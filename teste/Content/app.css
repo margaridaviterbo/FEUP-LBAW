@@ -1,5 +1,12 @@
 ﻿body {
     font-family: 'Open Sans', sans-serif;
+    
+    background-image: url("../Resorces/backimga.webp");
+    background-color: lightcoral;
+    background-attachment:fixed;
+    background-size: cover;
+    background-position:center;
+    padding-top: 137px;
 }
 
 .navbar-brand {
@@ -11,43 +18,28 @@
   width: 5em;
 }*/
 
-.organize-event-card {
-    display: inline-block;
-    width: 32%;
-    padding: 5px;
+header {
+    background-color: white;
 }
+
 
 .recomendacoes-publicas {
     margin: auto;
 }
 
-@media (max-width: 1000px) {
-    .organize-event-card {
-        display: inline-block;
-        width: 49%;
-        padding: 5px;
-    }
-}
-
-@media (max-width: 450px) {
-    .organize-event-card {
-        display: inline-block;
-        width: 100%;
-        padding: 5px;
-    }
-}
-
 .event-card-medium {
-    background-color: rgb(245, 245, 220);
+    background-color: rgba(255, 255, 255, 0.8);
     color: black;
     transition: box-shadow 0.3s ease-in-out;
+    padding: 10px;
+    margin-top: 50px;
 }
 
-.event-card-medium a {
-    text-decoration: none;
-    color: black;
-}
+.btn-default {
+    background-color: rgb(225,121,89);
+    display:block;
 
+}
 
 .event-card-medium:hover {
     box-shadow: 2px 2px 20px grey;
@@ -59,42 +51,12 @@
     height: auto;
 }
 
-.text-card {
-    padding-left: 5px;
-    padding-right: 2px;
-}
-
-.upper-card {
-    position: relative;
-}
-
-.card-preco {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    padding: 2px;
-    border: 1px solid black;
-    border-radius: 5px;
-    background-color: rgb(245, 245, 220);
-}
-
 .classifica-card {
-    position: absolute;
-    bottom: 10px;
-    left: 10px;
-    padding: 2px;
-    border: 1px solid black;
-    border-radius: 5px;
-    background-color: rgb(245, 245, 220);
+    color: rgb(225,121,89); 
 }
 
-.data-card {
-    margin-bottom: 5px;
-}
-
-.local-card {
-    margin-bottom: 5px;
-
+.text-card {
+    font-weight: bold;
 }
 
 .titulo-card {
@@ -170,4 +132,74 @@ ul {
     transform: translate(-50%, -50%);
     font-size: 5rem;
     text-shadow: 2px 2px 6px #000000;
+}
+
+
+.list-group-item.active, .list-group-item.active:focus, .list-group-item.active:hover {
+    color: rgb(43,163,141);
+    background-color: rgb(215,243,235);
+    border-color: white;
+}
+
+.list-group-item {
+    background-color: rgb(43,163,141);
+    border: 1px solid white;    
+    font-size: 1.8rem;
+    margin-top: 5px;
+}
+
+a.list-group-item {
+    color: white;
+    text-align: center;
+}
+
+a.list-group-item:focus, a.list-group-item:hover, button.list-group-item:focus, button.list-group-item:hover {
+    color: rgb(43,163,141);
+    background-color: rgb(215,243,235);
+}
+
+.asside-user-buttons {
+    padding: 20px;
+    background-color: rgba(43,163,141, 0.8);
+    padding-bottom: 50px;
+    margin-top: 75px;
+}
+
+.btn-lg {
+    padding: 50px 10px;
+    font-size: 18px;
+    line-height: 1.3333333;
+    border-radius: 50%;
+    margin-left: 50%;
+    transform: translate(-50%, 0);
+}
+
+.btn-primary {
+    background-color:  rgba(43,163,141, 1);
+    border-color: white;
+}
+
+.btn-primary:hover, .btn-primary:active, .btn-primary.focus, .btn-primary:focus {
+    color: rgb(43,163,141);
+    background-color: rgb(215,243,235);
+    border-color: white;
+}
+
+.header-ind {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    transition: all 0.5s;
+}
+
+.cbp-af-header-shrink {
+    padding-top: 0px;
+    padding-bottom: 0px;
+}
+
+.table {
+    margin-bottom: 0px;
+}
+
+.table>tbody>tr>td {
+    padding: 0px;
 }
