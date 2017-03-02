@@ -1,0 +1,147 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Event Manager</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width = device-width, initial-scale = 1">
+
+
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Baloo" rel="stylesheet">
+    <link href="Content/font-awesome.min.css" rel="stylesheet" />
+    <link href="Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="Content/app.css" rel="stylesheet" />
+
+
+</head>
+
+<body>
+
+    <header class="navbar-fixed-top header-ind cbp-af-header">
+        <div class="container-fluid text-center">
+            <div class="row">
+                <div class="col-sm-3">
+                    <h2>Eventify</h2>
+                </div>
+                <div class="col-sm-6">
+                    <form class="navbar-form navbar-center" role="search">
+                        <div class="form-group input-group">
+                            <input type="text" class="form-control" placeholder="Search Event...">
+                            <span class="input-group-btn">
+                                <button class="btn btn-default" type="button">
+                                    <span class="glyphicon glyphicon-search"></span>
+                                </button>
+                            </span>
+                        </div>
+                    </form>
+                </div>
+                <div class="col-sm-3">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+                        <li><a href="#"><span class="glyphicon glyphicon-pencil"></span> Register</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="container-fluid text-left">
+        <div class="page-title">
+            <h1>Notifications: </h1>
+        </div>
+        <div class="row">
+            <content class="col-sm-9">
+                <div class="container-fluid notification-card-medium">
+                    <p class="notification-date">Quinta, 19 de Março de 2017 às 19:45</p>
+                    <p class="notification-content">
+                        The user <a href="#">user1</a> invited to an event called <a href="#">Festa da faculdade</a> on March 9, 2017 19:45 to 23, at <a href="#">piolho</a>.
+                    </p>
+                    <button type="button" class="btn btn-default btn-lg">
+                        Go to event
+                    </button>
+                </div>
+                <div class="container-fluid notification-card-medium">
+                    <p class="notification-date">Quinta, 8 de Março de 2017 às 19:45</p>
+                    <p class="notification-content">
+                        The user <a href="#">user1</a> commented on the event <a href="#">Festa da maternidade</a>.
+                    </p>
+                    <button type="button" class="btn btn-default btn-lg">
+                        Go to event
+                    </button>
+                </div>
+                <div class="container-fluid notification-card-medium">
+                    <p class="notification-date">Quinta, 17 de Março de 2017 às 19:45</p>
+                    <p class="notification-content">
+                        The user <a href="#">user1</a> chaged the name of the event "Festa da maternidade" for <a href="#">Festa da Paternidade</a>.
+                    </p>
+                    <button type="button" class="btn btn-default btn-lg">
+                        Go to event
+                    </button>
+                </div>
+                <div class="container-fluid notification-card-medium">
+                    <p class="notification-date">Quinta, 16 de Março de 2017 às 19:45</p>
+                    <p class="notification-content">
+                        The user <a href="#">user1</a> chaged the location of the event <a href="#">Festa da maternidade</a> for <a>Sé so Porto</a>.
+                    </p>
+                    <button type="button" class="btn btn-default btn-lg">
+                        Go to event
+                    </button>
+                </div>
+                <div class="container-fluid notification-card-medium">
+                    <p class="notification-date">Quinta, 11 de Março de 2017 às 19:45</p>
+                    <p class="notification-content">
+                        There was a deletion a commet that you did on the event <a href="#">Festa da maternidade</a>.
+                    </p>
+                    <button type="button" class="btn btn-default btn-lg">
+                        Go to event
+                    </button>
+                </div>
+                <div class="container-fluid notification-card-medium">
+                    <p class="notification-date">Quinta, 11 de Março de 2017 às 19:45</p>
+                    <p class="notification-content">
+                        There was a deletion a commet that you did on the event <a href="#">Festa da maternidade</a>.
+                    </p>
+                    <button type="button" class="btn btn-default btn-lg">
+                        Go to event
+                    </button>
+                </div>
+
+                <div class="container-fluid notification-card-medium">
+                    <p class="notification-date">Quinta, 11 de Março de 2017 às 19:45</p>
+                    <p class="notification-content">
+                        All the tickets for <a href="#">Festa da marta</a> were alredy sold.
+                    </p>
+                    <button type="button" class="btn btn-default btn-lg">
+                        Go to event
+                    </button>
+                </div>
+
+            </content>
+            <content class="col-sm-3">
+                <div class="asside-user-buttons">
+                    <div class="list-group">
+                        <a href="my-page-my-events.html" class="list-group-item">My Events</a>
+                        <a href="my-page-attended.html" class="list-group-item">Events Attended</a>
+                        <a href="my-page-invitations.html" class="list-group-item">Invitations</a>
+                        <a href="my-page-notifications.html" class="list-group-item active">Notifications</a>
+                        <a href="my-page-my-information.html" class="list-group-item">My Information</a>
+                    </div>
+                    <a href="my-page-new-event.html" class="btn btn-primary btn-lg">Create Event</a>
+                </div>
+            </content>
+        </div>
+    </div>
+
+    <footer class="container-fluid text-center">
+        <br> <br>
+        <em>LBAW 2016/17</em>
+    </footer>
+
+    <script src="Scripts/classie.js"></script>
+    <script src="Scripts/cbpAnimatedHeader.js"></script>
+    <script src="Scripts/jquery-1.9.1.min.js"></script>
+    <script src="Scripts/bootstrap.min.js"></script>
+
+</body>
+</html>
