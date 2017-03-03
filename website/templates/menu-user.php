@@ -1,3 +1,4 @@
+<div class="container">
 <header class="navbar-fixed-top header-ind cbp-af-header">
     <div class="container-fluid text-center header">
         <div class="row">
@@ -25,3 +26,4 @@
         </div>
     </div>
 </header>
+</div>

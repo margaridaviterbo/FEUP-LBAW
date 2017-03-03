@@ -1,42 +1,43 @@
 <?php include('../templates/header.php'); ?>
 <?php include('../templates/menu-visitor.php'); ?>
 
-<div class="container-fluid text-left">
+<div class="container page">
 
-    <div class="page-title">
+    <div class="page-header">
         <h1>Register</h1>
     </div>
-    <div class="row">
-            <div class="container-fluid col-sm-5">
-                    <form action="upload.php" method="post" enctype="multipart/>form-data">
-                        <p>First Name:</p>
-                        <input type="text" class="form-control" placeholder="First Name" aria-describedby="basic-addon1">
 
-                        <p class="tag-new-event-card">Last Name:</p>
-                        <input type="text" class="form-control" placeholder="Last Name" aria-describedby="basic-addon1">
+    <form action="#" method="post" enctype="multipart/>form-data">
 
-                        <p>Username:</p>
-                        <input type="text" class="form-control" placeholder="Username" aria-describedby="basic-addon1">
+        <label>First Name</label>
+        <input type="text" class="form-control" placeholder="Insert your first name">
 
-                        <p class="tag-new-event-card">E-mail:</p>
-                        <input type="e-mail" class="form-control" placeholder="E-mail" aria-describedby="basic-addon1">
+        <label>Last Name</label>
+        <input type="text" class="form-control" placeholder="Insert your last name">
 
-                        <p class="tag-new-event-card">E-mail:</p>
-                        <input type="e-mail" class="form-control" placeholder="E-mail" aria-describedby="basic-addon1">
+        <label>Username</label>
+        <input type="text" class="form-control" placeholder="Choose an username">
 
-                        <p class="tag-new-event-card">Password:</p>
-                        <input type="password" class="form-control" name="Password">
+        <label>E-mail</label>
+        <input type="email" class="form-control" placeholder="Insert your email">
 
-                        <p class="tag-new-event-card">Confirm Password:</p>
-                        <input type="password" class="form-control" name="Password">
+        <label>Password</label>
+        <input type="password" class="form-control" placeholder="Choose a password">
 
-                        <p class="tag-new-event-card">Profile picture:</p>
-                        <input type="file" name="User image" id="User image">
+        <label>Confirm Password</label>
+        <input type="password" class="form-control" placeholder="Confirm the password">
+        <br></br>
 
-                        <input type="submit" class="form-control" value="Register">
-                    </form>
-            </div>
-    </div>
+        <label>Profile picture</label>
+        <input type="file" name="User image" id="User image">
+
+        <br></br>
+        <button type="submit" class="btn btn-default btn-lg">Register</button>
+        <br></br>
+
+    </form>
+
+    <label>Already have an account?<a href="#"> Log in</a> here.</label>
 </div>
 
 <?php include('../templates/footer.php'); ?>

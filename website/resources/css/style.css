@@ -317,3 +317,12 @@ body{
     font-family: 'Baloo', cursive;
     font-size: 30px;
 }
+
+
+.page{
+    background-color: rgba(255, 255, 255, 0.7);
+}
+
+a:hover, a:focus{
+    text-decoration: none;
+}

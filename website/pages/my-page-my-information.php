@@ -2,6 +2,7 @@
 <?php include('../templates/menu-user.php'); ?>
 <?php include('../templates/aside-menu.php'); ?>
 
+
     <div class="container-fluid text-left">
         <div class="page-title">
             <h1>My information: </h1>
@@ -32,7 +33,7 @@
                         <div class="col-sm-3 inoformation-personal-card">
                         </div>
                         <div class="col-sm-4 photo-personal-card">
-                            <img src="../resources/images/image.jpeg">
+                            <img src="../resources/images/image.jpeg" class="img-responsive img-thumbnail">
                             <button type="button" class="btn btn-default btn-lg">
                                 Upload a New photo
                             </button>
@@ -45,6 +46,5 @@
             </content>
         </div>
     </div>
-
 
 <?php include('../templates/footer.php'); ?>
