@@ -5,26 +5,10 @@
 header .header{
     margin-top:2%;
     background-color: rgba(0, 0, 0, 0.6);
-    color:white;
 }
 
 header{
     transition: all 0.5s;
-}
-
-header #login a, #title a{
-    color:white;
-}
-
-.header-ind {
-    padding-top: 20px;
-    padding-bottom: 20px;
-    transition: all 0.5s;
-}
-
-.cbp-af-header-shrink {
-    padding-top: 0px;
-    padding-bottom: 0px;
 }
 
 #title{
@@ -323,6 +307,11 @@ body{
     background-color: rgba(255, 255, 255, 0.7);
 }
 
-a:hover, a:focus{
+a:hover, a:focus, a{
     text-decoration: none;
+    color:white;
+}
+
+.icon-bar{
+    background-color: white;
 }
