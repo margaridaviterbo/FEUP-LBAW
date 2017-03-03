@@ -1,0 +1,319 @@
+/**
+ *Header
+ **/
+
+header .header{
+    margin-top:2%;
+    background-color: rgba(0, 0, 0, 0.6);
+    color:white;
+}
+
+header{
+    transition: all 0.5s;
+}
+
+header #login a, #title a{
+    color:white;
+}
+
+.header-ind {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    transition: all 0.5s;
+}
+
+.cbp-af-header-shrink {
+    padding-top: 0px;
+    padding-bottom: 0px;
+}
+
+#title{
+    margin-top: -1rem;
+}
+
+#login :hover{
+    color: lightslategrey;
+}
+
+#login :focus{
+    color: darkslategrey;
+}
+
+/**
+ * Side menu
+ **/
+
+.aside-user-buttons {
+    padding: 20px;
+    background-color: rgba(43,163,141, 0.8);
+    padding-bottom: 50px;
+    margin-top: 75px;
+}
+
+.aside-user-buttons .btn-lg {
+    padding: 50px 10px;
+    font-size: 18px;
+    line-height: 1.3333333;
+    border-radius: 50%;
+    margin-left: 50%;
+    transform: translate(-50%, 0);
+}
+
+.aside-user-buttons .btn-primary {
+    background-color:  rgba(43,163,141, 1);
+    border-color: white;
+}
+
+.aside-user-buttons .btn-default {
+    background-color: rgb(225,121,89);
+    display:block;
+}
+
+.aside-user-buttons .btn-primary:hover, .aside-user-buttons .btn-primary:active, .aside-user-buttons .btn-primary.focus, .aside-user-buttons .btn-primary:focus {
+    color: rgb(43,163,141);
+    background-color: rgb(215,243,235);
+    border-color: white;
+}
+
+@media (min-width: 768px) {
+    .aside-user-buttons {
+        position: fixed;
+    }
+}
+
+.list-group-item.active, .list-group-item.active:focus, .list-group-item.active:hover {
+    color: rgb(43,163,141);
+    background-color: rgb(215,243,235);
+    border-color: white;
+}
+
+.list-group-item {
+    background-color: rgb(43,163,141);
+    border: 1px solid white;
+    font-size: 1.8rem;
+    margin-top: 5px;
+}
+
+a.list-group-item {
+    color: white;
+    text-align: center;
+}
+
+a.list-group-item:focus, a.list-group-item:hover, button.list-group-item:focus, button.list-group-item:hover {
+    color: rgb(43,163,141);
+    background-color: rgb(215,243,235);
+}
+
+/**
+ * Footer
+ **/
+#footer{
+    margin-bottom: 2%;
+    color:white;
+    background-color: rgba(0, 0, 0, 0.6);
+}
+
+
+/* */
+a:hover{
+    text-decoration: none;
+}
+
+.aside-menu-list {
+    font-weight: bold;
+    font-size: 1.2rem;
+    background-color: rgb(245, 245, 220);
+    transition: box-shadow 0.3s ease-in-out;
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+
+
+
+/* */
+
+.recomendacoes-publicas {
+    margin: auto;
+}
+
+.event-card-medium {
+    background-color: rgba(255, 255, 255, 0.8);
+    color: black;
+    transition: box-shadow 0.3s ease-in-out;
+    padding: 10px;
+    margin-bottom: 50px;
+}
+
+.event-card-medium:hover {
+    box-shadow: 2px 2px 20px grey;
+    transition: box-shadow 0.3s ease-in-out;
+}
+
+.event-card-medium img {
+    width: 100%;
+    height: auto;
+}
+
+.classifica-card {
+    color: rgb(225,121,89);
+}
+
+.text-card {
+    font-weight: bold;
+}
+
+.titulo-card {
+    font-weight: bold;
+    font-size: 1.8rem;
+    margin-bottom: 5px;
+    height: 50px;
+    overflow: hidden;
+}
+
+.recomendacoes-publicas h1 {
+    border-bottom: 2px solid grey;
+}
+
+.create-event {
+    margin-top: 60px;
+    border-radius: 20px;
+    background-color: orange;
+    transition: box-shadow 0.3s ease-in-out;
+}
+
+ul {
+    padding: 0px;
+}
+
+.fill-screen {
+    background-size: cover;
+    filter: blur(5px);
+    background-position: center;
+}
+
+.relative-container {
+    position:relative;
+}
+
+#logo-image {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 5rem;
+}
+
+.list-group-item.active, .list-group-item.active:focus, .list-group-item.active:hover {
+    color: rgb(43,163,141);
+    background-color: rgb(215,243,235);
+    border-color: white;
+}
+
+.list-group-item {
+    background-color: rgb(43,163,141);
+    border: 1px solid white;
+    font-size: 1.8rem;
+    margin-top: 5px;
+}
+
+a.list-group-item {
+    color: white;
+    text-align: center;
+}
+
+a.list-group-item:focus, a.list-group-item:hover, button.list-group-item:focus, button.list-group-item:hover {
+    color: rgb(43,163,141);
+    background-color: rgb(215,243,235);
+}
+
+.page-title h1{
+    margin: 0px;
+    background-color:  rgba(255, 255, 255, 0.8);
+    display: inline;
+    padding-left: 20px;
+    padding-right: 20px;
+
+}
+
+.page-title{
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.notification-card-medium {
+    background-color: rgba(255, 255, 255, 0.8);
+    color: black;
+    transition: box-shadow 0.3s ease-in-out;
+    padding: 10px;
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.notification-card-medium:hover {
+    box-shadow: 2px 2px 20px grey;
+    transition: box-shadow 0.3s ease-in-out;
+}
+
+.notification-date {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+}
+
+.notification-content {
+    margin-top: 20px;
+}
+
+.personal-card {
+    background-color: rgba(255, 255, 255, 0.8);
+    color: black;
+    padding: 10px;
+    margin-bottom: 20px;
+}
+
+.personal-card p{
+    display: inline;
+    padding-left: 5px;
+    font-size: 2rem;
+}
+
+.tag-personal-card {
+    font-weight: bold;
+}
+
+
+.content-personal {
+    padding-bottom: 10px;
+}
+
+.photo-personal-card img {
+    width: 100%;
+    height: auto;
+}
+
+.new-event-card {
+    background-color: rgba(255, 255, 255, 0.8);
+    color: black;
+    padding: 10px;
+    margin-bottom: 20px;
+}
+
+.content-personal, .content-new-event p, .content-new-event input {
+    display: inline;
+}
+
+body{
+    font-family: 'Open Sans', sans-serif;
+
+    background-image: url("../images/backimga.webp");
+    background-color: lightcoral;
+    background-attachment:fixed;
+    background-size: cover;
+    background-position:center;
+    padding-top: 137px;
+}
+
+.navbar-brand {
+    font-family: 'Baloo', cursive;
+    font-size: 30px;
+}
