@@ -22,7 +22,7 @@
                                 <div class="row">
 
                                     <button type="button" class="btn btn-default col-sm-5">See Event</button>
-                                    <button type="button" class="btn btn-default col-sm-5">Edit Event</button>
+                                    <button onclick="window.location.href='../pages/my-page-edit-event.php'" type="submit" class="btn btn-default col-sm-5">Edit Event</button>
 
                                     <div class="classifica-card col-sm-7">
                                         <i class="fa fa-star fa-2x" aria-hidden="true"></i>
@@ -158,6 +158,5 @@
             </content>
         </div>
     </div>
-
 
 <?php include('../templates/footer.php'); ?>
