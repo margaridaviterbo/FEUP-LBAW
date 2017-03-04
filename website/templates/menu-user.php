@@ -33,11 +33,11 @@
                         <div class="row">
                             <div class="collapse navbar-collapse" id="menu">
                                 <div class="col-sm-5 search">
-                                    <form class="navbar-form navbar-center" role="search">
+                                    <form class="navbar-form navbar-center" role="search" action="../pages/search.php#eventosPesq">
                                         <div class="form-group input-group">
                                             <input type="text" class="form-control" placeholder="Search Event...">
                                             <span class="input-group-btn">
-                                                            <button class="btn btn-default" type="button">
+                                                            <button class="btn btn-default" type="submit">
                                                               <span class="glyphicon glyphicon-search"></span>
                                                             </button>
                                                         </span>
