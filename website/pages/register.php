@@ -37,7 +37,7 @@
 
     </form>
 
-    <label>Already have an account?<a href="./login.php"> Log in</a> here.</label>
+    <label>Already have an account?<a href="#" data-toggle="modal" data-target="#myModal"> Log in</a> here.</label>
 </div>
 
 <?php include('../templates/footer.php'); ?>
