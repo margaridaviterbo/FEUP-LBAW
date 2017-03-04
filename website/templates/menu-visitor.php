@@ -47,8 +47,8 @@
 
                                     <div class="col-sm-5 pull-right">
                                         <ul class="nav navbar-nav navbar-right" id="login">
-                                            <li><a href="#" data-toggle="modal" data-target="#myModal"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
-                                            <li><a href="../pages/register.php"><span class="glyphicon glyphicon-pencil"></span> Register</a></li>
+                                            <li><a href="#" data-toggle="modal" data-target="#modalLogin"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+                                            <li><a href="#" data-toggle="modal" data-target="#modalRegister"><span class="glyphicon glyphicon-pencil"></span> Register</a></li>
                                         </ul>
                                     </div>
                             </div>
