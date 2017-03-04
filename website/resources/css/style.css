@@ -416,3 +416,13 @@ div .dropdown {
 .see-more-evets {
     width: 100%;
 }
+
+.homepage .event-card-medium{
+  background-color: rgba(000, 000, 000, 0.7);
+  color: white;
+}
+
+.homepage .page-title h1{
+  background-color: rgba(000, 000, 000, 0.7);
+  color: white;
+}
