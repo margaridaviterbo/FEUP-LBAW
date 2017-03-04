@@ -3,6 +3,7 @@
         <content class="col-sm-offset-9 col-sm-3">
             <div class="aside-user-buttons">
                 <div class="list-group">
+                    <a href="../pages/admin.php" class="list-group-item">Admin</a>
                     <a href="../pages/user-homepage.php" class="list-group-item">Upcoming Events</a>
                     <a href="../pages/my-page-attended.php" class="list-group-item">Past Events</a>
                     <a href="../pages/my-page-my-events.php" class="list-group-item">My Events</a>
