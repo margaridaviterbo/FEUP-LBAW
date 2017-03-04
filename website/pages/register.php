@@ -10,22 +10,22 @@
     <form action="#" method="post" enctype="multipart/>form-data">
 
         <label>First Name</label>
-        <input type="text" class="form-control" placeholder="Insert your first name">
+        <input type="text" class="form-control" placeholder="Insert your first name" required>
 
         <label>Last Name</label>
-        <input type="text" class="form-control" placeholder="Insert your last name">
+        <input type="text" class="form-control" placeholder="Insert your last name" required>
 
         <label>Username</label>
-        <input type="text" class="form-control" placeholder="Choose an username">
+        <input type="text" class="form-control" placeholder="Choose an username" required>
 
         <label>E-mail</label>
-        <input type="email" class="form-control" placeholder="Insert your email">
+        <input type="email" class="form-control" placeholder="Insert your email" required>
 
         <label>Password</label>
-        <input type="password" class="form-control" placeholder="Choose a password">
+        <input type="password" class="form-control" placeholder="Choose a password" required>
 
         <label>Confirm Password</label>
-        <input type="password" class="form-control" placeholder="Confirm the password">
+        <input type="password" class="form-control" placeholder="Confirm the password" required>
         <br></br>
 
         <label>Profile picture</label>
@@ -37,7 +37,7 @@
 
     </form>
 
-    <label>Already have an account?<a href="#"> Log in</a> here.</label>
+    <label>Already have an account?<a href="./login.php"> Log in</a> here.</label>
 </div>
 
 <?php include('../templates/footer.php'); ?>
