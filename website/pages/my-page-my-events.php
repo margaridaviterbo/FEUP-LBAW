@@ -20,7 +20,8 @@
                             <p class="text-card">Gratuito</p>
                             <div class="container-fluid">
                                 <div class="row">
-                                    <button type="button" class="btn btn-default col-sm-5">See More...</button>
+                                    <button type="button" class="btn btn-default col-sm-5">See Event</button>
+                                    <button type="button" class="btn btn-default col-sm-5">Edit Event</button>
                                     <div class="classifica-card col-sm-7">
                                         <i class="fa fa-star fa-2x" aria-hidden="true"></i>
                                         <i class="fa fa-star fa-2x" aria-hidden="true"></i>
@@ -46,7 +47,8 @@
                             <p class="text-card">Gratuito</p>
                             <div class="container-fluid">
                                 <div class="row">
-                                    <button type="button" class="btn btn-default col-sm-5">See More...</button>
+                                    <button type="button" class="btn btn-default col-sm-5">See Event</button>
+                                    <button type="button" class="btn btn-default col-sm-5">Edit Event</button>
                                     <div class="classifica-card col-sm-7">
                                         <i class="fa fa-star fa-2x" aria-hidden="true"></i>
                                         <i class="fa fa-star fa-2x" aria-hidden="true"></i>
@@ -72,7 +74,8 @@
                             <p class="text-card">Gratuito</p>
                             <div class="container-fluid">
                                 <div class="row">
-                                    <button type="button" class="btn btn-default col-sm-5">See More...</button>
+                                    <button type="button" class="btn btn-default col-sm-5">See Event</button>
+                                    <button type="button" class="btn btn-default col-sm-5">Edit Event</button>
                                     <div class="classifica-card col-sm-7">
                                         <i class="fa fa-star fa-2x" aria-hidden="true"></i>
                                         <i class="fa fa-star fa-2x" aria-hidden="true"></i>
@@ -98,7 +101,8 @@
                             <p class="text-card">Gratuito</p>
                             <div class="container-fluid">
                                 <div class="row">
-                                    <button type="button" class="btn btn-default col-sm-5">See More...</button>
+                                    <button type="button" class="btn btn-default col-sm-5">See Event</button>
+                                    <button type="button" class="btn btn-default col-sm-5">Edit Event</button>
                                     <div class="classifica-card col-sm-7">
                                         <i class="fa fa-star fa-2x" aria-hidden="true"></i>
                                         <i class="fa fa-star fa-2x" aria-hidden="true"></i>
@@ -124,7 +128,8 @@
                             <p class="text-card">Gratuito</p>
                             <div class="container-fluid">
                                 <div class="row">
-                                    <button type="button" class="btn btn-default col-sm-5">See More...</button>
+                                    <button type="button" class="btn btn-default col-sm-5">See Event</button>
+                                    <button type="button" class="btn btn-default col-sm-5">Edit Event</button>
                                     <div class="classifica-card col-sm-7">
                                         <i class="fa fa-star-o fa-2x" aria-hidden="true"></i>
                                         <i class="fa fa-star-o fa-2x" aria-hidden="true"></i>
@@ -146,4 +151,3 @@
 
 
 <?php include('../templates/footer.php'); ?>
-
