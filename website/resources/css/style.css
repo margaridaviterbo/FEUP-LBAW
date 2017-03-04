@@ -120,7 +120,7 @@ a:hover{
     margin: auto;
 }
 
-.event-card-medium {
+.event-card-medium,  .user-card-medium{
     background-color: rgba(255, 255, 255, 0.8);
     color: black;
     transition: box-shadow 0.3s ease-in-out;
@@ -128,12 +128,12 @@ a:hover{
     margin-bottom: 50px;
 }
 
-.event-card-medium:hover {
+.event-card-medium:hover, .user-card-medium:hover {
     box-shadow: 2px 2px 20px grey;
     transition: box-shadow 0.3s ease-in-out;
 }
 
-.event-card-medium img {
+.event-card-medium img, .user-card-medium img {
     width: 100%;
     height: auto;
 }
@@ -314,6 +314,107 @@ a:hover, a:focus, a{
 
 .icon-bar{
     background-color: white;
+}
+
+/**
+    * TABS PESQ CSS *
+**/
+
+#tabs {
+	list-style-type: none;
+    padding: 0;
+    margin: 0;
+    overflow: hidden;
+    padding-left: 10%;
+    border: 1px solid #ccc;
+    background-color: #f1f1f1;
+}
+
+#tabs li {
+	float: left;
+    padding-right: 6%;
+}
+
+#tabs li a{
+  display: block;
+  color: black;
+  text-align: center;
+  padding: 5px 5px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+#tabs li a:hover {
+	background-color: #ddd;
+}
+
+#tabs li a:active {
+	background-color: #ddd;
+}
+
+.tabContent {
+	overflow:hidden;
+	border: 1px solid #ccc;
+	border-top: none;
+    background-color: rgba(255, 255, 255, 0.8);
+    width: 100%;
+    max-height: 0px;
+    position:absolute;
+    padding: 0px 12px;
+}
+
+.tabContent:target {
+	display: block;
+	border: 1px solid #ccc;
+	border-top: none;
+    max-height:10000px;
+    z-index: 1;
+    padding: 6px 12px;
+    
+    transition: max-height 2s;
+}
+
+div .dropdown {
+    display: inline;
+}
+
+.tabContentGroup {
+    position: relative;
+}
+
+.tabOptions {
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 5px; 
+    margin-bottom: 5px;
+}
+
+.user-card-medium a {
+  color: black;
+}
+
+.user-card-medium a:hover {
+  text-decoration: underline;
+}
+
+.user-card-medium ul {
+    list-style-type: circle;
+}
+
+.events-in-common {
+    padding-left: 10px;
+}
+
+.tipoEventos-card {
+    padding-left: 50px;
+    display: block;
+}
+
+#tipoEventos h1 {
+    border-bottom: 1px solid #ccc;
+}
+
+.see-more-evets {
+    width: 100%;
 }
 
 .homepage .event-card-medium{
