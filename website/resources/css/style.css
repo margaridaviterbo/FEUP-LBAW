@@ -11,6 +11,10 @@ header{
     transition: all 0.5s;
 }
 
+header a, #title a:hover, #title a:focus{
+    color:white;
+}
+
 #title{
     margin-top: -1rem;
 }
@@ -31,7 +35,7 @@ header{
     padding: 20px;
     background-color: rgba(43,163,141, 0.8);
     padding-bottom: 50px;
-    margin-top: 75px;
+    margin-top: 80px;
 }
 
 .aside-user-buttons .btn-lg {
@@ -99,9 +103,6 @@ a.list-group-item:focus, a.list-group-item:hover, button.list-group-item:focus, 
 
 
 /* */
-a:hover{
-    text-decoration: none;
-}
 
 .aside-menu-list {
     font-weight: bold;
@@ -307,12 +308,75 @@ body{
     background-color: rgba(255, 255, 255, 0.7);
 }
 
-a:hover, a:focus, a{
-    text-decoration: none;
-    color:white;
+.icon-bar{
+    background-color: white;
 }
 
-.icon-bar{
+a, a:hover, a:focus{
+    text-decoration: none;
+}
+
+/**
+ *  Show-event-page.php
+ **/
+
+
+.event-page-header{
+    display: flex;
+}
+
+.event-page-image-section{
+    width:70%;
+}
+
+.event-page-photo{
+    width:100%;
+}
+
+.event-page-info-square-section{
+    background-color: ghostwhite;
+    width:30%;
+    position:relative;
+}
+
+.event-page-info-square-section > *{
+    position: absolute;
+    left: 5%;
+}
+
+.event-date{
+    position: absolute;
+    bottom: 90%;
+}
+
+.event-name{
+    font-family: 'Open Sans', sans-serif;
+    font-size: 20px;
+    position: absolute;
+    bottom: 45%;
+}
+
+.event-creator{
+    position: absolute;
+    bottom: 25%;
+}
+
+.event-price{
+    position: absolute;
+    bottom: 5%;
+}
+
+.event-page-body{
+    padding: 1%;
+    padding-bottom:3%;
+    margin-bottom:5%;
+}
+
+.map-image{
+    width:100%;
+}
+
+.white-page{
     background-color: white;
 }
 
