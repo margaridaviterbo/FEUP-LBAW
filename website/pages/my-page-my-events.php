@@ -1,4 +1,4 @@
-﻿<?php include('../templates/header.php'); ?>
+<?php include('../templates/header.php'); ?>
 <?php include('../templates/menu-user.php'); ?>
 <?php include('../templates/aside-menu.php'); ?>
 
@@ -21,6 +21,7 @@
                             <div class="container-fluid">
                                 <div class="row">
                                     <button type="button" class="btn btn-default col-sm-5">See More...</button>
+                                    <a class="btn btn-md btn-default" href="my-page-edit-event.php">Edit...</a>
                                     <div class="classifica-card col-sm-7">
                                         <i class="fa fa-star fa-2x" aria-hidden="true"></i>
                                         <i class="fa fa-star fa-2x" aria-hidden="true"></i>
@@ -47,6 +48,7 @@
                             <div class="container-fluid">
                                 <div class="row">
                                     <button type="button" class="btn btn-default col-sm-5">See More...</button>
+                                    <a class="btn btn-md btn-default" href="my-page-edit-event.php">Edit...</a>
                                     <div class="classifica-card col-sm-7">
                                         <i class="fa fa-star fa-2x" aria-hidden="true"></i>
                                         <i class="fa fa-star fa-2x" aria-hidden="true"></i>
@@ -73,6 +75,7 @@
                             <div class="container-fluid">
                                 <div class="row">
                                     <button type="button" class="btn btn-default col-sm-5">See More...</button>
+                                    <a class="btn btn-md btn-default" href="my-page-edit-event.php">Edit...</a>
                                     <div class="classifica-card col-sm-7">
                                         <i class="fa fa-star fa-2x" aria-hidden="true"></i>
                                         <i class="fa fa-star fa-2x" aria-hidden="true"></i>
@@ -99,6 +102,7 @@
                             <div class="container-fluid">
                                 <div class="row">
                                     <button type="button" class="btn btn-default col-sm-5">See More...</button>
+                                    <a class="btn btn-md btn-default" href="my-page-edit-event.php">Edit...</a>
                                     <div class="classifica-card col-sm-7">
                                         <i class="fa fa-star fa-2x" aria-hidden="true"></i>
                                         <i class="fa fa-star fa-2x" aria-hidden="true"></i>
@@ -125,6 +129,7 @@
                             <div class="container-fluid">
                                 <div class="row">
                                     <button type="button" class="btn btn-default col-sm-5">See More...</button>
+                                    <a class="btn btn-md btn-default" href="my-page-edit-event.php">Edit...</a>
                                     <div class="classifica-card col-sm-7">
                                         <i class="fa fa-star-o fa-2x" aria-hidden="true"></i>
                                         <i class="fa fa-star-o fa-2x" aria-hidden="true"></i>
