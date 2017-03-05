@@ -35,7 +35,6 @@ header a, #title a:hover, #title a:focus{
     padding: 20px;
     background-color: rgba(43,163,141, 0.8);
     padding-bottom: 50px;
-    margin-top: 80px;
 }
 
 .aside-user-buttons .btn-lg {
@@ -322,12 +321,39 @@ a, a:hover, a:focus{
 
 .event-page-header{
     display: flex;
+    flex-wrap: wrap;
+}
+
+.event-page-header > [class*='col-']{
+    display: flex;
+    flex-direction: column;
+}
+
+.event-page-header {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+}
+
+.event-page-header > [class*='col-'] {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
 }
 
 .event-page-image-section{
     overflow: hidden;
     padding: 0;
-    /**height: 300px;*/
 }
 
 .event-page-photo{
@@ -338,32 +364,56 @@ a, a:hover, a:focus{
     overflow: hidden;
     background-color: ghostwhite;
     padding: 0;
+    position: relative;
 }
 
-.col-lg-* .event-page-info-square-section > *, .col-md-* .event-page-info-square-section >{
+.event-page-info-square-section > *{
     margin-left: 5%;
 }
 
-.col-sm-* .event-page-info-square-section > *{
-    margin-left: 0;
+.event-date{
+    position: absolute;
+    top: 5%;
 }
 
-.event-date{
-    margin-top: 10px;
+@media all and (min-width: 768px) { /* screen size until 500px */
+    .event-name {
+        font-size: 10px; /* 0.8x default size */
+    }
+}
+
+@media all and (min-width: 992px) { /* screen size until 1000px */
+    .event-name {
+        font-size: 15px; /* 1.2x default size */
+    }
+    .event-creator{
+        font-size: 13px;
+    }
+}
+
+@media all and (min-width: 1200px) { /* screen size until 1200px */
+    .event-name {
+        font-size: 20px; /* 1.5x default size */
+    }
+    .event-creator{
+        font-size: 15px;
+    }
 }
 
 .event-name{
     font-family: 'Open Sans', sans-serif;
-    font-size: 20px;
-    margin-top: 30%;
+    position: absolute;
+    top: 35%;
 }
 
 .event-creator{
-    margin-top: 10%;
+    position: absolute;
+    top: 70%;
 }
 
 .event-price{
-    margin-top: 20%;
+    position: absolute;
+    top: 90%;
 }
 
 .event-page-body{
@@ -376,6 +426,15 @@ a, a:hover, a:focus{
 
 .white-page{
     background-color: white;
+}
+
+.user-image{
+    width: 100px;
+    float: left;
+}
+
+.comment-text{
+    padding-left: 15%;
 }
 
 /**

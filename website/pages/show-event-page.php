@@ -10,7 +10,7 @@ include('../templates/aside-menu.php');
     <div class="row event-page-header">
 
         <div class="col-lg-6 col-lg-offset-2 col-md-6 col-md-offset-1 hidden-sm hidden-xs event-page-image-section white-page">
-            <img src="../resources/images/1.jpg" alt="Event" class="event-page-photo"/>
+            <img src="../resources/images/1.jpg" alt="Event" class="event-page-photo img-responsive "/>
         </div>
 
         <div class="col-lg-2 col-md-2 hidden-sm hidden-xs event-page-info-square-section">
@@ -36,7 +36,7 @@ include('../templates/aside-menu.php');
     <div class="row event-page-header-small">
 
         <div class="col-sm-8 col-sm-offset-1 col-xs-12 hidden-lg hidden-md event-page-image-section white-page">
-            <img src="../resources/images/1.jpg" alt="Event" class="event-page-photo"/>
+            <img src="../resources/images/1.jpg" alt="Event" class="event-page-photo img-responsive "/>
         </div>
     </div>
 
@@ -98,6 +98,69 @@ include('../templates/aside-menu.php');
                 <img src="../resources/images/map.png" class="map-image"/>
                 <h4> 131 Rua de Sá da Bandeira, 4000-427 Porto </h4>
             </div>
+
+            <div class="page-header">
+                <h3>Comments</h3>
+            </div>
+
+            <div class="row">
+                    <div class="col-sm-1">
+                        <div class="thumbnail">
+                            <img class="img-responsive user-photo" src="../resources/images/user.png">
+                        </div>
+                    </div>
+
+                    <div class="col-sm-11">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <strong>awesome1</strong> <span class="text-muted">commented 5 days ago</span>
+                            </div>
+                            <div class="panel-body">
+                                On it differed repeated wandered required in. Then girl neat why yet knew rose spot. Moreover property we he kindness greatest be oh striking laughter. In me he at collecting affronting principles apartments. Has visitor law attacks pretend you calling own excited painted. Contented attending smallness it oh ye unwilling. Turned favour man two but lovers. Suffer should if waited common person little oh. Improved civility graceful sex few smallest screened settling. Likely active her warmly has.
+                            </div>
+                        </div>
+                    </div>
+            </div>
+
+            <div class="row">
+                <div class="col-sm-1">
+                    <div class="thumbnail">
+                        <img class="img-responsive user-photo" src="../resources/images/user.png">
+                    </div>
+                </div>
+
+                <div class="col-sm-11">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <strong>awesome2</strong> <span class="text-muted">commented 4 days ago</span>
+                        </div>
+                        <div class="panel-body">
+                            Offered say visited elderly and. Waited period are played family man formed. He ye body or made on pain part meet. You one delay nor begin our folly abode. By disposed replying mr me unpacked no. As moonlight of my resolving unwilling. </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-sm-1">
+                    <div class="thumbnail">
+                        <img class="img-responsive user-photo" src="../resources/images/user.png">
+                    </div>
+                </div>
+
+                <div class="col-sm-11">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <strong>awesome3</strong> <span class="text-muted">commented 4 days ago</span>
+                        </div>
+                        <div class="panel-body">
+                            <div class="comment">
+                                OMG, look at us!!
+                            </div>
+                            <img src="../resources/images/3.jpg">
+                        </div>
+                </div>
+            </div>
+
 
         </div>
     </div>
