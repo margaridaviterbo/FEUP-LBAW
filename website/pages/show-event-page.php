@@ -27,7 +27,7 @@ include('../templates/aside-menu.php');
             </div>
 
             <div class="event-price">
-                Gratuito
+                13 - 20€
             </div>
         </div>
 
