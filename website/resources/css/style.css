@@ -285,6 +285,7 @@ a.list-group-item:focus, a.list-group-item:hover, button.list-group-item:focus, 
     margin-top: 20px;
 }
 
+/*PERSONAL CARD*/
 .personal-card {
     padding: 10px;
     margin-bottom: 20px;
@@ -304,6 +305,7 @@ a.list-group-item:focus, a.list-group-item:hover, button.list-group-item:focus, 
 .content-personal {
     padding-bottom: 10px;
     margin: 10px 0;
+    display: block;
 }
 
 .photo-personal-card img {
@@ -318,7 +320,7 @@ a.list-group-item:focus, a.list-group-item:hover, button.list-group-item:focus, 
     margin-bottom: 20px;
 }
 
-.content-personal, .content-new-event p, .content-new-event input {
+.content-new-event p, .content-new-event input {
     display: inline;
 }
 
@@ -573,3 +575,45 @@ textarea {
     max-width: 100%;
 }
 
+/*ckeckout CARD*/
+.ckeckout-card {
+    padding: 10px;
+    margin-bottom: 20px;
+}
+
+.ckeckout-card p{
+    display: inline;
+    padding-left: 5px;
+    font-size: 2rem;
+}
+
+.tag-ckeckout-card {
+    font-weight: bold;
+}
+
+
+.content-ckeckout {
+    padding-bottom: 10px;
+    margin: 10px 0;
+}
+
+.content-ckeckout {
+    display: block;
+}
+
+
+/*payed card*/
+.payed-card {
+    padding: 10px;
+    margin-bottom: 20px;
+}
+
+.payed-card p{
+    display: inline;
+    padding-left: 5px;
+    font-size: 2rem;
+}
+
+.payed-card a {
+    margin-bottom: 10px;
+}

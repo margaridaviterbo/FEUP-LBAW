@@ -74,7 +74,7 @@ include('../templates/aside-menu.php');
                 </form>
             </div>
             <div class="col-sm-3">
-                <a href="#"><button class="btn btn-default btn-primary form-control">Buy Tickets</button></a>
+                <a href="../pages/checkout-payment.php"><button class="btn btn-default btn-primary form-control">Buy Tickets</button></a>
             </div>
             </div>
 
