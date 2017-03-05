@@ -20,7 +20,7 @@
                             <p class="text-card">Gratuito</p>
                             <div class="container-fluid">
                                 <div class="row">
-                                    <button type="button" class="btn btn-default col-sm-3">See More...</button>
+                                     <a href="./show-event-page.php" class="btn btn-default col-sm-5">See More...</a>
                                     <button type="button" class="btn btn-default col-sm-3">Going</button>
                                     <div class="classifica-card col-sm-6">
                                         <i class="fa fa-star fa-2x" aria-hidden="true"></i>
@@ -47,7 +47,7 @@
                             <p class="text-card">Gratuito</p>
                             <div class="container-fluid">
                                 <div class="row">
-                                    <button type="button" class="btn btn-default col-sm-3">See More...</button>
+                                     <a href="./show-event-page.php" class="btn btn-default col-sm-5">See More...</a>
                                     <button type="button" class="btn btn-default col-sm-3">Going</button>
                                     <div class="classifica-card col-sm-6">
                                         <i class="fa fa-star fa-2x" aria-hidden="true"></i>
@@ -74,7 +74,7 @@
                             <p class="text-card">Gratuito</p>
                             <div class="container-fluid">
                                 <div class="row">
-                                    <button type="button" class="btn btn-default col-sm-3">See More...</button>
+                                     <a href="./show-event-page.php" class="btn btn-default col-sm-5">See More...</a>
                                     <button type="button" class="btn btn-default col-sm-3">Going</button>
                                     <div class="classifica-card col-sm-6">
                                         <i class="fa fa-star fa-2x" aria-hidden="true"></i>
@@ -101,7 +101,7 @@
                             <p class="text-card">Gratuito</p>
                             <div class="container-fluid">
                                 <div class="row">
-                                    <button type="button" class="btn btn-default col-sm-3">See More...</button>
+                                     <a href="./show-event-page.php" class="btn btn-default col-sm-5">See More...</a>
                                     <button type="button" class="btn btn-default col-sm-3">Going</button>
                                     <div class="classifica-card col-sm-6">
                                         <i class="fa fa-star fa-2x" aria-hidden="true"></i>
@@ -128,7 +128,7 @@
                             <p class="text-card">Gratuito</p>
                             <div class="container-fluid">
                                 <div class="row">
-                                    <button type="button" class="btn btn-default col-sm-3">See More...</button>
+                                     <a href="./show-event-page.php" class="btn btn-default col-sm-5">See More...</a>
                                     <button type="button" class="btn btn-default col-sm-3">Going</button>
                                     <div class="classifica-card col-sm-6">
                                         <i class="fa fa-star fa-2x" aria-hidden="true"></i>
@@ -155,7 +155,7 @@
                             <p class="text-card">Gratuito</p>
                             <div class="container-fluid">
                                 <div class="row">
-                                    <button type="button" class="btn btn-default col-sm-3">See More...</button>
+                                     <a href="./show-event-page.php" class="btn btn-default col-sm-5">See More...</a>
                                     <button type="button" class="btn btn-default col-sm-3">Going</button>
                                     <div class="classifica-card col-sm-6">
                                         <i class="fa fa-star-o fa-2x" aria-hidden="true"></i>
