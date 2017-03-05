@@ -26,6 +26,15 @@ include('../templates/aside-menu.php');
                 created by ...
             </div>
 
+          <div class="event-rate">
+            Rate: 
+            <i class="fa fa-star fa-2x" aria-hidden="true"></i>
+            <i class="fa fa-star fa-2x" aria-hidden="true"></i>
+            <i class="fa fa-star fa-2x" aria-hidden="true"></i>
+            <i class="fa fa-star-o fa-2x" aria-hidden="true"></i>
+            <i class="fa fa-star-o fa-2x" aria-hidden="true"></i>
+          </div>
+
             <div class="event-price">
                 13 - 20€
             </div>

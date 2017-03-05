@@ -19,9 +19,31 @@
                                 <a href="#"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
                             </div><div class="content-ckeckout">
                                 <p class="tag-ckeckout-card">Event:</p>    <p id="evento">Evento1</p>
-                            </div><div class="content-ckeckout">
-                                <p class="tag-ckeckout-card">Custo:</p> <p id="custo">10€</p>
-                           </div>
+                            </div>
+                          <div class="dropdown">
+                            <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">
+                              Type of ticket
+                              <span class="caret"></span>
+                            </button>
+                            <ul class="dropdown-menu">
+                              <li>
+                                <a href="#">Type 0</a>
+                              </li>
+                              <li>
+                                <a href="#">Type 1</a>
+                              </li>
+                              <li>
+                                <a href="#">Type 2</a>
+                              </li>
+                              <li>
+                                <a href="#">Type 3</a>
+                              </li>
+                            </ul>
+                          </div>
+                          <div class="content-ckeckout">
+                            <p class="tag-ckeckout-card">Custo:</p>
+                            <p id="custo">10€</p>
+                          </div>
                           <a href="../pages/comfirmation-payment.php">
                             <button class="btn btn-default btn-primary form-control">Pay with paypal</button>
                           </a>
