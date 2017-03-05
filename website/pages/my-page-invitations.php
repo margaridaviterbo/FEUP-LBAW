@@ -3,12 +3,12 @@
 <?php include('../templates/aside-menu.php'); ?>
 
     <div class="container-fluid text-left">
-        <div class="page-title">
-            <h1>Events that I am invited for: </h1>
-        </div>
         <div class="row">
-            <content class="col-sm-9">
-                <div class="container-fluid event-card-medium">
+            <content class="col-lg-offset-2 col-sm-8 col-sm-offset-1 col-xs-12 page">
+                <div class="page-header">
+                    <h1>Events that I am invited for</h1>
+                </div>
+                <div class="event-card-medium">
                     <p class="titulo-card">Sessão de Demonstração para o Desenvolvimento em Comunicação</p>
                     <div class="row">
                         <div class="col-sm-3">
@@ -35,7 +35,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="container-fluid event-card-medium">
+                <div class="event-card-medium">
                     <p class="titulo-card">Sessão de Demonstração para o Desenvolvimento em Comunicação</p>
                     <div class="row">
                         <div class="col-sm-3">
@@ -62,7 +62,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="container-fluid event-card-medium">
+                <div class="event-card-medium">
                     <p class="titulo-card">Sessão de Demonstração para o Desenvolvimento em Comunicação</p>
                     <div class="row">
                         <div class="col-sm-3">
@@ -89,7 +89,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="container-fluid event-card-medium">
+                <div class="event-card-medium">
                     <p class="titulo-card">Sessão de Demonstração para o Desenvolvimento em Comunicação</p>
                     <div class="row">
                         <div class="col-sm-3">
@@ -116,7 +116,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="container-fluid event-card-medium">
+                <div class="event-card-medium">
                     <p class="titulo-card">Sessão de Demonstração para o Desenvolvimento em Comunicação</p>
                     <div class="row">
                         <div class="col-sm-3">
@@ -143,7 +143,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="container-fluid event-card-medium">
+                <div class="event-card-medium">
                     <p class="titulo-card">Sessão de Demonstração para o Desenvolvimento em Comunicação</p>
                     <div class="row">
                         <div class="col-sm-3">
