@@ -30,14 +30,17 @@ body{
  *Header
  **/
 
+
 header .container-fluid{
   height: 100px;
   padding-top: 25px;
   padding-bottom: 25px;
 }
 
-header .header{
+
+.header{
     background-color: rgba(0, 0, 0, 0.6);
+    transition: all 0.2s;
 }
 
 header{
@@ -284,7 +287,7 @@ a.list-group-item:focus, a.list-group-item:hover, button.list-group-item:focus, 
 
 .notification-card-medium {
     transition: box-shadow 0.3s ease-in-out;
-    padding: 10px 10px 20px 10px;
+    padding: 10px 10px 40px 10px;
     margin-bottom: 20px;
     position: relative;
     border-bottom: 1px white;
@@ -306,6 +309,13 @@ a.list-group-item:focus, a.list-group-item:hover, button.list-group-item:focus, 
     margin-top: 20px;
 }
 
+@media (max-width: 768px) {
+    .notification-card-medium {
+        padding: 10px 10px 20px 10px;
+    }
+}
+
+/*PERSONAL CARD*/
 .personal-card {
     padding: 10px;
     margin-bottom: 20px;
@@ -325,11 +335,17 @@ a.list-group-item:focus, a.list-group-item:hover, button.list-group-item:focus, 
 .content-personal {
     padding-bottom: 10px;
     margin: 10px 0;
+    display: block;
 }
 
 .photo-personal-card img {
     width: 100%;
     height: auto;
+}
+
+.purchased-tickets ul li{
+    margin-bottom: 10px;
+   font-size: 2rem;
 }
 
 .new-event-card {
@@ -339,7 +355,7 @@ a.list-group-item:focus, a.list-group-item:hover, button.list-group-item:focus, 
     margin-bottom: 20px;
 }
 
-.content-personal, .content-new-event p, .content-new-event input {
+.content-new-event p, .content-new-event input {
     display: inline;
 }
 
@@ -454,7 +470,12 @@ a, a:hover, a:focus{
 
 .event-creator{
     position: absolute;
-    top: 70%;
+    top: 77%;
+}
+
+.event-rate{
+    position: absolute;
+    top: 60%;
 }
 
 .event-price{
@@ -521,13 +542,9 @@ a, a:hover, a:focus{
 
 .tabContent {
 	overflow:hidden;
-	border: 1px solid #ccc;
 	border-top: none;
-    background-color: rgba(255, 255, 255, 0.8);
     width: 100%;
     max-height: 0px;
-    position:absolute;
-    padding: 0px 12px;
 }
 
 .tabContent:target {
@@ -543,10 +560,6 @@ a, a:hover, a:focus{
 
 div .dropdown {
     display: inline;
-}
-
-.tabContentGroup {
-    position: relative;
 }
 
 .tabOptions {
@@ -606,3 +619,53 @@ label{
 textarea {
     max-width: 100%;
 }
+
+
+/*ckeckout CARD*/
+.ckeckout-card {
+    padding: 10px;
+    margin-bottom: 20px;
+}
+
+.ckeckout-card p{
+    display: inline;
+    padding-left: 5px;
+    font-size: 2rem;
+}
+
+.tag-ckeckout-card {
+    font-weight: bold;
+}
+
+
+.content-ckeckout {
+    padding-bottom: 10px;
+    margin: 10px 0;
+}
+
+.content-ckeckout {
+    display: block;
+}
+
+
+/*payed card*/
+.payed-card {
+    padding: 10px;
+    margin-bottom: 20px;
+}
+
+.payed-card p{
+    display: inline;
+    padding-left: 5px;
+    font-size: 2rem;
+}
+
+.payed-card a {
+    margin-bottom: 10px;
+}
+
+/*transicao do menu superior*/
+.cbp-af-header-shrink {
+    margin-top:0px;
+}
+

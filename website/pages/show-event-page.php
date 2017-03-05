@@ -26,8 +26,17 @@ include('../templates/aside-menu.php');
                 created by ...
             </div>
 
+          <div class="event-rate">
+            Rate: 
+            <i class="fa fa-star fa-2x" aria-hidden="true"></i>
+            <i class="fa fa-star fa-2x" aria-hidden="true"></i>
+            <i class="fa fa-star fa-2x" aria-hidden="true"></i>
+            <i class="fa fa-star-o fa-2x" aria-hidden="true"></i>
+            <i class="fa fa-star-o fa-2x" aria-hidden="true"></i>
+          </div>
+
             <div class="event-price">
-                Gratuito
+                13 - 20€
             </div>
         </div>
 
@@ -75,7 +84,7 @@ include('../templates/aside-menu.php');
             </div>
 
             <div class="col-sm-3">
-                <a href="#"><button class="btn btn-default btn-primary form-control">Buy Tickets</button></a>
+                <a href="../pages/checkout-payment.php"><button class="btn btn-default btn-primary form-control">Buy Tickets</button></a>
             </div>
             </div>
 
