@@ -7,7 +7,6 @@
         <script src="../scripts/jquery-1.9.1.min.js"></script>
         <script src="../lib/bootstrap/js/bootstrap.min.js"></script>
 
-        </div>
     </body>
 
     <!-- Modal Login -->

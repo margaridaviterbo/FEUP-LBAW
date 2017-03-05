@@ -1,55 +1,3 @@
-html{
-    position: relative;
-    min-height:100%;
-}
-
-body{
-    font-family: 'Open Sans', sans-serif;
-
-    background-image: url("../images/backimga.webp");
-    /*background-image: url("../images/COLOURlovers.com-Slices_of_Life.png");*/
-    background-color: lightcoral;
-    background-attachment:fixed;
-    background-size: cover;
-    background-position:center;
-    padding-top: 137px;
-    margin-top: 90px;
-    margin-bottom: 60px;
-}
-
-
-/**
- *Header
- **/
-
-header{
-    margin-top: -150px;
-    width: 100%;
-}
-
-header .header{
-    background-color: rgba(0, 0, 0, 0.6);
-}
-
-header{
-    transition: all 0.5s;
-}
-
-header a, #title a:hover, #title a:focus{
-    color:white;
-}
-
-#title{
-    margin-top: -1rem;
-}
-
-#login :hover{
-    color: lightslategrey;
-}
-
-#login :focus{
-    color: darkslategrey;
-}
 
 /**
  * Side menu
@@ -131,20 +79,6 @@ a.list-group-item:focus, a.list-group-item:hover, button.list-group-item:focus, 
     color: rgb(43,163,141);
     background-color: rgb(215,243,235);
 }
-
-/**
- * Footer
- **/
-#footer{
-    margin: 10px 0;
-    color:white;
-    background-color: rgba(0, 0, 0, 0.6);
-    position: absolute;
-    bottom:0;
-    width:100%;
-}
-
-
 /* */
 
 .aside-menu-list {

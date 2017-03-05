@@ -15,8 +15,7 @@
         <link rel="stylesheet" href="../resources/css/reset.css">
         <link rel="stylesheet" href="../lib/bootstrap/css/bootstrap.min.css">
         <link rel="stylesheet" href="../resources/css/style.css">
+        <link rel="stylesheet" href="../resources/css/basic-style.css">
     </head>
 
     <body>
-
-    <div class="wrapper">

@@ -1,0 +1,65 @@
+/**
+ *  Contains the CSS for html, body, header and footer
+ *
+ **/
+
+html{
+    position: relative;
+    min-height:100%;
+}
+
+/**
+ * Header
+ **/
+
+header .navbar-fixed-top{
+    margin-top: 1%;
+    background-color: rgba(0, 0, 0, 0.6);
+    transition: all 0.5s;
+}
+
+header a{
+    color:white;
+}
+
+header .site-title a:hover, header .site-title a:focus{
+    color: white;
+}
+
+.site-title{
+    margin-top: -1rem;
+}
+
+/**
+ * Body
+ **/
+
+body{
+    font-family: 'Open Sans', sans-serif;
+    padding-top: 60px;
+    /*background-color: lightcoral;
+    background-attachment:fixed;
+    background-size: cover;
+    background-position:center;
+    padding-top: 137px;
+    margin-top: 90px;
+    margin-bottom: 60px;*/
+}
+
+@media (max-width: 979px) {
+    body {
+        padding-top: 280px;
+    }
+}
+
+/**
+ * Footer
+ **/
+
+footer{
+    background-color: rgba(0, 0, 0, 0.6);
+    color: white;
+    position: absolute;
+    bottom: 10px;
+    width: 100%;
+}
