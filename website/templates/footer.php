@@ -7,6 +7,7 @@
         <script src="../scripts/jquery-1.9.1.min.js"></script>
         <script src="../lib/bootstrap/js/bootstrap.min.js"></script>
 
+        </div>
     </body>
 
     <!-- Modal Login -->
@@ -89,7 +90,10 @@
                             <br></br>
 
                             <label>Profile picture</label>
-                            <input type="file" name="User image" id="User image">
+                            <div>
+                                <label for="profile-photo" class="btn btn-default">Upload photo</label>
+                                <input id="profile-photo" style="visibility:hidden;" type="file">
+                            </div>
 
                         </form>
 
