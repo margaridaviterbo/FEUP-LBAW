@@ -335,16 +335,21 @@ a, a:hover, a:focus{
 }
 
 .event-page-info-square-section{
+    overflow: hidden;
     background-color: ghostwhite;
     padding: 0;
 }
 
-.event-page-info-square-section > *{
+.col-lg-* .event-page-info-square-section > *, .col-md-* .event-page-info-square-section >{
     margin-left: 5%;
 }
 
+.col-sm-* .event-page-info-square-section > *{
+    margin-left: 0;
+}
+
 .event-date{
-    margin-top: 5%;
+    margin-top: 10px;
 }
 
 .event-name{
@@ -363,8 +368,6 @@ a, a:hover, a:focus{
 
 .event-page-body{
     padding: 1%;
-    padding-bottom:3%;
-    margin-bottom:5%;
 }
 
 .map-image{
