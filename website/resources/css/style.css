@@ -22,9 +22,10 @@ body{
  *Header
  **/
 
-header .header{
+.header{
     margin-top:2%;
     background-color: rgba(0, 0, 0, 0.6);
+    transition: all 0.2s;
 }
 
 header{
@@ -632,4 +633,9 @@ textarea {
 
 .payed-card a {
     margin-bottom: 10px;
+}
+
+/*transicao do menu superior*/
+.cbp-af-header-shrink {
+    margin-top:0px;
 }

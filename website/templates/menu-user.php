@@ -2,7 +2,7 @@
     <div class="container">
 
         <nav class="navbar navbar-fixed-top text-center">
-            <div class="container-fluid header">
+            <div class="container-fluid header cbp-af-header">
 
                 <div class="navbar-header">
 
