@@ -17,8 +17,21 @@
                         <label>Date</label>
                         <input type="date" class="form-control" placeholder="Date" aria-describedby="basic-addon1" required>
 
+                        <label>Time</label>
+                        <input type="time" class="form-control" placeholder="Time" aria-describedby="basic-addon1" required>
+
                         <label>Local</label>
                         <input type="text" class="form-control" placeholder="Local" aria-describedby="basic-addon1" required>
+
+                        <label>Category</label>
+                        <select class="form-control">
+                            <option value="">---</option>
+                            <option value="arts">Arts</option>
+                            <option value="business">Business</option>
+                            <option value="charity">Charity</option>
+                            <option value="food">Food & Drink</option>
+                            <option value="music">Music</option>
+                        </select>
 
                         <p><label>Description</label></p>
                         <textarea rows="4" cols="50" placeholder="Describe the event here" class="form-control" required></textarea>
@@ -48,7 +61,10 @@
                         </table>
 
                         <label>Event photo</label>
-                        <input type="file" name="User image" id="User image">
+                        <div>
+                            <label for="event-photo" class="btn btn-default">Upload photo</label>
+                            <input id="event-photo" style="visibility:hidden;" type="file">
+                        </div>
 
                         <br></br>
                         <button type="submit" class="btn btn-default btn-lg">Create event!</button>
@@ -58,6 +74,5 @@
             </content>
         </div>
     </div>
-
 
 <?php include('../templates/footer.php'); ?>
