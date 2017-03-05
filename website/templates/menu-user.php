@@ -1,7 +1,6 @@
 <header>
-    <div class="container">
 
-        <nav class="navbar navbar-fixed-top text-center">
+        <nav class="navbar text-center">
             <div class="container-fluid header">
 
                 <div class="navbar-header">
@@ -58,6 +57,5 @@
                 </div>
             </div>
         </nav>
-    </div>
 
 </header>

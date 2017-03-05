@@ -1,25 +1,24 @@
 <header>
-    <div class="container">
 
-        <nav class="navbar navbar-fixed-top text-center">
-            <div class="container-fluid header">
+    <nav class="navbar text-center">
+        <div class="container-fluid header">
 
-                <div class="navbar-header">
+            <div class="navbar-header">
 
-                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#menu" aria-expanded="false">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#menu" aria-expanded="false">
 
-                        <span class="sr-only"></span>
+                    <span class="sr-only"></span>
 
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
 
-                    <div class="hidden-sm hidden-md hidden-lg" id="title">
-                        <a href="../index.php"><h2>Eventify</h2></a>
-                    </div>
-
+                <div class="hidden-sm hidden-md hidden-lg" id="title">
+                    <a href="../index.php"><h2>Eventify</h2></a>
                 </div>
+
+            </div>
 
                     <div class="row">
 
