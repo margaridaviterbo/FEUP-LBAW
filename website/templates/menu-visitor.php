@@ -14,7 +14,6 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-
                     <div class="hidden-sm hidden-md hidden-lg" id="title">
                         <a href="../index.php"><h2>Eventify</h2></a>
                     </div>
