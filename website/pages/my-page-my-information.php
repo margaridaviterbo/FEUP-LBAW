@@ -12,21 +12,21 @@
                     <div class="row personal-card">
                         <div class="col-sm-4 tags-personal-card">
                             <div class="content-personal">
+                                <p class="tag-personal-card">Name:</p>    <p id="nome-utilizador">Rui Paiva</p>
+                                <a href="#"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
+                            </div><div class="content-personal">
                                 <p class="tag-personal-card">Username:</p><p id="username">ruivop</p>
                                 <a href="#"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
                             </div><div class="content-personal">
                                 <p class="tag-personal-card">Email:</p>  <p id="email">lalaland@lalaland.pt</p>
                                 <a href="#"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
                             </div><div class="content-personal">
-                                <p class="tag-personal-card">Name:</p>    <p id="nome-utilizador">Rui Paiva</p>
-                                <a href="#"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
-                            </div><div class="content-personal">
                                 <p class="tag-personal-card">Bithday:</p> <p id="datanascimento">18/03/1996</p>
                                 <a href="#"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
-                            </div><div class="content-personal">
-                                <p class="tag-personal-card">Password:</p><p id="password">********</p>
-                                <a href="#"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
                             </div>
+
+                            <a href="#" data-toggle="modal" data-target="#modalEdit" class="btn btn-default">Edit Profile  <span class="glyphicon glyphicon-pencil"></span></a>
+
                         </div>
 
                         <div class="col-sm-3 inoformation-personal-card">
