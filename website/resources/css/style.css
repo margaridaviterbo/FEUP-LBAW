@@ -6,9 +6,17 @@ html{
 body{
     font-family: 'Open Sans', sans-serif;
 
+    /*background-image: url("../images/wallpaper1.png");
+    background-image: url("../images/wallpaper2.png");
+    background-image: url("../images/wallpaper3.jpg");
+    background-image: url("../images/wallpaper4.jpg");
+    background-image: url("../images/wallpaper5.jpg");*/
+    background-image: url("../images/wallpaper6.jpg");
+    /*background-image: url("../images/wallpaper7.jpg");
+    background-image: url("../images/wallpaper8.jpg");
     background-image: url("../images/backimga.webp");
-    /*background-image: url("../images/COLOURlovers.com-Slices_of_Life.png");*/
-    background-color: lightcoral;
+    background-image: url("../images/COLOURlovers.com-Slices_of_Life.png");*/
+    background-color: lightslategrey;
     background-attachment:fixed;
     background-size: cover;
     background-position:center;
@@ -22,8 +30,13 @@ body{
  *Header
  **/
 
+header .container-fluid{
+  height: 100px;
+  padding-top: 25px;
+  padding-bottom: 25px;
+}
+
 header .header{
-    margin-top:2%;
     background-color: rgba(0, 0, 0, 0.6);
 }
 
@@ -33,6 +46,13 @@ header{
 
 header a, #title a:hover, #title a:focus{
     color:white;
+}
+
+header h2{
+  font-size: 50px;
+  font-family: 'Baloo', cursive;
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
 
 #title{
@@ -53,7 +73,7 @@ header a, #title a:hover, #title a:focus{
 
 .aside-user-buttons {
     padding: 20px;
-    background-color: rgba(43,163,141, 0.8);
+    background-color: rgba(0, 174, 93, 0.8);
     padding-bottom: 50px;
 }
 
@@ -67,7 +87,7 @@ header a, #title a:hover, #title a:focus{
 }
 
 .aside-user-buttons .btn-primary {
-    background-color:  rgba(43,163,141, 1);
+    background-color:  rgba(0, 174, 93, 1);
     border-color: white;
 }
 
@@ -104,10 +124,11 @@ header a, #title a:hover, #title a:focus{
 a.list-group-item {
     color: white;
     text-align: center;
+    background-color:  rgba(0, 174, 93, 1);
 }
 
 a.list-group-item:focus, a.list-group-item:hover, button.list-group-item:focus, button.list-group-item:hover {
-    color: rgb(43,163,141);
+    color: rgb(0, 174, 93);
     background-color: rgb(215,243,235);
 }
 
@@ -115,7 +136,7 @@ a.list-group-item:focus, a.list-group-item:hover, button.list-group-item:focus, 
  * Footer
  **/
 #footer{
-    margin: 10px 0;
+
     color:white;
     background-color: rgba(0, 0, 0, 0.6);
     position: absolute;
@@ -566,11 +587,16 @@ div .dropdown {
 .homepage .event-card-medium{
   background-color: rgba(000, 000, 000, 0.7);
   color: white;
+  margin: 10px;
 }
 
 .homepage .page-title h1{
   background-color: rgba(000, 000, 000, 0.7);
   color: white;
+}
+
+.homepage .page-title{
+  margin-top: 50px;
 }
 
 label{
@@ -580,4 +606,3 @@ label{
 textarea {
     max-width: 100%;
 }
-

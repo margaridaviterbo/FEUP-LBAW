@@ -73,6 +73,7 @@ include('../templates/aside-menu.php');
                     <a href="#"><button class="btn btn-default form-control">Share Event</button></a>
                 </form>
             </div>
+
             <div class="col-sm-3">
                 <a href="#"><button class="btn btn-default btn-primary form-control">Buy Tickets</button></a>
             </div>
