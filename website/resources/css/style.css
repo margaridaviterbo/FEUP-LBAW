@@ -95,7 +95,7 @@ a.list-group-item:focus, a.list-group-item:hover, button.list-group-item:focus, 
  * Footer
  **/
 #footer{
-    margin-bottom: 2%;
+    margin: 20px 0;
     color:white;
     background-color: rgba(0, 0, 0, 0.6);
 }
@@ -113,19 +113,33 @@ a.list-group-item:focus, a.list-group-item:hover, button.list-group-item:focus, 
 }
 
 
-
 /* */
 
 .recomendacoes-publicas {
     margin: auto;
 }
 
-.event-card-medium,  .user-card-medium{
+.user-card-medium{
     background-color: rgba(255, 255, 255, 0.8);
     color: black;
     transition: box-shadow 0.3s ease-in-out;
     padding: 10px;
     margin-bottom: 50px;
+}
+
+.event-card-medium{
+    transition: box-shadow 0.3s ease-in-out;
+    padding: 10px 10px 30px 10px;
+    margin: 50px 0;
+    border-bottom: 1px white;
+    border-style: solid;
+}
+
+.event-card-medium:last-child{
+    transition: box-shadow 0.3s ease-in-out;
+    padding: 10px;
+    margin:0;
+    border-bottom: 1px rgba(255, 255, 255, 0.7);
 }
 
 .event-card-medium:hover, .user-card-medium:hover {
@@ -225,12 +239,12 @@ a.list-group-item:focus, a.list-group-item:hover, button.list-group-item:focus, 
 }
 
 .notification-card-medium {
-    background-color: rgba(255, 255, 255, 0.8);
-    color: black;
     transition: box-shadow 0.3s ease-in-out;
-    padding: 10px;
+    padding: 10px 10px 20px 10px;
     margin-bottom: 20px;
     position: relative;
+    border-bottom: 1px white;
+    border-style: solid;
 }
 
 .notification-card-medium:hover {
@@ -547,4 +561,12 @@ div .dropdown {
 .homepage .page-title h1{
   background-color: rgba(000, 000, 000, 0.7);
   color: white;
+}
+
+label{
+    margin: 10px 0 10px 5px;
+}
+
+textarea {
+    max-width: 100%;
 }
