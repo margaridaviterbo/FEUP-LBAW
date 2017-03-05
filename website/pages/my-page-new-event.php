@@ -48,7 +48,10 @@
                         </table>
 
                         <label>Event photo</label>
-                        <input type="file" name="User image" id="User image">
+                        <div>
+                            <label for="event-photo" class="btn btn-default">Upload photo</label>
+                            <input id="event-photo" style="visibility:hidden;" type="file">
+                        </div>
 
                         <br></br>
                         <button type="submit" class="btn btn-default btn-lg">Create event!</button>
