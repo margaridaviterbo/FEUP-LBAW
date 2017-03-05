@@ -4,12 +4,11 @@
 
 
     <div class="container-fluid text-left">
-        <div class="page-title">
-            <h1>My information: </h1>
-        </div>
         <div class="row">
-            <content class="col-sm-9">
-                <div class="container-fluid">
+            <content class="col-lg-offset-2 col-sm-8 col-sm-offset-1 col-xs-12 page">
+                <div class="page-header">
+                    <h1>My information</h1>
+                </div>
                     <div class="row personal-card">
                         <div class="col-sm-4 tags-personal-card">
                             <div class="content-personal">
@@ -34,9 +33,10 @@
                         </div>
                         <div class="col-sm-4 photo-personal-card">
                             <img src="../resources/images/image.jpeg" class="img-responsive img-thumbnail">
-                            <button type="button" class="btn btn-default btn-lg">
-                                Upload a New photo
-                            </button>
+                            <div>
+                                <label for="files" class="btn btn-default">Upload photo</label>
+                                <input id="files" style="visibility:hidden;" type="file">
+                            </div>
                         </div>
 
                         <div class="col-sm-1 inoformation-personal-card">
@@ -44,7 +44,6 @@
                     </div>
                 </div>
             </content>
-        </div>
     </div>
 
 <?php include('../templates/footer.php'); ?>

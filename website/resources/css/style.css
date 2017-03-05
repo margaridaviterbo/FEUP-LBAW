@@ -1,3 +1,23 @@
+html{
+    position: relative;
+    min-height:100%;
+}
+
+body{
+    font-family: 'Open Sans', sans-serif;
+
+    background-image: url("../images/backimga.webp");
+    /*background-image: url("../images/COLOURlovers.com-Slices_of_Life.png");*/
+    background-color: lightcoral;
+    background-attachment:fixed;
+    background-size: cover;
+    background-position:center;
+    padding-top: 137px;
+
+    margin-bottom: 60px;
+}
+
+
 /**
  *Header
  **/
@@ -95,9 +115,12 @@ a.list-group-item:focus, a.list-group-item:hover, button.list-group-item:focus, 
  * Footer
  **/
 #footer{
-    margin: 20px 0;
+    margin: 10px 0;
     color:white;
     background-color: rgba(0, 0, 0, 0.6);
+    position: absolute;
+    bottom:0;
+    width:100%;
 }
 
 
@@ -263,8 +286,6 @@ a.list-group-item:focus, a.list-group-item:hover, button.list-group-item:focus, 
 }
 
 .personal-card {
-    background-color: rgba(255, 255, 255, 0.8);
-    color: black;
     padding: 10px;
     margin-bottom: 20px;
 }
@@ -282,6 +303,7 @@ a.list-group-item:focus, a.list-group-item:hover, button.list-group-item:focus, 
 
 .content-personal {
     padding-bottom: 10px;
+    margin: 10px 0;
 }
 
 .photo-personal-card img {
@@ -298,17 +320,6 @@ a.list-group-item:focus, a.list-group-item:hover, button.list-group-item:focus, 
 
 .content-personal, .content-new-event p, .content-new-event input {
     display: inline;
-}
-
-body{
-    font-family: 'Open Sans', sans-serif;
-
-    background-image: url("../images/backimga.webp");
-    background-color: lightcoral;
-    background-attachment:fixed;
-    background-size: cover;
-    background-position:center;
-    padding-top: 137px;
 }
 
 .navbar-brand {
@@ -505,7 +516,7 @@ a, a:hover, a:focus{
     max-height:10000px;
     z-index: 1;
     padding: 6px 12px;
-    
+
     transition: max-height 2s;
 }
 
@@ -519,7 +530,7 @@ div .dropdown {
 
 .tabOptions {
     border-bottom: 1px solid #ccc;
-    padding-bottom: 5px; 
+    padding-bottom: 5px;
     margin-bottom: 5px;
 }
 
@@ -569,3 +580,4 @@ label{
 textarea {
     max-width: 100%;
 }
+
