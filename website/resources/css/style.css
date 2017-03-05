@@ -320,13 +320,14 @@ a, a:hover, a:focus{
  *  Show-event-page.php
  **/
 
-
 .event-page-header{
     display: flex;
 }
 
 .event-page-image-section{
-    width:70%;
+    overflow: hidden;
+    padding: 0;
+    /**height: 300px;*/
 }
 
 .event-page-photo{
@@ -335,35 +336,29 @@ a, a:hover, a:focus{
 
 .event-page-info-square-section{
     background-color: ghostwhite;
-    width:30%;
-    position:relative;
+    padding: 0;
 }
 
 .event-page-info-square-section > *{
-    position: absolute;
-    left: 5%;
+    margin-left: 5%;
 }
 
 .event-date{
-    position: absolute;
-    bottom: 90%;
+    margin-top: 5%;
 }
 
 .event-name{
     font-family: 'Open Sans', sans-serif;
     font-size: 20px;
-    position: absolute;
-    bottom: 45%;
+    margin-top: 30%;
 }
 
 .event-creator{
-    position: absolute;
-    bottom: 25%;
+    margin-top: 10%;
 }
 
 .event-price{
-    position: absolute;
-    bottom: 5%;
+    margin-top: 20%;
 }
 
 .event-page-body{
