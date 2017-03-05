@@ -13,7 +13,7 @@ body{
     background-size: cover;
     background-position:center;
     padding-top: 137px;
-
+    margin-top: 90px;
     margin-bottom: 60px;
 }
 
@@ -22,8 +22,12 @@ body{
  *Header
  **/
 
+header{
+    margin-top: -150px;
+    width: 100%;
+}
+
 header .header{
-    margin-top:2%;
     background-color: rgba(0, 0, 0, 0.6);
 }
 
@@ -51,10 +55,27 @@ header a, #title a:hover, #title a:focus{
  * Side menu
  **/
 
+.second-menu{
+    background-color: rgba(43,163,141, 0.7);
+    padding-right: 0;
+    padding-left: 0;
+}
+
+#second-menu ul li a{
+    text-decoration: none;
+    color: white;
+}
+
+#second-menu ul li a:hover{
+    text-decoration: none;
+    color: slategrey;
+}
+
 .aside-user-buttons {
     padding: 20px;
     background-color: rgba(43,163,141, 0.8);
     padding-bottom: 50px;
+    margin-top:70px;
 }
 
 .aside-user-buttons .btn-lg {
