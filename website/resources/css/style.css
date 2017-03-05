@@ -319,6 +319,11 @@ a.list-group-item:focus, a.list-group-item:hover, button.list-group-item:focus, 
     height: auto;
 }
 
+.purchased-tickets ul li{
+    margin-bottom: 10px;
+   font-size: 2rem;
+}
+
 .new-event-card {
     background-color: rgba(255, 255, 255, 0.8);
     color: black;
