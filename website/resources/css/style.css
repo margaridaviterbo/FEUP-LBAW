@@ -290,6 +290,7 @@ body{
     font-family: 'Open Sans', sans-serif;
 
     background-image: url("../images/backimga.webp");
+    /*background-image: url("../images/COLOURlovers.com-Slices_of_Life.png");*/
     background-color: lightcoral;
     background-attachment:fixed;
     background-size: cover;
@@ -491,7 +492,7 @@ a, a:hover, a:focus{
     max-height:10000px;
     z-index: 1;
     padding: 6px 12px;
-    
+
     transition: max-height 2s;
 }
 
@@ -505,7 +506,7 @@ div .dropdown {
 
 .tabOptions {
     border-bottom: 1px solid #ccc;
-    padding-bottom: 5px; 
+    padding-bottom: 5px;
     margin-bottom: 5px;
 }
 
