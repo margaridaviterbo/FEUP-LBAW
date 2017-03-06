@@ -8,6 +8,7 @@
                     <a href="../pages/my-page-my-events.php" class="list-group-item">My Events</a>
                     <a href="../pages/my-page-invitations.php" class="list-group-item">Invitations</a>
                     <a href="../pages/my-page-notifications.php" class="list-group-item">Notifications</a>
+                    <a href="../pages/my-tickets.php" class="list-group-item">My Tickets</a>
                 </div>
                 <a href="../pages/my-page-new-event.php" class="btn btn-primary btn-lg">Create Event</a>
             </div>
