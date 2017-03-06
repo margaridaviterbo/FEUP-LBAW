@@ -30,7 +30,6 @@ body{
  *Header
  **/
 
-
 header .container-fluid{
   height: 100px;
   padding-top: 25px;
@@ -640,7 +639,7 @@ textarea {
 
 .content-ckeckout {
     padding-bottom: 10px;
-    margin: 10px 0;
+    margin: 10px 0px;
 }
 
 .content-ckeckout {
@@ -664,8 +663,8 @@ textarea {
     margin-bottom: 10px;
 }
 
-/*transicao do menu superior*/
-.cbp-af-header-shrink {
-    margin-top:0px;
+@media (max-width: 768px) {
+	#menu {
+		background-color: rgba(0, 0, 0, 0.6);
+	}
 }
-
