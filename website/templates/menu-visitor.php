@@ -15,7 +15,7 @@
                         <span class="icon-bar"></span>
                     </button>
                     <div class="hidden-sm hidden-md hidden-lg" id="title">
-                        <a href="../index.php"><h2>Eventify</h2></a>
+                        <a href="./index.php"><h2>Eventify</h2></a>
                     </div>
 
                 </div>
@@ -24,7 +24,7 @@
 
                         <div class="col-sm-3 hidden-xs">
                             <div id="title">
-                                <a href="../index.php"><h2>Eventify</h2></a>
+                                <a href="./index.php"><h2>Eventify</h2></a>
                             </div>
                         </div>
 
@@ -32,16 +32,16 @@
                             <div class="row">
                                 <div class="collapse navbar-collapse" id="menu">
                                     <div class="col-sm-5 search">
-                                        <form class="navbar-form navbar-center" role="search" action="../pages/search.php#eventosPesq">
-                                            <div class="form-group input-group">
-                                                <input type="text" class="form-control" placeholder="Search Event...">
-                                                <span class="input-group-btn">
-                                                            <button class="btn btn-default" type="button">
-                                                              <span class="glyphicon glyphicon-search"></span>
-                                                            </button>
-                                                        </span>
-                                            </div>
-                                        </form>
+                                      <form class="navbar-form navbar-center" role="search" action="../pages/search.php#eventosPesq">
+                                        <div class="form-group input-group">
+                                          <input type="text" class="form-control" placeholder="Search Event...">
+                                            <span class="input-group-btn">
+                                              <button class="btn btn-default" type="submit">
+                                                <span class="glyphicon glyphicon-search"></span>
+                                              </button>
+                                            </span>
+                                          </div>
+                                      </form>
                                     </div>
 
                                     <div class="col-sm-5 pull-right">

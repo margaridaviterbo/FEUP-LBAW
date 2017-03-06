@@ -16,7 +16,7 @@
                     </button>
 
                     <div class="hidden-sm hidden-md hidden-lg" id="title">
-                        <a href="../index.php"><h2>Eventify</h2></a>
+                        <a href="./index.php"><h2>Eventify</h2></a>
                     </div>
 
                 </div>
@@ -25,7 +25,7 @@
 
                     <div class="col-sm-3 hidden-xs">
                         <div id="title">
-                            <a href="../index.php"><h2>Eventify</h2></a>
+                            <a href="./index.php"><h2>Eventify</h2></a>
                         </div>
                     </div>
 
