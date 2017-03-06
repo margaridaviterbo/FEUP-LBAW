@@ -60,16 +60,6 @@ CREATE TABLE IF NOT EXISTS Administrator(
     password varchar NOT NULL
 );
 
-CREATE TABLE IF NOT EXISTS Ticket(
-    ticket_id integer PRIMARY KEY,
-    event_id integer NOT NULL,
-	user_id integer NOT NULL,
-	pdf varchar NOT NULL,
-	price float,
-    FOREIGN KEY(event_id) REFERENCES Event(event_id),
-    FOREIGN KEY(user_id) REFERENCES User(user_id)
-);
-
 CREATE TABLE IF NOT EXISTS TicketType(
     ticket_type_id integer PRIMARY KEY,
     event_id integer NOT NULL,
@@ -77,4 +67,26 @@ CREATE TABLE IF NOT EXISTS TicketType(
 	name varchar NOT NULL,
 	description varchar,
     FOREIGN KEY(event_id) REFERENCES Event(event_id)
+);/*
+por par evento-nome unique
+*/
+
+CREATE TABLE IF NOT EXISTS Ticket(
+    ticket_id integer PRIMARY KEY,
+    event_id integer NOT NULL,
+	ticket_type_id integer NOT NULL,
+	user_id integer NOT NULL,
+	pdf varchar NOT NULL,
+	price float,
+	tin integer,
+    FOREIGN KEY(event_id) REFERENCES Event(event_id),
+    FOREIGN KEY(user_id) REFERENCES User(user_id),
+	FOREIGN KEY(ticket_type_id) REFERENCES TicketType(ticket_type_id)
+);
+
+CREATE TABLe IF NOT EXISTS Notification(
+	notification_id integer PRIMARY KEY,
+	note varchar NOT NULL,
+	notification_date NOT NULL,
+	FOREIGN KEY(user_id) REFERENCES User(user_id)
 );
