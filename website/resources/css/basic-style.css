@@ -12,10 +12,13 @@ html{
  * Header
  **/
 
-header .navbar-fixed-top{
+header {
     margin-top: 1%;
-    background-color: rgba(0, 0, 0, 0.6);
     transition: all 0.5s;
+}
+
+header .navbar{
+    background-color: rgba(0, 0, 0, 0.6);
 }
 
 header a{
