@@ -1,8 +1,8 @@
 User(user_id PK, birthdate, email NN UK, first_name, last_name, nif UK, password NN, password, photo_url, username UK)
 
-Saved_Event(user_id PK FK, meta_event_id PK FK)
+Saved_Event(user_id->User PK FK, meta_event_id->Meta_Event PK FK)
 
-Host(user_id PK FK, meta_event_id PK FK)
+Host(user_id->User PK FK, meta_event_id->Meta_Event PK FK)
 
 Meta_Event(meta_event_id PK, creation_date NN, description NN, expiration_date, name NN, photo_url, recurrence NN)
 
@@ -16,9 +16,9 @@ Type_of_ticket(type_of_ticket_id PK, price, type NN)
 
 Ticket(ticket_id PK, name NN, nif)
 
-Guest(user_id PK FK, event_id PK FK, is_going)
+Guest(user_id->User PK FK, event_id->Event PK FK, is_going)
 
-Notification_Intervinient(user_id PK FK, notification_id PK FK)
+Notification_Intervinient(user_id->User PK FK, notification_id->Notification PK FK)
 
 Notification(notification_id PK, notification_date NN, read, type NN)	--> DELETE DATE constraint !
 
