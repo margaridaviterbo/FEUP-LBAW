@@ -60,12 +60,17 @@ CREATE TYPE Recurrence AS ENUM(
 	'daily', 'weekly', 'once', 'annually', 'quarterly', 'semester'
 );
 
+CREATE FUNCTION XOR(bool,bool) RETURNS bool AS '
+SELECT ($1 AND NOT $2) OR (NOT $1 AND $2);
+' LANGUAGE 'sql';
+
 CREATE TABLE public.Administrator
 (
 	administrator_id serial PRIMARY KEY,
 	username varchar(20) UNIQUE NOT NULL,
 	email varchar(254) UNIQUE NOT NULL,
-	password varchar(30) NOT NULL
+	password varchar(30) NOT NULL,
+	CONSTRAINT min_size CHECK (LENGTH(username) >= 8 AND LENGTH(password) >= 8)
 );
 
 CREATE TABLE public.Users
@@ -75,7 +80,9 @@ CREATE TABLE public.Users
 	last_name varchar(20) NOT NULL,
 	email varchar(254) UNIQUE NOT NULL,
 	birthdate date,
-	nif int UNIQUE
+	nif int UNIQUE,
+	CONSTRAINT min_size CHECK (LENGTH(first_name) >= 3 AND LENGTH(last_name) >= 2 AND length(nif::TEXT) = 9),
+	CONSTRAINT valid_date CHECK (birthdate < current_date)
 );
 
 
@@ -85,7 +92,8 @@ CREATE TABLE public.Authenticated_User
 	username varchar(20) UNIQUE NOT NULL,
 	password varchar(30) NOT NULL,
 	photo_url varchar(150),
-	FOREIGN KEY(user_id) REFERENCES Users(user_id)
+	FOREIGN KEY(user_id) REFERENCES Users(user_id),
+	CONSTRAINT min_size CHECK (LENGTH(username) >= 8 AND LENGTH(password) >= 8)
 );
 
 CREATE TABLE public.Category
@@ -131,7 +139,8 @@ CREATE TABLE public.Meta_Event
 	local_id integer NOT NULL,
 	FOREIGN KEY(owner_id) REFERENCES Authenticated_User(user_id),
 	FOREIGN KEY(category_id) REFERENCES Category(category_id),
-	FOREIGN KEY(local_id) REFERENCES Localization(local_id)
+	FOREIGN KEY(local_id) REFERENCES Localization(local_id),
+	CONSTRAINT expiration_date CHECK (expiration_date > current_date)
 );
 
 CREATE TABLE public.Event
@@ -146,7 +155,9 @@ CREATE TABLE public.Event
 	meta_event_id integer NOT NULL,
 	local_id integer NOT NULL,
 	FOREIGN KEY(meta_event_id) REFERENCES Meta_Event(meta_event_id),
-	FOREIGN KEY(local_id) REFERENCES Localization(local_id)
+	FOREIGN KEY(local_id) REFERENCES Localization(local_id),
+	CONSTRAINT beginning_date CHECK (beginning_date > current_date),
+	CONSTRAINT end_date CHECK (ending_date > Event.beginning_date)
 );
 
 CREATE TABLE public.Event_Content
@@ -161,11 +172,12 @@ CREATE TABLE public.Event_Content
 
 CREATE TABLE public.Comments
 (
-	comment_id serial PRIMARY KEY,
+	comment_id integer PRIMARY KEY,
 	content varchar(500),
 	photo_url varchar(150),
-	comment_date timestamp NOT NULL,
-	FOREIGN KEY(comment_id) REFERENCES Event_Content(event_content_id)
+	comment_date timestamp NOT NULL DEFAULT now(),
+	FOREIGN KEY(comment_id) REFERENCES Event_Content(event_content_id),
+	CONSTRAINT valid_content CHECK (photo_url IS NOT NULL OR content IS NOT NULL)
 );
 
 CREATE TABLE public.Guest
@@ -190,7 +202,7 @@ CREATE TABLE public.Host
 CREATE TABLE public.Notification
 (
 	notification_id serial PRIMARY KEY,
-	notification_date timestamp NOT NULL,
+	notification_date timestamp NOT NULL DEFAULT now(),
 	notification_type notification_type NOT NULL,
 	checked boolean NOT NULL, 
 	event_id integer,
@@ -200,7 +212,9 @@ CREATE TABLE public.Notification
 	FOREIGN KEY(event_id) REFERENCES Event(event_id),
 	FOREIGN KEY(event_content_id) REFERENCES Event_Content(event_content_id),
 	FOREIGN KEY(user_id) REFERENCES Authenticated_User(user_id),
-	FOREIGN KEY(administrator_id) REFERENCES Administrator(administrator_id)
+	FOREIGN KEY(administrator_id) REFERENCES Administrator(administrator_id),
+	CONSTRAINT valid_date CHECK(notification_date < current_date),
+	CONSTRAINT valid_user CHECK (XOR(user_id IS NOT NULL, administrator_id IS NOT NULL))
 );
 
 CREATE TABLE public.Notification_Intervinient
@@ -216,7 +230,7 @@ CREATE TABLE public.Poll
 (
 	poll_id serial PRIMARY KEY,
 	poll_type integer NOT NULL,
-	poll_date timestamp NOT NULL,
+	poll_date timestamp NOT NULL DEFAULT now(),
   FOREIGN KEY(poll_id) REFERENCES Event_Content(event_content_id)
 );
 
@@ -241,7 +255,8 @@ CREATE TABLE public.Rate
 (
 	event_content_id integer PRIMARY KEY,
 	evaluation integer NOT NULL,
-	FOREIGN KEY(event_content_id) REFERENCES Event_Content(event_content_id)
+	FOREIGN KEY(event_content_id) REFERENCES Event_Content(event_content_id),
+	CONSTRAINT check_evaluation CHECK (evaluation <= 10 AND evaluation > 0)
 );
 
 CREATE TABLE public.Saved_Event
@@ -261,16 +276,18 @@ CREATE TABLE public.Type_of_Ticket
 	meta_event_id integer,
 	event_id integer,
 	FOREIGN KEY(meta_event_id) REFERENCES Meta_Event(meta_event_id),
-	FOREIGN KEY(event_id) REFERENCES Event(event_id)
+	FOREIGN KEY(event_id) REFERENCES Event(event_id),
+	CONSTRAINT positive_price CHECK (price > 0)
 );
 
 CREATE TABLE public.Ticket
 (
 	ticket_id serial PRIMARY KEY,
-	name varchar NOT NULL,
+	name varchar(20) NOT NULL,
 	nif integer NOT NULL,
 	user_id integer NOT NULL,
 	type_of_ticket_id integer NOT NULL,
 	FOREIGN KEY(user_id) REFERENCES Users(user_id),
-	FOREIGN KEY(type_of_ticket_id) REFERENCES Type_of_Ticket(type_of_ticket_id)
+	FOREIGN KEY(type_of_ticket_id) REFERENCES Type_of_Ticket(type_of_ticket_id),
+	CONSTRAINT valid_nif CHECK (LENGTH(nif::TEXT) = 9)
 );
