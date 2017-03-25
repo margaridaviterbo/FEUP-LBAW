@@ -48,14 +48,16 @@ DROP TABLE IF EXISTS Ticket;
 
 DROP TABLE IF EXISTS Users;
 
-DROP TABLE IF EXISTS Visitor;
-
 DROP TABLE IF EXISTS Host;
 
 DROP TABLE IF EXISTS Type_of_Ticket;
 
 CREATE TYPE notification_type AS ENUM(
     'userReport', 'eventReport', 'contentReport', 'eventCommented', 'eventCreatedPoll', 'eventRated', 'eventChangedLocal', 'eventChangedDate', 'eventChangedName', 'eventInvitation', 'eventCanceled', 'eventAllSoldTickets', 'eventReminder', 'userSentEmail'
+);
+
+CREATE TYPE Recurrence AS ENUM(
+	'daily', 'weekly', 'once', 'annually', 'quarterly', 'semester'
 );
 
 CREATE TABLE public.Administrator
@@ -95,7 +97,7 @@ CREATE TABLE public.Category
 CREATE TABLE public.Country
 (
 	country_id serial PRIMARY KEY,
-	name varchar(20) NOT NULL
+	name varchar(20) UNIQUE NOT NULL
 );
 
 CREATE TABLE public.City
@@ -109,10 +111,10 @@ CREATE TABLE public.City
 CREATE TABLE public.Localization
 (	
 	local_id serial PRIMARY KEY,
-    street VARCHAR(200),
-    coordinates VARCHAR(100) NOT NULL,
-    city_id INTEGER,
-    FOREIGN KEY(city_id) REFERENCES City(city_id)
+  street VARCHAR(200),
+	coordinates VARCHAR(100) NOT NULL,
+	city_id INTEGER,
+	FOREIGN KEY(city_id) REFERENCES City(city_id)
 );
 
 CREATE TABLE public.Meta_Event
@@ -120,13 +122,13 @@ CREATE TABLE public.Meta_Event
 	meta_event_id serial PRIMARY KEY,
 	name varchar(50) NOT NULL,
 	description varchar(2000) NOT NULL,
-	recurrence varchar(20) NOT NULL,
+	recurrence Recurrence NOT NULL,
 	photo_url varchar(150),
 	expiration_date timestamp,
 	free boolean NOT NULL,
-	owner_id integer,
-	category_id integer,
-	local_id integer,
+	owner_id integer NOT NULL,
+	category_id integer NOT NULL,
+	local_id integer NOT NULL,
 	FOREIGN KEY(owner_id) REFERENCES Authenticated_User(user_id),
 	FOREIGN KEY(category_id) REFERENCES Category(category_id),
 	FOREIGN KEY(local_id) REFERENCES Localization(local_id)
@@ -136,7 +138,7 @@ CREATE TABLE public.Event
 (
 	event_id serial PRIMARY KEY,
 	name varchar(50) NOT NULL,
-	description varchar(2000),
+	description varchar(2000) NOT NULL,
 	beginning_date timestamp NOT NULL,
 	ending_date timestamp,
 	photo_url varchar(150),
@@ -215,30 +217,30 @@ CREATE TABLE public.Poll
 	poll_id serial PRIMARY KEY,
 	poll_type integer NOT NULL,
 	poll_date timestamp NOT NULL,
-    FOREIGN KEY(poll_id) REFERENCES Event_Content(event_content_id)
+  FOREIGN KEY(poll_id) REFERENCES Event_Content(event_content_id)
 );
 
 CREATE TABLE public.Poll_Unit
 (
 	poll_unit_id serial PRIMARY KEY,
 	name varchar(20) NOT NULL,
-	poll_id integer,
+	poll_id integer NOT NULL,
 	FOREIGN KEY(poll_id) REFERENCES Poll(poll_id)
 );
 
 CREATE TABLE public.JoinPoll_UnitToAuthenticated_User
 (
-    user_id integer,
-    poll_unit_id integer,
-    PRIMARY KEY(user_id, poll_unit_id),
-    FOREIGN KEY(user_id) REFERENCES Authenticated_User(user_id),
-    FOREIGN KEY(poll_unit_id) REFERENCES Poll_Unit(poll_unit_id)
+  user_id integer,
+  poll_unit_id integer,
+  PRIMARY KEY(user_id, poll_unit_id),
+  FOREIGN KEY(user_id) REFERENCES Authenticated_User(user_id),
+  FOREIGN KEY(poll_unit_id) REFERENCES Poll_Unit(poll_unit_id)
 );
 
 CREATE TABLE public.Rate
 (
 	event_content_id integer PRIMARY KEY,
-	avaliation int NOT NULL,
+	evaluation integer NOT NULL,
 	FOREIGN KEY(event_content_id) REFERENCES Event_Content(event_content_id)
 );
 
@@ -254,7 +256,7 @@ CREATE TABLE public.Saved_Event
 CREATE TABLE public.Type_of_Ticket
 (
 	type_of_ticket_id serial PRIMARY KEY,
-	ticket_type varchar NOT NULL,
+	ticket_type varchar(30) NOT NULL,
 	price float NOT NULL,
 	meta_event_id integer,
 	event_id integer,
@@ -272,4 +274,3 @@ CREATE TABLE public.Ticket
 	FOREIGN KEY(user_id) REFERENCES Users(user_id),
 	FOREIGN KEY(type_of_ticket_id) REFERENCES Type_of_Ticket(type_of_ticket_id)
 );
-
