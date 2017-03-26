@@ -143,6 +143,7 @@ CREATE TABLE public.Meta_Event
 	CONSTRAINT expiration_date CHECK (expiration_date > current_date)
 );
 
+/*TODO: fazer trigger para quando se adiciona um evento verificar o tipo de meta_event */
 CREATE TABLE public.Event
 (
 	event_id serial PRIMARY KEY,
@@ -326,6 +327,22 @@ BEFORE INSERT ON Ticket
 FOR EACH ROW
 EXECUTE PROCEDURE buy_ticket();
 
+/* Insere owner na tabela host do evento*/
+CREATE OR REPLACE FUNCTION add_owner_as_host() RETURNS TRIGGER AS
+$BODY$
+BEGIN
+	IF tg_op = 'INSERT' THEN
+		INSERT INTO host(user_id, meta_event_id) VALUES (NEW.owner_id, NEW.meta_event_id);
+	END IF;
+	RETURN NEW;
+END;
+$BODY$
+LANGUAGE plpgsql;
+
+CREATE TRIGGER add_owner_as_host
+AFTER INSERT ON Meta_Event
+FOR EACH ROW
+EXECUTE PROCEDURE add_owner_as_host();
 
 
 /*Delete User */
