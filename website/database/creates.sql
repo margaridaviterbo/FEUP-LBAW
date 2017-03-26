@@ -129,7 +129,7 @@ CREATE TABLE public.Meta_Event
 (
 	meta_event_id serial PRIMARY KEY,
 	name varchar(50) NOT NULL,
-	description varchar(2000) NOT NULL,
+	description varchar(20000) NOT NULL,
 	recurrence Recurrence NOT NULL,
 	photo_url varchar(150),
 	expiration_date timestamp,
@@ -147,7 +147,7 @@ CREATE TABLE public.Event
 (
 	event_id serial PRIMARY KEY,
 	name varchar(50) NOT NULL,
-	description varchar(2000) NOT NULL,
+	description varchar(20000) NOT NULL,
 	beginning_date timestamp NOT NULL,
 	ending_date timestamp,
 	photo_url varchar(150),
@@ -213,7 +213,7 @@ CREATE TABLE public.Notification
 	FOREIGN KEY(event_content_id) REFERENCES Event_Content(event_content_id),
 	FOREIGN KEY(user_id) REFERENCES Authenticated_User(user_id),
 	FOREIGN KEY(administrator_id) REFERENCES Administrator(administrator_id),
-	CONSTRAINT valid_date CHECK(notification_date < current_date),
+	CONSTRAINT report CHECK (notification_type IN ('userReport', 'contentReport', 'eventReport') AND administrator_id IS NOT NULL),
 	CONSTRAINT valid_user CHECK (XOR(user_id IS NOT NULL, administrator_id IS NOT NULL))
 );
 
@@ -488,3 +488,23 @@ CREATE TRIGGER delete_type_of_ticket
 BEFORE DELETE ON Type_of_Ticket
 FOR EACH ROW
 EXECUTE PROCEDURE delete_type_of_ticket();
+
+/*Delete Administrator*/
+
+CREATE OR REPLACE FUNCTION delete_administrator() RETURNS TRIGGER AS
+$BODY$
+BEGIN
+	IF tg_op = 'DELETE' THEN
+
+		DELETE FROM Notification WHERE OLD.administrator_id = Notification.administrator_id;
+
+	END IF;
+	RETURN OLD;
+END;
+$BODY$
+LANGUAGE plpgsql;
+
+CREATE TRIGGER delete_administrator
+BEFORE DELETE ON Administrator
+FOR EACH ROW
+EXECUTE PROCEDURE delete_administrator();

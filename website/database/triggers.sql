@@ -92,6 +92,7 @@ BEGIN
 		DELETE FROM Saved_Event WHERE OLD.meta_event_id = Saved_Event.meta_event_id;
 		DELETE FROM Host WHERE OLD.meta_event_id = Host.meta_event_id;
 		DELETE FROM Event WHERE OLD.meta_event_id = Event.meta_event_id;
+		DELETE FROM Type_of_Ticket WHERE OLD.meta_event_id = Type_of_Ticket.meta_event_id;
 
 	END IF;
 	RETURN OLD;
@@ -103,3 +104,111 @@ CREATE TRIGGER delete_meta_event
 BEFORE DELETE ON Meta_Event
 FOR EACH ROW
 EXECUTE PROCEDURE delete_meta_event();
+
+
+/*Delete Event */
+
+CREATE OR REPLACE FUNCTION delete_event() RETURNS TRIGGER AS
+$BODY$
+BEGIN
+	IF tg_op = 'DELETE' THEN
+
+		DELETE FROM Event_Content WHERE OLD.event_id = Event_Content.event_id;
+		DELETE FROM Notification WHERE OLD.event_id = Notification.event_id;
+		DELETE FROM Type_of_Ticket WHERE OLD.event_id = Type_of_Ticket.event_id;
+
+	END IF;
+	RETURN OLD;
+END;
+$BODY$
+LANGUAGE plpgsql;
+
+CREATE TRIGGER delete_event
+BEFORE DELETE ON Event
+FOR EACH ROW
+EXECUTE PROCEDURE delete_event();
+
+
+/*Delete Event Content*/
+
+CREATE OR REPLACE FUNCTION delete_event_content() RETURNS TRIGGER AS
+$BODY$
+BEGIN
+	IF tg_op = 'DELETE' THEN
+
+		DELETE FROM Notification WHERE OLD.event_content_id = Notification.event_content_id;
+		DELETE FROM Comments WHERE OLD.event_content_id = Comments.comment_id;
+		DELETE FROM Rate WHERE OLD.event_content_id = Rate.event_content_id;
+		DELETE FROM Poll WHERE OLD.event_content_id = Poll.poll_id;
+	END IF;
+	RETURN OLD;
+END;
+$BODY$
+LANGUAGE plpgsql;
+
+CREATE TRIGGER delete_event_content
+BEFORE DELETE ON Event_Content
+FOR EACH ROW
+EXECUTE PROCEDURE delete_event_content();
+
+
+/*Delete Poll*/
+
+CREATE OR REPLACE FUNCTION delete_poll() RETURNS TRIGGER AS
+$BODY$
+BEGIN
+	IF tg_op = 'DELETE' THEN
+
+		DELETE FROM Poll_Unit WHERE OLD.poll_id = Poll_Unit.poll_id;
+
+	END IF;
+	RETURN OLD;
+END;
+$BODY$
+LANGUAGE plpgsql;
+
+CREATE TRIGGER delete_poll
+BEFORE DELETE ON Poll
+FOR EACH ROW
+EXECUTE PROCEDURE delete_poll();
+
+
+/*Delete Type_of_Ticket*/
+
+CREATE OR REPLACE FUNCTION delete_type_of_ticket() RETURNS TRIGGER AS
+$BODY$
+BEGIN
+	IF tg_op = 'DELETE' THEN
+
+		DELETE FROM Ticket WHERE OLD.type_of_ticket_id = Ticket.type_of_ticket_id;
+
+	END IF;
+	RETURN OLD;
+END;
+$BODY$
+LANGUAGE plpgsql;
+
+CREATE TRIGGER delete_type_of_ticket
+BEFORE DELETE ON Type_of_Ticket
+FOR EACH ROW
+EXECUTE PROCEDURE delete_type_of_ticket();
+
+/*Delete Administrator*/
+
+CREATE OR REPLACE FUNCTION delete_administrator() RETURNS TRIGGER AS
+$BODY$
+BEGIN
+	IF tg_op = 'DELETE' THEN
+
+		DELETE FROM Notification WHERE OLD.administrator_id = Notification.administrator_id;
+
+	END IF;
+	RETURN OLD;
+END;
+$BODY$
+LANGUAGE plpgsql;
+
+CREATE TRIGGER delete_administrator
+BEFORE DELETE ON Administrator
+FOR EACH ROW
+EXECUTE PROCEDURE delete_administrator();
