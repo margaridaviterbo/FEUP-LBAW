@@ -48,3 +48,5 @@ INSERT INTO public.event(name, description, beginning_date, ending_date, free, m
 
 INSERT INTO public.event_content(user_id, event_id) VALUES (1, 1);
 
+/*Type_of_ticket */
+INSERT INTO public.type_of_ticket(ticket_type, price, num_tickets, meta_event_id, event_id) VALUES ('Plateia', 10, 2, 1, 1);

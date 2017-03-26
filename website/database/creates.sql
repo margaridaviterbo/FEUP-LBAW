@@ -273,11 +273,14 @@ CREATE TABLE public.Type_of_Ticket
 	type_of_ticket_id serial PRIMARY KEY,
 	ticket_type varchar(30) NOT NULL,
 	price float NOT NULL,
+	num_tickets integer NOT NULL,
 	meta_event_id integer,
 	event_id integer,
 	FOREIGN KEY(meta_event_id) REFERENCES Meta_Event(meta_event_id),
 	FOREIGN KEY(event_id) REFERENCES Event(event_id),
-	CONSTRAINT positive_price CHECK (price > 0)
+	CONSTRAINT positive_price CHECK (price > 0),
+	CONSTRAINT valid_num_tickets CHECK (num_tickets > 0),
+	CONSTRAINT has_event CHECK (meta_event_id IS NOT NULL OR event_id IS NOT NULL)
 );
 
 CREATE TABLE public.Ticket
