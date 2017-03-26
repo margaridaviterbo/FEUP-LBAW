@@ -50,3 +50,7 @@ INSERT INTO public.event_content(user_id, event_id) VALUES (1, 1);
 
 /*Type_of_ticket */
 INSERT INTO public.type_of_ticket(ticket_type, price, num_tickets, meta_event_id, event_id) VALUES ('Plateia', 10, 2, 1, 1);
+
+/*Ticket */
+
+INSERT INTO public.ticket(name, nif, user_id, type_of_ticket_id) VALUES ('Catarina Correia', 123456789, 1, 1);

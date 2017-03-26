@@ -1,3 +1,4 @@
+
 /* Verificar numero de bilhetes em stock quando se comprar bilhete*/
 
 CREATE OR REPLACE FUNCTION buy_ticket() RETURNS TRIGGER AS
@@ -25,6 +26,80 @@ $BODY$
 LANGUAGE plpgsql;
 
 CREATE TRIGGER buy_ticket
-	BEFORE INSERT ON Ticket
-	FOR EACH ROW
-	EXECUTE PROCEDURE buy_ticket();
+BEFORE INSERT ON Ticket
+FOR EACH ROW
+EXECUTE PROCEDURE buy_ticket();
+
+
+
+/*Delete User */
+
+CREATE OR REPLACE FUNCTION delete_user() RETURNS TRIGGER AS
+$BODY$
+BEGIN
+	IF tg_op = 'DELETE' THEN
+
+		DELETE FROM Authenticated_User WHERE OLD.user_id = Authenticated_User.user_id;
+		DELETE FROM Ticket WHERE OLD.user_id = Ticket.user_id;
+
+	END IF;
+	RETURN OLD;
+END;
+$BODY$
+LANGUAGE plpgsql;
+
+CREATE TRIGGER delete_user
+BEFORE DELETE ON Users
+FOR EACH ROW
+EXECUTE PROCEDURE delete_user();
+
+
+/*Delete Authenticated User */
+
+CREATE OR REPLACE FUNCTION delete_authenticated_user() RETURNS TRIGGER AS
+$BODY$
+BEGIN
+	IF tg_op = 'DELETE' THEN
+
+		DELETE FROM Meta_Event WHERE OLD.user_id = Meta_Event.owner_id;
+		DELETE FROM Saved_Event WHERE OLD.user_id = Saved_Event.user_id;
+		DELETE FROM Host WHERE OLD.user_id = Host.user_id;
+		DELETE FROM Guest WHERE OLD.user_id = Guest.user_id;
+		DELETE FROM Notification WHERE OLD.user_id = Notification.user_id;
+		DELETE FROM Notification_Intervinient WHERE OLD.user_id = Notification_Intervinient.user_id;
+		DELETE FROM JoinPoll_UnitToAuthenticated_User WHERE OLD.user_id = JoinPoll_UnitToAuthenticated_User.user_id;
+		DELETE FROM Event_Content WHERE OLD.user_id = Event_Content.user_id;
+
+	END IF;
+	RETURN OLD;
+END;
+$BODY$
+LANGUAGE plpgsql;
+
+CREATE TRIGGER delete_authenticated_user
+BEFORE DELETE ON Authenticated_User
+FOR EACH ROW
+EXECUTE PROCEDURE delete_authenticated_user();
+
+
+/*Delete Meta Event */
+
+CREATE OR REPLACE FUNCTION delete_meta_event() RETURNS TRIGGER AS
+$BODY$
+BEGIN
+	IF tg_op = 'DELETE' THEN
+
+		DELETE FROM Saved_Event WHERE OLD.meta_event_id = Saved_Event.meta_event_id;
+		DELETE FROM Host WHERE OLD.meta_event_id = Host.meta_event_id;
+		DELETE FROM Event WHERE OLD.meta_event_id = Event.meta_event_id;
+
+	END IF;
+	RETURN OLD;
+END;
+$BODY$
+LANGUAGE plpgsql;
+
+CREATE TRIGGER delete_meta_event
+BEFORE DELETE ON Meta_Event
+FOR EACH ROW
+EXECUTE PROCEDURE delete_meta_event();
