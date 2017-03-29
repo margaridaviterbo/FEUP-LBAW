@@ -60,6 +60,10 @@ CREATE TYPE Recurrence AS ENUM(
 	'daily', 'weekly', 'once', 'annually', 'quarterly', 'semester'
 );
 
+CREATE TYPE user_state AS ENUM(
+	'notconfirmed', 'active', 'canceledAdmin', 'canceledUser'
+);
+
 CREATE FUNCTION XOR(bool,bool) RETURNS bool AS '
 SELECT ($1 AND NOT $2) OR (NOT $1 AND $2);
 ' LANGUAGE 'sql';
@@ -67,19 +71,20 @@ SELECT ($1 AND NOT $2) OR (NOT $1 AND $2);
 CREATE TABLE public.Administrator
 (
 	administrator_id serial PRIMARY KEY,
-	username varchar(20) UNIQUE NOT NULL,
-	email varchar(254) UNIQUE NOT NULL,
-	password varchar(30) NOT NULL,
+	username varchar(1000) UNIQUE NOT NULL,
+	email varchar(1000) UNIQUE NOT NULL,
+	password varchar(1000) NOT NULL,
 	CONSTRAINT min_size CHECK (LENGTH(username) >= 8 AND LENGTH(password) >= 8)
 );
 
 CREATE TABLE public.Users
 (
 	user_id serial PRIMARY KEY,
-	first_name varchar(20) NOT NULL,
-	last_name varchar(20) NOT NULL,
-	email varchar(254) UNIQUE NOT NULL,
+	first_name varchar(1000) NOT NULL,
+	last_name varchar(1000) NOT NULL,
+	email varchar(1000) UNIQUE NOT NULL,
 	birthdate date,
+    user_state user_state NOT NULL,
 	nif int UNIQUE,
 	CONSTRAINT min_size CHECK (LENGTH(first_name) >= 3 AND LENGTH(last_name) >= 2 AND length(nif::TEXT) = 9),
 	CONSTRAINT valid_date CHECK (birthdate < current_date)
@@ -89,9 +94,9 @@ CREATE TABLE public.Users
 CREATE TABLE public.Authenticated_User
 (
 	user_id serial PRIMARY KEY,
-	username varchar(20) UNIQUE NOT NULL,
-	password varchar(30) NOT NULL,
-	photo_url varchar(150),
+	username varchar(1000) UNIQUE NOT NULL,
+	password varchar(1000) NOT NULL,
+	photo_url varchar(1000),
 	FOREIGN KEY(user_id) REFERENCES Users(user_id),
 	CONSTRAINT min_size CHECK (LENGTH(username) >= 8 AND LENGTH(password) >= 8)
 );
@@ -99,19 +104,19 @@ CREATE TABLE public.Authenticated_User
 CREATE TABLE public.Category
 (
 	category_id serial PRIMARY KEY,
-	name varchar(50) UNIQUE NOT NULL
+	name varchar(1000) UNIQUE NOT NULL
 );
 
 CREATE TABLE public.Country
 (
 	country_id serial PRIMARY KEY,
-	name varchar(20) UNIQUE NOT NULL
+	name varchar(1000) UNIQUE NOT NULL
 );
 
 CREATE TABLE public.City
 (
 	city_id serial PRIMARY KEY,
-	name varchar(20) NOT NULL,
+	name varchar(1000) NOT NULL,
 	country_id integer,
 	FOREIGN KEY(city_id) REFERENCES Country(country_id)
 );
@@ -119,8 +124,8 @@ CREATE TABLE public.City
 CREATE TABLE public.Localization
 (	
 	local_id serial PRIMARY KEY,
-  street VARCHAR(200),
-	coordinates VARCHAR(100) NOT NULL,
+    street VARCHAR(1000),
+	coordinates VARCHAR(1000) NOT NULL,
 	city_id INTEGER,
 	FOREIGN KEY(city_id) REFERENCES City(city_id)
 );
@@ -128,10 +133,11 @@ CREATE TABLE public.Localization
 CREATE TABLE public.Meta_Event
 (
 	meta_event_id serial PRIMARY KEY,
-	name varchar(50) NOT NULL,
+	name varchar(1000) NOT NULL,
 	description varchar(20000) NOT NULL,
 	recurrence Recurrence NOT NULL,
-	photo_url varchar(150),
+	meta_event_state boolean NOT NULL,
+    photo_url varchar(1000),
 	expiration_date timestamp,
 	free boolean NOT NULL,
 	owner_id integer NOT NULL,
@@ -147,18 +153,19 @@ CREATE TABLE public.Meta_Event
 CREATE TABLE public.Event
 (
 	event_id serial PRIMARY KEY,
-	name varchar(50) NOT NULL,
+	name varchar(1000) NOT NULL,
 	description varchar(20000) NOT NULL,
 	beginning_date timestamp NOT NULL,
 	ending_date timestamp,
-	photo_url varchar(150),
+    event_state boolean NOT NULL,
+	photo_url varchar(1000),
 	free boolean NOT NULL,
 	meta_event_id integer NOT NULL,
 	local_id integer NOT NULL,
 	FOREIGN KEY(meta_event_id) REFERENCES Meta_Event(meta_event_id),
-	FOREIGN KEY(local_id) REFERENCES Localization(local_id),
-	CONSTRAINT beginning_date CHECK (beginning_date > current_date),
-	CONSTRAINT end_date CHECK (ending_date > Event.beginning_date)
+	FOREIGN KEY(local_id) REFERENCES Localization(local_id)
+	/*CONSTRAINT beginning_date CHECK (beginning_date > current_date),
+	CONSTRAINT end_date CHECK (ending_date > Event.beginning_date)*/
 );
 
 CREATE TABLE public.Event_Content
@@ -174,8 +181,8 @@ CREATE TABLE public.Event_Content
 CREATE TABLE public.Comments
 (
 	comment_id integer PRIMARY KEY,
-	content varchar(500),
-	photo_url varchar(150),
+	content varchar(10000),
+	photo_url varchar(2000),
 	comment_date timestamp NOT NULL DEFAULT now(),
 	FOREIGN KEY(comment_id) REFERENCES Event_Content(event_content_id),
 	CONSTRAINT valid_content CHECK (photo_url IS NOT NULL OR content IS NOT NULL)
@@ -238,7 +245,7 @@ CREATE TABLE public.Poll
 CREATE TABLE public.Poll_Unit
 (
 	poll_unit_id serial PRIMARY KEY,
-	name varchar(20) NOT NULL,
+	name varchar(1000) NOT NULL,
 	poll_id integer NOT NULL,
 	FOREIGN KEY(poll_id) REFERENCES Poll(poll_id)
 );
@@ -272,7 +279,7 @@ CREATE TABLE public.Saved_Event
 CREATE TABLE public.Type_of_Ticket
 (
 	type_of_ticket_id serial PRIMARY KEY,
-	ticket_type varchar(30) NOT NULL,
+	ticket_type varchar(1000) NOT NULL,
 	price float NOT NULL,
 	num_tickets integer NOT NULL,
 	meta_event_id integer,
@@ -287,7 +294,7 @@ CREATE TABLE public.Type_of_Ticket
 CREATE TABLE public.Ticket
 (
 	ticket_id serial PRIMARY KEY,
-	name varchar(20) NOT NULL,
+	name varchar(1000) NOT NULL,
 	nif integer NOT NULL,
 	user_id integer NOT NULL,
 	type_of_ticket_id integer NOT NULL,
@@ -295,233 +302,3 @@ CREATE TABLE public.Ticket
 	FOREIGN KEY(type_of_ticket_id) REFERENCES Type_of_Ticket(type_of_ticket_id),
 	CONSTRAINT valid_nif CHECK (LENGTH(nif::TEXT) = 9)
 );
-
-/* Verificar numero de bilhetes em stock quando se comprar bilhete*/
-
-CREATE OR REPLACE FUNCTION buy_ticket() RETURNS TRIGGER AS
-$BODY$
-DECLARE
-	num_total_tickets integer;
-	num_sold_tickets integer;
-BEGIN
-	IF tg_op = 'INSERT' THEN
-		SELECT type_ticket.num_tickets INTO num_total_tickets
-		FROM Type_of_Ticket type_ticket
-		WHERE new.type_of_ticket_id = type_ticket.type_of_ticket_id;
-
-		SELECT count(*) INTO num_sold_tickets
-		FROM Ticket t
-		WHERE t.type_of_ticket_id = NEW.type_of_ticket_id;
-
-		IF num_total_tickets <= num_sold_tickets THEN
-			RAISE EXCEPTION 'Unable to sell ticket. No more tickets to sell. (%) (%)', num_total_tickets, num_sold_tickets;
-		END IF;
-	END IF;
-	RETURN NEW;
-END;
-$BODY$
-LANGUAGE plpgsql;
-
-CREATE TRIGGER buy_ticket
-BEFORE INSERT ON Ticket
-FOR EACH ROW
-EXECUTE PROCEDURE buy_ticket();
-
-/* Insere owner na tabela host do evento*/
-CREATE OR REPLACE FUNCTION add_owner_as_host() RETURNS TRIGGER AS
-$BODY$
-BEGIN
-	IF tg_op = 'INSERT' THEN
-		INSERT INTO host(user_id, meta_event_id) VALUES (NEW.owner_id, NEW.meta_event_id);
-	END IF;
-	RETURN NEW;
-END;
-$BODY$
-LANGUAGE plpgsql;
-
-CREATE TRIGGER add_owner_as_host
-AFTER INSERT ON Meta_Event
-FOR EACH ROW
-EXECUTE PROCEDURE add_owner_as_host();
-
-
-/*Delete User */
-
-CREATE OR REPLACE FUNCTION delete_user() RETURNS TRIGGER AS
-$BODY$
-BEGIN
-	IF tg_op = 'DELETE' THEN
-
-		DELETE FROM Authenticated_User WHERE OLD.user_id = Authenticated_User.user_id;
-		DELETE FROM Ticket WHERE OLD.user_id = Ticket.user_id;
-
-	END IF;
-	RETURN OLD;
-END;
-$BODY$
-LANGUAGE plpgsql;
-
-CREATE TRIGGER delete_user
-BEFORE DELETE ON Users
-FOR EACH ROW
-EXECUTE PROCEDURE delete_user();
-
-
-/*Delete Authenticated User */
-
-CREATE OR REPLACE FUNCTION delete_authenticated_user() RETURNS TRIGGER AS
-$BODY$
-BEGIN
-	IF tg_op = 'DELETE' THEN
-
-		DELETE FROM Meta_Event WHERE OLD.user_id = Meta_Event.owner_id;
-		DELETE FROM Saved_Event WHERE OLD.user_id = Saved_Event.user_id;
-		DELETE FROM Host WHERE OLD.user_id = Host.user_id;
-		DELETE FROM Guest WHERE OLD.user_id = Guest.user_id;
-		DELETE FROM Notification WHERE OLD.user_id = Notification.user_id;
-		DELETE FROM Notification_Intervinient WHERE OLD.user_id = Notification_Intervinient.user_id;
-		DELETE FROM JoinPoll_UnitToAuthenticated_User WHERE OLD.user_id = JoinPoll_UnitToAuthenticated_User.user_id;
-		DELETE FROM Event_Content WHERE OLD.user_id = Event_Content.user_id;
-
-	END IF;
-	RETURN OLD;
-END;
-$BODY$
-LANGUAGE plpgsql;
-
-CREATE TRIGGER delete_authenticated_user
-BEFORE DELETE ON Authenticated_User
-FOR EACH ROW
-EXECUTE PROCEDURE delete_authenticated_user();
-
-
-/*Delete Meta Event */
-
-CREATE OR REPLACE FUNCTION delete_meta_event() RETURNS TRIGGER AS
-$BODY$
-BEGIN
-	IF tg_op = 'DELETE' THEN
-
-		DELETE FROM Saved_Event WHERE OLD.meta_event_id = Saved_Event.meta_event_id;
-		DELETE FROM Host WHERE OLD.meta_event_id = Host.meta_event_id;
-		DELETE FROM Event WHERE OLD.meta_event_id = Event.meta_event_id;
-		DELETE FROM Type_of_Ticket WHERE OLD.meta_event_id = Type_of_Ticket.meta_event_id;
-
-	END IF;
-	RETURN OLD;
-END;
-$BODY$
-LANGUAGE plpgsql;
-
-CREATE TRIGGER delete_meta_event
-BEFORE DELETE ON Meta_Event
-FOR EACH ROW
-EXECUTE PROCEDURE delete_meta_event();
-
-
-/*Delete Event */
-
-CREATE OR REPLACE FUNCTION delete_event() RETURNS TRIGGER AS
-$BODY$
-BEGIN
-	IF tg_op = 'DELETE' THEN
-
-		DELETE FROM Event_Content WHERE OLD.event_id = Event_Content.event_id;
-		DELETE FROM Notification WHERE OLD.event_id = Notification.event_id;
-		DELETE FROM Type_of_Ticket WHERE OLD.event_id = Type_of_Ticket.event_id;
-
-	END IF;
-	RETURN OLD;
-END;
-$BODY$
-LANGUAGE plpgsql;
-
-CREATE TRIGGER delete_event
-BEFORE DELETE ON Event
-FOR EACH ROW
-EXECUTE PROCEDURE delete_event();
-
-
-/*Delete Event Content*/
-
-CREATE OR REPLACE FUNCTION delete_event_content() RETURNS TRIGGER AS
-$BODY$
-BEGIN
-	IF tg_op = 'DELETE' THEN
-
-		DELETE FROM Notification WHERE OLD.event_content_id = Notification.event_content_id;
-		DELETE FROM Comments WHERE OLD.event_content_id = Comments.comment_id;
-		DELETE FROM Rate WHERE OLD.event_content_id = Rate.event_content_id;
-		DELETE FROM Poll WHERE OLD.event_content_id = Poll.poll_id;
-	END IF;
-	RETURN OLD;
-END;
-$BODY$
-LANGUAGE plpgsql;
-
-CREATE TRIGGER delete_event_content
-BEFORE DELETE ON Event_Content
-FOR EACH ROW
-EXECUTE PROCEDURE delete_event_content();
-
-
-/*Delete Poll*/
-
-CREATE OR REPLACE FUNCTION delete_poll() RETURNS TRIGGER AS
-$BODY$
-BEGIN
-	IF tg_op = 'DELETE' THEN
-
-		DELETE FROM Poll_Unit WHERE OLD.poll_id = Poll_Unit.poll_id;
-
-	END IF;
-	RETURN OLD;
-END;
-$BODY$
-LANGUAGE plpgsql;
-
-CREATE TRIGGER delete_poll
-BEFORE DELETE ON Poll
-FOR EACH ROW
-EXECUTE PROCEDURE delete_poll();
-
-
-/*Delete Type_of_Ticket*/
-
-CREATE OR REPLACE FUNCTION delete_type_of_ticket() RETURNS TRIGGER AS
-$BODY$
-BEGIN
-	IF tg_op = 'DELETE' THEN
-
-		DELETE FROM Ticket WHERE OLD.type_of_ticket_id = Ticket.type_of_ticket_id;
-
-	END IF;
-	RETURN OLD;
-END;
-$BODY$
-LANGUAGE plpgsql;
-
-CREATE TRIGGER delete_type_of_ticket
-BEFORE DELETE ON Type_of_Ticket
-FOR EACH ROW
-EXECUTE PROCEDURE delete_type_of_ticket();
-
-/*Delete Administrator*/
-
-CREATE OR REPLACE FUNCTION delete_administrator() RETURNS TRIGGER AS
-$BODY$
-BEGIN
-	IF tg_op = 'DELETE' THEN
-
-		DELETE FROM Notification WHERE OLD.administrator_id = Notification.administrator_id;
-
-	END IF;
-	RETURN OLD;
-END;
-$BODY$
-LANGUAGE plpgsql;
-
-CREATE TRIGGER delete_administrator
-BEFORE DELETE ON Administrator
-FOR EACH ROW
-EXECUTE PROCEDURE delete_administrator();

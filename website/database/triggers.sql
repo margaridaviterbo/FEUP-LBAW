@@ -210,21 +210,60 @@ FOR EACH ROW
 EXECUTE PROCEDURE delete_type_of_ticket();
 
 /*Delete Administrator*/
-
 CREATE OR REPLACE FUNCTION delete_administrator() RETURNS TRIGGER AS
 $BODY$
+DECLARE
+	num_total_admins INTEGER;
 BEGIN
 	IF tg_op = 'DELETE' THEN
-
+ 
+		SELECT COUNT(administrator_id) INTO num_total_admins
+		FROM Administrator a
+		WHERE a.administrator_id = OLD.administrator_id;
+ 		
+        IF num_total_admins < '0' THEN
+			RAISE EXCEPTION 'Unable to delete administrator. Just exists this one!';
+		END IF;
+        
+ 		DELETE FROM Notification_Intervinient WHERE Notification_Intervinient.notification_id in (SELECT notification_id 
+																								FROM Notification 
+																								WHERE OLD.administrator_id = Notification.administrator_id);
 		DELETE FROM Notification WHERE OLD.administrator_id = Notification.administrator_id;
-
+		
 	END IF;
 	RETURN OLD;
 END;
 $BODY$
 LANGUAGE plpgsql;
-
+ 
 CREATE TRIGGER delete_administrator
 BEFORE DELETE ON Administrator
 FOR EACH ROW
 EXECUTE PROCEDURE delete_administrator();
+
+/*verifica se é possivel fazer update a um evento (visto que ja passou da data)*/
+CREATE OR REPLACE FUNCTION change_event() RETURNS TRIGGER AS
+$BODY$
+DECLARE
+	event_date INTEGER;
+BEGIN
+	IF tg_op = 'UPDATE' THEN
+ 
+		SELECT beginning_date INTO event_date
+		FROM public.Event
+		WHERE public.Event.event_id = OLD.event_id;
+ 
+		IF event_date <= current_date THEN
+			RAISE EXCEPTION 'Event passed';
+		END IF;
+		
+	END IF;
+	RETURN OLD;
+END;
+$BODY$
+LANGUAGE plpgsql;
+ 
+CREATE TRIGGER change_event
+BEFORE UPDATE ON public.Event
+FOR EACH ROW
+EXECUTE PROCEDURE change_event();
