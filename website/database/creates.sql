@@ -56,12 +56,12 @@ CREATE TYPE notification_type AS ENUM(
     'userReport', 'eventReport', 'contentReport', 'eventCommented', 'eventCreatedPoll', 'eventRated', 'eventChangedLocal', 'eventChangedDate', 'eventChangedName', 'eventInvitation', 'eventCanceled', 'eventAllSoldTickets', 'eventReminder', 'userSentEmail'
 );
 
-CREATE TYPE Recurrence AS ENUM(
+CREATE TYPE recurrence AS ENUM(
 	'daily', 'weekly', 'once', 'annually', 'quarterly', 'semester'
 );
 
 CREATE TYPE user_state AS ENUM(
-	'notconfirmed', 'active', 'canceledAdmin', 'canceledUser'
+	'notConfirmed', 'active', 'canceledAdmin', 'canceledUser'
 );
 
 CREATE FUNCTION XOR(bool,bool) RETURNS bool AS '
@@ -74,6 +74,7 @@ CREATE TABLE public.Administrator
 	username varchar(1000) UNIQUE NOT NULL,
 	email varchar(1000) UNIQUE NOT NULL,
 	password varchar(1000) NOT NULL,
+	active boolean NOT NULL,
 	CONSTRAINT min_size CHECK (LENGTH(username) >= 8 AND LENGTH(password) >= 8)
 );
 
@@ -84,7 +85,6 @@ CREATE TABLE public.Users
 	last_name varchar(1000) NOT NULL,
 	email varchar(1000) UNIQUE NOT NULL,
 	birthdate date,
-    user_state user_state NOT NULL,
 	nif int UNIQUE,
 	CONSTRAINT min_size CHECK (LENGTH(first_name) >= 3 AND LENGTH(last_name) >= 2 AND length(nif::TEXT) = 9),
 	CONSTRAINT valid_date CHECK (birthdate < current_date)
@@ -97,6 +97,7 @@ CREATE TABLE public.Authenticated_User
 	username varchar(1000) UNIQUE NOT NULL,
 	password varchar(1000) NOT NULL,
 	photo_url varchar(1000),
+	user_state user_state NOT NULL,
 	FOREIGN KEY(user_id) REFERENCES Users(user_id),
 	CONSTRAINT min_size CHECK (LENGTH(username) >= 8 AND LENGTH(password) >= 8)
 );
@@ -135,7 +136,7 @@ CREATE TABLE public.Meta_Event
 	meta_event_id serial PRIMARY KEY,
 	name varchar(1000) NOT NULL,
 	description varchar(20000) NOT NULL,
-	recurrence Recurrence NOT NULL,
+	recurrence recurrence NOT NULL,
 	meta_event_state boolean NOT NULL,
     photo_url varchar(1000),
 	expiration_date timestamp,
@@ -163,9 +164,9 @@ CREATE TABLE public.Event
 	meta_event_id integer NOT NULL,
 	local_id integer NOT NULL,
 	FOREIGN KEY(meta_event_id) REFERENCES Meta_Event(meta_event_id),
-	FOREIGN KEY(local_id) REFERENCES Localization(local_id)
-	/*CONSTRAINT beginning_date CHECK (beginning_date > current_date),
-	CONSTRAINT end_date CHECK (ending_date > Event.beginning_date)*/
+	FOREIGN KEY(local_id) REFERENCES Localization(local_id),
+	/*CONSTRAINT beginning_date CHECK (beginning_date > current_date),*/
+	CONSTRAINT end_date CHECK (ending_date > beginning_date)
 );
 
 CREATE TABLE public.Event_Content
