@@ -47,104 +47,6 @@ AFTER INSERT ON Meta_Event
 FOR EACH ROW
 EXECUTE PROCEDURE add_owner_as_host();
 
-
-/*Delete User */
-
-CREATE OR REPLACE FUNCTION delete_user() RETURNS TRIGGER AS
-$BODY$
-BEGIN
-	IF tg_op = 'DELETE' THEN
-
-		DELETE FROM Authenticated_User WHERE OLD.user_id = Authenticated_User.user_id;
-		DELETE FROM Ticket WHERE OLD.user_id = Ticket.user_id;
-
-	END IF;
-	RETURN OLD;
-END;
-$BODY$
-LANGUAGE plpgsql;
-
-CREATE TRIGGER delete_user
-BEFORE DELETE ON Users
-FOR EACH ROW
-EXECUTE PROCEDURE delete_user();
-
-
-/*Delete Authenticated User */
-
-CREATE OR REPLACE FUNCTION delete_authenticated_user() RETURNS TRIGGER AS
-$BODY$
-BEGIN
-	IF tg_op = 'DELETE' THEN
-
-		DELETE FROM Meta_Event WHERE OLD.user_id = Meta_Event.owner_id;
-		DELETE FROM Saved_Event WHERE OLD.user_id = Saved_Event.user_id;
-		DELETE FROM Host WHERE OLD.user_id = Host.user_id;
-		DELETE FROM Guest WHERE OLD.user_id = Guest.user_id;
-		DELETE FROM Notification WHERE OLD.user_id = Notification.user_id;
-		DELETE FROM Notification_Intervinient WHERE OLD.user_id = Notification_Intervinient.user_id;
-		DELETE FROM JoinPoll_UnitToAuthenticated_User WHERE OLD.user_id = JoinPoll_UnitToAuthenticated_User.user_id;
-		DELETE FROM Event_Content WHERE OLD.user_id = Event_Content.user_id;
-
-	END IF;
-	RETURN OLD;
-END;
-$BODY$
-LANGUAGE plpgsql;
-
-CREATE TRIGGER delete_authenticated_user
-BEFORE DELETE ON Authenticated_User
-FOR EACH ROW
-EXECUTE PROCEDURE delete_authenticated_user();
-
-
-/*Delete Meta Event */
-
-CREATE OR REPLACE FUNCTION delete_meta_event() RETURNS TRIGGER AS
-$BODY$
-BEGIN
-	IF tg_op = 'DELETE' THEN
-
-		DELETE FROM Saved_Event WHERE OLD.meta_event_id = Saved_Event.meta_event_id;
-		DELETE FROM Host WHERE OLD.meta_event_id = Host.meta_event_id;
-		DELETE FROM Event WHERE OLD.meta_event_id = Event.meta_event_id;
-		DELETE FROM Type_of_Ticket WHERE OLD.meta_event_id = Type_of_Ticket.meta_event_id;
-
-	END IF;
-	RETURN OLD;
-END;
-$BODY$
-LANGUAGE plpgsql;
-
-CREATE TRIGGER delete_meta_event
-BEFORE DELETE ON Meta_Event
-FOR EACH ROW
-EXECUTE PROCEDURE delete_meta_event();
-
-
-/*Delete Event */
-
-CREATE OR REPLACE FUNCTION delete_event() RETURNS TRIGGER AS
-$BODY$
-BEGIN
-	IF tg_op = 'DELETE' THEN
-
-		DELETE FROM Event_Content WHERE OLD.event_id = Event_Content.event_id;
-		DELETE FROM Notification WHERE OLD.event_id = Notification.event_id;
-		DELETE FROM Type_of_Ticket WHERE OLD.event_id = Type_of_Ticket.event_id;
-
-	END IF;
-	RETURN OLD;
-END;
-$BODY$
-LANGUAGE plpgsql;
-
-CREATE TRIGGER delete_event
-BEFORE DELETE ON Event
-FOR EACH ROW
-EXECUTE PROCEDURE delete_event();
-
-
 /*Delete Event Content*/
 
 CREATE OR REPLACE FUNCTION delete_event_content() RETURNS TRIGGER AS
@@ -188,82 +90,90 @@ BEFORE DELETE ON Poll
 FOR EACH ROW
 EXECUTE PROCEDURE delete_poll();
 
-
-/*Delete Type_of_Ticket*/
-
-CREATE OR REPLACE FUNCTION delete_type_of_ticket() RETURNS TRIGGER AS
-$BODY$
-BEGIN
-	IF tg_op = 'DELETE' THEN
-
-		DELETE FROM Ticket WHERE OLD.type_of_ticket_id = Ticket.type_of_ticket_id;
-
-	END IF;
-	RETURN OLD;
-END;
-$BODY$
-LANGUAGE plpgsql;
-
-CREATE TRIGGER delete_type_of_ticket
-BEFORE DELETE ON Type_of_Ticket
-FOR EACH ROW
-EXECUTE PROCEDURE delete_type_of_ticket();
-
-/*Delete Administrator*/
-CREATE OR REPLACE FUNCTION delete_administrator() RETURNS TRIGGER AS
-$BODY$
-DECLARE
-	num_total_admins INTEGER;
-BEGIN
-	IF tg_op = 'DELETE' THEN
- 
-		SELECT COUNT(administrator_id) INTO num_total_admins
-		FROM Administrator a
-		WHERE a.administrator_id = OLD.administrator_id;
- 		
-        IF num_total_admins < '0' THEN
-			RAISE EXCEPTION 'Unable to delete administrator. Just exists this one!';
-		END IF;
-        
- 		DELETE FROM Notification_Intervinient WHERE Notification_Intervinient.notification_id in (SELECT notification_id 
-																								FROM Notification 
-																								WHERE OLD.administrator_id = Notification.administrator_id);
-		DELETE FROM Notification WHERE OLD.administrator_id = Notification.administrator_id;
-		
-	END IF;
-	RETURN OLD;
-END;
-$BODY$
-LANGUAGE plpgsql;
- 
-CREATE TRIGGER delete_administrator
-BEFORE DELETE ON Administrator
-FOR EACH ROW
-EXECUTE PROCEDURE delete_administrator();
-
 /*verifica se é possivel fazer update a um evento (visto que ja passou da data)*/
 CREATE OR REPLACE FUNCTION change_event() RETURNS TRIGGER AS
 $BODY$
 DECLARE
-	event_date INTEGER;
+	event_date TIMESTAMP;
 BEGIN
 	IF tg_op = 'UPDATE' THEN
- 
+
 		SELECT beginning_date INTO event_date
 		FROM public.Event
 		WHERE public.Event.event_id = OLD.event_id;
- 
-		IF event_date <= current_date THEN
+
+		IF event_date <= now() THEN
 			RAISE EXCEPTION 'Event passed';
 		END IF;
-		
+
 	END IF;
 	RETURN OLD;
 END;
 $BODY$
 LANGUAGE plpgsql;
- 
+
 CREATE TRIGGER change_event
 BEFORE UPDATE ON public.Event
 FOR EACH ROW
 EXECUTE PROCEDURE change_event();
+
+
+/*Blocks Administrator*/
+CREATE OR REPLACE FUNCTION block_administrator() RETURNS TRIGGER AS
+$BODY$
+DECLARE
+	num_total_admins INTEGER;
+BEGIN
+	IF tg_op = 'UPDATE' THEN
+
+		IF NEW.active IS FALSE THEN
+
+			SELECT COUNT(administrator_id) INTO num_total_admins
+			FROM Administrator a
+			WHERE a.active = true;
+
+			IF num_total_admins <= 1 THEN
+				RAISE EXCEPTION 'Unable to delete administrator. Just exists this one!';
+			END IF;
+
+		END IF;
+
+	END IF;
+	RETURN NEW;
+END;
+$BODY$
+LANGUAGE plpgsql;
+
+CREATE TRIGGER block_administrator
+BEFORE UPDATE OF active
+ON Administrator
+FOR EACH ROW
+EXECUTE PROCEDURE block_administrator();
+
+
+/*Adicionar Notification */
+CREATE OR REPLACE FUNCTION add_notification() RETURNS TRIGGER AS
+$BODY$
+DECLARE
+	isActive BOOLEAN;
+BEGIN
+	IF tg_op = 'INSERT' THEN
+
+		SELECT active INTO isActive
+		FROM Administrator
+		WHERE administrator_id = NEW.administrator_id;
+
+		IF isActive IS FALSE THEN
+			RAISE EXCEPTION 'Cannot add Notification. Administrator does not exist';
+		END IF;
+
+	END IF;
+	RETURN NEW;
+END;
+$BODY$
+LANGUAGE plpgsql;
+
+CREATE TRIGGER add_notification
+BEFORE INSERT	ON Notification
+FOR EACH ROW
+EXECUTE PROCEDURE add_notification();
