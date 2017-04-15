@@ -1,3 +1,8 @@
+<?php
+include('../templates/header.php');
+include('../templates/menu-visitor.php');
+?>
+
 <div class="homepage">
   <div class="container-fluid text-left">
     <div class="page-title text-center">
@@ -260,3 +265,7 @@
     </div>
   </div>
 </div>
+
+<?php
+include('../templates/footer.php');
+?>

@@ -39,17 +39,18 @@
                       <input type="checkbox"> Remember me
                     </label>
                   </div>
+
+                  <div class="modal-footer">
+                      <button type="submit" class="btn btn-success">Login</button>
+                      <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                  </div>
+
                 </form>
 
               </p>
               <span>Don't have an account?<a href="#" data-toggle="modal" data-target="#modalRegister"> Register</a> here.</span>
           </div>
 
-
-          <div class="modal-footer">
-              <button type="submit" class="btn btn-success">Login</button>
-            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-          </div>
         </div>
 
       </div>
@@ -68,22 +69,22 @@
                     <div class="modal-body">
                         <p>
 
-                        <form action="#" method="post" enctype="multipart/>form-data">
+                        <form action="../actions/authentication/register.php" method="post" enctype="multipart/>form-data">
 
                             <label>First Name</label>
-                            <input type="text" class="form-control" placeholder="Insert your first name" required>
+                            <input name="first_name" type="text" class="form-control" placeholder="Insert your first name" required>
 
                             <label>Last Name</label>
-                            <input type="text" class="form-control" placeholder="Insert your last name" required>
+                            <input name="last_name" type="text" class="form-control" placeholder="Insert your last name" required>
 
                             <label>Username</label>
-                            <input type="text" class="form-control" placeholder="Choose an username" required>
+                            <input name="username" type="text" class="form-control" placeholder="Choose an username" required>
 
                             <label>E-mail</label>
-                            <input type="email" class="form-control" placeholder="Insert your email" required>
+                            <input name="email" type="email" class="form-control" placeholder="Insert your email" required>
 
                             <label>Password</label>
-                            <input type="password" class="form-control" placeholder="Choose a password" required>
+                            <input name="password" type="password" class="form-control" placeholder="Choose a password" required>
 
                             <label>Confirm Password</label>
                             <input type="password" class="form-control" placeholder="Confirm the password" required>
@@ -95,17 +96,17 @@
                                 <input id="profile-photo" style="visibility:hidden;" type="file">
                             </div>
 
+                            <div class="modal-footer">
+                                <button type="submit" class="btn btn-success">Register</button>
+                                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                            </div>
+
                         </form>
 
                         </p>
                         <span>Already have an account?<a href="#" data-toggle="modal" data-target="#modalLogin"> Log in</a> here.</span>
                     </div>
 
-
-                    <div class="modal-footer">
-                        <button type="submit" class="btn btn-success">Register</button>
-                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                    </div>
                 </div>
 
             </div>
