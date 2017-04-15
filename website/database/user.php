@@ -1,5 +1,18 @@
 <?php
 
+    function createUser($firstname, $lastname, $email){
+        global $conn;
+        $stmt = $conn->prepare('INSERT INTO users(first_name, last_name, email) VALUES (?, ?, ?)');
+        $stmt->execute(array($firstname, $lastname, $email));
+    }
+
+    function createAuthenticatedUser($user_id, $username, $password){
+        global $conn;
+        $state = 'active';
+        $stmt = $conn->prepare('INSERT INTO authenticated_user(user_id, username, password, user_state) VALUES (?, ?, ?, ?)');
+        $stmt->execute(array($user_id, $username, sha1($password), $state));
+    }
+
     function authenticatedUserExists($username, $email){
 
         $r_email = getAuthenticatedUserByEmail($email);

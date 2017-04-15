@@ -73,7 +73,7 @@ CREATE TABLE public.Administrator
 	administrator_id serial PRIMARY KEY,
 	username varchar(20) UNIQUE NOT NULL,
 	email varchar(254) UNIQUE NOT NULL,
-	password varchar(30) NOT NULL,
+	password varchar(100) NOT NULL,
 	active boolean NOT NULL,
 	CONSTRAINT min_size CHECK (LENGTH(username) >= 8 AND LENGTH(password) >= 8)
 );
@@ -95,7 +95,7 @@ CREATE TABLE public.Authenticated_User
 (
 	user_id integer PRIMARY KEY,
 	username varchar(20) UNIQUE NOT NULL,
-	password varchar(25) NOT NULL,
+	password varchar(100) NOT NULL,
 	photo_url varchar(1000),
 	user_state user_state NOT NULL,
 	FOREIGN KEY(user_id) REFERENCES Users(user_id),

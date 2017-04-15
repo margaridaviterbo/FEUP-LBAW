@@ -9,34 +9,30 @@
     $email = $_POST["email"];
     $password = $_POST["password"];
 
-    $bool = authenticatedUserExists($username, $email);
+    var_dump($email);
 
-    var_dump($bool);
+    $bool = authenticatedUserExists($username, $email);
 
     if ($bool){
         echo '<script> alert("User already exists.") </script>';
-        header('refresh:2; url=pages/register.php');
+        header('refresh:2; url=../../pages/register.php');
     }
     else{
 
         $user = getUserByEmail($email);
-        var_dump($user);
 
         //Se o utilizador ainda não existir na base de dados
         if ($user == false) {
 
-            $stmt = $conn->prepare('INSERT INTO users(first_name, last_name, email) VALUES (?, ?, ?)');
-            $stmt->execute(array($firstname, $lastname, $email));
+            createUser($firstname, $lastname, $email);
         }
 
         $user_id = getUserIdFromUser($email);
-        $state = 'active';
 
-        $stmt = $conn->prepare('INSERT INTO authenticated_user(user_id, username, password, user_state) VALUES (?, ?, ?, ?)');
-        $stmt->execute(array($user_id, $username, $password, $state));
+        createAuthenticatedUser($user_id, $username, $password);
 
         echo '<script> alert("New user added. Check your email.") </script>';
-        header('refresh:2; url=pages/user-homepage.php');
+        header('refresh:2; url=../../pages/user-homepage.php');
     }
 
 ?>
