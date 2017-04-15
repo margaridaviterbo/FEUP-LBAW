@@ -71,9 +71,9 @@ SELECT ($1 AND NOT $2) OR (NOT $1 AND $2);
 CREATE TABLE public.Administrator
 (
 	administrator_id serial PRIMARY KEY,
-	username varchar(1000) UNIQUE NOT NULL,
-	email varchar(1000) UNIQUE NOT NULL,
-	password varchar(1000) NOT NULL,
+	username varchar(20) UNIQUE NOT NULL,
+	email varchar(254) UNIQUE NOT NULL,
+	password varchar(30) NOT NULL,
 	active boolean NOT NULL,
 	CONSTRAINT min_size CHECK (LENGTH(username) >= 8 AND LENGTH(password) >= 8)
 );
@@ -81,9 +81,9 @@ CREATE TABLE public.Administrator
 CREATE TABLE public.Users
 (
 	user_id serial PRIMARY KEY,
-	first_name varchar(1000) NOT NULL,
-	last_name varchar(1000) NOT NULL,
-	email varchar(1000) UNIQUE NOT NULL,
+	first_name varchar(20) NOT NULL,
+	last_name varchar(20) NOT NULL,
+	email varchar(254) UNIQUE NOT NULL,
 	birthdate date,
 	nif int UNIQUE,
 	CONSTRAINT min_size CHECK (LENGTH(first_name) >= 3 AND LENGTH(last_name) >= 2 AND length(nif::TEXT) = 9),
@@ -93,9 +93,9 @@ CREATE TABLE public.Users
 
 CREATE TABLE public.Authenticated_User
 (
-	user_id serial PRIMARY KEY,
-	username varchar(1000) UNIQUE NOT NULL,
-	password varchar(1000) NOT NULL,
+	user_id integer PRIMARY KEY,
+	username varchar(20) UNIQUE NOT NULL,
+	password varchar(25) NOT NULL,
 	photo_url varchar(1000),
 	user_state user_state NOT NULL,
 	FOREIGN KEY(user_id) REFERENCES Users(user_id),
