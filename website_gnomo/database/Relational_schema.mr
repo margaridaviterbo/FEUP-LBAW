@@ -1,0 +1,41 @@
+User(user_id PK, birthdate, email NN UK, first_name, last_name, nif UK, password NN, password, photo_url, username UK)
+
+Saved_Event(user_id->User PK FK, meta_event_id->Meta_Event PK FK)
+
+Host(user_id->User PK FK, meta_event_id->Meta_Event PK FK)
+
+Meta_Event(meta_event_id PK, creation_date NN, description NN, expiration_date, name NN, photo_url, recurrence NN)
+
+Event(event_id PK, beginning_date NN, description, ending_date, name, photo_url)
+
+Category(category_id PK, name NN UK)
+
+Local(local_id PK, city, coordinates NN, country, street)
+
+Type_of_ticket(type_of_ticket_id PK, price, type NN)
+
+Ticket(ticket_id PK, name NN, nif)
+
+Guest(user_id->User PK FK, event_id->Event PK FK, is_going)
+
+Notification_Intervinient(user_id->User PK FK, notification_id->Notification PK FK)
+
+Notification(notification_id PK, notification_date NN, read, type NN)	--> DELETE DATE constraint !
+
+Administrator(administrator_id PK, email NN UK, password NN, username NN)
+
+Event_Content(event_content_id PK, content NN)
+
+Comment(comment_id PK, date, photo)
+
+Rate(rate_id PK, avaliation)
+
+Poll(poll_id PK, date, type NN)
+
+Poll_unit(poll_unit_id, name NN)
+
+
+
+
+
+
