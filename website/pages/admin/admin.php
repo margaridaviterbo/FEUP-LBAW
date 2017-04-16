@@ -1,6 +1,9 @@
-<?php include('../../templates/header.php'); ?>
-<?php include('../../templates/menu-user.php'); ?>
-<?php include('../../templates/menu-admin.php'); ?>
+<?php
+include('../../templates/common/header.php');
+include('../../config/init.php');
+include('../../templates/menu-admin.php');
+?>
+
   <div class="admin">
     <div class="container-fluid text-left">
 
@@ -233,4 +236,4 @@
      </div>
   </div>
 
- <?php include('../../templates/footer.php'); ?>
+<?php include('../../templates/common/footer.php'); ?>

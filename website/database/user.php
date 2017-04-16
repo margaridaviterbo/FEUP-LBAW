@@ -24,9 +24,6 @@
         $r_email = getAuthenticatedUserByEmail($email);
         $r_username = getAuthenticatedUserByUsername($username);
 
-        var_dump($r_username);
-        var_dump($r_email);
-
         if ($r_email == NULL && $r_username == NULL)
             return false;
         else
@@ -75,7 +72,7 @@
     function isLoginCorrect($username, $password) {
         global $conn;
         $stmt = $conn->prepare("SELECT * 
-                                FROM users 
+                                FROM authenticated_user 
                                 WHERE username = ? AND password = ?");
         $stmt->execute(array($username, sha1($password)));
         return $stmt->fetch() == true;

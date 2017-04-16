@@ -1,6 +1,14 @@
-<?php include('../templates/header.php'); ?>
-<?php include('../templates/menu.php'); ?>
-<?php include('../templates/aside-menu.php'); ?>
+<?php
+include('../../templates/common/header.php');
+include('../../config/init.php');
+include('../../templates/common/menu.php');
+
+if(isset($_SESSION['authenticated'])) {
+    if ($_SESSION['authenticated'] == true) {
+        include('../../templates/common/aside-menu.php');
+    }
+}
+?>
 
 <div class="container-fluid text-left">
   <div class="row">
@@ -53,7 +61,7 @@
               <p class="titulo-card">Sessão de Demonstração para o Desenvolvimento em Comunicação</p>
               <div class="row">
                 <div class="col-sm-3">
-                  <img src="../resources/images/1.jpg" />
+                  <img src="../../resources/images/1.jpg" />
                 </div>
                 <div class="col-sm-9">
                   <p class="text-card"> Quinta, 9 de Março às 19:45</p>
@@ -80,7 +88,7 @@
               <p class="titulo-card">Sessão de Demonstração para o Desenvolvimento em Comunicação</p>
               <div class="row">
                 <div class="col-sm-3">
-                  <img src="../resources/images/1.jpg" />
+                  <img src="../../resources/images/1.jpg" />
                 </div>
                 <div class="col-sm-9">
                   <p class="text-card"> Quinta, 9 de Março às 19:45</p>
@@ -107,7 +115,7 @@
               <p class="titulo-card">Sessão de Demonstração para o Desenvolvimento em Comunicação</p>
               <div class="row">
                 <div class="col-sm-3">
-                  <img src="../resources/images/1.jpg" />
+                  <img src="../../resources/images/1.jpg" />
                 </div>
                 <div class="col-sm-9">
                   <p class="text-card"> Quinta, 9 de Março às 19:45</p>
@@ -134,7 +142,7 @@
               <p class="titulo-card">Sessão de Demonstração para o Desenvolvimento em Comunicação</p>
               <div class="row">
                 <div class="col-sm-3">
-                  <img src="../resources/images/1.jpg" />
+                  <img src="../../resources/images/1.jpg" />
                 </div>
                 <div class="col-sm-9">
                   <p class="text-card"> Quinta, 9 de Março às 19:45</p>
@@ -161,7 +169,7 @@
               <p class="titulo-card">Sessão de Demonstração para o Desenvolvimento em Comunicação</p>
               <div class="row">
                 <div class="col-sm-3">
-                  <img src="../resources/images/1.jpg" />
+                  <img src="../../resources/images/1.jpg" />
                 </div>
                 <div class="col-sm-9">
                   <p class="text-card"> Quinta, 9 de Março às 19:45</p>
@@ -209,7 +217,7 @@
               <p class="titulo-card">festa123</p>
               <div class="row">
                 <div class="col-sm-3">
-                  <img src="../resources/images/image.jpeg" />
+                  <img src="../../resources/images/image.jpeg" />
                 </div>
                 <div class="col-sm-9">
                   <p class="text-card"> Rui Vasco Oliveira Paiva</p>
@@ -272,7 +280,7 @@
                 <p class="titulo-card">Sessão de Demonstração para o Desenvolvimento em Comunicação</p>
                 <div class="row">
                   <div class="col-sm-3">
-                    <img src="../resources/images/1.jpg" />
+                    <img src="../../resources/images/1.jpg" />
                   </div>
                   <div class="col-sm-9">
                     <p class="text-card"> Quinta, 9 de Março às 19:45</p>
@@ -299,7 +307,7 @@
                 <p class="titulo-card">Sessão de Demonstração para o Desenvolvimento em Comunicação</p>
                 <div class="row">
                   <div class="col-sm-3">
-                    <img src="../resources/images/1.jpg" />
+                    <img src="../../resources/images/1.jpg" />
                   </div>
                   <div class="col-sm-9">
                     <p class="text-card"> Quinta, 9 de Março às 19:45</p>
@@ -326,7 +334,7 @@
                 <p class="titulo-card">Sessão de Demonstração para o Desenvolvimento em Comunicação</p>
                 <div class="row">
                   <div class="col-sm-3">
-                    <img src="../resources/images/1.jpg" />
+                    <img src="../../resources/images/1.jpg" />
                   </div>
                   <div class="col-sm-9">
                     <p class="text-card"> Quinta, 9 de Março às 19:45</p>
@@ -353,7 +361,7 @@
                 <p class="titulo-card">Sessão de Demonstração para o Desenvolvimento em Comunicação</p>
                 <div class="row">
                   <div class="col-sm-3">
-                    <img src="../resources/images/1.jpg" />
+                    <img src="../../resources/images/1.jpg" />
                   </div>
                   <div class="col-sm-9">
                     <p class="text-card"> Quinta, 9 de Março às 19:45</p>
@@ -386,7 +394,7 @@
                 <p class="titulo-card">Sessão de Demonstração para o Desenvolvimento em Comunicação</p>
                 <div class="row">
                   <div class="col-sm-3">
-                    <img src="../resources/images/1.jpg" />
+                    <img src="../../resources/images/1.jpg" />
                   </div>
                   <div class="col-sm-9">
                     <p class="text-card"> Quinta, 9 de Março às 19:45</p>
@@ -413,7 +421,7 @@
                 <p class="titulo-card">Sessão de Demonstração para o Desenvolvimento em Comunicação</p>
                 <div class="row">
                   <div class="col-sm-3">
-                    <img src="../resources/images/1.jpg" />
+                    <img src="../../resources/images/1.jpg" />
                   </div>
                   <div class="col-sm-9">
                     <p class="text-card"> Quinta, 9 de Março às 19:45</p>
@@ -442,4 +450,4 @@
   </div>
 </div>
 
-<?php include('../templates/footer.php'); ?>
+<?php include('../../templates/common/footer.php'); ?>
