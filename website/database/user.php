@@ -23,6 +23,8 @@
 
         $r_email = getAuthenticatedUserByEmail($email);
         $r_username = getAuthenticatedUserByUsername($username);
+        var_dump($r_email);
+        var_dump($r_username);
 
         if ($r_email == NULL && $r_username == NULL)
             return false;
@@ -67,6 +69,26 @@
         $id = intval($row['user_id']);
 
         return $id;
+    }
+
+    function getUserIdFromAuthenticatedUser($username){
+
+        global $conn;
+        $stmt = $conn->prepare('SELECT user_id FROM authenticated_user WHERE authenticated_user.username = ?');
+        $stmt->execute(array($username));
+
+        $row = $stmt->fetch();
+        $id = intval($row['user_id']);
+
+        return $id;
+    }
+
+    function getUsernameOfUser($email){
+
+        global $conn;
+        $stmt = $conn->prepare('SELECT username FROM authenticated_user INNER JOIN users ON authenticated_user.user_id = users.user_id WHERE users.email = ?');
+        $stmt->execute(array($email));
+        return $stmt->fetch();
     }
 
     function isLoginCorrect($username, $password) {

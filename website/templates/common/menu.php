@@ -59,7 +59,7 @@
                                                                 class="glyphicon glyphicon-pencil"></span><?= $_SESSION['username'] ?>
                                                     </a>
                                                 </li>
-                                                <li><a href="../../index.php"><span
+                                                <li><a href="../../actions/authentication/logout.php"><span
                                                                 class="glyphicon glyphicon-log-out"></span> Logout</a>
                                                 </li>
 
@@ -88,19 +88,3 @@
     </div>
 
 </header>
-
-<script>
-    $(document).ready(function () {
-        console.log($('a.current').attr('href'));
-        if ($('a.current').attr('href') != 'homepage.php') {
-            <?php
-
-            if (isset($_SESSION['authenticated'])) {
-                if ($_SESSION['authenticated'] == true) {
-                    include('../../templates/common/aside-menu.php');
-                }
-            }
-            ?>
-        }
-    });
-</script>

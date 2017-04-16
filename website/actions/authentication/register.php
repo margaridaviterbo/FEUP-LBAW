@@ -14,7 +14,7 @@
     if ($bool === true){
 
         echo '<script> alert("User already exists.") </script>';
-        header('refresh:1; url=../../pages/homepage.php');
+        header('refresh:1; url=../../pages/common/homepage.php');
     }
     else {
 

@@ -23,10 +23,10 @@
             <div class="modal-body">
                 <p>
 
-                <form action="../../actions/authentication/register.php" method="post">
+                <form action="../../actions/authentication/login.php" method="post">
                     <div class="form-group">
                         <label for="exampleInputEmail1">Email address / Username</label>
-                        <input type="email" class="form-control" id="email-login" placeholder="Insert email or username" required>
+                        <input type="text" class="form-control" id="email-login" placeholder="Insert email or username" required>
                     </div>
                     <div class="form-group">
                         <label for="exampleInputPassword1">Password</label>
