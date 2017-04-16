@@ -16,7 +16,7 @@
                     </button>
 
                     <div class="hidden-sm hidden-md hidden-lg" id="title">
-                        <a href="./index.php"><h2>Eventify</h2></a>
+                        <a href="../../index.php"><h2>Eventify</h2></a>
                     </div>
 
                 </div>
@@ -47,9 +47,9 @@
 
                                 <div class="col-sm-5 pull-right">
                                     <ul class="nav navbar-nav navbar-right" id="login">
-                                        
-                                        <li><a href="../pages/my-page-my-information.php"><span class="glyphicon glyphicon-pencil"></span> Rui Paiva</a></li>
-                                        <li><a href="../index.php"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
+
+                                        <li><a href="../../pages/user/my-page-my-information.php"><span class="glyphicon glyphicon-pencil"></span> Rui Paiva</a></li>
+                                        <li><a href="../../index.php"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
                                     </ul>
                                 </div>
                             </div>
