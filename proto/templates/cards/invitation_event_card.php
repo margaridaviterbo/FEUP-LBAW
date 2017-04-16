@@ -20,7 +20,6 @@
                         <i class="fa fa-star fa-2x" aria-hidden="true"></i>
                     </div>
                 </div>
-
             </div>
         </div>
     </div>
