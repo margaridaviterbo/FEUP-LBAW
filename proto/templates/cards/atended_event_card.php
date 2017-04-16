@@ -2,7 +2,7 @@
     <p class="titulo-card">Sessão de Demonstração para o Desenvolvimento em Comunicação</p>
     <div class="row">
         <div class="col-sm-3">
-            <img src="../../../resources/images/1.jpg" />
+            <img src="../../resources/images/1.jpg" />
         </div>
         <div class="col-sm-9">
             <p class="text-card"> Quinta, 9 de Março às 19:45</p>
