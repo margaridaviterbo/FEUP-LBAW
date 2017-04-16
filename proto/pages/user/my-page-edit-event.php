@@ -1,6 +1,7 @@
-<?php include('../templates/header.php'); ?>
-<?php include('../templates/menu-user.php'); ?>
-<?php include('../templates/aside-menu.php'); ?>
+<?phpinclude_once('../../config/init.php'); ?>
+<?php include('../../templates/header.php'); ?>
+<?php include('../../templates/menu-user.php'); ?>
+<?php include('../../templates/aside-menu.php'); ?>
 
     <div class="container-fluid text-left">
         <div class="page-title">

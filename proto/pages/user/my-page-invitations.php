@@ -1,14 +1,15 @@
-﻿<?php include('../templates/header.php'); ?>
-<?php include('../templates/menu-user.php'); ?>
-<?php include('../templates/aside-menu.php'); ?>
+﻿<?phpinclude_once('../../config/init.php'); ?>
+<?php include('../../templates/header.php'); ?>
+<?php include('../../templates/menu-user.php'); ?>
+<?php include('../../templates/aside-menu.php'); ?>
 
     <div class="container-fluid text-left">
         <div class="row">
             <content class="col-lg-offset-2 col-sm-8 col-sm-offset-1 col-xs-12 page">
                 <div class="page-header">
-                    <h1>Events that I attended</h1>
+                    <h1>Events that I am invited for</h1>
                 </div>
-                <div class="container-fluid event-card-medium">
+                <div class="event-card-medium">
                     <p class="titulo-card">Sessão de Demonstração para o Desenvolvimento em Comunicação</p>
                     <div class="row">
                         <div class="col-sm-3">
@@ -20,8 +21,9 @@
                             <p class="text-card">Gratuito</p>
                             <div class="container-fluid">
                                 <div class="row">
-                                    <a href="./show-event-page.php" class="btn btn-default col-sm-5">See More...</a>
-                                    <div class="classifica-card col-sm-7">
+                                     <a href="./show-event-page.php" class="btn btn-default col-sm-5">See More...</a>
+                                    <button type="button" class="btn btn-default col-sm-3">Going</button>
+                                    <div class="classifica-card col-sm-6">
                                         <i class="fa fa-star fa-2x" aria-hidden="true"></i>
                                         <i class="fa fa-star fa-2x" aria-hidden="true"></i>
                                         <i class="fa fa-star fa-2x" aria-hidden="true"></i>
@@ -34,7 +36,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="container-fluid event-card-medium">
+                <div class="event-card-medium">
                     <p class="titulo-card">Sessão de Demonstração para o Desenvolvimento em Comunicação</p>
                     <div class="row">
                         <div class="col-sm-3">
@@ -46,8 +48,9 @@
                             <p class="text-card">Gratuito</p>
                             <div class="container-fluid">
                                 <div class="row">
-                                    <button type="button" class="btn btn-default col-sm-5">See More...</button>
-                                    <div class="classifica-card col-sm-7">
+                                     <a href="./show-event-page.php" class="btn btn-default col-sm-5">See More...</a>
+                                    <button type="button" class="btn btn-default col-sm-3">Going</button>
+                                    <div class="classifica-card col-sm-6">
                                         <i class="fa fa-star fa-2x" aria-hidden="true"></i>
                                         <i class="fa fa-star fa-2x" aria-hidden="true"></i>
                                         <i class="fa fa-star fa-2x" aria-hidden="true"></i>
@@ -60,7 +63,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="container-fluid event-card-medium">
+                <div class="event-card-medium">
                     <p class="titulo-card">Sessão de Demonstração para o Desenvolvimento em Comunicação</p>
                     <div class="row">
                         <div class="col-sm-3">
@@ -72,8 +75,9 @@
                             <p class="text-card">Gratuito</p>
                             <div class="container-fluid">
                                 <div class="row">
-                                    <button type="button" class="btn btn-default col-sm-5">See More...</button>
-                                    <div class="classifica-card col-sm-7">
+                                     <a href="./show-event-page.php" class="btn btn-default col-sm-5">See More...</a>
+                                    <button type="button" class="btn btn-default col-sm-3">Going</button>
+                                    <div class="classifica-card col-sm-6">
                                         <i class="fa fa-star fa-2x" aria-hidden="true"></i>
                                         <i class="fa fa-star fa-2x" aria-hidden="true"></i>
                                         <i class="fa fa-star fa-2x" aria-hidden="true"></i>
@@ -86,7 +90,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="container-fluid event-card-medium">
+                <div class="event-card-medium">
                     <p class="titulo-card">Sessão de Demonstração para o Desenvolvimento em Comunicação</p>
                     <div class="row">
                         <div class="col-sm-3">
@@ -98,8 +102,9 @@
                             <p class="text-card">Gratuito</p>
                             <div class="container-fluid">
                                 <div class="row">
-                                    <button type="button" class="btn btn-default col-sm-5">See More...</button>
-                                    <div class="classifica-card col-sm-7">
+                                     <a href="./show-event-page.php" class="btn btn-default col-sm-5">See More...</a>
+                                    <button type="button" class="btn btn-default col-sm-3">Going</button>
+                                    <div class="classifica-card col-sm-6">
                                         <i class="fa fa-star fa-2x" aria-hidden="true"></i>
                                         <i class="fa fa-star fa-2x" aria-hidden="true"></i>
                                         <i class="fa fa-star fa-2x" aria-hidden="true"></i>
@@ -112,7 +117,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="container-fluid event-card-medium">
+                <div class="event-card-medium">
                     <p class="titulo-card">Sessão de Demonstração para o Desenvolvimento em Comunicação</p>
                     <div class="row">
                         <div class="col-sm-3">
@@ -124,8 +129,9 @@
                             <p class="text-card">Gratuito</p>
                             <div class="container-fluid">
                                 <div class="row">
-                                    <button type="button" class="btn btn-default col-sm-5">See More...</button>
-                                    <div class="classifica-card col-sm-7">
+                                     <a href="./show-event-page.php" class="btn btn-default col-sm-5">See More...</a>
+                                    <button type="button" class="btn btn-default col-sm-3">Going</button>
+                                    <div class="classifica-card col-sm-6">
                                         <i class="fa fa-star fa-2x" aria-hidden="true"></i>
                                         <i class="fa fa-star fa-2x" aria-hidden="true"></i>
                                         <i class="fa fa-star fa-2x" aria-hidden="true"></i>
@@ -138,7 +144,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="container-fluid event-card-medium">
+                <div class="event-card-medium">
                     <p class="titulo-card">Sessão de Demonstração para o Desenvolvimento em Comunicação</p>
                     <div class="row">
                         <div class="col-sm-3">
@@ -150,8 +156,9 @@
                             <p class="text-card">Gratuito</p>
                             <div class="container-fluid">
                                 <div class="row">
-                                    <button type="button" class="btn btn-default col-sm-5">See More...</button>
-                                    <div class="classifica-card col-sm-7">
+                                     <a href="./show-event-page.php" class="btn btn-default col-sm-5">See More...</a>
+                                    <button type="button" class="btn btn-default col-sm-3">Going</button>
+                                    <div class="classifica-card col-sm-6">
                                         <i class="fa fa-star-o fa-2x" aria-hidden="true"></i>
                                         <i class="fa fa-star-o fa-2x" aria-hidden="true"></i>
                                         <i class="fa fa-star-o fa-2x" aria-hidden="true"></i>
@@ -164,7 +171,11 @@
                         </div>
                     </div>
                 </div>
+
+
+            </content>
         </div>
     </div>
+
 
 <?php include('../templates/footer.php'); ?>

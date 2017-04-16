@@ -1,5 +1,3 @@
 <?php
-  //header('Location: pages/main.php');
-  include_once('./config/init.php');
+  header('Location: pages/user/main.php');
 ?>
-<h1>vai</h1>
