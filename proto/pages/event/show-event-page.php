@@ -1,4 +1,5 @@
 <?php
+include_once('../config/init.php'); 
 include('../templates/header.php');
 include('../templates/menu-user.php');
 include('../templates/aside-menu.php');

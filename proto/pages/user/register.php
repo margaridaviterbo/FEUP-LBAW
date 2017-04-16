@@ -1,5 +1,6 @@
-<?php include('../templates/header.php'); ?>
-<?php include('../templates/menu-visitor.php'); ?>
+<?phpinclude_once('../../config/init.php'); ?>
+<?php include('../../templates/header.php'); ?>
+<?php include('../../templates/menu-visitor.php'); ?>
 
 <div class="container page">
 
