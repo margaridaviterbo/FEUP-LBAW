@@ -32,7 +32,7 @@
                             <div class="row">
                                 <div class="collapse navbar-collapse" id="menu">
                                     <div class="col-sm-5 search">
-                                      <form class="navbar-form navbar-center" role="search" action="../pages/search.php#eventosPesq">
+                                      <form class="navbar-form navbar-center" role="search" action="../pages/user/search.php#eventosPesq">
                                         <div class="form-group input-group">
                                           <input type="text" class="form-control" placeholder="Search Event...">
                                             <span class="input-group-btn">
