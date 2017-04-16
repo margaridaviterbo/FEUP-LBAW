@@ -1,4 +1,4 @@
-<?phpinclude_once('../../config/init.php'); ?>
+<?php include_once('../../config/init.php'); ?>
 <?php include('../../templates/header.php'); ?>
 <?php include('../../templates/menu-user.php'); ?>
 <?php include('../../templates/aside-menu.php'); ?>
@@ -443,4 +443,4 @@
   </div>
 </div>
 
-<?php include('../templates/footer.php'); ?>
+<?php include('../../templates/footer.php'); ?>

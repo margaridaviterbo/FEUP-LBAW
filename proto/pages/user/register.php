@@ -1,4 +1,4 @@
-<?phpinclude_once('../../config/init.php'); ?>
+<?php include_once('../../config/init.php'); ?>
 <?php include('../../templates/header.php'); ?>
 <?php include('../../templates/menu-visitor.php'); ?>
 
@@ -41,4 +41,4 @@
     <label>Already have an account?<a href="#" data-toggle="modal" data-target="#modalLogin"> Log in</a> here.</label>
 </div>
 
-<?php include('../templates/footer.php'); ?>
+<?php include('../../templates/footer.php'); ?>
