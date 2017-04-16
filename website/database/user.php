@@ -6,6 +6,12 @@
         $stmt->execute(array($firstname, $lastname, $email));
     }
 
+    function updateUser($firstname, $lastname, $email){
+        global $conn;
+        $stmt = $conn->prepare('INSERT INTO users(first_name, last_name) VALUES (?, ?)'); //TODO: Fazer update
+        $stmt->execute(array($firstname, $lastname, $email));
+    }
+
     function createAuthenticatedUser($user_id, $username, $password){
         global $conn;
         $state = 'active';
@@ -59,7 +65,19 @@
         global $conn;
         $stmt = $conn->prepare('SELECT user_id FROM users WHERE users.email = ?');
         $stmt->execute(array($email));
-        return intval($stmt->fetch());
+
+        $row = $stmt->fetch();
+        $id = intval($row['user_id']);
+
+        return $id;
     }
 
+    function isLoginCorrect($username, $password) {
+        global $conn;
+        $stmt = $conn->prepare("SELECT * 
+                                FROM users 
+                                WHERE username = ? AND password = ?");
+        $stmt->execute(array($username, sha1($password)));
+        return $stmt->fetch() == true;
+    }
 ?>

@@ -1,6 +1,6 @@
-﻿<?php include('../templates/header.php'); ?>
-<?php include('../templates/menu-user.php'); ?>
-<?php include('../templates/aside-menu.php'); ?>
+﻿<?php include('../../templates/header.php'); ?>
+<?php include('../../templates/menu.php'); ?>
+<?php include('../../templates/aside-menu.php'); ?>
 
 
 <div class="container-fluid text-left">
@@ -36,7 +36,7 @@
           </a>
           <br>
             <br>
-              <a href="../pages/show-event-page.php">
+              <a href="../event/show-event-page.php">
                 <button class="btn btn-default btn-primary form-control">Go back to evet</button>
               </a>
             </div>
@@ -45,4 +45,4 @@
 </div>
 </div>
 
-<?php include('../templates/footer.php'); ?>
+<?php include('../../templates/footer.php'); ?>

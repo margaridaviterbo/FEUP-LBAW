@@ -1,7 +1,7 @@
 <?php
-include('../templates/header.php');
-include('../templates/menu-user.php');
-include('../templates/aside-menu.php');
+include('../../templates/header.php');
+include('../../templates/menu.php');
+include('../../templates/aside-menu.php');
 ?>
 
 
@@ -10,7 +10,7 @@ include('../templates/aside-menu.php');
     <div class="row event-page-header">
 
         <div class="col-lg-6 col-lg-offset-2 col-md-6 col-md-offset-1 hidden-sm hidden-xs event-page-image-section white-page">
-            <img src="../resources/images/1.jpg" alt="Event" class="event-page-photo img-responsive "/>
+            <img src="../../resources/images/1.jpg" alt="Event" class="event-page-photo img-responsive "/>
         </div>
 
         <div class="col-lg-2 col-md-2 hidden-sm hidden-xs event-page-info-square-section">
@@ -45,7 +45,7 @@ include('../templates/aside-menu.php');
     <div class="row event-page-header-small">
 
         <div class="col-sm-8 col-sm-offset-1 col-xs-12 hidden-lg hidden-md event-page-image-section white-page">
-            <img src="../resources/images/1.jpg" alt="Event" class="event-page-photo img-responsive "/>
+            <img src="../../resources/images/1.jpg" alt="Event" class="event-page-photo img-responsive "/>
         </div>
     </div>
 
@@ -84,7 +84,7 @@ include('../templates/aside-menu.php');
             </div>
 
             <div class="col-sm-3">
-                <a href="../pages/checkout-payment.php"><button class="btn btn-default btn-primary form-control">Buy Tickets</button></a>
+                <a href="../ticket/checkout-payment.php"><button class="btn btn-default btn-primary form-control">Buy Tickets</button></a>
             </div>
             </div>
 
@@ -105,7 +105,7 @@ include('../templates/aside-menu.php');
             </div>
 
             <div class="map-section text-center">
-                <img src="../resources/images/map.png" class="map-image"/>
+                <img src="../../resources/images/map.png" class="map-image"/>
                 <h4> 131 Rua de Sá da Bandeira, 4000-427 Porto </h4>
             </div>
 
@@ -116,7 +116,7 @@ include('../templates/aside-menu.php');
             <div class="row">
                     <div class="col-sm-1">
                         <div class="thumbnail">
-                            <img class="img-responsive user-photo" src="../resources/images/user.png">
+                            <img class="img-responsive user-photo" src="../../resources/images/user.png">
                         </div>
                     </div>
 
@@ -135,7 +135,7 @@ include('../templates/aside-menu.php');
             <div class="row">
                 <div class="col-sm-1">
                     <div class="thumbnail">
-                        <img class="img-responsive user-photo" src="../resources/images/user.png">
+                        <img class="img-responsive user-photo" src="../../resources/images/user.png">
                     </div>
                 </div>
 
@@ -153,7 +153,7 @@ include('../templates/aside-menu.php');
             <div class="row">
                 <div class="col-sm-1">
                     <div class="thumbnail">
-                        <img class="img-responsive user-photo" src="../resources/images/user.png">
+                        <img class="img-responsive user-photo" src="../../resources/images/user.png">
                     </div>
                 </div>
 
@@ -166,15 +166,13 @@ include('../templates/aside-menu.php');
                             <div class="comment">
                                 OMG, look at us!!
                             </div>
-                            <img src="../resources/images/3.jpg">
+                            <img src="../../resources/images/3.jpg">
                         </div>
                 </div>
             </div>
-
-
         </div>
     </div>
 
 </div>
 
-<?php include('../templates/footer.php'); ?>
+<?php include('../../templates/footer.php'); ?>

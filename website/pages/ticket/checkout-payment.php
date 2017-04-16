@@ -1,6 +1,6 @@
-﻿<?php include('../templates/header.php'); ?>
-<?php include('../templates/menu-user.php'); ?>
-<?php include('../templates/aside-menu.php'); ?>
+﻿<?php include('../../templates/header.php'); ?>
+<?php include('../../templates/menu.php'); ?>
+<?php include('../../templates/aside-menu.php'); ?>
 
 
     <div class="container-fluid text-left">
@@ -44,7 +44,7 @@
                             <p class="tag-ckeckout-card">Custo:</p>
                             <p id="custo">10€</p>
                           </div>
-                          <a href="../pages/comfirmation-payment.php">
+                          <a href="confirmation-payment.php">
                             <button class="btn btn-default btn-primary form-control">Pay with paypal</button>
                           </a>
                     </div>
@@ -53,4 +53,4 @@
     </div>
       </div>
 
-<?php include('../templates/footer.php'); ?>
+<?php include('../../templates/footer.php'); ?>

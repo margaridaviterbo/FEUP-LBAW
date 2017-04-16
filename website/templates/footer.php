@@ -2,10 +2,10 @@
             <h5>LBAW 2016/17</h5>
         </footer>
 
-        <script src="../scripts/classie.js"></script>
-        <script src="../scripts/cbpAnimatedHeader.js"></script>
-        <script src="../scripts/jquery-1.9.1.min.js"></script>
-        <script src="../lib/bootstrap/js/bootstrap.min.js"></script>
+        <script src="../../scripts/classie.js"></script>
+        <script src="../../scripts/cbpAnimatedHeader.js"></script>
+        <script src="../../scripts/jquery-1.9.1.min.js"></script>
+        <script src="../../lib/bootstrap/js/bootstrap.min.js"></script>
 
         </div>
     </body>
@@ -69,7 +69,7 @@
                     <div class="modal-body">
                         <p>
 
-                        <form id="teste" action="../actions/authentication/register.php" method="post" enctype="multipart/>form-data">
+                        <form id="teste" action="../../actions/authentication/register.php" method="post" enctype="multipart/>form-data">
 
                             <label for="first_name">First Name</label>
                             <input name="first_name" id="first_name" type="text" class="form-control" placeholder="Insert your first name" onkeyup="validateFirstName();" required>
@@ -146,7 +146,6 @@
                         </p>
                     </div>
 
-
                     <div class="modal-footer">
                         <button type="submit" class="btn btn-success">Edit</button>
                         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -156,6 +155,6 @@
             </div>
         </div>
 
-        <script src="../scripts/authentication/validateRegister.js"> </script>
+        <script src="../../scripts/authentication/validateRegister.js"> </script>
 
 </html>

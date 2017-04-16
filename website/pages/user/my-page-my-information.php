@@ -1,7 +1,8 @@
-﻿<?php include('../templates/header.php'); ?>
-<?php include('../templates/menu-user.php'); ?>
-<?php include('../templates/aside-menu.php'); ?>
-
+﻿<?php
+include('../../templates/header.php');
+include('../../templates/menu.php');
+include('../../templates/aside-menu.php');
+?>
 
 <div class="container-fluid text-left">
   <div class="row">
@@ -51,7 +52,7 @@
         <div class="col-sm-3 inoformation-personal-card">
         </div>
         <div class="col-sm-4 photo-personal-card">
-          <img src="../resources/images/image.jpeg" class="img-responsive img-thumbnail">
+          <img src="../../resources/images/image.jpeg" class="img-responsive img-thumbnail">
             <div>
               <label for="files" class="btn btn-default">Upload photo</label>
               <input id="files" style="visibility:hidden;" type="file">
@@ -64,4 +65,4 @@
     </content>
   </div>
 
-  <?php include('../templates/footer.php'); ?>
+<?php include('../../templates/footer.php'); ?>

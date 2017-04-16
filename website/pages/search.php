@@ -1,5 +1,5 @@
 <?php include('../templates/header.php'); ?>
-<?php include('../templates/menu-user.php'); ?>
+<?php include('../templates/menu.php'); ?>
 <?php include('../templates/aside-menu.php'); ?>
 
 <div class="container-fluid text-left">

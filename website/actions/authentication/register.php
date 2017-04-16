@@ -9,22 +9,22 @@
     $email = $_POST["email"];
     $password = $_POST["password"];
 
-    var_dump($email);
-
     $bool = authenticatedUserExists($username, $email);
 
-    if ($bool){
+    if ($bool === true){
+
         echo '<script> alert("User already exists.") </script>';
-        header('refresh:2; url=../../pages/register.php');
+        header('refresh:1; url=../../pages/homepage.php');
     }
-    else{
+    else {
 
         $user = getUserByEmail($email);
 
         //Se o utilizador ainda não existir na base de dados
         if ($user == false) {
-
             createUser($firstname, $lastname, $email);
+        } else {
+            //UpdateUser
         }
 
         $user_id = getUserIdFromUser($email);
@@ -32,7 +32,16 @@
         createAuthenticatedUser($user_id, $username, $password);
 
         echo '<script> alert("New user added. Check your email.") </script>';
-        header('refresh:2; url=../../pages/user-homepage.php');
+        header('refresh:1; url=../../pages/user/user-homepage.php');
+
+        //Login - pode existir algum erro na base de dados
+        if (isLoginCorrect($username, $password)) {
+            $_SESSION['authenticated'] = true;
+            $_SESSION['username'] = $username;
+            $_SESSION['user_id'] = $user_id;
+
+            header('Location: ../../pages/user/user-homepage.php');
+        }
     }
 
 ?>

@@ -1,6 +1,6 @@
 <?php
 include('../templates/header.php');
-include('../templates/menu-visitor.php');
+include('../templates/menu.php');
 ?>
 
 <div class="homepage">
@@ -28,7 +28,7 @@ include('../templates/menu-visitor.php');
                 <p class="text-card">Gratuito</p>
                 <div class="container-fluid">
                   <div class="row">
-                    <button onclick="window.location.href='show-event-page.php'" type="button" class="btn btn-default col-sm-5">See More...</button>
+                    <button onclick="window.location.href='event/show-event-page.php'" type="button" class="btn btn-default col-sm-5">See More...</button>
                     <div class="classifica-card col-sm-7">
                       <i class="fa fa-star fa-2x" aria-hidden="true"></i>
                       <i class="fa fa-star fa-2x" aria-hidden="true"></i>
@@ -55,7 +55,7 @@ include('../templates/menu-visitor.php');
                 <p class="text-card">Gratuito</p>
                 <div class="container-fluid">
                   <div class="row">
-                     <button onclick="window.location.href='show-event-page.php'" type="button" class="btn btn-default col-sm-5">See More...</button>
+                     <button onclick="window.location.href='event/show-event-page.php'" type="button" class="btn btn-default col-sm-5">See More...</button>
                     <div class="classifica-card col-sm-7">
                       <i class="fa fa-star fa-2x" aria-hidden="true"></i>
                       <i class="fa fa-star fa-2x" aria-hidden="true"></i>
@@ -82,7 +82,7 @@ include('../templates/menu-visitor.php');
                 <p class="text-card">Gratuito</p>
                 <div class="container-fluid">
                   <div class="row">
-                     <button onclick="window.location.href='show-event-page.php'" type="button" class="btn btn-default col-sm-5">See More...</button>
+                     <button onclick="window.location.href='event/show-event-page.php'" type="button" class="btn btn-default col-sm-5">See More...</button>
                     <div class="classifica-card col-sm-7">
                       <i class="fa fa-star fa-2x" aria-hidden="true"></i>
                       <i class="fa fa-star fa-2x" aria-hidden="true"></i>
@@ -110,7 +110,7 @@ include('../templates/menu-visitor.php');
                 <p class="text-card">Gratuito</p>
                 <div class="container-fluid">
                   <div class="row">
-                     <button onclick="window.location.href='show-event-page.php'" type="button" class="btn btn-default col-sm-5">See More...</button>
+                     <button onclick="window.location.href='event/show-event-page.php'" type="button" class="btn btn-default col-sm-5">See More...</button>
                     <div class="classifica-card col-sm-7">
                       <i class="fa fa-star fa-2x" aria-hidden="true"></i>
                       <i class="fa fa-star fa-2x" aria-hidden="true"></i>
@@ -137,7 +137,7 @@ include('../templates/menu-visitor.php');
                 <p class="text-card">Gratuito</p>
                 <div class="container-fluid">
                   <div class="row">
-                     <button onclick="window.location.href='show-event-page.php'" type="button" class="btn btn-default col-sm-5">See More...</button>
+                     <button onclick="window.location.href='event/show-event-page.php'" type="button" class="btn btn-default col-sm-5">See More...</button>
                     <div class="classifica-card col-sm-7">
                       <i class="fa fa-star fa-2x" aria-hidden="true"></i>
                       <i class="fa fa-star fa-2x" aria-hidden="true"></i>
@@ -164,7 +164,7 @@ include('../templates/menu-visitor.php');
                 <p class="text-card">Gratuito</p>
                 <div class="container-fluid">
                   <div class="row">
-                     <button onclick="window.location.href='show-event-page.php'" type="button" class="btn btn-default col-sm-5">See More...</button>
+                     <button onclick="window.location.href='event/show-event-page.php'" type="button" class="btn btn-default col-sm-5">See More...</button>
                     <div class="classifica-card col-sm-7">
                       <i class="fa fa-star fa-2x" aria-hidden="true"></i>
                       <i class="fa fa-star fa-2x" aria-hidden="true"></i>
@@ -192,7 +192,7 @@ include('../templates/menu-visitor.php');
                 <p class="text-card">Gratuito</p>
                 <div class="container-fluid">
                   <div class="row">
-                     <button onclick="window.location.href='show-event-page.php'" type="button" class="btn btn-default col-sm-5">See More...</button>
+                     <button onclick="window.location.href='event/show-event-page.php'" type="button" class="btn btn-default col-sm-5">See More...</button>
                     <div class="classifica-card col-sm-7">
                       <i class="fa fa-star-o fa-2x" aria-hidden="true"></i>
                       <i class="fa fa-star-o fa-2x" aria-hidden="true"></i>
@@ -219,7 +219,7 @@ include('../templates/menu-visitor.php');
                 <p class="text-card">Gratuito</p>
                 <div class="container-fluid">
                   <div class="row">
-                     <button onclick="window.location.href='show-event-page.php'" type="button" class="btn btn-default col-sm-5">See More...</button>
+                     <button onclick="window.location.href='event/show-event-page.php'" type="button" class="btn btn-default col-sm-5">See More...</button>
                     <div class="classifica-card col-sm-7">
                       <i class="fa fa-star fa-2x" aria-hidden="true"></i>
                       <i class="fa fa-star fa-2x" aria-hidden="true"></i>
@@ -246,7 +246,7 @@ include('../templates/menu-visitor.php');
                 <p class="text-card">Gratuito</p>
                 <div class="container-fluid">
                   <div class="row">
-                     <button onclick="window.location.href='show-event-page.php'" type="button" class="btn btn-default col-sm-5">See More...</button>
+                     <button onclick="window.location.href='event/show-event-page.php'" type="button" class="btn btn-default col-sm-5">See More...</button>
                     <div class="classifica-card col-sm-7">
                       <i class="fa fa-star fa-2x" aria-hidden="true"></i>
                       <i class="fa fa-star fa-2x" aria-hidden="true"></i>
