@@ -32,11 +32,6 @@ body{
    margin-right:0;
 }
 
-.text-left {
-	margin-left:2%;
-    margin-right:1%;
-}
-
 /**
  *Header
  **/
@@ -121,6 +116,11 @@ header h2{
 	  width: 22%;
 	  right:4%;
     }
+	
+	.text-left {
+		margin-left:2%;
+		margin-right:1%;
+	}
 }
 
 .list-group-item.active, .list-group-item.active:focus, .list-group-item.active:hover {
