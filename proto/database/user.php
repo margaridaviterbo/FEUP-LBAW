@@ -6,15 +6,15 @@
     return $stmt->fetchAll();
   }
   
-   function getSearchUsers($page, $name) {
+   function getSearchUsers($page, $name, $asc) {
     global $conn;
 	$param = "%$name%";
     $stmt = $conn->prepare('SELECT public.Users.first_name, public.Users.last_name, public.Users.email, public.Authenticated_User.photo_url
 							FROM public.Authenticated_User INNER JOIN public.Users ON (public.Authenticated_User.user_id = public.Users.user_id)
 							WHERE (last_name LIKE ? OR first_name LIKE ?) 
-							ORDER BY first_name ASC
+							ORDER BY first_name ?
 							LIMIT 10 OFFSET ? * 10;');
-    $stmt->execute(array($param, $param, $page));
+    $stmt->execute(array($param, $param, $asc, $page));
     return $stmt->fetchAll();
   }
 ?>
