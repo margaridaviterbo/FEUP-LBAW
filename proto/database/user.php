@@ -13,7 +13,7 @@
 							FROM public.Authenticated_User INNER JOIN public.Users ON (public.Authenticated_User.user_id = public.Users.user_id)
 							WHERE public.Users.first_name LIKE ? 
 							LIMIT 10 OFFSET ? * 10;');
-    $stmt->execute(array($param, $param, $page));
+    $stmt->execute(array($param, $page));
     return $stmt->fetchAll();
   }
 ?>
