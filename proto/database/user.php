@@ -12,7 +12,7 @@
     $stmt = $conn->prepare('SELECT public.Users.first_name, public.Users.last_name, public.Users.email, public.Authenticated_User.photo_url
 							FROM public.Authenticated_User, public.Users
 							WHERE (public.Users.first_name LIKE ? OR public.Users.last_name LIKE ? );');
-    $stmt->execute(array($param, $param, $page));
+    $stmt->execute(array($param, $param));
     return $stmt->fetchAll();
   }
 ?>
