@@ -9,6 +9,7 @@
             <br>
     <?php $users = getAllUsers(); 
 	print_r($users); ?>
+	
     </div>
     <div class="row">
       <content class="col-sm-12">
