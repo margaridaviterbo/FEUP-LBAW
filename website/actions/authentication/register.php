@@ -14,7 +14,7 @@
     if ($bool === true){
 
         echo '<script> alert("User already exists.") </script>';
-        header('refresh:1; url=../../pages/homepage.php');
+        header('refresh:1; url=../../pages/common/homepage.php');
     }
     else {
 
@@ -31,16 +31,16 @@
 
         createAuthenticatedUser($user_id, $username, $password);
 
-        echo '<script> alert("New user added. Check your email.") </script>';
-        header('refresh:1; url=../../pages/user/user-homepage.php');
-
         //Login - pode existir algum erro na base de dados
         if (isLoginCorrect($username, $password)) {
+
             $_SESSION['authenticated'] = true;
             $_SESSION['username'] = $username;
             $_SESSION['user_id'] = $user_id;
 
-            header('Location: ../../pages/user/user-homepage.php');
+            //echo '<script> alert("New user added. Check your email.") </script>';
+            echo '<script> alert("New user added.") </script>';
+            header('refresh:1; url=../../pages/user/user-homepage.php');
         }
     }
 

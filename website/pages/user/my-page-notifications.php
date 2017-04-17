@@ -1,7 +1,13 @@
 ﻿<?php
-include('../../templates/header.php');
-include('../../templates/menu.php');
-include('../../templates/aside-menu.php');
+include('../../templates/common/header.php');
+include('../../config/init.php');
+include('../../templates/common/menu.php');
+
+if(isset($_SESSION['authenticated'])) {
+    if ($_SESSION['authenticated'] == true) {
+        include('../../templates/common/aside-menu.php');
+    }
+}
 ?>
 
     <div class="container-fluid text-left">
@@ -65,4 +71,4 @@ include('../../templates/aside-menu.php');
         </div>
     </div>
 
-<?php include('../../templates/footer.php'); ?>
+<?php include('../../templates/common/footer.php'); ?>
