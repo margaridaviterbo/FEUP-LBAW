@@ -27,7 +27,7 @@ body{
 }
 
 .wrapper, .row {
-   height: 100%;
+   height: 0%;
    margin-left:0;
    margin-right:0;
 }
