@@ -2,11 +2,9 @@
 {include file='common/menu-user.tpl'}
 {include file='common/aside-menu.tpl'}
 
-<div class="container-fluid text-left">
-  <div class="row">
-    <content class="col-lg-offset-2 col-sm-8 col-sm-offset-1 col-xs-12 page">
+    <div class="homepage col-sm-9 col-sm-pull-3">
         <div class="page-header">
-            <h1>Search Results for "Festa" </h1>
+            <h1>Search Results for "{$serched}" </h1>
         </div>
 
         <ul id="tabs">
