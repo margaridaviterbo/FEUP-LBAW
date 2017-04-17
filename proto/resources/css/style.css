@@ -139,12 +139,6 @@ a.list-group-item:focus, a.list-group-item:hover, button.list-group-item:focus, 
     background-color: rgb(215,243,235);
 }
 
-.list-group {
-	position: absolute;
-	right: 0;
-	margin: 0;
-	padding: 0;
-}
 
 /**
  * Footer
