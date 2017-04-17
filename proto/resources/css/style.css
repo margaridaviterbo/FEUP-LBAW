@@ -106,7 +106,6 @@ header h2{
 
 @media (min-width: 768px) {
     .aside-user-buttons {
-        eigth: 250px;
         width: 25%;
         position: fixed;
         height: 100%;
@@ -142,9 +141,7 @@ a.list-group-item:focus, a.list-group-item:hover, button.list-group-item:focus, 
 
 .list-group {
 	position: absolute;
-	top: 0;
-	width: 250px;
-	list-style: none;
+	right: 0;
 	margin: 0;
 	padding: 0;
 }
