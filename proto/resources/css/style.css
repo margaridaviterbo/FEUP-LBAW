@@ -180,7 +180,7 @@ a.list-group-item:focus, a.list-group-item:hover, button.list-group-item:focus, 
 
 .user-card-medium{
     background-color: rgba(000, 000, 000, 0.7);
-    color: black;
+    color: white;
     transition: box-shadow 0.3s ease-in-out;
     padding: 10px;
     margin-bottom: 50px;
