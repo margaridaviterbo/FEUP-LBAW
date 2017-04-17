@@ -1,4 +1,5 @@
 <?php include_once('../../config/init.php'); ?>
+<?php include_once($BASE_DIR . 'database/user.php'); ?>
 <?php include($BASE_DIR . 'templates/header.php'); ?>
 <?php include($BASE_DIR . 'templates/menu-user.php'); ?>
 <?php include($BASE_DIR . 'templates/aside-menu.php'); ?>
@@ -205,7 +206,10 @@
                   </ul>
                 </div>
             </div>
-
+			
+			<?php 
+			getAllUsers(1, 'c');
+			?>
             <div class="container-fluid user-card-medium">
               <p class="titulo-card">festa123</p>
               <div class="row">
