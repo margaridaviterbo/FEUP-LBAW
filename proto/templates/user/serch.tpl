@@ -196,16 +196,18 @@
                   </button>
                   <ul class="dropdown-menu">
                     <li>
-                      <a href="#">Name descending</a>
+                      <a id="user-name-descending">Name descending</a>
                     </li>
                     <li>
-                      <a href="#">Name ascending</a>
+                      <a id="user-name-ascending">Name ascending</a>
                     </li>
                   </ul>
                 </div>
             </div>
 			
             <div class="usercadssech">
+            </div>
+			<div class="usercadssech">
             </div>
           </div>
           <div id="tipoEventos" class="tabContent">
