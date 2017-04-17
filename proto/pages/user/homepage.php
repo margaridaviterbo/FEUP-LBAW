@@ -1,4 +1,4 @@
-<?php include('../../database/user.php'); ?>
+<?php include($BASE_DIR . 'database/user.php'); ?>
 <div class="homepage">
   <div class="container-fluid text-left">
     <div class="page-title text-center">
