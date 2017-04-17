@@ -6,7 +6,7 @@
     return $stmt->fetchAll();
   }
   
-   function getAllUsers($page, $name) {
+   function getSearchUsers($page, $name) {
     global $conn;
 	echo 'vai';
     $stmt = $conn->prepare('SELECT  *
