@@ -1,6 +1,6 @@
 <div class="container-fluid text-left">
     <div class="row">
-        <content class="col-lg-offset-10 col-lg-2 col-md-offset-9 col-md-3   col-sm-3 col-sm-offset-9">
+        <content class="col-sm-3">
             <div class="aside-user-buttons">
                 <div class="list-group">
                     <a href="{$BASE_DIR}pages/user/user-homepage.php" class="list-group-item">Upcoming Events</a>
@@ -13,5 +13,3 @@
                 <a href="{$BASE_DIR}pages/user/my-page-new-event.php" class="btn btn-primary btn-lg">Create Event</a>
             </div>
         </content>
-    </div>
-</div>
