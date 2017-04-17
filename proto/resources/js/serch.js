@@ -21,10 +21,23 @@ function addeventChange() {
 function initUsersReloader() {
 	var name = $('#serch-input').val();
 	console.log(BASE_URL + "actions/user/serchusers.php");
+	
     $.getJSON(BASE_URL + "actions/user/serchusers.php", {page: '0', serch: name, asc: 'ASC'}, function(data) {
-		console.log(data);
       $.each(data, function(i, asc) {
-		  console.log(asc);
+		 $('#usersPesq').append(		 
+		 '<div class="container-fluid user-card-medium">' +
+              '<p class="titulo-card">festa123</p>' +
+              '<div class="row">' +
+               '<div class="col-sm-3">' +
+                  '<img src="' BASE_URL + 'resources/images/' + asc.photo_url + '"/>' +
+                '</div>' +
+                '<div class="col-sm-9">' +
+                  '<p class="text-card">' + asc.first_name + ' ' + asc.last_name + '</p>' +
+                  '<p class="text-card">' + asc.email + '</p>' +
+                  '<button type="button" class="btn btn-default col-sm-5">Go To ptofile</button>' +
+                '</div>' +
+              '</div>' +
+            '</div>');
       });
     });
 }
