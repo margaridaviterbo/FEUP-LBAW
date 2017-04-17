@@ -1,1 +1,1 @@
-porçoes de html que podem ser reutilizadas ao longo do site
+porçoes de html que sao utilizadas ao longo do site

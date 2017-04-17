@@ -1,9 +1,13 @@
 <?php include_once('../../config/init.php'); ?>
 <?php include_once($BASE_DIR . 'database/user.php'); ?>
 <?php include_once($BASE_DIR . 'database/event.php'); ?>
-<?php include($BASE_DIR . 'templates/header.php'); ?>
-<?php include($BASE_DIR . 'templates/menu-user.php'); ?>
-<?php include($BASE_DIR . 'templates/aside-menu.php'); ?>
+<?php include($HEADER_DIR); ?>
+<?php include($MENU_USER_DIR); ?>
+<?php include($ASSIDE_MENU_DIR); ?>
+
+<?php $smarty->assign('events', $events); ?>
+<?php $smarty->assign('users', $users); ?>
+<?php $smarty->assign('types', $types); ?>
 
 <div class="container-fluid text-left">
   <div class="row">
@@ -450,4 +454,4 @@
   </div>
 </div>
 
-<?php include($BASE_DIR . 'templates/footer.php'); ?>
+<?php include($FOTTER_DIR); ?>
