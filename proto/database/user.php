@@ -6,16 +6,13 @@
     return $stmt->fetchAll();
   }
   
-   function getSearchUsers($page, $name) {
+   function getAllUsers($page, $name) {
     global $conn;
-	echo 'vai';
-    $stmt = $conn->prepare('SELECT  *
+    $stmt = $conn->prepare("SELECT  public.Users.first_name, public.Users.last_name, public.Users.email, public.Authenticated_User.photo_url
 							FROM public.Authenticated_User, public.Users
-							WHERE public.Users.first_name LIKE "%?%"
-							LIMIT 10 OFFSET ? * 10;');
-	echo 'asd';
+							WHERE public.Authenticated_User.user_id = public.Users.user_id AND public.Users.first_name LIKE '%?%'
+							LIMIT 10 OFFSET ? * 10;");
     $stmt->execute(array($page, $name));
-	echo 'lol';
     return $stmt->fetchAll();
   }
 ?>
