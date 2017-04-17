@@ -27,7 +27,7 @@ function initUsersReloader() {
 		  console.log(asc);
 		 $('#usersPesq .usercadssech').append(
 		 '<div class="container-fluid user-card-medium">' +
-              '<p class="titulo-card">festa123</p>' +
+              '<p class="titulo-card">' + asc.username + '</p>' +
               '<div class="row">' +
                '<div class="col-sm-3">' +
                   '<img src="' + BASE_URL + 'resources/images/' + asc.photo_url + '"/>' +
