@@ -13,17 +13,17 @@
     </div>
     <div class="row">
       <content class="col-sm-12">
-        <?php include('../../templates/cards/homepage_event_card.php'); ?>
-		<?php include('../../templates/cards/homepage_event_card.php'); ?>
-		<?php include('../../templates/cards/homepage_event_card.php'); ?>
+        <?php include($BASE_DIR . 'templates/cards/homepage_event_card.php'); ?>
+		<?php include($BASE_DIR . 'templates/cards/homepage_event_card.php'); ?>
+		<?php include($BASE_DIR . 'templates/cards/homepage_event_card.php'); ?>
         <div class="clearfix visible-md-block"></div>
-		<?php include('../../templates/cards/homepage_event_card.php'); ?>
-		<?php include('../../templates/cards/homepage_event_card.php'); ?>
-		<?php include('../../templates/cards/homepage_event_card.php'); ?>
+		<?php include($BASE_DIR . 'templates/cards/homepage_event_card.php'); ?>
+		<?php include($BASE_DIR . 'templates/cards/homepage_event_card.php'); ?>
+		<?php include($BASE_DIR . 'templates/cards/homepage_event_card.php'); ?>
         <div class="clearfix visible-md-block"></div>
-		<?php include('../../templates/cards/homepage_event_card.php'); ?>
-		<?php include('../../templates/cards/homepage_event_card.php'); ?>
-		<?php include('../../templates/cards/homepage_event_card.php'); ?>
+		<?php include($BASE_DIR . 'templates/cards/homepage_event_card.php'); ?>
+		<?php include($BASE_DIR . 'templates/cards/homepage_event_card.php'); ?>
+		<?php include($BASE_DIR . 'templates/cards/homepage_event_card.php'); ?>
         <div class="clearfix visible-md-block"></div>
       </content>
     </div>
