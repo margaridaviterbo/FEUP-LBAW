@@ -1,8 +1,14 @@
-﻿<?php include_once('../../config/init.php'); ?>
-<?php include($BASE_DIR . 'templates/header.php'); ?>
-<?php include($BASE_DIR . 'templates/menu-user.php'); ?>
-<?php include($BASE_DIR . 'templates/aside-menu.php'); ?>
+﻿<?php
+include('../../templates/common/header.php');
+include('../../config/init.php');
+include('../../templates/common/menu.php');
 
+if(isset($_SESSION['authenticated'])) {
+    if ($_SESSION['authenticated'] == true) {
+        include('../../templates/common/aside-menu.php');
+    }
+}
+?>
 
 <div class="container-fluid text-left">
   <div class="row">
@@ -52,7 +58,7 @@
         <div class="col-sm-3 inoformation-personal-card">
         </div>
         <div class="col-sm-4 photo-personal-card">
-          <img src="../resources/images/image.jpeg" class="img-responsive img-thumbnail">
+          <img src="../../resources/images/image.jpeg" class="img-responsive img-thumbnail">
             <div>
               <label for="files" class="btn btn-default">Upload photo</label>
               <input id="files" style="visibility:hidden;" type="file">
@@ -65,4 +71,4 @@
     </content>
   </div>
 
-<?php include($BASE_DIR . 'templates/footer.php'); ?>
+<?php include('../../templates/common/footer.php'); ?>

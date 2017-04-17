@@ -1,10 +1,14 @@
 <?php
-include_once('../../config/init.php'); 
-include('../../templates/header.php');
-include('../../templates/menu-user.php');
-include('../../templates/aside-menu.php');
-?>
+include('../../templates/common/header.php');
+include('../../config/init.php');
+include('../../templates/common/menu.php');
 
+if(isset($_SESSION['authenticated'])) {
+    if ($_SESSION['authenticated'] == true) {
+        include('../../templates/common/aside-menu.php');
+    }
+}
+?>
 
 <div class="container-fluid">
 
@@ -85,7 +89,7 @@ include('../../templates/aside-menu.php');
             </div>
 
             <div class="col-sm-3">
-                <a href="../../pages/checkout-payment.php"><button class="btn btn-default btn-primary form-control">Buy Tickets</button></a>
+                <a href="../ticket/checkout-payment.php"><button class="btn btn-default btn-primary form-control">Buy Tickets</button></a>
             </div>
             </div>
 
@@ -113,20 +117,6 @@ include('../../templates/aside-menu.php');
             <div class="page-header">
                 <h3>Comments</h3>
             </div>
-
-
- <div class="row">
-                        <div class="col-md-12">
-                                <div class="panel panel-default">
-                                        <div class="panel-heading">New Comment</div>
-                                        <div class="panel-body">
-                                                <textarea class="form-control" rows="3"></textarea>
-                                                <br/>
-                                                <button type="submit" class="btn pull-right btn-default">Comment</button>
-                                        </div>
-                                </div>
-                        </div>
-                </div>
 
             <div class="row">
                     <div class="col-sm-1">
@@ -185,11 +175,8 @@ include('../../templates/aside-menu.php');
                         </div>
                 </div>
             </div>
-
-
         </div>
     </div>
-
 </div>
 
-<?php include('../../templates/footer.php'); ?>
+<?php include('../../templates/common/footer.php'); ?>

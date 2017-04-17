@@ -1,7 +1,9 @@
-<?phpinclude_once('../config/init.php'); ?>
-<?php include('../templates/header.php'); ?>
-<?php include('../templates/menu-user.php'); ?>
-<?php include('../templates/menu-admin.php'); ?>
+<?php
+include('../../templates/common/header.php');
+include('../../config/init.php');
+include('../../templates/menu-admin.php');
+?>
+
   <div class="admin">
     <div class="container-fluid text-left">
 
@@ -14,7 +16,7 @@
                     <p class="titulo-card">Sessão de Demonstração para o Desenvolvimento em Comunicação</p>
                     <div class="row">
                         <div class="col-sm-3">
-                            <img src="../resources/images/2.jpg" />
+                            <img src="../../resources/images/2.jpg" />
                       </div>
                         <div class="col-sm-6">
                             <p class="text-card"> Quinta, 9 de Março às 19:45</p>
@@ -59,7 +61,7 @@
                     <p class="titulo-card">Sessão de Demonstração para o Desenvolvimento em Comunicação</p>
                     <div class="row">
                         <div class="col-sm-3">
-                            <img src="../resources/images/1.jpg" />
+                            <img src="../../resources/images/1.jpg" />
                         </div>
                         <div class="col-sm-6">
                             <p class="text-card"> Quinta, 9 de Março às 19:45</p>
@@ -102,7 +104,7 @@
                     <p class="titulo-card">Sessão de Demonstração para o Desenvolvimento em Comunicação</p>
                     <div class="row">
                         <div class="col-sm-3">
-                            <img src="../resources/images/4.png" />
+                            <img src="../../resources/images/4.png" />
                         </div>
                         <div class="col-sm-6">
                             <p class="text-card"> Quinta, 9 de Março às 19:45</p>
@@ -145,7 +147,7 @@
                     <p class="titulo-card">Sessão de Demonstração para o Desenvolvimento em Comunicação</p>
                     <div class="row">
                         <div class="col-sm-3">
-                            <img src="../resources/images/5.png" />
+                            <img src="../../resources/images/5.png" />
                         </div>
                         <div class="col-sm-6">
                             <p class="text-card"> Quinta, 9 de Março às 19:45</p>
@@ -188,7 +190,7 @@
                     <p class="titulo-card">Sessão de Demonstração para o Desenvolvimento em Comunicação</p>
                     <div class="row">
                         <div class="col-sm-3">
-                            <img src="../resources/images/6.png" />
+                            <img src="../../resources/images/6.png" />
                         </div>
                         <div class="col-sm-6">
                             <p class="text-card"> Quinta, 9 de Março às 19:45</p>
@@ -234,4 +236,4 @@
      </div>
   </div>
 
- <?php include('../templates/footer.php'); ?>
+<?php include('../../templates/common/footer.php'); ?>

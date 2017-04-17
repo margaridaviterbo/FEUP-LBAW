@@ -25,7 +25,7 @@
 
                     <div class="col-sm-3 hidden-xs">
                         <div id="title">
-                            <a href="../../index.php"><h2>Eventify</h2></a>
+                            <a href="./index.php"><h2>Eventify</h2></a>
                         </div>
                     </div>
 
@@ -33,7 +33,7 @@
                         <div class="row">
                             <div class="collapse navbar-collapse" id="menu">
                                 <div class="col-sm-5 search">
-                                    <form class="navbar-form navbar-center" role="search" action="../../pages/user/search.php#eventosPesq">
+                                    <form class="navbar-form navbar-center" role="search" action="../pages/common/search.php#eventosPesq">
                                         <div class="form-group input-group">
                                             <input type="text" class="form-control" placeholder="Search Event...">
                                             <span class="input-group-btn">
@@ -47,7 +47,7 @@
 
                                 <div class="col-sm-5 pull-right">
                                     <ul class="nav navbar-nav navbar-right" id="login">
-                                        
+
                                         <li><a href="../../pages/user/my-page-my-information.php"><span class="glyphicon glyphicon-pencil"></span> Rui Paiva</a></li>
                                         <li><a href="../../index.php"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
                                     </ul>

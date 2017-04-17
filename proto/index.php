@@ -1,3 +1,3 @@
 <?php
-  header('Location: pages/user/main.php');
+    header('Location: pages/common/homepage.php');
 ?>
