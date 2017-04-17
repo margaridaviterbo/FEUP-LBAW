@@ -1,4 +1,4 @@
-<div class="homepage col-sm-8">
+<div class="homepage col-sm-9 pull-sm-3">
     <div class="page-title text-center">
       <h1>Popular Events: </h1>
       <br>

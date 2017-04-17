@@ -1,6 +1,6 @@
 <div class="container-fluid text-left">
     <div class="row">
-        <content class="col-sm-3">
+        <content class="col-sm-3 push-sm-9">
             <div class="aside-user-buttons">
                 <div class="list-group">
                     <a href="{$BASE_DIR}pages/user/user-homepage.php" class="list-group-item">Upcoming Events</a>
