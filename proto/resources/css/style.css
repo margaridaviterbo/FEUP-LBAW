@@ -189,6 +189,10 @@ a.list-group-item:focus, a.list-group-item:hover, button.list-group-item:focus, 
     border-style: solid;
 }
 
+.homepage-card {
+	width: 30%;
+}
+
 .event-card-medium:last-child{
     transition: box-shadow 0.3s ease-in-out;
     padding: 10px;
@@ -675,8 +679,4 @@ textarea {
 	#menu {
 		background-color: rgba(0, 0, 0, 0.6);
 	}
-}
-
-.homepage-card {
-	width: 30%;
 }
