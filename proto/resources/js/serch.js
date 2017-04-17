@@ -42,7 +42,7 @@ function initUsersReloader() {
               '</div>' +
             '</div>');
       });
+	  	console.log(ind);
+		$('#tabs:nth-child(2) a').html('Users (' + ind + ')');
     });
-	console.log(ind);
-	$('#tabs:nth-child(2) a').html('Users (' + ind + ')');
 }
