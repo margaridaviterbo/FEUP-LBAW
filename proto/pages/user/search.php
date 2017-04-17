@@ -8,7 +8,7 @@ $serch = $_GET['serched'];
 echo $serch;
 
 $events = getSearchEvents(0, $serch, true, true, true, 'ASC');
-$users = getSearchUsers(0, $serch, 'ASC'));
+$users = getSearchUsers(0, $serch, 'ASC');
 
 $smarty->assign('events', $events); 
 $smarty->assign('users', $users);
