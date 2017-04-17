@@ -208,7 +208,7 @@
             </div>
 			
 			<?php 
-			getAllUsers(1, 'c');
+			//getAllUsers(1, 'c');
 			?>
             <div class="container-fluid user-card-medium">
               <p class="titulo-card">festa123</p>
