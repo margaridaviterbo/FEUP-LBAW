@@ -9,7 +9,7 @@ function initserchname() {
 }
 
 function addeventChange() {
-	$('#serch-input').click(changedContent());
+	$('#serch-input').focus(changedContent());
 }
 
 function changedContent() {
