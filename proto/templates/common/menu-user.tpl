@@ -20,7 +20,7 @@
                     </div>
 
                 </div>
-<p>{$BASE_DIR}</p>
+
                 <div class="row">
 
                     <div class="col-sm-3 hidden-xs">

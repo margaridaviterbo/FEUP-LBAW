@@ -1,3 +1,4 @@
+<p>{$BASE_DIR}</p>
 {include file='common/header.tpl'}
 {include file='common/menu-user.tpl'}
 {include file='common/aside-menu.tpl'}
