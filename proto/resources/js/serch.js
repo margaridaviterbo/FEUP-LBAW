@@ -1,6 +1,9 @@
 $(document).ready(function() {
+	alert('vai1');
   initserchname();
+  alert('vai2');
   addeventChange();
+  alert('vai3');
 });
 
 function initserchname() {
