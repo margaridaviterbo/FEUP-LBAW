@@ -43,6 +43,6 @@ function initUsersReloader() {
             '</div>');
       });
 	  	console.log(ind);
-		$('#tabs:nth-child(2) a').html('Users (' + ind + ')');
+		$('#tabs:eq( 1 ):eq( 0 )').html('Users (' + ind + ')');
     });
 }
