@@ -2,7 +2,7 @@
 {include file='common/menu-user.tpl'}
 {include file='common/aside-menu.tpl'}
 
-    <div class="homepage col-sm-9 col-sm-pull-3">
+    <div class="homepage col-sm-9 col-sm-pull-3 page">
         <div class="page-header">
             <h1>Search Results for "{$serch}" </h1>
         </div>
