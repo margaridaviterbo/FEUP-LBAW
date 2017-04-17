@@ -11,13 +11,13 @@
 
         <ul id="tabs">
           <li>
-            <a href="#eventosPesq">Events (0)</a>
+            <a class="button-events" href="#eventosPesq">Events (0)</a>
           </li>
           <li>
-            <a href="#usersPesq">Users (0)</a>
+            <a class="button-users" href="#usersPesq">Users (0)</a>
           </li>
           <li>
-            <a href="#tipoEventos">Types of Events (0)</a>
+            <a class="button-type" href="#tipoEventos">Types of Events (0)</a>
           </li>
         </ul>
         
