@@ -14,7 +14,7 @@ function initserchname() {
 
 function changedContent() {
 	var name = $('#serch-input').val();
-	
+	alert(name);
 	$('#searched-words').text(name);
 	$('#page-header').text("Search Results for \"" + name + "\"");
 }
