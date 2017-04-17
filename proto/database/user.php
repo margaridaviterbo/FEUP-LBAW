@@ -12,6 +12,7 @@
     $stmt = $conn->prepare('SELECT public.Users.first_name, public.Users.last_name, public.Users.email, public.Authenticated_User.photo_url
 							FROM public.Authenticated_User INNER JOIN public.Users ON (public.Authenticated_User.user_id = public.Users.user_id)
 							WHERE (last_name LIKE ? OR first_name LIKE ?) 
+							ORDER BY first_name ASC
 							LIMIT 10 OFFSET ? * 10;');
     $stmt->execute(array($param, $param, $page));
     return $stmt->fetchAll();
