@@ -51,10 +51,10 @@
     function getAuthenticatedUserByEmail($email){
 
         global $conn;
-        $stmt = $conn->prepare('SELECT * FROM users 
-                                INNER JOIN authenticated_user 
-                                ON users.user_id = authenticated_user.user_id 
-                                WHERE users.email = ?');
+        $stmt = $conn->prepare('SELECT * FROM public.users 
+                                INNER JOIN public.authenticated_user 
+                                ON public.users.user_id = public.authenticated_user.user_id 
+                                WHERE public.users.email = ?');
         $stmt->execute(array($email));
         return $stmt->fetch();
     }
