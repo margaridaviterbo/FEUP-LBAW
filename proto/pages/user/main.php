@@ -1,7 +1,10 @@
 <?php
 	include_once('../../config/init.php');
-    include($HEADER_DIR);
-    include($BASE_DIR . 'templates/common/menu-visitor.php');
-    include($BASE_DIR . 'pages/user/homepage.php');
-    include($FOTTER_DIR);
+    include_once($BASE_DIR . 'database/user.php'); 
+	
+	$users = getAllUsers(1);
+	
+	$smarty->assign('users', $users);
+	
+	$smarty->display('user/main.tpl');
 ?>
