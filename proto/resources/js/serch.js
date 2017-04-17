@@ -1,5 +1,6 @@
 $(document).ready(function() {
   initserchname();
+  alert('Close');
 });
 
 function initserchname() {
