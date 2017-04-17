@@ -26,8 +26,8 @@ function initUsersReloader() {
     $.getJSON(BASE_URL + "actions/user/serchusers.php", {page: '0', serch: name, asc: 'ASC'}, function(data) {
       $.each(data, function(i, asc) {
 		  ind += 1;
+		  console.log(ind);
 		 $('#usersPesq .usercadssech').append(
-		 console.log(ind);
 		 '<div class="container-fluid user-card-medium">' +
               '<p class="titulo-card">' + asc.username + '</p>' +
               '<div class="row">' +
