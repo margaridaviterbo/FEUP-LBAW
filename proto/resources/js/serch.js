@@ -10,10 +10,11 @@ function initserchname() {
 
 function addeventChange() {
 	$('#serch-input').focus(function() {
-	var name = $('#serch-input').val();
-	alert(name);
-	$('#searched-words').text(name);
-	$('#page-header').text("Search Results for \"" + name + "\"");
-});
+		var name = $('#serch-input').val();
+		alert(name);
+		$('#searched-words').text(name);
+		$('#page-header').text("Search Results for \"" + name + "\"");
+	});
+	alert('vai');
 }
 
