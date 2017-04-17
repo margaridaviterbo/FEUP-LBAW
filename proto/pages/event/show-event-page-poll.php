@@ -72,6 +72,7 @@ include('../../templates/aside-menu.php');
 
     </div>
 
+
     <div class="row">
 
         <div class="col-lg-offset-2 col-sm-8 col-sm-offset-1 event-page-body white-page">
@@ -88,6 +89,96 @@ include('../../templates/aside-menu.php');
                 <a href="../../pages/checkout-payment.php"><button class="btn btn-default btn-primary form-control">Buy Tickets</button></a>
             </div>
             </div>
+
+            <div class="text">
+
+                <p>
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title">Poll - When is the event?</h3>
+  </div>
+  <div class="panel-body">
+    
+
+
+
+
+
+  <div class="checkbox">
+    <label>
+      <input type="checkbox"> 8-10h
+    </label>
+  </div>
+
+ <div class="progress">
+   <div class="progress-bar progress-bar-info progress-bar-striped" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: 40%">
+   40 votes <span class="sr-only">40 Votes</span>
+  </div>
+</div>
+
+  <div class="checkbox">
+    <label>
+      <input type="checkbox"> 10-12h
+    </label>
+  </div>
+
+<div class="progress">
+  <div class="progress-bar progress-bar-info progress-bar-striped" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" style="width: 20%">
+    20 votes <span class="sr-only">20 Votes</span>
+  </div>
+</div>
+
+  <div class="checkbox">
+    <label>
+      <input type="checkbox"> 12-14h
+    </label>
+  </div>
+
+<div class="progress">
+  <div class="progress-bar progress-bar-info progress-bar-striped" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%">
+    60 votes <span class="sr-only">60 Votes</span>
+  </div>
+</div>
+
+<?php
+$val = 88;
+?>
+
+
+  <div class="checkbox">
+    <label>
+      <input type="checkbox"> 14-16h
+    </label>
+  </div>
+<div class="progress">
+  <div class="progress-bar progress-bar-info progress-bar-striped" role="progressbar" aria-valuenow="<?php echo $val; ?>" aria-valuemin="0" aria-valuemax="100" style="width: <?php echo $val;?>%">
+    <?php echo $val;?> votes<span class="sr-only"><?php echo $val; ?> Votes</span>
+  </div>
+</div>
+
+ <button type="submit" class="btn pull-right btn-default">Vote</button>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  </div>
+</div>
+
+</p>
+
+            </div>
+
 
             <div class="page-header">
                 <h3>Description</h3>
@@ -115,18 +206,18 @@ include('../../templates/aside-menu.php');
             </div>
 
 
- <div class="row">
-                        <div class="col-md-12">
-                                <div class="panel panel-default">
-                                        <div class="panel-heading">New Comment</div>
-                                        <div class="panel-body">
-                                                <textarea class="form-control" rows="3"></textarea>
-                                                <br/>
-                                                <button type="submit" class="btn pull-right btn-default">Comment</button>
-                                        </div>
-                                </div>
-                        </div>
-                </div>
+		<div class="row">
+			<div class="col-md-12">
+				<div class="panel panel-default">
+					<div class="panel-heading">New Comment</div>
+  					<div class="panel-body">
+    						<textarea class="form-control" rows="3"></textarea>
+						<br/>
+						<button type="submit" class="btn pull-right btn-default">Comment</button>
+					</div>
+  				</div>
+			</div>
+		</div>
 
             <div class="row">
                     <div class="col-sm-1">
