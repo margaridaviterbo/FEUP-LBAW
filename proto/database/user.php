@@ -11,9 +11,8 @@
 	$param = "%$name%";
     $stmt = $conn->prepare('SELECT first_name, last_name, email, photo_url
 							FROM public.Authenticated_User INNER JOIN public.Users ON (public.Authenticated_User.user_id = public.Users.user_id)
-							WHERE first_name = \'Rui\'
-							LIMIT 10 OFFSET ? * 10;');
-    $stmt->execute(array($page));
+							WHERE first_name = \'Rui\';');
+    $stmt->execute();
     return $stmt->fetchAll();
   }
 ?>
