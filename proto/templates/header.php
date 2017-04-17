@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<?php include($BASE_DIR . 'database/user.php'); ?>
+<?php include_once('../../config/init.php'); ?>
 <html>
 
     <head>
