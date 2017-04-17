@@ -1,7 +1,7 @@
 ﻿<?php include_once('../../config/init.php'); ?>
-<?php include('../../templates/header.php'); ?>
-<?php include('../../templates/menu-user.php'); ?>
-<?php include('../../templates/aside-menu.php'); ?>
+<?php include($BASE_DIR . 'templates/header.php'); ?>
+<?php include($BASE_DIR . 'templates/menu-user.php'); ?>
+<?php include($BASE_DIR . 'templates/aside-menu.php'); ?>
 
 <div class="container-fluid text-left">
     <div class="row">
@@ -9,13 +9,13 @@
             <div class="page-header">
                 <h1>Events that I attended</h1>
             </div>
-            <?php include('../../templates/cards/atended_event_card.php'); ?>
-            <?php include('../../templates/cards/atended_event_card.php'); ?>
-			<?php include('../../templates/cards/atended_event_card.php'); ?>
-			<?php include('../../templates/cards/atended_event_card.php'); ?>
-			<?php include('../../templates/cards/atended_event_card.php'); ?>
-			<?php include('../../templates/cards/atended_event_card.php'); ?>
+            <?php include($BASE_DIR . 'templates/cards/atended_event_card.php'); ?>
+            <?php include($BASE_DIR . 'templates/cards/atended_event_card.php'); ?>
+			<?php include($BASE_DIR . 'templates/cards/atended_event_card.php'); ?>
+			<?php include($BASE_DIR . 'templates/cards/atended_event_card.php'); ?>
+			<?php include($BASE_DIR . 'templates/cards/atended_event_card.php'); ?>
+			<?php include($BASE_DIR . 'templates/cards/atended_event_card.php'); ?>
 		</content>
 </div>
 
-<?php include('../../templates/footer.php'); ?>
+<?php include($BASE_DIR . 'templates/footer.php'); ?>
