@@ -14,7 +14,7 @@
 							WHERE (upper(last_name) LIKE upper(?) OR upper(first_name) LIKE upper(?) OR upper(username) LIKE upper(?)) 
 							ORDER BY first_name ' . $asc . 
 							' LIMIT 10 OFFSET ? * 10;');
-    $stmt->execute(array($param, $param, $page));
+    $stmt->execute(array($param, $param, $param, $page));
     return $stmt->fetchAll();
   }
 ?>
