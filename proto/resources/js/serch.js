@@ -9,11 +9,10 @@ function initserchname() {
 }
 
 function addeventChange() {
-	$('#serch-input').focus(function() {
-	var name = $('#serch-input').val();
-	alert(name);
-	$('#searched-words').text(name);
-	$('#page-header').text("Search Results for \"" + name + "\"");
-});
+	$('#serch-input').change(function() {
+		var name = $('#serch-input').val();
+		$('#searched-words').text(name);
+		$('#page-header').text("Search Results for \"" + name + "\"");
+	});
 }
 
