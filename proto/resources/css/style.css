@@ -113,7 +113,8 @@ header h2{
 @media (min-width: 768px) {
     .aside-user-buttons {
 	  position:fixed;
-	  right:12.5%;
+	  weight: 25%;
+	  right:7%;
     }
 }
 
