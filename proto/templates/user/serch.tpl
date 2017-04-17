@@ -189,17 +189,10 @@
             <div class="tabOptions">
               <input type="checkbox" name="Cost" value="free" checked="">
                 Matching events
-                <div class="dropdown">
-                  <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">
-                    Ordenate
-                    <span class="caret"></span>
-                  </button>
                   <select class="selectpicker">
                     <option id="user-name-descending">Name descending</option>
                     <option id="user-name-ascending">Name ascending</option>
                   </select>
-
-                </div>
             </div>
 			
             <div class="usercadssech">
