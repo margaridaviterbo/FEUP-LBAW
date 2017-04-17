@@ -12,12 +12,10 @@
       <content>
         {include file='cards/homepage_event_card.tpl'}
 		{include file='cards/homepage_event_card.tpl'}
-		{include file='cards/homepage_event_card.tpl'} 
-        <div class="clearfix visible-md-block"></div>                
+		{include file='cards/homepage_event_card.tpl'}              
 		{include file='cards/homepage_event_card.tpl'}
 		{include file='cards/homepage_event_card.tpl'}
-		{include file='cards/homepage_event_card.tpl'}
-        <div class="clearfix visible-md-block"></div>                  
+		{include file='cards/homepage_event_card.tpl'}               
 		{include file='cards/homepage_event_card.tpl'}
 		{include file='cards/homepage_event_card.tpl'}
 		{include file='cards/homepage_event_card.tpl'}
