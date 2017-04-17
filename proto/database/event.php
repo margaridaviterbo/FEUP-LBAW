@@ -6,6 +6,14 @@
     return $stmt->fetchAll();
   }
   
+  /**
+  $page, numero da pagina
+  $name, nome do evento a procurar
+  $free, true se procurar em free
+  $paid, true se procurar em false
+  $nameOrPrice, true se nome false se price
+  $asc, ASC ou DESC
+  */
    function getSearchEvents($page, $name, $free, $paid, $nameOrPrice, $asc) {
     global $conn;
 	$param = "%$name%";
