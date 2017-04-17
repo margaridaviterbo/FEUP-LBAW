@@ -20,7 +20,7 @@ function addeventChange() {
 
 function initUsersReloader() {
 	var name = $('#serch-input').val();
-	console.log("asc");
+	console.log(BASE_URL + "actions/user/serchusers.php);
     $.getJSON(BASE_URL + "actions/user/serchusers.php", {page: '0', serch: name, asc: 'ASC'}, function(data) {
 		console.log(data);
       $.each(data, function(i, asc) {
