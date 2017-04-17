@@ -205,35 +205,7 @@
                 </div>
             </div>
 			
-            <div class="container-fluid user-card-medium">
-              <p class="titulo-card">festa123</p>
-              <div class="row">
-                <div class="col-sm-3">
-                  <img src="../resources/images/image.jpeg" />
-                </div>
-                <div class="col-sm-9">
-                  <p class="text-card"> Rui Vasco Oliveira Paiva</p>
-                  <p class="text-card">up201405136@fe.up.pt</p>
-                  <p class="text-card"> Events in common:</p>
-                  <div class="events-in-common">
-                  <ul>
-                    <li>
-                      <a href="#" class="text-card"> Festa da senhora da aparecida</a>
-                    </li>
-                    <li>
-                      <a href="#" class="text-card"> Event2</a>
-                    </li>
-                    <li>
-                      <a href="#" class="text-card"> Event3</a>
-                    </li>
-                    <li>
-                      <a href="#" class="text-card"> Event 4</a>
-                    </li>
-                  </ul>
-                  </div>
-                  <button type="button" class="btn btn-default col-sm-5">Go To ptofile</button>
-                </div>
-              </div>
+            <div class="usercadssech">
             </div>
           </div>
           <div id="tipoEventos" class="tabContent">
