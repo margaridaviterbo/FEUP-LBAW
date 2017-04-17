@@ -26,9 +26,9 @@
 		$stringpaid = " AND free = true";
 	
 	if($nameOrPrice) //name
-		$stringnNOP = "name, price";
+		$stringnNOP = "name"; //"name, price" falta implementar o price
 	else
-		$stringnNOP = "price, name";
+		$stringnNOP = "name"; //"price, name" falta implementar o price
 	echo 'SELECT *
 							FROM public.Event
 							WHERE name LIKE ?' . $stringfreee . $stringpaid .

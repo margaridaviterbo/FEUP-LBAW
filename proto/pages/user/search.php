@@ -52,7 +52,7 @@
               </div>
             </div>
 			
-			<?php print_r(getSearchEvents(0, "as", false, false, true, 'ASC'));  ?>
+			<?php print_r(getSearchEvents(0, "as", true, true, true, 'ASC'));  ?>
 			
             <div class="container-fluid event-card-medium">
               <p class="titulo-card">Sessão de Demonstração para o Desenvolvimento em Comunicação</p>
