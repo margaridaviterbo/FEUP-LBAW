@@ -3,7 +3,7 @@ include_once('../../config/init.php');
 include_once($BASE_DIR . 'database/user.php'); 
 include_once($BASE_DIR . 'database/event.php');
 
-$serch = $_GET['serched'];
+$serch = strip_tags($_GET['serched']);
 
 $events = getSearchEvents(0, $serch, true, true, true, 'ASC');
 $users = getSearchUsers(0, $serch, 'ASC');
