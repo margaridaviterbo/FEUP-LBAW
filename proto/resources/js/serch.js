@@ -42,6 +42,6 @@ function initUsersReloader() {
             '</div>');
       });
 	  	console.log(ind);
-		$('#tabs .button-users').html('va');
+		$('#tabs .button-users').html('Users (' + ind + ')');
     });
 }
