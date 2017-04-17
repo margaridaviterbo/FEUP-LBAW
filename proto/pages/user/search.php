@@ -208,7 +208,7 @@
             </div>
 			
 			<?php 
-			print_r(getSearchUsers(1, 'a'));
+			print_r(getSearchUsers(1, 'u'));
 			?>
             <div class="container-fluid user-card-medium">
               <p class="titulo-card">festa123</p>
