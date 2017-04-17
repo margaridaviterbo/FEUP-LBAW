@@ -1,3 +1,4 @@
+alert('vai1');
 $(document).ready(function() {
 	alert('vai1');
   initserchname();
