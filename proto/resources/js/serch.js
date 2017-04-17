@@ -11,7 +11,6 @@ function initserchname() {
 function addeventChange() {
 	$('#serch-input').on('input', function() {
 		var name = $('#serch-input').val();
-		alert(name);
 		$('#searched-words').text(name);
 		$('.page-header h1').text("Search Results for \"" + name + "\"");
 	});
