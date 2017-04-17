@@ -115,8 +115,8 @@ header h2{
 	  position:fixed;
 	  width: 25%;
 	  right:1%;
-	  padding-left: 10px;
-	  padding-right: 30px;
+	  margin-left: 10px;
+	  margin-right: 1%;
     }
 }
 
