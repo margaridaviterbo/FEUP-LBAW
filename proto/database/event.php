@@ -18,7 +18,7 @@
 		$stringpaid = " AND free = true";
 	
 	if($nameOrPrice) //name
-		$stringnNOP = "name, price"
+		$stringnNOP = "name, price";
 	else
 		$stringnNOP = "price, name";
 	
