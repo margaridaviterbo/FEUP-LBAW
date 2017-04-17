@@ -31,12 +31,12 @@
 		$stringnNOP = "price, name";
 	echo 'SELECT *
 							FROM public.Event
-							WHERE name LIKE ?' . stringfreee . stringpaid .
+							WHERE name LIKE ?' . $stringfreee . $stringpaid .
 							' ORDER BY ' . $stringnNOP . ' ' . $asc . 
 							' LIMIT 10 OFFSET ? * 10;';
     $stmt = $conn->prepare('SELECT *
 							FROM public.Event
-							WHERE name LIKE ?' . stringfreee . stringpaid .
+							WHERE name LIKE ?' . $stringfreee . $stringpaid .
 							' ORDER BY ' . $stringnNOP . ' ' . $asc . 
 							' LIMIT 10 OFFSET ? * 10;');
     $stmt->execute(array($param, $page));
