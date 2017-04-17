@@ -705,3 +705,7 @@ textarea {
 		background-color: rgba(0, 0, 0, 0.6);
 	}
 }
+
+.page-title .text-center h1 {
+	margin-bottom: 50px;
+}
