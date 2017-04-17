@@ -11,7 +11,7 @@
 	$param = "%$name%";
     $stmt = $conn->prepare('SELECT public.Users.first_name, public.Users.last_name, public.Users.email, public.Authenticated_User.photo_url
 							FROM public.Authenticated_User INNER JOIN public.Users ON (public.Authenticated_User.user_id = public.Users.user_id)
-							WHERE (public.Users.last_name ~* ? OR public.Users.first_name ~* ?) 
+							WHERE (public.Users.last_name LIKE ? OR public.Users.first_name LIKE ?) 
 							LIMIT 10 OFFSET ? * 10;');
     $stmt->execute(array($param, $param, $page));
     return $stmt->fetchAll();
