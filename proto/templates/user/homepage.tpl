@@ -12,17 +12,17 @@
     </div>
     <div class="row">
       <content class="col-sm-12">
-        <?php include($BASE_DIR . 'templates/cards/homepage_event_card.php'); ?>
-		<?php include($BASE_DIR . 'templates/cards/homepage_event_card.php'); ?>
-		<?php include($BASE_DIR . 'templates/cards/homepage_event_card.php'); ?>
-        <div class="clearfix visible-md-block"></div>
-		<?php include($BASE_DIR . 'templates/cards/homepage_event_card.php'); ?>
-		<?php include($BASE_DIR . 'templates/cards/homepage_event_card.php'); ?>
-		<?php include($BASE_DIR . 'templates/cards/homepage_event_card.php'); ?>
-        <div class="clearfix visible-md-block"></div>
-		<?php include($BASE_DIR . 'templates/cards/homepage_event_card.php'); ?>
-		<?php include($BASE_DIR . 'templates/cards/homepage_event_card.php'); ?>
-		<?php include($BASE_DIR . 'templates/cards/homepage_event_card.php'); ?>
+        {include file='cards/homepage_event_card.tpl'}
+		{include file='cards/homepage_event_card.tpl'}
+		{include file='cards/homepage_event_card.tpl'} 
+        <div class="clearfix visible-md-block"></div>                
+		{include file='cards/homepage_event_card.tpl'}
+		{include file='cards/homepage_event_card.tpl'}
+		{include file='cards/homepage_event_card.tpl'}
+        <div class="clearfix visible-md-block"></div>                  
+		{include file='cards/homepage_event_card.tpl'}
+		{include file='cards/homepage_event_card.tpl'}
+		{include file='cards/homepage_event_card.tpl'}
         <div class="clearfix visible-md-block"></div>
       </content>
     </div>
