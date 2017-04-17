@@ -194,14 +194,11 @@
                     Ordenate
                     <span class="caret"></span>
                   </button>
-                  <ul class="selectpicker">
-                    <li>
-                      <a id="user-name-descending">Name descending</a>
-                    </li>
-                    <li>
-                      <a id="user-name-ascending">Name ascending</a>
-                    </li>
-                  </ul>
+                  <select class="selectpicker">
+                    <option id="user-name-descending">Name descending</option>
+                    <option id="user-name-ascending">Name ascending</option>
+                  </select>
+
                 </div>
             </div>
 			
