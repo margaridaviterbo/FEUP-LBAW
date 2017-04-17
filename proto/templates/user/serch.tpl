@@ -6,6 +6,7 @@
         <div class="page-header">
             <h1>Search Results for "{$serch}" </h1>
         </div>
+		<p hidden id="searched-words">{$serch}</p>
 
         <ul id="tabs">
           <li>
