@@ -2,7 +2,7 @@
     <div class="page-title text-center">
       <h1>Popular Events: </h1>
     </div>
-    <div>
+    <div class="card-home-contentent">
         {include file='cards/homepage_event_card.tpl'}
 		{include file='cards/homepage_event_card.tpl'}
 		{include file='cards/homepage_event_card.tpl'}              
