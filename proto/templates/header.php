@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-
+<?php include($BASE_DIR . 'database/user.php'); ?>
 <html>
 
     <head>
