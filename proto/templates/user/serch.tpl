@@ -194,7 +194,7 @@
                     Ordenate
                     <span class="caret"></span>
                   </button>
-                  <ul class="dropdown-menu">
+                  <ul class="selectpicker">
                     <li>
                       <a id="user-name-descending">Name descending</a>
                     </li>
