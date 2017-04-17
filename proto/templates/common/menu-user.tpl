@@ -20,7 +20,7 @@
                     </div>
 
                 </div>
-<p>"{$BASE_DIR}index.php"</p>
+<p>"{$BASE_URL}index.php"</p>
                 <div class="row">
 
                     <div class="col-sm-3 hidden-xs">
