@@ -20,10 +20,12 @@ function addeventChange() {
 
 function initUsersReloader() {
 	var name = $('#serch-input').val();
+	var i = 0;
 	console.log(BASE_URL + "actions/user/serchusers.php");
 	$('#usersPesq .usercadssech').html("");
     $.getJSON(BASE_URL + "actions/user/serchusers.php", {page: '0', serch: name, asc: 'ASC'}, function(data) {
       $.each(data, function(i, asc) {
+		  i = i+1;
 		 $('#usersPesq .usercadssech').append(
 		 '<div class="container-fluid user-card-medium">' +
               '<p class="titulo-card">' + asc.username + '</p>' +
@@ -40,4 +42,6 @@ function initUsersReloader() {
             '</div>');
       });
     });
+	console.log(i);
+	$('#tabs:nth-child(2) a').html('Uers (' + i + ')');
 }
