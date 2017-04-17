@@ -4,7 +4,7 @@
 
     <div class="homepage col-sm-9 col-sm-pull-3">
         <div class="page-header">
-            <h1>Search Results for "{$serched}" </h1>
+            <h1>Search Results for "{$serch}" </h1>
         </div>
 
         <ul id="tabs">
