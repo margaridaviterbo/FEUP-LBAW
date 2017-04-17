@@ -8,7 +8,6 @@ $password = $_POST["password-login"];
 
 
 $user = getUserByEmail($emailUsername);
-
 //Se o mail não existir, procura o username
 if ($user == false) {
 
@@ -18,10 +17,14 @@ if ($user == false) {
         $username = $emailUsername;
         $user_id = getUserIdFromAuthenticatedUser($username);
     }
+    else{
+        echo '<script> alert("User doesn\'t exist.") </script>';
+        echo '<script> window.location.href = "../../index.php"; </script>';
+    }
 
 } else {
-    $username = getUsernameOfUser($email);
-    $user_id = getUserIdFromUser($email);
+    $username = getUsernameOfUser($emailUsername);
+    $user_id = getUserIdFromUser($emailUsername);
 }
 
 if (isLoginCorrect($username, $password)) {
@@ -34,9 +37,8 @@ if (isLoginCorrect($username, $password)) {
 }
 else {
 
-    echo '<script> alert("User doesn\'t exist.") </script>';
-    header('refresh:1; url=../../index.php');
-
+    echo '<script> alert("Incorrect password") </script>';
+    echo '<script> window.location.href = "../../index.php"; </script>';
 }
 
 ?>

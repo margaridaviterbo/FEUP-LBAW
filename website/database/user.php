@@ -88,7 +88,9 @@
         global $conn;
         $stmt = $conn->prepare('SELECT username FROM authenticated_user INNER JOIN users ON authenticated_user.user_id = users.user_id WHERE users.email = ?');
         $stmt->execute(array($email));
-        return $stmt->fetch();
+        $row = $stmt->fetch();
+        $username = $row['username'];
+        return $username;
     }
 
     function isLoginCorrect($username, $password) {
