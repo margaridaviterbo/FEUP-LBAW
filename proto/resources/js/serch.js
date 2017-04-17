@@ -8,7 +8,7 @@ function initserchname() {
     $('#serch-input').val(name);
 }
 
-function initserchname() {
+function addeventChange() {
 	$('#serch-input').change(changedContent());
 }
 
