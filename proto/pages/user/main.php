@@ -1,7 +1,7 @@
 <?php
 	include_once('../../config/init.php');
-    include('../../templates/header.php');
-    include('../../templates/menu-visitor.php');
-    include('../user/homepage.php');
-    include ('../../templates/footer.php');
+    include($BASE_DIR . 'templates/header.php');
+    include($BASE_DIR . 'templates/menu-visitor.php');
+    include($BASE_DIR . 'pages/user/homepage.php');
+    include($BASE_DIR . 'templates/footer.php');
 ?>

@@ -1,7 +1,7 @@
 <?php include_once('../../config/init.php'); ?>
-<?php include('../../templates/header.php'); ?>
-<?php include('../../templates/menu-user.php'); ?>
-<?php include('../../templates/aside-menu.php'); ?>
+<?php include($BASE_DIR . 'templates/header.php'); ?>
+<?php include($BASE_DIR . 'templates/menu-user.php'); ?>
+<?php include($BASE_DIR . 'templates/aside-menu.php'); ?>
 
 <div class="container-fluid text-left">
 	  <div class="row">
@@ -22,4 +22,5 @@
 		</div>
 	</div>
 </div>
-<?php include('../../templates/footer.php'); ?>
+
+<?php include($BASE_DIR . 'templates/footer.php'); ?>

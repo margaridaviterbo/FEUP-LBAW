@@ -1,7 +1,9 @@
 <?php include_once('../../config/init.php'); ?>
-<?php include('../../templates/header.php'); ?>
-<?php include('../../templates/menu-user.php'); ?>
-<?php include('../../templates/aside-menu.php'); ?>
+<?php include_once($BASE_DIR . 'database/user.php'); ?>
+<?php include_once($BASE_DIR . 'database/event.php'); ?>
+<?php include($BASE_DIR . 'templates/header.php'); ?>
+<?php include($BASE_DIR . 'templates/menu-user.php'); ?>
+<?php include($BASE_DIR . 'templates/aside-menu.php'); ?>
 
 <div class="container-fluid text-left">
   <div class="row">
@@ -49,7 +51,9 @@
                 </ul>
               </div>
             </div>
-
+			
+			<?php print_r(getSearchEvents(0, "at", true, true, true, 'ASC'));  ?>
+			
             <div class="container-fluid event-card-medium">
               <p class="titulo-card">Sessão de Demonstração para o Desenvolvimento em Comunicação</p>
               <div class="row">
@@ -205,7 +209,10 @@
                   </ul>
                 </div>
             </div>
-
+			
+			<?php 
+			print_r(getSearchUsers(0, 'u', 'ASC'));
+			?>
             <div class="container-fluid user-card-medium">
               <p class="titulo-card">festa123</p>
               <div class="row">
@@ -443,4 +450,4 @@
   </div>
 </div>
 
-<?php include('../../templates/footer.php'); ?>
+<?php include($BASE_DIR . 'templates/footer.php'); ?>
