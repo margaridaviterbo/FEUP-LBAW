@@ -108,10 +108,9 @@ header h2{
     .aside-user-buttons {
         width: 25%;
         position: fixed;
-        height: 100%;
+		right:0;
         overflow-y: auto;
         z-index: 1000;
-        transition: all 0.4s ease 0s;
     }
 }
 
@@ -138,7 +137,6 @@ a.list-group-item:focus, a.list-group-item:hover, button.list-group-item:focus, 
     color: rgb(0, 174, 93);
     background-color: rgb(215,243,235);
 }
-
 
 /**
  * Footer
