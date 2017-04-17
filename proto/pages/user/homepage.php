@@ -1,3 +1,4 @@
+<?php include('../../database/user.php'); ?>
 <div class="homepage">
   <div class="container-fluid text-left">
     <div class="page-title text-center">
@@ -6,7 +7,8 @@
         <br>
           <br>
             <br>
-    
+    <?php $users = getAllUsers(); 
+	print_r($users); ?>
     </div>
     <div class="row">
       <content class="col-sm-12">
