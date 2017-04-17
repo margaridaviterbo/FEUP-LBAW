@@ -13,7 +13,7 @@ function addeventChange() {
 		var name = $('#serch-input').val();
 		alert(name);
 		$('#searched-words').text(name);
-		$('#page-header h1').text("Search Results for \"" + name + "\"");
+		$('.page-header h1').text("Search Results for \"" + name + "\"");
 	});
 }
 
