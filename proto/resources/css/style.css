@@ -32,6 +32,11 @@ body{
    margin-right:0;
 }
 
+.text-left {
+	margin-left:2%;
+    margin-right:1%;
+}
+
 /**
  *Header
  **/
@@ -223,7 +228,7 @@ a.list-group-item:focus, a.list-group-item:hover, button.list-group-item:focus, 
     font-weight: bold;
     font-size: 1.8rem;
     margin-bottom: 0px;
-    height: 40px;
+    height: 60px;
     overflow: hidden;
 }
 
