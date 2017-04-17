@@ -9,7 +9,7 @@ function initserchname() {
 }
 
 function addeventChange() {
-	$('#serch-input').change(function() {
+	$('#serch-input').on('input', function() {
 		var name = $('#serch-input').val();
 		alert(name);
 		$('#searched-words').text(name);
