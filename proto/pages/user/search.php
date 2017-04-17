@@ -5,8 +5,6 @@ include_once($BASE_DIR . 'database/event.php');
 
 $serch = $_GET['serched'];
 
-echo $serch;
-
 $events = getSearchEvents(0, $serch, true, true, true, 'ASC');
 $users = getSearchUsers(0, $serch, 'ASC');
 
