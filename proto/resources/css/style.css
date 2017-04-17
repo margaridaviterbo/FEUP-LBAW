@@ -106,9 +106,8 @@ header h2{
 
 @media (min-width: 768px) {
     .aside-user-buttons {
-        margin-left: -250px;
-        left: 250px;
-        width: 250px;
+        eigth: 250px;
+        width: 25%;
         position: fixed;
         height: 100%;
         overflow-y: auto;
