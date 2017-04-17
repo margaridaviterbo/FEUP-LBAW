@@ -8,18 +8,14 @@
       <p class="text-card"> Quinta, 9 de Março às 19:45</p>
       <p class="text-card">ISG</p>
       <p class="text-card">Gratuito</p>
-      <div class="container-fluid">
-        <div class="row">
-          <button onclick="window.location.href='show-event-page.php'" type="button" class="btn btn-default col-sm-5">See More...</button>
-          <div class="classifica-card col-sm-7">
-            <i class="fa fa-star fa-2x" aria-hidden="true"></i>
-            <i class="fa fa-star fa-2x" aria-hidden="true"></i>
-            <i class="fa fa-star fa-2x" aria-hidden="true"></i>
-            <i class="fa fa-star fa-2x" aria-hidden="true"></i>
-            <i class="fa fa-star fa-2x" aria-hidden="true"></i>
-          </div>
-        </div>
-      </div>
+       <button onclick="window.location.href='show-event-page.php'" type="button" class="btn btn-default col-sm-5">See More...</button>
+       <div class="classifica-card col-sm-7">
+         <i class="fa fa-star fa-2x" aria-hidden="true"></i>
+         <i class="fa fa-star fa-2x" aria-hidden="true"></i>
+         <i class="fa fa-star fa-2x" aria-hidden="true"></i>
+         <i class="fa fa-star fa-2x" aria-hidden="true"></i>
+         <i class="fa fa-star fa-2x" aria-hidden="true"></i>
+       </div>
     </div>
   </div>
 </div>
