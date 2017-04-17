@@ -19,6 +19,3 @@
     <body>
 
     <div class="wrapper">
-	
-{include file='common/menu-user.tpl'}
-{include file='common/aside-menu.tpl'}
