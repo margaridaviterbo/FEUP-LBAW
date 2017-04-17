@@ -9,6 +9,7 @@ function initserchname() {
 }
 
 function addeventChange() {
+	alert('vai');
 	$('#serch-input').focus(function() {
 		var name = $('#serch-input').val();
 		alert(name);
