@@ -7,7 +7,7 @@
         <br>
           <br>
             <br>
-    <?php $users = getAllUsers(); 
+    <?php $users = getAllUsers(1); 
 	print_r($users); ?>
 	
     </div>
