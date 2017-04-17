@@ -190,8 +190,8 @@ a.list-group-item:focus, a.list-group-item:hover, button.list-group-item:focus, 
 }
 
 .homepage-card {
-	width: 30%;
-	display: block;
+	display: inline-block;
+	margin: 0;
 }
 
 .event-card-medium:last-child{
@@ -454,6 +454,11 @@ a, a:hover, a:focus{
     .event-name {
         font-size: 10px; /* 0.8x default size */
     }
+	
+	.homepage-card {
+		width: 100%;
+		margin: 0;
+	}
 }
 
 @media all and (min-width: 992px) { /* screen size until 1000px */
@@ -463,6 +468,11 @@ a, a:hover, a:focus{
     .event-creator{
         font-size: 13px;
     }
+	
+	.homepage-card {
+		width: 30%;
+		margin: 0;
+	}
 }
 
 @media all and (min-width: 1200px) { /* screen size until 1200px */
@@ -472,6 +482,11 @@ a, a:hover, a:focus{
     .event-creator{
         font-size: 15px;
     }
+	
+	.homepage-card {
+		width: 20%;
+		margin: 0;
+	}
 }
 
 .event-name{
