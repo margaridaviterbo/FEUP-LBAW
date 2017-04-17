@@ -8,7 +8,7 @@
 			
 	{$users|@print_r}
     </div>
-    <div class="row">
+    <div>
         {include file='cards/homepage_event_card.tpl'}
 		{include file='cards/homepage_event_card.tpl'}
 		{include file='cards/homepage_event_card.tpl'}              
