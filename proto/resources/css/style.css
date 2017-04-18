@@ -540,6 +540,11 @@ a, a:hover, a:focus{
     padding-left: 15%;
 }
 
+.alfabetic-ordering {
+    display: inline;
+    padding-left: 20px;
+}
+
 /**
     * TABS PESQ CSS *
 **/
@@ -646,11 +651,6 @@ div .dropdown {
 
 .homepage .page-title{
   margin-top: 50px;
-}
-
-.alfabetic-ordering {
-	padding-left: 10px;
-	display: inline;
 }
 
 label{
