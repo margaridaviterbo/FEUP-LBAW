@@ -31,7 +31,6 @@ function addorderlisteners() {
 		var name = $('#serch-input').val();
 		$('#usersPesq .usercadssech').html("");
 	    var asc = $('input[name=alfa-order-users]:checked').val();
-		alert(asc);
 		doajaxusercall('0', name, asc);
 	});
 }
