@@ -27,9 +27,11 @@
 	
 	if($nameOrPrice){ //name
 		$stringnNOP = "name"; //"name, price" falta implementar o price
-		echo 'vai';
 	}else
 		$stringnNOP = "name"; //"price, name" falta implementar o price
+	
+	echo $stringfreee;
+	echo $free;
     $stmt = $conn->prepare('SELECT *
 							FROM public.Event  INNER JOIN public.Localization ON (public.Event.local_id = public.Localization.local_id)
 							WHERE upper(name) LIKE upper(?)' . $stringfreee . $stringpaid .
