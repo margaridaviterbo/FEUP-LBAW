@@ -60,13 +60,13 @@ function doajaxusercall(page, name, asc) {
 		  ind += 1;
 		 $('#usersPesq .usercadssech').append(
 		 '<div class="container-fluid user-card-medium">' +
-              '<p class="titulo-card">' + asc.username + '</p>' +
+              '<p class="titulo-card">' + asc.first_name + ' ' + asc.last_name +'</p>' +
               '<div class="row">' +
                '<div class="col-sm-3">' +
                   '<img src="' + BASE_URL + 'resources/images/' + asc.photo_url + '"/>' +
                 '</div>' +
                 '<div class="col-sm-9">' +
-                  '<p class="text-card">' + asc.first_name + ' ' + asc.last_name + '</p>' +
+                  '<p class="text-card">'  + asc.username + '</p>' +
                   '<p class="text-card">' + asc.email + '</p>' +
                   '<button type="button" class="btn btn-default col-sm-5">Go To ptofile</button>' +
                 '</div>' +
