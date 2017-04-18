@@ -26,8 +26,8 @@
 	if($paid == false){
 		$stringpaid = " AND free = true";
 	}
-	echo $free;
-	echo $paid;
+	echo $stringfreee;
+	echo $stringpaid;
 	if($nameOrPrice){ //name
 		$stringnNOP = "name"; //"name, price" falta implementar o price
 	}else{
