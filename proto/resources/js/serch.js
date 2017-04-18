@@ -1,6 +1,7 @@
 $(document).ready(function() {
   initserchname();
   addeventChange();
+  addorderlisteners();
 });
 BASE_URL = 'http://gnomo.fe.up.pt/~lbaw1622/rui/FEUP-LBAW/proto/';
 
@@ -43,4 +44,12 @@ function initUsersReloader() {
       });
 		$('#tabs .button-users').html('Users (' + ind + ')');
     });
+}
+
+function addorderlisteners() {
+	$('.tabOptions input').on('change', function() {
+	   alert($('input[name=alfa-order-users]:checked').val()); 
+	});
+	
+	
 }
