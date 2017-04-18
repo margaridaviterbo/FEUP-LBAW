@@ -21,7 +21,6 @@ function addeventChange() {
 
 function initUsersReloader() {
 	var name = $('#serch-input').val();
-	var ind = 0;
 	console.log(BASE_URL + "actions/user/serchusers.php");
 	$('#usersPesq .usercadssech').html("");
 	doajaxusercall('0', name, 'ASC');
@@ -35,6 +34,7 @@ function addorderlisteners() {
 }
 
 function doajaxusercall(page, name, asc) {
+	  var ind = 0;
 	  $.getJSON(BASE_URL + "actions/user/serchusers.php", {page: page, serch: name, asc: asc}, function(data) {
       $.each(data, function(i, asc) {
 		  ind += 1;
