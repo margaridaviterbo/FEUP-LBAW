@@ -79,8 +79,25 @@ function doajaxusercall(page, name, asc) {
 function doajaxeventcall(page, name, free, paid, nameOrPrice, asc) {
 	  var ind = 0;
 	  canUpdateEvent = false;
-	  console.log('page: '+ page + ', serch: ' + name + ', free: ' + free + ', paid: ' + paid + ', nameOrPrice: ' + nameOrPrice + ', asc: ' + asc);
-	  $.getJSON(BASE_URL + "actions/user/serchevents.php", {page: page, serch: name, free: free, paid: paid, nameOrPrice: nameOrPrice, asc: asc}, function(data) {
+	  var bFree = true;
+	  var bPaid = true;
+	  var bNameOrPrice = true;
+	  if(free)
+		  bFree = 1;
+	  else
+		  bFree = 0;
+	  
+	  if(paid)
+		  bPaid = 1;
+	  else
+		  bPaid = 0;
+	  
+	  if(nameOrPrice)
+		  bNameOrPrice = 1;
+	  else
+		  bNameOrPrice = 0;
+	  
+	  $.getJSON(BASE_URL + "actions/user/serchevents.php", {page: page, serch: name, free: bFree, paid: bPaid, nameOrPrice: bNameOrPrice, asc: asc}, function(data) {
       $.each(data, function(i, asc) {
 		  ind += 1;
 		  var street = 'Not Difined';
