@@ -36,6 +36,7 @@ function testCanUpdate() {
 	if(askedToUpdate){
 		if(canUpdateuser && canUpdateEvent){
 			$('#usersPesq .usercadssech').html("");
+			$('#eventosPesq .eventcadssech').html("");
 			var name = $('#serch-input').val();
 			var ascUser = $('input[name=alfa-order-users]:checked').val();
 			var ascEvent = $('input[name=alfa-order-event]:checked').val();
