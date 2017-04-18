@@ -24,31 +24,21 @@ function addeventChange() {
 	});
 }
 
-function initEventsReloader() {
-	var name = $('#serch-input').val();
-	$('#eventosPesq .eventcadssech').html("");
-	var asc = $('input[name=alfa-order-users]:checked').val();
-	askedToUpdate = true;
-	testCanUpdate();
-}
-
 function addorderlisteners() {
 	$('.tabOptionsUsers input').on('change', function() {
-		var name = $('#serch-input').val();
-		$('#usersPesq .usercadssech').html("");
-	    var asc = $('input[name=alfa-order-event]:checked').val();
-		var by = $('input[name=type-order-event]:checked').val();
 		askedToUpdate = true;
 		testCanUpdate();
 	});
 }
 
-function testCanUpdate(){
+function testCanUpdate() {
 	if(askedToUpdate){
 		if(canUpdate){
 			$('#usersPesq .usercadssech').html("");
 			var name = $('#serch-input').val();
 			var ascUser = $('input[name=alfa-order-users]:checked').val();
+			var ascEvent = $('input[name=alfa-order-event]:checked').val();
+			var byEvent = $('input[name=type-order-event]:checked').val();
 			doajaxusercall('0', name, ascUser);
 			askedToUpdate = false;
 		}
@@ -59,7 +49,6 @@ function doajaxusercall(page, name, asc) {
 	  var ind = 0;
 	  canUpdate = false;
 	  $.getJSON(BASE_URL + "actions/user/serchusers.php", {page: page, serch: name, asc: asc}, function(data) {
-		  console.log(data);
       $.each(data, function(i, asc) {
 		  ind += 1;
 		 $('#usersPesq .usercadssech').append(
