@@ -26,8 +26,8 @@
           <div id="eventosPesq" class="tabContent">
 		  
             <div class="tabOptions tabOptionsEvets">
-              <input type="checkbox" name="Cost" value="free" checked=""> Free
-              <input type="checkbox" name="Cost" value="paid" checked=""> Paid
+              <input type="checkbox" name="free-order-event" value="free" checked=""> Free
+              <input type="checkbox" name="paid-order-event" value="paid" checked=""> Paid
 
 				<div class='alfabetic-ordering'>
 					Alfabetic order:
@@ -43,141 +43,7 @@
             </div>
 			
 			<div class="eventcadssech">
-			
-            <div class="container-fluid event-card-medium">
-              <p class="titulo-card">Sessão de Demonstração para o Desenvolvimento em Comunicação</p>
-              <div class="row">
-                <div class="col-sm-3">
-                  <img src="../resources/images/1.jpg" />
-                </div>
-                <div class="col-sm-9">
-                  <p class="text-card"> Quinta, 9 de Março às 19:45</p>
-                  <p class="text-card">ISG</p>
-                  <p class="text-card">Gratuito</p>
-                  <div class="container-fluid">
-                    <div class="row">
-                      <button type="button" class="btn btn-default col-sm-5">See More...</button>
-                      <div class="classifica-card col-sm-7">
-                        <i class="fa fa-star fa-2x" aria-hidden="true"></i>
-                        <i class="fa fa-star fa-2x" aria-hidden="true"></i>
-                        <i class="fa fa-star fa-2x" aria-hidden="true"></i>
-                        <i class="fa fa-star-o fa-2x" aria-hidden="true"></i>
-                        <i class="fa fa-star-o fa-2x" aria-hidden="true"></i>
-                      </div>
-                    </div>
 
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="container-fluid event-card-medium">
-              <p class="titulo-card">Sessão de Demonstração para o Desenvolvimento em Comunicação</p>
-              <div class="row">
-                <div class="col-sm-3">
-                  <img src="../resources/images/1.jpg" />
-                </div>
-                <div class="col-sm-9">
-                  <p class="text-card"> Quinta, 9 de Março às 19:45</p>
-                  <p class="text-card">ISG</p>
-                  <p class="text-card">Gratuito</p>
-                  <div class="container-fluid">
-                    <div class="row">
-                      <button type="button" class="btn btn-default col-sm-5">See More...</button>
-                      <div class="classifica-card col-sm-7">
-                        <i class="fa fa-star fa-2x" aria-hidden="true"></i>
-                        <i class="fa fa-star fa-2x" aria-hidden="true"></i>
-                        <i class="fa fa-star fa-2x" aria-hidden="true"></i>
-                        <i class="fa fa-star-o fa-2x" aria-hidden="true"></i>
-                        <i class="fa fa-star-o fa-2x" aria-hidden="true"></i>
-                      </div>
-                    </div>
-
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="container-fluid event-card-medium">
-              <p class="titulo-card">Sessão de Demonstração para o Desenvolvimento em Comunicação</p>
-              <div class="row">
-                <div class="col-sm-3">
-                  <img src="../resources/images/1.jpg" />
-                </div>
-                <div class="col-sm-9">
-                  <p class="text-card"> Quinta, 9 de Março às 19:45</p>
-                  <p class="text-card">ISG</p>
-                  <p class="text-card">Gratuito</p>
-                  <div class="container-fluid">
-                    <div class="row">
-                      <button type="button" class="btn btn-default col-sm-5">See More...</button>
-                      <div class="classifica-card col-sm-7">
-                        <i class="fa fa-star fa-2x" aria-hidden="true"></i>
-                        <i class="fa fa-star fa-2x" aria-hidden="true"></i>
-                        <i class="fa fa-star fa-2x" aria-hidden="true"></i>
-                        <i class="fa fa-star-o fa-2x" aria-hidden="true"></i>
-                        <i class="fa fa-star-o fa-2x" aria-hidden="true"></i>
-                      </div>
-                    </div>
-
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="container-fluid event-card-medium">
-              <p class="titulo-card">Sessão de Demonstração para o Desenvolvimento em Comunicação</p>
-              <div class="row">
-                <div class="col-sm-3">
-                  <img src="../resources/images/1.jpg" />
-                </div>
-                <div class="col-sm-9">
-                  <p class="text-card"> Quinta, 9 de Março às 19:45</p>
-                  <p class="text-card">ISG</p>
-                  <p class="text-card">Gratuito</p>
-                  <div class="container-fluid">
-                    <div class="row">
-                      <button type="button" class="btn btn-default col-sm-5">See More...</button>
-                      <div class="classifica-card col-sm-7">
-                        <i class="fa fa-star fa-2x" aria-hidden="true"></i>
-                        <i class="fa fa-star fa-2x" aria-hidden="true"></i>
-                        <i class="fa fa-star fa-2x" aria-hidden="true"></i>
-                        <i class="fa fa-star-o fa-2x" aria-hidden="true"></i>
-                        <i class="fa fa-star-o fa-2x" aria-hidden="true"></i>
-                      </div>
-                    </div>
-
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="container-fluid event-card-medium">
-              <p class="titulo-card">Sessão de Demonstração para o Desenvolvimento em Comunicação</p>
-              <div class="row">
-                <div class="col-sm-3">
-                  <img src="../resources/images/1.jpg" />
-                </div>
-                <div class="col-sm-9">
-                  <p class="text-card"> Quinta, 9 de Março às 19:45</p>
-                  <p class="text-card">ISG</p>
-                  <p class="text-card">Gratuito</p>
-                  <div class="container-fluid">
-                    <div class="row">
-                      <button type="button" class="btn btn-default col-sm-5">See More...</button>
-                      <div class="classifica-card col-sm-7">
-                        <i class="fa fa-star fa-2x" aria-hidden="true"></i>
-                        <i class="fa fa-star fa-2x" aria-hidden="true"></i>
-                        <i class="fa fa-star fa-2x" aria-hidden="true"></i>
-                        <i class="fa fa-star-o fa-2x" aria-hidden="true"></i>
-                        <i class="fa fa-star-o fa-2x" aria-hidden="true"></i>
-                      </div>
-                    </div>
-
-                  </div>
-                </div>
-              </div>
-            </div>
             
 			</div>
           </div>

@@ -41,6 +41,8 @@ function testCanUpdate() {
 			var ascUser = $('input[name=alfa-order-users]:checked').val();
 			var ascEvent = $('input[name=alfa-order-event]:checked').val();
 			var byEvent = $('input[name=type-order-event]:checked').val();
+			var boolFree = $('input[name=free-order-event]').attr('checked');
+			alert(boolFree);
 			doajaxusercall('0', name, ascUser);
 			doajaxeventcall('0', name, true, true, byEvent, ascEvent)
 			askedToUpdate = false;
