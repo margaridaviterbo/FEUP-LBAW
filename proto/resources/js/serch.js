@@ -3,6 +3,7 @@ $(document).ready(function() {
   addeventChange();
   addorderlisteners();
   setInterval(testCanUpdate(), 50);
+  setInterval(function(){ alert("Hello"); }, 3000);
 });
 BASE_URL = 'http://gnomo.fe.up.pt/~lbaw1622/rui/FEUP-LBAW/proto/';
 
