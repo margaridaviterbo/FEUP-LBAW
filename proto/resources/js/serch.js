@@ -21,12 +21,12 @@ function addeventChange() {
 
 function initUsersReloader() {
 	var name = $('#serch-input').val();
-	console.log(BASE_URL + "actions/user/serchusers.php");
 	$('#usersPesq .usercadssech').html("");
 	doajaxusercall('0', name, 'ASC');
 }
 
 function addorderlisteners() {
+	var name = $('#serch-input').val();
 	$('#usersPesq .usercadssech').html("");
 	$('.tabOptions input').on('change', function() {
 	    var asc = $('input[name=alfa-order-users]:checked').val();
