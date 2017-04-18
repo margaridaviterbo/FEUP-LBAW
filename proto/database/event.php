@@ -40,6 +40,6 @@
 							' ORDER BY ' . $stringnNOP . ' ' . $asc . 
 							' LIMIT 10 OFFSET ? * 10;');
     $stmt->execute(array($param, $page));
-    return $stmt->fetchAll();
+    echo $stmt->fetchAll();
   }
 ?>
