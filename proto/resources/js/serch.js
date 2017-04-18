@@ -26,7 +26,9 @@ function initUsersReloader() {
 	var name = $('#serch-input').val();
 	$('#usersPesq .usercadssech').html("");
 	var asc = $('input[name=alfa-order-users]:checked').val();
-	doajaxusercall('0', name, asc);
+	if(canUpdate){
+		doajaxusercall('0', name, asc);
+	}
 }
 
 function initEventsReloader() {
