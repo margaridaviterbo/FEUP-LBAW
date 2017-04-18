@@ -26,9 +26,9 @@ function initUsersReloader() {
 }
 
 function addorderlisteners() {
-	var name = $('#serch-input').val();
-	$('#usersPesq .usercadssech').html("");
 	$('.tabOptions input').on('change', function() {
+		var name = $('#serch-input').val();
+		$('#usersPesq .usercadssech').html("");
 	    var asc = $('input[name=alfa-order-users]:checked').val();
 		doajaxusercall('0', name, asc);
 	});
