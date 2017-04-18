@@ -43,10 +43,10 @@
 	$stmt->execute(array($param, $page));*/
 	$stmt = $conn->prepare('SELECT name, event_id, beginning_date, ending_date, photo_url, free
 							FROM public.Event  INNER JOIN public.Localization ON (public.Event.local_id = public.Localization.local_id)
-							WHERE upper(name) LIKE upper("%%")
+							WHERE upper(name) LIKE upper(?)
 							ORDER BY ' . $stringnNOP . ' ' . $asc . 
 							' LIMIT 10 OFFSET 0 * 10;');
-    $stmt->execute();
+    $stmt->execute(array($param));
     return $stmt->fetchAll();
   }
 ?>
