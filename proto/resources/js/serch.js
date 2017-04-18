@@ -80,6 +80,7 @@ function doajaxusercall(page, name, asc) {
 function doajaxeventcall(page, name, free, paid, nameOrPrice, asc) {
 	  var ind = 0;
 	  canUpdateEvent = false;
+	  console.log('page: '+ page + ', serch: ' + name + ', free: ' + free + ', paid: ' + paid + ', nameOrPrice: ' + nameOrPrice + ', asc: ' + asc);
 	  $.getJSON(BASE_URL + "actions/user/serchevents.php", {page: page, serch: name, free: free, paid: paid, nameOrPrice: nameOrPrice, asc: asc}, function(data) {
       $.each(data, function(i, asc) {
 		  ind += 1;
