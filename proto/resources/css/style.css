@@ -648,6 +648,11 @@ div .dropdown {
   margin-top: 50px;
 }
 
+.alfabetic-ordering {
+	padding-left: 10px;
+	display: inline;
+}
+
 label{
     margin: 10px 0 10px 5px;
 }
@@ -660,10 +665,6 @@ textarea {
 	padding-top: 50px;
 }
 
-.alfabetic-ordering {
-	padding-left: 10px;
-	display: inline;
-}
 
 /*ckeckout CARD*/
 .ckeckout-card {
