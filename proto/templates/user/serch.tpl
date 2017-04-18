@@ -37,8 +37,8 @@
 				
 				<div class='alfabetic-ordering'>
 					By:
-					<input type="radio" name="alfa-order-event" value="ASC" checked>Price
-					<input type="radio" name="alfa-order-event" value="DESC">Name
+					<input type="radio" name="type-order-event" value="true" checked>Name
+					<input type="radio" name="type-order-event" value="false">Price
 				</div>
             </div>
 			

@@ -16,12 +16,20 @@ function addeventChange() {
 		$('#searched-words').text(name);
 		$('.page-header h1').text("Search Results for \"" + name + "\"");
 		initUsersReloader();
+		initEventsReloader();
 	});
 }
 
 function initUsersReloader() {
 	var name = $('#serch-input').val();
 	$('#usersPesq .usercadssech').html("");
+	var asc = $('input[name=alfa-order-users]:checked').val();
+	doajaxusercall('0', name, asc);
+}
+
+function initUsersReloader() {
+	var name = $('#serch-input').val();
+	$('#eventosPesq .eventcadssech').html("");
 	var asc = $('input[name=alfa-order-users]:checked').val();
 	doajaxusercall('0', name, asc);
 }
