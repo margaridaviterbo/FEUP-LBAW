@@ -30,11 +30,15 @@
 	}else{
 		$stringnNOP = "name"; //"price, name" falta implementar o price
 	}
-	echo $asc;
+	echo 'SELECT *
+							FROM public.Event  INNER JOIN public.Localization ON (public.Event.local_id = public.Localization.local_id)
+							WHERE upper(name) LIKE upper(?)' . $stringfreee . $stringpaid .
+							' ORDER BY  ? ' . $asc .
+							' LIMIT 10 OFFSET ? * 10;';
     $stmt = $conn->prepare('SELECT *
 							FROM public.Event  INNER JOIN public.Localization ON (public.Event.local_id = public.Localization.local_id)
 							WHERE upper(name) LIKE upper(?)' . $stringfreee . $stringpaid .
-							' ORDER BY  ? ' . $asc . 
+							' ORDER BY  ? ' . $asc .
 							' LIMIT 10 OFFSET ? * 10;');
     $stmt->execute(array($param, $stringnNOP, $page));
     return $stmt->fetchAll();
