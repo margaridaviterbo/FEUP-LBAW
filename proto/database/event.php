@@ -19,10 +19,10 @@
 	$param = "%$name%";
 	$stringfreee = "";
 	$stringpaid = "";
-	if(!$free)
+	if(!($free))
 		$stringfreee = " AND free = false";
 	
-	if(!$paid)
+	if(!($paid))
 		$stringpaid = " AND free = true";
 	
 	if($nameOrPrice) //name
