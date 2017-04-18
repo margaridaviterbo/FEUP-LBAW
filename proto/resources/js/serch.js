@@ -49,6 +49,8 @@ function doajaxusercall(page, name, asc) {
 	  $.getJSON(BASE_URL + "actions/user/serchusers.php", {page: page, serch: name, asc: asc}, function(data) {
       $.each(data, function(i, asc) {
 		  ind += 1;
+		  
+			alert('vae');
 		 $('#usersPesq .usercadssech').append(
 		 '<div class="container-fluid user-card-medium">' +
               '<p class="titulo-card">' + asc.username + '</p>' +
@@ -73,7 +75,6 @@ function testCanUpdate(){
 	if(askedToUpdate){
 		if(canUpdate){
 			$('#usersPesq .usercadssech').html("");
-			alert('vae');
 			var name = $('#serch-input').val();
 			var ascUser = $('input[name=alfa-order-users]:checked').val();
 			doajaxusercall('0', name, asc);
