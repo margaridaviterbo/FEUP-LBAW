@@ -7,7 +7,7 @@
 	$asc = $_GET['asc'];
   
 	include_once('../../config/init.php');
-    include_once($BASE_DIR . 'database/user.php');
+    include_once($BASE_DIR . 'database/event.php');
 	
 	$events = getSearchEvents($page, $name, $free, $paid, $nameOrPrice, $asc);
 	
