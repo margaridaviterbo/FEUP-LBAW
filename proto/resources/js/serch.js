@@ -78,7 +78,7 @@ function doajaxusercall(page, name, asc) {
     });
 }
 
-function doajaxeventcall(page, name, free, paid, nameOrPrice, asc) {
+function doajaxeventcall(page, name, free, paid, nameOrPrice, asci) {
 	  var ind = 0;
 	  canUpdateEvent = false;
 	  var bFree = true;
@@ -99,7 +99,7 @@ function doajaxeventcall(page, name, free, paid, nameOrPrice, asc) {
 	  else
 		  bNameOrPrice = 0;
 	  
-	  $.getJSON(BASE_URL + "actions/user/serchevents.php", {page: page, serch: name, free: bFree, paid: bPaid, nameOrPrice: bNameOrPrice, asc: asc}, function(data) {
+	  $.getJSON(BASE_URL + "actions/user/serchevents.php", {page: page, serch: name, free: bFree, paid: bPaid, nameOrPrice: bNameOrPrice, asc: asci}, function(data) {
       $.each(data, function(i, asc) {
 		  ind += 1;
 		  var street = 'Not Difined';
