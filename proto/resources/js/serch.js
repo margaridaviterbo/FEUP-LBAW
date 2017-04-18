@@ -42,7 +42,7 @@ function testCanUpdate() {
 			var ascEvent = $('input[name=alfa-order-event]:checked').val();
 			var byEvent = $('input[name=type-order-event]:checked').val();
 			doajaxusercall('0', name, ascUser);
-			doajaxeventcall('0', name, true, true, true, 'ASC')
+			doajaxeventcall('0', name, true, true, byEvent, ascEvent)
 			askedToUpdate = false;
 		}
 	}
