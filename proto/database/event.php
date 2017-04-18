@@ -19,12 +19,14 @@
 	$param = "%$name%";
 	$stringfreee = "";
 	$stringpaid = "";
-	if($free == false){
+	if($free != true){
 		$stringfreee = " AND free = false";
+		echo 'vai1';
 	}
 	
-	if($paid == false){
+	if($paid != true){
 		$stringpaid = " AND free = true";
+		echo 'vai2';
 	}
 	echo $stringfreee;
 	echo $stringpaid;
