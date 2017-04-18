@@ -187,14 +187,13 @@
           </div>
           <div id="usersPesq" class="tabContent">
             <div class="tabOptions">
-              <input type="checkbox" name="Cost" value="free" checked="">
+              <input type="checkbox" name="Cost" value="free" checked>
                 Matching events
-                  <select class="selectpicker">
-                    <option id="user-name-descending">Name descending</option>
-                    <option id="user-name-ascending">Name ascending</option>
-                  </select>
-            </div>
-			
+				<div class='alfabetic-ordering'>
+					Alfabetic order:
+					<input type="radio" name="order" value="ASC" checked>Ascending
+					<input type="radio" name="order" value="DESC">Descending
+				</div>
             <div class="usercadssech">
             </div>
 			<div class="usercadssech">
