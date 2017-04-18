@@ -6,6 +6,7 @@ $(document).ready(function() {
 BASE_URL = 'http://gnomo.fe.up.pt/~lbaw1622/rui/FEUP-LBAW/proto/';
 
 var canUpdate = true;
+var askedToUpdate = false;
 
 function initserchname() {
 	var name = $('#searched-words').text();
@@ -17,27 +18,15 @@ function addeventChange() {
 		var name = $('#serch-input').val();
 		$('#searched-words').text(name);
 		$('.page-header h1').text("Search Results for \"" + name + "\"");
-		initUsersReloader();
-		//initEventsReloader();
+		askedToUpdate = true;
 	});
-}
-
-function initUsersReloader() {
-	var name = $('#serch-input').val();
-	$('#usersPesq .usercadssech').html("");
-	var asc = $('input[name=alfa-order-users]:checked').val();
-	if(canUpdate){
-		doajaxusercall('0', name, asc);
-	}
 }
 
 function initEventsReloader() {
 	var name = $('#serch-input').val();
 	$('#eventosPesq .eventcadssech').html("");
 	var asc = $('input[name=alfa-order-users]:checked').val();
-	if(canUpdate){
-		doajaxeventcall('0', name, asc);
-	}
+	askedToUpdate = true;
 }
 
 function addorderlisteners() {
@@ -46,9 +35,7 @@ function addorderlisteners() {
 		$('#usersPesq .usercadssech').html("");
 	    var asc = $('input[name=alfa-order-event]:checked').val();
 		var by = $('input[name=type-order-event]:checked').val();
-		if(canUpdate){
-			doajaxusercall('0', name, asc);
-		}
+		askedToUpdate = true;
 	});
 }
 
@@ -76,4 +63,15 @@ function doajaxusercall(page, name, asc) {
 		$('#tabs .button-users').html('Users (' + ind + ')');
 		canUpdate = true;
     });
+}
+
+while(1){
+	if(askedToUpdate){
+		if(canUpdate){
+			$('#usersPesq .usercadssech').html("");
+			var name = $('#serch-input').val();
+			var ascUser = $('input[name=alfa-order-users]:checked').val();
+			doajaxusercall('0', name, asc);
+		}
+	}
 }
