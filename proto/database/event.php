@@ -10,7 +10,7 @@
   $page, numero da pagina
   $name, nome do evento a procurar
   $free, true se procurar em free
-  $paid, true se procurar em false
+  $paid, true se procurar em paid
   $nameOrPrice, true se nome false se price
   $asc, ASC ou DESC
   */

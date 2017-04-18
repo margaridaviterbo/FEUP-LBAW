@@ -5,6 +5,8 @@ $(document).ready(function() {
 });
 BASE_URL = 'http://gnomo.fe.up.pt/~lbaw1622/rui/FEUP-LBAW/proto/';
 
+var canUpdate = true;
+
 function initserchname() {
 	var name = $('#searched-words').text();
     $('#serch-input').val(name);
@@ -31,20 +33,26 @@ function initUsersReloader() {
 	var name = $('#serch-input').val();
 	$('#eventosPesq .eventcadssech').html("");
 	var asc = $('input[name=alfa-order-users]:checked').val();
-	doajaxusercall('0', name, asc);
+	if(canUpdate){
+		doajaxeventcall('0', name, asc);
+	}
 }
 
 function addorderlisteners() {
 	$('.tabOptionsUsers input').on('change', function() {
 		var name = $('#serch-input').val();
 		$('#usersPesq .usercadssech').html("");
-	    var asc = $('input[name=alfa-order-users]:checked').val();
-		doajaxusercall('0', name, asc);
+	    var asc = $('input[name=alfa-order-event]:checked').val();
+		var by = $('input[name=type-order-event]:checked').val();
+		if(canUpdate){
+			doajaxusercall('0', name, asc);
+		}
 	});
 }
 
 function doajaxusercall(page, name, asc) {
 	  var ind = 0;
+	  canUpdate = false;
 	  $.getJSON(BASE_URL + "actions/user/serchusers.php", {page: page, serch: name, asc: asc}, function(data) {
       $.each(data, function(i, asc) {
 		  ind += 1;
@@ -64,5 +72,6 @@ function doajaxusercall(page, name, asc) {
             '</div>');
       });
 		$('#tabs .button-users').html('Users (' + ind + ')');
+		canUpdate = true;
     });
 }
