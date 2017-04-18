@@ -660,6 +660,10 @@ textarea {
 	padding-top: 50px;
 }
 
+.alfabetic-ordering {
+	padding-left: 10px;
+	display: inline;
+}
 
 /*ckeckout CARD*/
 .ckeckout-card {
@@ -687,6 +691,7 @@ textarea {
     display: block;
 }
 
+
 /*payed card*/
 .payed-card {
     padding: 10px;
@@ -707,9 +712,4 @@ textarea {
 	#menu {
 		background-color: rgba(0, 0, 0, 0.6);
 	}
-}
-
-.alfabetic-ordering {
-	padding-left: 10px;
-	display: inline;
 }
