@@ -18,7 +18,7 @@ function addeventChange() {
 		$('#searched-words').text(name);
 		$('.page-header h1').text("Search Results for \"" + name + "\"");
 		initUsersReloader();
-		initEventsReloader();
+		//initEventsReloader();
 	});
 }
 
@@ -29,7 +29,7 @@ function initUsersReloader() {
 	doajaxusercall('0', name, asc);
 }
 
-function initUsersReloader() {
+function initEventsReloader() {
 	var name = $('#serch-input').val();
 	$('#eventosPesq .eventcadssech').html("");
 	var asc = $('input[name=alfa-order-users]:checked').val();
