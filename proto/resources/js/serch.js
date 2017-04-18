@@ -73,6 +73,7 @@ function testCanUpdate(){
 	if(askedToUpdate){
 		if(canUpdate){
 			$('#usersPesq .usercadssech').html("");
+			alert('vae');
 			var name = $('#serch-input').val();
 			var ascUser = $('input[name=alfa-order-users]:checked').val();
 			doajaxusercall('0', name, asc);
