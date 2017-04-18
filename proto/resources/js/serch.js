@@ -42,9 +42,9 @@ function testCanUpdate() {
 			var ascEvent = $('input[name=alfa-order-event]:checked').val();
 			var byEvent = $('input[name=type-order-event]:checked').val();
 			var boolFree = $('input[name=free-order-event]').is(':checked');
-			alert(boolFree);
+			var boolPaid = $('input[name=paid-order-event]').is(':checked');
 			doajaxusercall('0', name, ascUser);
-			doajaxeventcall('0', name, true, true, byEvent, ascEvent)
+			doajaxeventcall('0', name, boolFree, boolPaid, byEvent, ascEvent)
 			askedToUpdate = false;
 		}
 	}
