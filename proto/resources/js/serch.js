@@ -49,7 +49,7 @@ function testCanUpdate(){
 			$('#usersPesq .usercadssech').html("");
 			var name = $('#serch-input').val();
 			var ascUser = $('input[name=alfa-order-users]:checked').val();
-			doajaxusercall('0', name, asc);
+			doajaxusercall('0', name, ascUser);
 			askedToUpdate = false;
 		}
 	}
