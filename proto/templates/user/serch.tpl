@@ -194,11 +194,10 @@
 					<input type="radio" name="order" value="ASC" checked>Ascending
 					<input type="radio" name="order" value="DESC">Descending
 				</div>
-            <div class="usercadssech">
-            </div>
-			<div class="usercadssech">
-            </div>
           </div>
+		  <div class="usercadssech">
+          </div>
+		  </div>
           <div id="tipoEventos" class="tabContent">
             <div class="tabOptions">
               <input type="checkbox" name="Cost" value="free" checked="">
@@ -401,7 +400,7 @@
             </div>
           </div>
         </div>
-    </div>
+		</div>
   </div>
 </div>
 
