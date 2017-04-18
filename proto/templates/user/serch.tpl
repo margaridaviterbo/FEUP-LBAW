@@ -24,30 +24,25 @@
         <div class="tabContentGroup">
           
           <div id="eventosPesq" class="tabContent">
+		  
             <div class="tabOptions tabOptionsEvets">
               <input type="checkbox" name="Cost" value="free" checked=""> Free
               <input type="checkbox" name="Cost" value="paid" checked=""> Paid
-              <div class="dropdown">
-                <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">
-                  Ordenate
-                  <span class="caret"></span>
-                </button>
-                <ul class="dropdown-menu">
-                  <li>
-                    <a href="#">Price descending</a>
-                  </li>
-                  <li>
-                    <a href="#">Price ascending</a>
-                  </li>
-                  <li>
-                    <a href="#">Name descending</a>
-                  </li>
-                  <li>
-                    <a href="#">Name ascending</a>
-                  </li>
-                </ul>
-              </div>
+
+				<div class='alfabetic-ordering'>
+					Alfabetic order:
+					<input type="radio" name="alfa-order-event" value="ASC" checked>Ascending
+					<input type="radio" name="alfa-order-event" value="DESC">Descending
+				</div>
+				
+				<div class='alfabetic-ordering'>
+					By:
+					<input type="radio" name="alfa-order-event" value="ASC" checked>Price
+					<input type="radio" name="alfa-order-event" value="DESC">Name
+				</div>
             </div>
+			
+			<div class="eventcadssech">
 			
             <div class="container-fluid event-card-medium">
               <p class="titulo-card">Sessão de Demonstração para o Desenvolvimento em Comunicação</p>
@@ -184,9 +179,11 @@
               </div>
             </div>
             
+			</div>
           </div>
           <div id="usersPesq" class="tabContent">
-            <div class="tabOptions tabOptionsUsers">
+            
+			<div class="tabOptions tabOptionsUsers">
               <input type="checkbox" name="match-events-users" value="free" checked>
                 Matching events
 				<div class='alfabetic-ordering'>
@@ -195,8 +192,9 @@
 					<input type="radio" name="alfa-order-users" value="DESC">Descending
 				</div>
           </div>
-		  <div class="usercadssech">
-          </div>
+		    
+			<div class="usercadssech">
+            </div>
 		  </div>
           <div id="tipoEventos" class="tabContent">
             <div class="tabOptions tabOptionsTypes">
