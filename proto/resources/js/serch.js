@@ -43,14 +43,25 @@ function addorderlisteners() {
 	});
 }
 
+function testCanUpdate(){
+	if(askedToUpdate){
+		if(canUpdate){
+			$('#usersPesq .usercadssech').html("");
+			var name = $('#serch-input').val();
+			var ascUser = $('input[name=alfa-order-users]:checked').val();
+			doajaxusercall('0', name, asc);
+			askedToUpdate = false;
+		}
+	}
+}
+
 function doajaxusercall(page, name, asc) {
 	  var ind = 0;
 	  canUpdate = false;
 	  $.getJSON(BASE_URL + "actions/user/serchusers.php", {page: page, serch: name, asc: asc}, function(data) {
+		  console.log(data);
       $.each(data, function(i, asc) {
 		  ind += 1;
-		  
-			alert('vae');
 		 $('#usersPesq .usercadssech').append(
 		 '<div class="container-fluid user-card-medium">' +
               '<p class="titulo-card">' + asc.username + '</p>' +
@@ -69,16 +80,4 @@ function doajaxusercall(page, name, asc) {
 		$('#tabs .button-users').html('Users (' + ind + ')');
 		canUpdate = true;
     });
-}
-
-function testCanUpdate(){
-	if(askedToUpdate){
-		if(canUpdate){
-			$('#usersPesq .usercadssech').html("");
-			var name = $('#serch-input').val();
-			var ascUser = $('input[name=alfa-order-users]:checked').val();
-			doajaxusercall('0', name, asc);
-			askedToUpdate = false;
-		}
-	}
 }
