@@ -25,9 +25,10 @@
 	if(!($paid))
 		$stringpaid = " AND free = true";
 	
-	if($nameOrPrice) //name
+	if($nameOrPrice){ //name
 		$stringnNOP = "name"; //"name, price" falta implementar o price
-	else
+		echo 'vai';
+	}else
 		$stringnNOP = "name"; //"price, name" falta implementar o price
     $stmt = $conn->prepare('SELECT *
 							FROM public.Event  INNER JOIN public.Localization ON (public.Event.local_id = public.Localization.local_id)
