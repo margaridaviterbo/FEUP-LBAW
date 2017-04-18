@@ -20,10 +20,10 @@
 	$stringfreee = "";
 	$stringpaid = "";
 	if(!($free))
-		$stringfreee = " AND free = false";
+		$stringfreee = " AND free = 0";
 	
 	if(!($paid))
-		$stringpaid = " AND free = true";
+		$stringpaid = " AND free = 1";
 	
 	if($nameOrPrice){ //name
 		$stringnNOP = "name"; //"name, price" falta implementar o price
