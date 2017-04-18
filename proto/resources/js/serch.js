@@ -27,7 +27,7 @@ function initUsersReloader() {
 }
 
 function addorderlisteners() {
-	$('.tabOptions input').on('change', function() {
+	$('.tabOptionsUsers input').on('change', function() {
 		var name = $('#serch-input').val();
 		$('#usersPesq .usercadssech').html("");
 	    var asc = $('input[name=alfa-order-users]:checked').val();

@@ -24,7 +24,7 @@
         <div class="tabContentGroup">
           
           <div id="eventosPesq" class="tabContent">
-            <div class="tabOptions">
+            <div class="tabOptions tabOptionsEvets">
               <input type="checkbox" name="Cost" value="free" checked=""> Free
               <input type="checkbox" name="Cost" value="paid" checked=""> Paid
               <div class="dropdown">
@@ -186,7 +186,7 @@
             
           </div>
           <div id="usersPesq" class="tabContent">
-            <div class="tabOptions">
+            <div class="tabOptions tabOptionsUsers">
               <input type="checkbox" name="match-events-users" value="free" checked>
                 Matching events
 				<div class='alfabetic-ordering'>
@@ -199,7 +199,7 @@
           </div>
 		  </div>
           <div id="tipoEventos" class="tabContent">
-            <div class="tabOptions">
+            <div class="tabOptions tabOptionsTypes">
               <input type="checkbox" name="Cost" value="free" checked="">
                 Free
                 <input type="checkbox" name="Cost" value="paid" checked="">
