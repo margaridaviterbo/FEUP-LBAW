@@ -80,6 +80,14 @@ function doajaxeventcall(page, name, free, paid, nameOrPrice, asc) {
 	  $.getJSON(BASE_URL + "actions/user/serchevents.php", {page: page, serch: name, free: free, paid: paid, nameOrPrice: nameOrPrice, asc: asc}, function(data) {
       $.each(data, function(i, asc) {
 		  ind += 1;
+		  var street = 'Not Difined';
+		  var vfree = 'Free';
+		  if(asc.street){
+			  street = asc.street;
+		  }
+		  if(!asc.free){
+			  vfree = 'Paid';
+		  }
 		 $('#eventosPesq .eventcadssech').append(
 		    '<div class="container-fluid event-card-medium">' +
               '<p class="titulo-card">' + asc.name + '</p>' +
@@ -89,8 +97,8 @@ function doajaxeventcall(page, name, free, paid, nameOrPrice, asc) {
                 '</div>' +
                 '<div class="col-sm-9">' +
                   '<p class="text-card">' + asc.beginning_date + '</p>' +
-                  '<p class="text-card">' + asc.street + '</p>' +
-                  '<p class="text-card">' + asc.free + '</p>' +
+                  '<p class="text-card">' + street + '</p>' +
+                  '<p class="text-card">' + vfree + '</p>' +
                   '<div class="container-fluid">' + 
                     '<div class="row">' +
                       '<button type="button" class="btn btn-default col-sm-5">See More...</button>' +
