@@ -15,6 +15,8 @@
   $asc, ASC ou DESC
   */
    function getSearchEvents($page, $name, $free, $paid, $nameOrPrice, $asc) {
+	   echo $free;
+	   echo  $paid;
     global $conn;
 	$param = "%$name%";
 	$stringfreee = "";

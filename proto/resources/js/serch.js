@@ -45,7 +45,6 @@ function testCanUpdate() {
 			var boolPaid = $('input[name=paid-order-event]').is(':checked');
 			doajaxusercall('0', name, ascUser);
 			doajaxeventcall('0', name, boolFree, boolPaid, byEvent, ascEvent);
-			console.log(ascEvent);
 			askedToUpdate = false;
 		}
 	}
