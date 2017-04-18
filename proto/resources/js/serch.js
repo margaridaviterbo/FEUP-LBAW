@@ -20,6 +20,7 @@ function addeventChange() {
 		$('#searched-words').text(name);
 		$('.page-header h1').text("Search Results for \"" + name + "\"");
 		askedToUpdate = true;
+		testCanUpdate();
 	});
 }
 
@@ -28,6 +29,7 @@ function initEventsReloader() {
 	$('#eventosPesq .eventcadssech').html("");
 	var asc = $('input[name=alfa-order-users]:checked').val();
 	askedToUpdate = true;
+	testCanUpdate();
 }
 
 function addorderlisteners() {
@@ -37,6 +39,7 @@ function addorderlisteners() {
 	    var asc = $('input[name=alfa-order-event]:checked').val();
 		var by = $('input[name=type-order-event]:checked').val();
 		askedToUpdate = true;
+		testCanUpdate();
 	});
 }
 
@@ -73,6 +76,7 @@ function testCanUpdate(){
 			var name = $('#serch-input').val();
 			var ascUser = $('input[name=alfa-order-users]:checked').val();
 			doajaxusercall('0', name, asc);
+			askedToUpdate = false;
 		}
 	}
 }
