@@ -32,7 +32,6 @@ function addorderlisteners() {
 }
 
 function testCanUpdate() {
-	console.log('tenta');
 	if(askedToUpdate){
 		if(canUpdate){
 			$('#usersPesq .usercadssech').html("");
