@@ -82,15 +82,15 @@ function doajaxeventcall(page, name, free, paid, nameOrPrice, asc) {
 		  ind += 1;
 		 $('#eventosPesq .eventcadssech').append(
 		    '<div class="container-fluid event-card-medium">' +
-              '<p class="titulo-card">Sessão de Demonstração para o Desenvolvimento em Comunicação</p>' +
+              '<p class="titulo-card">' + asc.name + '</p>' +
               '<div class="row">' +
                 '<div class="col-sm-3">' +
-                  '<img src="../resources/images/1.jpg" />' +
+                  '<img src="' + BASE_URL + 'resources/images/' + asc.photo_url + '"/>' +
                 '</div>' +
                 '<div class="col-sm-9">' +
-                  '<p class="text-card"> Quinta, 9 de Março às 19:45</p>' +
-                  '<p class="text-card">ISG</p>' +
-                  '<p class="text-card">Gratuito</p>' +
+                  '<p class="text-card">' + asc.beginning_date + '</p>' +
+                  '<p class="text-card">' + asc.street + '</p>' +
+                  '<p class="text-card">' + asc.free + '</p>' +
                   '<div class="container-fluid">' + 
                     '<div class="row">' +
                       '<button type="button" class="btn btn-default col-sm-5">See More...</button>' +
