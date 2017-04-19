@@ -30,7 +30,7 @@
 	}else{
 		$stringnNOP = "public.Event.name"; //"price, name" falta implementar o price
 	} //public.City.name AS cityName, public.Localization.street, public.Event.name AS name, public.Event.photo_url, public.Event.beginning_date, public.Event.ending_date, public.Event.free
-    $stmt = $conn->prepare('SELECT *
+    $stmt = $conn->prepare('SELECT public.City.name AS cityName, public.Localization.street, public.Event.name AS name, public.Event.photo_url, public.Event.beginning_date, public.Event.ending_date, public.Event.free
 							FROM ((public.Event 
 								 INNER JOIN public.Localization ON (public.Event.local_id = public.Localization.local_id))
 								 INNER JOIN public.City ON (public.City.city_id = public.Localization.city_id))
