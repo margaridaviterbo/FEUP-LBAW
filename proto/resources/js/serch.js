@@ -104,7 +104,7 @@ function doajaxeventcall(page, name, free, paid, nameOrPrice, asci) {
 		  var vfree = 'Free';
 		  var address = asc.cityname;
 		  if(asc.street){
-			  address = address . asc.street;
+			  address = address + ', ' +  asc.street;
 		  }
 		  if(!asc.free){
 			  vfree = 'Paid';
