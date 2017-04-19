@@ -40,6 +40,10 @@ function testCanUpdate() {
 			$('#usersPesq .usercadssech').html("");
 			$('#eventosPesq .eventcadssech').html("");
 			var name = $('#serch-input').val();
+			if(name == ''){
+				askedToUpdate = false;
+				return;
+			}
 			var ascUser = $('input[name=alfa-order-users]:checked').val();
 			var ascEvent = $('input[name=alfa-order-event]:checked').val();
 			var byEvent = $('input[name=type-order-event]:checked').val();
