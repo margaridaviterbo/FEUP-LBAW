@@ -41,6 +41,8 @@ function testCanUpdate() {
 			$('#eventosPesq .eventcadssech').html("");
 			var name = $('#serch-input').val();
 			if(name == ''){
+				$('#tabs .button-users').html('Users (0)');
+				$('#tabs .button-events').html('Events (0)');
 				askedToUpdate = false;
 				return;
 			}
