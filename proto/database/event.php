@@ -31,9 +31,9 @@
 		$stringnNOP = "name"; //"price, name" falta implementar o price
 	} //public.City.name AS cityName, public.Localization.street, public.Meta_Event.name AS name, public.Meta_Event.photo_url, public.Meta_Event.beginning_date, public.Meta_Event.ending_date, public.Meta_Event.free
     $stmt = $conn->prepare('SELECT *
-							FROM public.Event 
-								 INNER JOIN public.Localization ON (public.Event.local_id = public.Localization.local_id)
-								 INNER JOIN public.City ON (public.City.city_id = public.Localization.city_id)
+							FROM ((public.Event 
+								 INNER JOIN public.Localization ON (public.Event.local_id = public.Localization.local_id))
+								 INNER JOIN public.City ON (public.City.city_id = public.Localization.city_id))
 							WHERE upper(public.Meta_Event.name) LIKE upper(?)' . $stringfreee . $stringpaid .
 							' ORDER BY ' . $stringnNOP . ' ' . $asc .
 							' LIMIT 10 OFFSET ? * 10;');
