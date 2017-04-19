@@ -22,7 +22,4 @@ function createEvent($name, $description, $beginning_date, $beginning_time, $end
     $stmt = $conn->prepare('INSERT INTO public.event(name, description, beginning_date, ending_date, event_state, photo_url, free, meta_event_id, local_id) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)');
     $stmt->execute(array($name, $description, $beginning, $ending, $state, $photo, $free, $meta_event_id, $local));
 }
-
-
-
 ?>

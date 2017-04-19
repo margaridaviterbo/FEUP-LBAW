@@ -15,7 +15,8 @@
     <link rel="stylesheet" href="../../css/style.css">
     <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
     <script type="text/javascript"
-            src='http://maps.google.com/maps/api/js?key=AIzaSyA3phNNq0EMPtIndXE0ncMDoHGHxzw3iDk&sensor=false&libraries=places'></script>
+            src='http://maps.google.com/maps/api/js?key=AIzaSyA3phNNq0EMPtIndXE0ncMDoHGHxzw3iDk&libraries=places'></script>
+    <script src="https://maps.googleapis.com/maps/api/geocode/json?address=1600+Amphitheatre+Parkway,+Mountain+View,+CA&key=AIzaSyA3phNNq0EMPtIndXE0ncMDoHGHxzw3iDk"></script>
 </head>
 
 <body>

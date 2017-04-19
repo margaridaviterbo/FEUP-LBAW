@@ -16,6 +16,8 @@ $category = $_POST["category"];
 $description = $_POST["description"];
 $price = $_POST["paid"];
 $photo = $_POST["event-photo"];
+$latitude = $_POST["lat"];
+$longitude = $_POST["lng"];
 
 if ($price == null || $price==false)
     $free = true;
@@ -23,6 +25,7 @@ else
     $free = false;
 
 $state = true;
+
 
 //TESTE:
 $local=1;

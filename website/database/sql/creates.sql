@@ -125,7 +125,6 @@ CREATE TABLE public.City
 CREATE TABLE public.Localization
 (	
 	local_id serial PRIMARY KEY,
-    street VARCHAR(1000),
 	coordinates VARCHAR(1000) NOT NULL,
 	city_id INTEGER,
 	FOREIGN KEY(city_id) REFERENCES City(city_id)
@@ -141,6 +140,7 @@ CREATE TABLE public.Meta_Event
   photo_url varchar(1000),
 	expiration_date timestamp,
 	free boolean NOT NULL,
+	public boolean NOT NULL,
 	owner_id integer NOT NULL,
 	category_id integer NOT NULL,
 	local_id integer NOT NULL,
