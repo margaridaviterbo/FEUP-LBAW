@@ -41,7 +41,8 @@
 	$stmt = $conn->prepare('SELECT name, public.Event.event_id, AVG(evaluation)
 							FROM ((public.Rate 
 								 INNER JOIN public.Event_Content ON (public.Rate.event_content_id = public.Event_Content.event_content_id))
-								 INNER JOIN public.Event ON (public.Event.event_id = public.Event_Content.event_id))');
+								 INNER JOIN public.Event ON (public.Event.event_id = public.Event_Content.event_id))
+							GROUP BY public.Event.event_id');
     $stmt->execute();
     return $stmt->fetchAll();
   }
