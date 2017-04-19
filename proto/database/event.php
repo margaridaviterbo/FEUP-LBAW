@@ -26,9 +26,9 @@
 		$stringpaid = " AND free = true";
 	
 	if($nameOrPrice){ //name
-		$stringnNOP = "name"; //"name, price" falta implementar o price
+		$stringnNOP = "public.Event.name"; //"name, price" falta implementar o price
 	}else{
-		$stringnNOP = "name"; //"price, name" falta implementar o price
+		$stringnNOP = "public.Event.name"; //"price, name" falta implementar o price
 	} //public.City.name AS cityName, public.Localization.street, public.Event.name AS name, public.Event.photo_url, public.Event.beginning_date, public.Event.ending_date, public.Event.free
     $stmt = $conn->prepare('SELECT *
 							FROM ((public.Event 
