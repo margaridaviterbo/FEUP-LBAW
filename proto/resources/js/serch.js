@@ -101,10 +101,10 @@ function doajaxeventcall(page, name, free, paid, nameOrPrice, asci) {
 	  $.getJSON(BASE_URL + "actions/user/serchevents.php", {page: page, serch: name, free: bFree, paid: bPaid, nameOrPrice: bNameOrPrice, asc: asci}, function(data) {
       $.each(data, function(i, asc) {
 		  ind += 1;
-		  var street = 'Not Difined';
 		  var vfree = 'Free';
+		  var address = asc.cityname;
 		  if(asc.street){
-			  street = asc.street;
+			  address = address . asc.street;
 		  }
 		  if(!asc.free){
 			  vfree = 'Paid';
@@ -118,7 +118,7 @@ function doajaxeventcall(page, name, free, paid, nameOrPrice, asci) {
                 '</div>' +
                 '<div class="col-sm-9">' +
                   '<p class="text-card">' + asc.beginning_date + '</p>' +
-                  '<p class="text-card">' + street + '</p>' +
+                  '<p class="text-card">' + address + '</p>' +
                   '<p class="text-card">' + vfree + '</p>' +
                   '<div class="container-fluid">' + 
                     '<div class="row">' +
