@@ -1,6 +1,6 @@
 <?php
 
-   /* session_set_cookie_params(3600);
+    session_set_cookie_params(3600);
     session_start();
 
     error_reporting(E_ERROR | E_WARNING); // E_NOTICE by default
@@ -9,7 +9,7 @@
     $conn->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);       # permite que um erro seja detetado
 
-*/
+/*
   session_set_cookie_params(3600, '/~lbaw1622/FEUP-LBAW/');
   session_start();
 
@@ -41,6 +41,6 @@
   unset($_SESSION['error_messages']);
   unset($_SESSION['field_errors']);
   unset($_SESSION['form_values']);
-
+*/
 
 ?>

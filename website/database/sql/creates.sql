@@ -57,7 +57,7 @@ CREATE TYPE notification_type AS ENUM(
 );
 
 CREATE TYPE recurrence AS ENUM(
-	'daily', 'weekly', 'once', 'annually', 'quarterly', 'semester'
+	'daily', 'weekly', 'once', 'annually', 'monthly', 'semester'
 );
 
 CREATE TYPE user_state AS ENUM(
@@ -138,7 +138,7 @@ CREATE TABLE public.Meta_Event
 	description varchar(20000) NOT NULL,
 	recurrence recurrence NOT NULL,
 	meta_event_state boolean NOT NULL,
-    photo_url varchar(1000),
+  photo_url varchar(1000),
 	expiration_date timestamp,
 	free boolean NOT NULL,
 	owner_id integer NOT NULL,
@@ -158,7 +158,7 @@ CREATE TABLE public.Event
 	description varchar(20000) NOT NULL,
 	beginning_date timestamp NOT NULL,
 	ending_date timestamp,
-    event_state boolean NOT NULL,
+  event_state boolean NOT NULL,
 	photo_url varchar(1000),
 	free boolean NOT NULL,
 	meta_event_id integer NOT NULL,

@@ -2,11 +2,6 @@
     <h5>LBAW 2016/17</h5>
 </footer>
 
-<script src="../../scripts/classie.js"></script>
-<script src="../../scripts/cbpAnimatedHeader.js"></script>
-<script src="../../scripts/jquery-1.9.1.min.js"></script>
-<script src="../../lib/bootstrap/js/bootstrap.min.js"></script>
-
 </div>
 </body>
 
@@ -26,11 +21,13 @@
                 <form action="../../actions/authentication/login.php" method="post">
                     <div class="form-group">
                         <label for="exampleInputEmail1">Email address / Username</label>
-                        <input type="text" name="email-login" class="form-control" id="email-login" placeholder="Insert email or username" required>
+                        <input type="text" name="email-login" class="form-control" id="email-login"
+                               placeholder="Insert email or username" required>
                     </div>
                     <div class="form-group">
                         <label for="exampleInputPassword1">Password</label>
-                        <input type="password" name="password-login" class="form-control" id="password-login" placeholder="Insert password"
+                        <input type="password" name="password-login" class="form-control" id="password-login"
+                               placeholder="Insert password"
                                required>
                         <span class="psw">Forgot <a href="#">password?</a></span>
                     </div>
@@ -161,10 +158,12 @@
                 <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
             </div>
         </div>
-
     </div>
 </div>
 
 <script src="../../scripts/authentication/validateRegister.js"></script>
+<script src="../../scripts/classie.js"></script>
+<script src="../../scripts/cbpAnimatedHeader.js"></script>
+<script src="../../lib/bootstrap/js/bootstrap.min.js"></script>
 
 </html>
