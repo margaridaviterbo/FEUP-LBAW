@@ -109,12 +109,19 @@ function doajaxeventcall(page, name, free, paid, nameOrPrice, asci) {
 		  ind += 1;
 		  var vfree = 'Free';
 		  var address = asc.cityname;
+		  var rateEvent = asc.rate;
+		  var rateString = '';
 		  if(asc.street){
 			  address = address + ', ' +  asc.street;
 		  }
 		  if(!asc.free){
 			  vfree = 'Paid';
 		  }
+		  if(!rateEvent){
+			  rateEvent = 0;
+		  }
+		  rateString = '<i class="fa fa-star fa-2x" aria-hidden="true"></i>'.repeat(rateEvent);
+		  rateString = rateString + '<i class="fa fa-star-o fa-2x" aria-hidden="true"></i>'.repeat(5-rateEvent);
 		 $('#eventosPesq .eventcadssech').append(
 		    '<div class="container-fluid event-card-medium">' +
               '<p class="titulo-card">' + asc.name + '</p>' +
@@ -130,11 +137,7 @@ function doajaxeventcall(page, name, free, paid, nameOrPrice, asci) {
                     '<div class="row">' +
                       '<button type="button" class="btn btn-default col-sm-5">See More...</button>' +
                       '<div class="classifica-card col-sm-7">' +
-                        '<i class="fa fa-star fa-2x" aria-hidden="true"></i>' +
-                        '<i class="fa fa-star fa-2x" aria-hidden="true"></i>' +
-                        '<i class="fa fa-star fa-2x" aria-hidden="true"></i>' +
-                        '<i class="fa fa-star-o fa-2x" aria-hidden="true"></i>' +
-                        '<i class="fa fa-star-o fa-2x" aria-hidden="true"></i>' +
+                       rateString  +
                       '</div>' +
                     '</div>' +
                   '</div>' +
