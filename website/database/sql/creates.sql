@@ -125,8 +125,10 @@ CREATE TABLE public.City
 CREATE TABLE public.Localization
 (	
 	local_id serial PRIMARY KEY,
-	coordinates VARCHAR(1000) NOT NULL,
+	latitude FLOAT NOT NULL,
+	longitude FLOAT NOT NULL,
 	city_id INTEGER,
+	UNIQUE(latitude, longitude),
 	FOREIGN KEY(city_id) REFERENCES City(city_id)
 );
 
@@ -161,11 +163,12 @@ CREATE TABLE public.Event
   event_state boolean NOT NULL,
 	photo_url varchar(1000),
 	free boolean NOT NULL,
+	public boolean NOT NULL,
 	meta_event_id integer NOT NULL,
 	local_id integer NOT NULL,
 	FOREIGN KEY(meta_event_id) REFERENCES Meta_Event(meta_event_id),
 	FOREIGN KEY(local_id) REFERENCES Localization(local_id),
-	/*CONSTRAINT beginning_date CHECK (beginning_date > current_date),*/
+	CONSTRAINT beginning_date CHECK (beginning_date > current_date),
 	CONSTRAINT end_date CHECK (ending_date > beginning_date)
 );
 

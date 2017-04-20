@@ -26,11 +26,11 @@ if (isset($_SESSION['authenticated'])) {
                                aria-describedby="basic-addon1" required>
                     </content>
                     <content class="col-md-offset-1 col-md-1 col-xs-2">
-                        <label class="">Public</label>
+                        <label>Public</label>
                         <input type="checkbox" class="checkbox-form" name="public">
                     </content>
                     <content class="col-md-offset-1 col-md-1 col-xs-2">
-                        <label class="text-center">Free</label>
+                        <label>Free</label>
                         <input type="checkbox" class="checkbox-form" name="free">
                     </content>
                 </div>
