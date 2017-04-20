@@ -48,11 +48,11 @@
                                 <ul class="nav navbar-nav navbar-right" id="login">
 
                                     {if $USERNAME}
-                                        <li><a href="../../pages/user/my-page-my-information.php"><span
+                                        <li><a href="{$BASE_URL}pages/user/my-page-my-information.php"><span
                                                         class="glyphicon glyphicon-pencil"></span><?= $_SESSION['username'] ?>
                                             </a>
                                         </li>
-                                        <li><a href="../../actions/authentication/logout.php"><span
+                                        <li><a href="{$BASE_URL}actions/authentication/logout.php"><span
                                                         class="glyphicon glyphicon-log-out"></span> Logout</a>
                                         </li>
                                     {else}

@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2017-04-20 17:55:24
+<?php /* Smarty version Smarty-3.1.15, created on 2017-04-20 18:16:50
          compiled from "/home/catarina/Desktop/FEUP/3ºano/LBAW/FEUP-LBAW/website/templates/common/footer.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:143349275958f8d5bed4f784-25568743%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '8cbd8d0ca24db86072f703176b47f8a85a9223ef' => 
     array (
       0 => '/home/catarina/Desktop/FEUP/3ºano/LBAW/FEUP-LBAW/website/templates/common/footer.tpl',
-      1 => 1492703562,
+      1 => 1492705003,
       2 => 'file',
     ),
   ),
@@ -28,15 +28,15 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 </footer>
 
 </div>
-</body>
 
-<script src="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
-scripts/authentication/validateRegister.js"></script>
 <script src="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
 scripts/classie.js"></script>
 <script src="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
 scripts/cbpAnimatedHeader.js"></script>
 <script src="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
 lib/bootstrap/js/bootstrap.min.js"></script>
+<script src="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
+scripts/authentication/validateRegister.js"></script>
 
+</body>
 </html><?php }} ?>

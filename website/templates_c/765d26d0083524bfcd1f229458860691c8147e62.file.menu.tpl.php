@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2017-04-20 17:35:16
+<?php /* Smarty version Smarty-3.1.15, created on 2017-04-20 18:03:46
          compiled from "/home/catarina/Desktop/FEUP/3ºano/LBAW/FEUP-LBAW/website/templates/common/menu.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:127155670758f8d3e8599837-82394470%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '765d26d0083524bfcd1f229458860691c8147e62' => 
     array (
       0 => '/home/catarina/Desktop/FEUP/3ºano/LBAW/FEUP-LBAW/website/templates/common/menu.tpl',
-      1 => 1492702515,
+      1 => 1492704001,
       2 => 'file',
     ),
   ),
@@ -76,11 +76,13 @@ index.php"><h2>Eventify</h2></a>
                                 <ul class="nav navbar-nav navbar-right" id="login">
 
                                     <?php if ($_smarty_tpl->tpl_vars['USERNAME']->value) {?>
-                                        <li><a href="../../pages/user/my-page-my-information.php"><span
+                                        <li><a href="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
+pages/user/my-page-my-information.php"><span
                                                         class="glyphicon glyphicon-pencil"></span><<?php ?>?= $_SESSION['username'] ?<?php ?>>
                                             </a>
                                         </li>
-                                        <li><a href="../../actions/authentication/logout.php"><span
+                                        <li><a href="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
+actions/authentication/logout.php"><span
                                                         class="glyphicon glyphicon-log-out"></span> Logout</a>
                                         </li>
                                     <?php } else { ?>

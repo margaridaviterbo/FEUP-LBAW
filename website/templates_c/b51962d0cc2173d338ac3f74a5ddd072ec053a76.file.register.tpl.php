@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2017-04-20 17:52:14
+<?php /* Smarty version Smarty-3.1.15, created on 2017-04-20 19:13:11
          compiled from "/home/catarina/Desktop/FEUP/3ºano/LBAW/FEUP-LBAW/website/templates/authentication/register.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:124944227158f8d92e443848-06202155%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'b51962d0cc2173d338ac3f74a5ddd072ec053a76' => 
     array (
       0 => '/home/catarina/Desktop/FEUP/3ºano/LBAW/FEUP-LBAW/website/templates/authentication/register.tpl',
-      1 => 1492703528,
+      1 => 1492708361,
       2 => 'file',
     ),
   ),
@@ -15,13 +15,13 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   'function' => 
   array (
   ),
+  'version' => 'Smarty-3.1.15',
+  'unifunc' => 'content_58f8d92e4444d5_44680002',
   'variables' => 
   array (
     'BASE_URL' => 0,
   ),
   'has_nocache_code' => false,
-  'version' => 'Smarty-3.1.15',
-  'unifunc' => 'content_58f8d92e4444d5_44680002',
 ),false); /*/%%SmartyHeaderCode%%*/?>
 <?php if ($_valid && !is_callable('content_58f8d92e4444d5_44680002')) {function content_58f8d92e4444d5_44680002($_smarty_tpl) {?>
 <!-- Modal Register -->
@@ -37,38 +37,38 @@ $_valid = $_smarty_tpl->decodeProperties(array (
             <div class="modal-body">
                 <p>
 
-                <form id="teste" action="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
+                <form action="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
 actions/authentication/register.php" method="post"
                       enctype="multipart/>form-data">
 
-                    <label for="first_name">First Name </label>
+                    <label>First Name *</label>
                     <input name="first_name" id="first_name" type="text" class="form-control"
                            placeholder="Insert your first name" onkeyup="validateFirstName();" required>
-                    <span class="name_message"></span>
 
-                    <label>Last Name</label>
+                    <label>Last Name *</label>
                     <input name="last_name" id="last_name" type="text" class="form-control"
-                           placeholder="Insert your last name" required>
-                    <span class="name_message"></span>
+                           placeholder="Insert your last name" onkeyup="validateLastName();" required>
 
-                    <label>Username</label>
-                    <input name="username" type="text" class="form-control" placeholder="Choose an username" required>
-                    <span class="username_message"></span>
+                    <label>Username *</label>
+                    <input name="username" id="username" type="text" class="form-control" placeholder="Choose an username" onkeyup="validateUsername();" required>
 
-                    <label>E-mail</label>
-                    <input name="email" id="email" type="email" class="form-control" placeholder="Insert your email"
+                    <label>E-mail *</label>
+                    <input name="email" id="email" type="email" class="form-control" placeholder="Insert your email" onkeyup="validateEmail();"
                            required>
-                    <span class="email_message"></span>
 
-                    <label for="password">Password</label>
+                    <label>NIF</label>
+                    <input name="nif" id="nif" type="number" class="form-control" placeholder="Insert your nif" onkeyup="validateNif();"
+                           required>
+                    <span class="nif_message"></span>
+
+                    <label for="password">Password *</label>
                     <input name="password" type="password" id="password" class="form-control"
                            placeholder="Choose a password between 8 and 25 characters" onkeyup="validatePassword();"
                            required>
-                    <span class="password_message"></span>
 
-                    <label>Confirm Password</label>
+                    <label>Confirm Password *</label>
                     <input type="password" class="form-control" placeholder="Confirm the password" required>
-                    <span class="confirm_password_message"></span>
+                    <span id="confirm_password_message"></span>
                     <br></br>
 
                     <label>Profile picture</label>
@@ -89,8 +89,6 @@ actions/authentication/register.php" method="post"
                 <span>Already have an account?<a href="#" data-toggle="modal" data-dismiss="modal"
                                                  data-target="#modalLogin"> Log in</a> here.</span>
             </div>
-
         </div>
-
     </div>
 </div><?php }} ?>
