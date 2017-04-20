@@ -120,8 +120,8 @@ function doajaxeventcall(page, name, free, paid, nameOrPrice, asci) {
 		  if(!rateEvent){
 			  rateEvent = 0;
 		  }
-		  rateString = '<i class="fa fa-star fa-2x" aria-hidden="true"></i>'.repeat(rateEvent);
-		  rateString = rateString + '<i class="fa fa-star-o fa-2x" aria-hidden="true"></i>'.repeat(5-rateEvent);
+		  rateString.concat('<i class="fa fa-star fa-2x" aria-hidden="true"></i>'.repeat(rateEvent));
+		  rateString.concat('<i class="fa fa-star-o fa-2x" aria-hidden="true"></i>'.repeat(5-rateEvent));
 		 $('#eventosPesq .eventcadssech').append(
 		    '<div class="container-fluid event-card-medium">' +
               '<p class="titulo-card">' + asc.name + '</p>' +
