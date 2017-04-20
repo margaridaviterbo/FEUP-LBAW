@@ -39,7 +39,7 @@
 								WHERE upper(public.Event.name) LIKE upper(?)' . $stringfreee . $stringpaid .
 								' ORDER BY ' . $stringnNOP . ' ' . $asc .
 								' LIMIT 10 OFFSET ? * 10) AS eventInfo,
-								(SELECT public.Event.event_id AS avgEvId, AVG(evaluation) as rate
+								(SELECT public.Event.event_id AS avgEvId, 3
 								FROM ((public.Rate 
 									 INNER JOIN public.Event_Content ON (public.Rate.event_content_id = public.Event_Content.event_content_id))
 									 INNER JOIN public.Event ON (public.Event.event_id = public.Event_Content.event_id))
