@@ -81,7 +81,9 @@ function doajaxusercall(page, name, asc) {
               '</div>' +
             '</div>');
       });
-		$('#tabs .button-users').html('Users (' + ind + ')');
+	  	var numpageuser = parseInt($('#serch-num-page-user').text());
+		var numResults = numpageuser * 10 + ind;
+		$('#tabs .button-users').html('Users (' + numResults + ')');
 		if(ind == 10){
 			  $('#usersPesq .usercadssech').append('<button type="button" class="btn btn-default see-more-evets find-more-users">See More</button>');
 			  $('.find-more-users').click(function() {
