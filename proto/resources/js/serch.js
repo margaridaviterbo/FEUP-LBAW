@@ -122,16 +122,8 @@ function doajaxeventcall(page, name, free, paid, nameOrPrice, asci) {
 		  }
 		  rateEvent = Math.floor(rateEvent);
 		  console.log(rateEvent);
-		  rateString.concat("<i class=\"fa fa-star fa-2x\" aria-hidden=\"true\"></i>".repeat(rateEvent));
+		  rateString = "<i class=\"fa fa-star fa-2x\" aria-hidden=\"true\"></i>".repeat(rateEvent);
 		  console.log(rateString);
-		  rateString.concat('<i class="fa fa-star-o fa-2x" aria-hidden="true"></i>'.repeat(5-rateEvent));
-		  console.log("<i class=\"fa fa-star fa-2x\" aria-hidden=\"true\"></i>".repeat(rateEvent));
-		  console.log('<i class="fa fa-star fa-2x" aria-hidden="true"></i>'.repeat(rateEvent));
-		  console.log('i class="fa fa-star fa-2x" aria-hidden="true"/i'.repeat(rateEvent));
-		  console.log('i class=fa fa-star fa-2x aria-hidden=true/i'.repeat(rateEvent));
-		  console.log('i classfa fa-star fa-2x aria-hiddentrue/i'.repeat(rateEvent));
-		  console.log('i classfa fa-star fa-2x aria-hiddentruei'.repeat(rateEvent));
-		  console.log('aei ou'.repeat(5));
 		 $('#eventosPesq .eventcadssech').append(
 		    '<div class="container-fluid event-card-medium">' +
               '<p class="titulo-card">' + asc.name + '</p>' +
