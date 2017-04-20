@@ -121,9 +121,9 @@ function doajaxeventcall(page, name, free, paid, nameOrPrice, asci) {
 			  rateEvent = 0;
 		  }
 		  rateEvent = Math.floor(rateEvent);
-		  console.log(rateEvent);
 		  rateString = '<i class="fa fa-star fa-2x" aria-hidden="true"></i>'.repeat(rateEvent);
-		  console.log(rateString);
+		  rateString = rateString + '<i class="fa fa-star-o fa-2x" aria-hidden="true"></i>'.repeat(5-rateEvent);
+		  
 		 $('#eventosPesq .eventcadssech').append(
 		    '<div class="container-fluid event-card-medium">' +
               '<p class="titulo-card">' + asc.name + '</p>' +
