@@ -1,4 +1,25 @@
-<footer class="container-fluid text-center" id="footer">
+<?php /* Smarty version Smarty-3.1.15, created on 2017-04-20 15:22:02
+         compiled from "/home/catarina/Desktop/FEUP/3ºano/LBAW/FEUP-LBAW/website/templates/common/footer.php" */ ?>
+<?php /*%%SmartyHeaderCode:95828742258f8b5fa981db9-43483442%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+$_valid = $_smarty_tpl->decodeProperties(array (
+  'file_dependency' => 
+  array (
+    '3deec6ee1ac3811a5e366d8bef1da708257006af' => 
+    array (
+      0 => '/home/catarina/Desktop/FEUP/3ºano/LBAW/FEUP-LBAW/website/templates/common/footer.php',
+      1 => 1492588420,
+      2 => 'file',
+    ),
+  ),
+  'nocache_hash' => '95828742258f8b5fa981db9-43483442',
+  'function' => 
+  array (
+  ),
+  'has_nocache_code' => false,
+  'version' => 'Smarty-3.1.15',
+  'unifunc' => 'content_58f8b5fa998180_88013864',
+),false); /*/%%SmartyHeaderCode%%*/?>
+<?php if ($_valid && !is_callable('content_58f8b5fa998180_88013864')) {function content_58f8b5fa998180_88013864($_smarty_tpl) {?><footer class="container-fluid text-center" id="footer">
     <h5>LBAW 2016/17</h5>
 </footer>
 
@@ -166,4 +187,4 @@
 <script src="../../scripts/cbpAnimatedHeader.js"></script>
 <script src="../../lib/bootstrap/js/bootstrap.min.js"></script>
 
-</html>
+</html><?php }} ?>

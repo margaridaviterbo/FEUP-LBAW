@@ -1,7 +1,7 @@
 ﻿<?php
-include('../../templates/common/header.php');
 include('../../config/init.php');
-include('../../templates/common/menu.php');
+$smarty->display('common/header.tpl');
+$smarty->display('common/menu.php');
 
 if (isset($_SESSION['authenticated'])) {
     if ($_SESSION['authenticated'] == true) {
@@ -135,4 +135,4 @@ if (isset($_SESSION['authenticated'])) {
 
 <script type="text/javascript" src="../../scripts/map.js"></script>
 
-<?php include('../../templates/common/footer.php'); ?>
+<?php include('../../templates/common/footer.tpl'); ?>

@@ -6,7 +6,7 @@
     error_reporting(E_ERROR | E_WARNING); // E_NOTICE by default
 
     $BASE_DIR = '/home/catarina/Desktop/FEUP/3ºano/LBAW/FEUP-LBAW/website/';
-    $BASE_URL = '/home/catarina/Desktop/FEUP/3ºano/LBAW/FEUP-LBAW/website/';
+    $BASE_URL = '/';
 
     $conn = new PDO('pgsql:host=localhost;port=5432;dbname=postgres', 'postgres', 'postgres');
     $conn->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);

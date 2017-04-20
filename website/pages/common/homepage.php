@@ -1,7 +1,7 @@
 <?php
-include('../../templates/common/header.php');
 include('../../config/init.php');
-include('../../templates/common/menu.php');
+$smarty->display('common/header.tpl');
+$smarty->display('common/menu.tpl');
 ?>
 
 <div class="homepage">
@@ -267,4 +267,4 @@ include('../../templates/common/menu.php');
   </div>
 </div>
 
-<?php include('../../templates/common/footer.php'); ?>
+<?php $smarty->display('common/footer.tpl'); ?>
