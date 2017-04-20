@@ -159,7 +159,10 @@ function doajaxeventcall(page, name, free, paid, nameOrPrice, asci) {
               '</div>' +
             '</div>');
       });
-		$('#tabs .button-events').html('Events (' + ind + ')');
+	  	var numpageevents = parseInt($('#serch-num-page-event').text());
+		var numResults = numpageevents * 10 + ind;
+		$('#tabs .button-events').html('Events (' + numResults + ')');
+		
 		if(ind == 10){
 			  $('#eventosPesq .eventcadssech').append('<button type="button" class="btn btn-default see-more-evets find-more-events">See More</button>');
 			  $('.find-more-events').click(function() {
