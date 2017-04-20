@@ -5,7 +5,7 @@ include('../../templates/common/menu.tpl');
 
 if(isset($_SESSION['authenticated'])) {
     if ($_SESSION['authenticated'] == true) {
-        include('../../templates/common/aside-menu.php');
+        include('../../templates/common/aside-menu.tpl');
     }
 }
 ?>

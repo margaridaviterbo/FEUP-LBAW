@@ -49,7 +49,7 @@
 
                                     {if $USERNAME}
                                         <li><a href="{$BASE_URL}pages/user/my-page-my-information.php"><span
-                                                        class="glyphicon glyphicon-pencil"></span><?= $_SESSION['username'] ?>
+                                                        class="glyphicon glyphicon-pencil"></span>{$USERNAME}
                                             </a>
                                         </li>
                                         <li><a href="{$BASE_URL}actions/authentication/logout.php"><span

@@ -1,4 +1,3 @@
-
 <!-- Modal Register -->
 <div id="modalRegister" class="modal fade" role="dialog">
     <div class="modal-dialog">

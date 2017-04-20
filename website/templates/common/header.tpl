@@ -25,3 +25,4 @@
 
     {include file='authentication/login.tpl'}
     {include file='authentication/register.tpl'}
+    {include file='common/menu.tpl'}

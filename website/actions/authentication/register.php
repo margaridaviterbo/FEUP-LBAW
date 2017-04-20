@@ -14,8 +14,9 @@
 
     if ($bool === true){
 
-        echo '<script> alert("User already exists.") </script>';
-        header('refresh:1; url=../../pages/common/homepage.php');
+        $_SESSION['error_messages'] = 'User already exists';
+        header('Location: {$BASE_URL}pages/common/error.php');
+        exit;
     }
     else {
 

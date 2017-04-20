@@ -69,6 +69,21 @@
         return $id;
     }
 
+    function getUserFromId($id){
+        global $conn;
+        $stmt = $conn->prepare('SELECT * FROM public.users WHERE public.users.user_id = ?');
+        $stmt->execute(array($id));
+
+        return $stmt->fetch();
+    }
+
+    function getAuthenticatedUserFromId($id){
+        global $conn;
+        $stmt = $conn->prepare('SELECT * FROM public.authenticated_user WHERE public.authenticated_user.user_id = ?');
+        $stmt->execute(array($id));
+        return $stmt->fetch();
+    }
+
     function getUserIdFromAuthenticatedUser($username){
 
         global $conn;
@@ -77,7 +92,6 @@
 
         $row = $stmt->fetch();
         $id = intval($row['user_id']);
-
         return $id;
     }
 
