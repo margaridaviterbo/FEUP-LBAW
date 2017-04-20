@@ -159,6 +159,11 @@ function doajaxeventcall(page, name, free, paid, nameOrPrice, asci) {
 		$('#tabs .button-events').html('Events (' + ind + ')');
 		if(ind == 10){
 			  $('#eventosPesq .eventcadssech').append('<button type="button" class="btn btn-default see-more-evets find-more-events">See More</button>');
+			  $('.find-more-events').click(function() {
+					var antepage = parseInt($('#serch-num-page-event').text());
+					$('#serch-num-page-event').text(antepage + 1);
+					finMoreEvents(antepage + 1);
+			});
 		}
 		canUpdateEvent = true;
     });
@@ -167,7 +172,6 @@ function doajaxeventcall(page, name, free, paid, nameOrPrice, asci) {
 function finMoreUsers(page) {
 		if(canUpdateuser && canUpdateEvent){
 			$('.find-more-users').remove();
-			console.log($('.find-more-users').html());
 			var name = $('#serch-input').val();
 			if(name == ''){
 				$('#tabs .button-users').html('Users (0)');
@@ -177,5 +181,23 @@ function finMoreUsers(page) {
 			}
 			var ascUser = $('input[name=alfa-order-users]:checked').val();
 			doajaxusercall(page, name, ascUser);
+		}
+}
+
+function finMoreEvents(page) {
+		if(canUpdateuser && canUpdateEvent){
+			$('.find-more-events').remove();
+			var name = $('#serch-input').val();
+			if(name == ''){
+				$('#tabs .button-users').html('Users (0)');
+				$('#tabs .button-events').html('Events (0)');
+				askedToUpdate = false;
+				return;
+			}
+			var ascEvent = $('input[name=alfa-order-event]:checked').val();
+			var byEvent = $('input[name=type-order-event]:checked').val();
+			var boolFree = $('input[name=free-order-event]').is(':checked');
+			var boolPaid = $('input[name=paid-order-event]').is(':checked');
+			doajaxeventcall(page, name, boolFree, boolPaid, byEvent, ascEvent);
 		}
 }

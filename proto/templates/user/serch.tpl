@@ -9,6 +9,7 @@
         </div>
 		<p hidden id="searched-words">{$serch}</p>
 		<p hidden id="serch-num-page-user">0</p>
+		<p hidden id="serch-num-page-event">0</p>
 
         <ul id="tabs">
           <li>
