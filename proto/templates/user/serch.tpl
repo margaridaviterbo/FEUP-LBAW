@@ -8,6 +8,7 @@
             <h1>Search Results for "{$serch}" </h1>
         </div>
 		<p hidden id="searched-words">{$serch}</p>
+		<p hidden id="serch-num-page-user">0</p>
 
         <ul id="tabs">
           <li>

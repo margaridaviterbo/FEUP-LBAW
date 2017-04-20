@@ -39,6 +39,7 @@ function testCanUpdate() {
 		if(canUpdateuser && canUpdateEvent){
 			$('#usersPesq .usercadssech').html("");
 			$('#eventosPesq .eventcadssech').html("");
+			$('#serch-num-page-user').text(0);
 			var name = $('#serch-input').val();
 			if(name == ''){
 				$('#tabs .button-users').html('Users (0)');
@@ -81,7 +82,13 @@ function doajaxusercall(page, name, asc) {
       });
 		$('#tabs .button-users').html('Users (' + ind + ')');
 		if(ind == 10){
-			  $('#usersPesq .usercadssech').append('<button type="button" class="btn btn-default see-more-evets">See More</button>');
+			  $('#usersPesq .usercadssech').append('<button type="button" class="btn btn-default see-more-evets find-more-users">See More</button>');
+			  $('.find-more-users').click(function() {
+					console.log('carrgou');
+					var antepage = $('#serch-num-page-user').text();
+					$('#serch-num-page-user').text(antepage + 1);
+					finMoreUsers(antepage + 1);
+			});
 		}
 		canUpdateuser = true;
     });
@@ -152,8 +159,23 @@ function doajaxeventcall(page, name, free, paid, nameOrPrice, asci) {
       });
 		$('#tabs .button-events').html('Events (' + ind + ')');
 		if(ind == 10){
-			  $('#eventosPesq .eventcadssech').append('<button type="button" class="btn btn-default see-more-evets">See More</button>');
+			  $('#eventosPesq .eventcadssech').append('<button type="button" class="btn btn-default see-more-evets find-more-events">See More</button>');
 		}
 		canUpdateEvent = true;
     });
+}
+
+function finMoreUsers(page) {
+		if(canUpdateuser && canUpdateEvent){
+			var name = $('#serch-input').val();
+			if(name == ''){
+				$('#tabs .button-users').html('Users (0)');
+				$('#tabs .button-events').html('Events (0)');
+				askedToUpdate = false;
+				return;
+			}
+			var ascUser = $('input[name=alfa-order-users]:checked').val();
+			doajaxusercall(page, name, ascUser);
+		}
+	}
 }
