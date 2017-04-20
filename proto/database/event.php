@@ -38,12 +38,13 @@
 									 INNER JOIN public.City ON (public.City.city_id = public.Localization.city_id))
 								WHERE upper(public.Event.name) LIKE upper(?)' . $stringfreee . $stringpaid .
 								' ORDER BY ' . $stringnNOP . ' ' . $asc .
-								' LIMIT 10 OFFSET ? * 10) AS eventInfo INNER JOIN
+								' LIMIT 10 OFFSET ? * 10) AS eventInfo,
 								(SELECT public.Event.event_id AS avgEvId, AVG(evaluation) as rate
 								FROM ((public.Rate 
 									 INNER JOIN public.Event_Content ON (public.Rate.event_content_id = public.Event_Content.event_content_id))
 									 INNER JOIN public.Event ON (public.Event.event_id = public.Event_Content.event_id))
-								GROUP BY public.Event.event_id) ON (eveId = avgEvId);');
+								GROUP BY public.Event.event_id) AS aveInfo
+							WHERE (eveId = avgEvId);');
     $stmt->execute(array($param, $page));
     return $stmt->fetchAll();
   }
