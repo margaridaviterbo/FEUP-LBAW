@@ -30,7 +30,7 @@
 	}else{
 		$stringnNOP = "public.Event.name"; //"price, name" falta implementar o price
 	}
-    $stmt = $conn->prepare('SELECT cityName, street, name, photo_url, beginning_date, ending_date, free, event_id, rate
+    $stmt = $conn->prepare('SELECT cityName, street, name, photo_url, beginning_date, ending_date, free, eventInfo.eveId, rate
 							FROM
 								(SELECT public.City.name AS cityName, public.Localization.street, public.Event.name AS name, public.Event.photo_url, public.Event.beginning_date, public.Event.ending_date, public.Event.free, public.Event.event_id AS eveId
 								FROM ((public.Event 
