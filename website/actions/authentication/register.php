@@ -8,6 +8,7 @@
     $username = $_POST["username"];
     $email = $_POST["email"];
     $password = $_POST["password"];
+    $nif = $_POST["nif"];
 
     $bool = authenticatedUserExists($username, $email);
 
@@ -22,7 +23,7 @@
 
         //Se o utilizador ainda não existir na base de dados
         if ($user == false) {
-            createUser($firstname, $lastname, $email);
+            createUser($firstname, $lastname, $email, $nif);
         } else {
             //UpdateUser
         }
@@ -38,9 +39,12 @@
             $_SESSION['username'] = $username;
             $_SESSION['user_id'] = $user_id;
 
-            //echo '<script> alert("New user added. Check your email.") </script>';
-            echo '<script> alert("New user added.") </script>';
-            header('refresh:1; url=../../pages/user/user-homepage.php');
+            header('Location: ../../pages/user/user-homepage.php');
+        }
+        else{
+            $_SESSION['error_messages'] = 'Login Failed';
+            header('Location: {$BASE_URL}pages/common/error.php');
+            exit;
         }
     }
 

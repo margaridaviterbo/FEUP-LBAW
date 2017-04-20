@@ -1,9 +1,9 @@
 <?php
 
-    function createUser($firstname, $lastname, $email){
+    function createUser($firstname, $lastname, $email, $nif){
         global $conn;
-        $stmt = $conn->prepare('INSERT INTO public.users(first_name, last_name, email) VALUES (?, ?, ?)');
-        $stmt->execute(array($firstname, $lastname, $email));
+        $stmt = $conn->prepare('INSERT INTO public.users(first_name, last_name, email, nif) VALUES (?, ?, ?, ?)');
+        $stmt->execute(array($firstname, $lastname, $email, $nif));
     }
 
     function updateUser($firstname, $lastname, $email){

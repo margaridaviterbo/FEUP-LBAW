@@ -3,13 +3,13 @@ var badColor = "#ff6666";
 var color = "#fff7e9";
 var white = "#ffffff";
 
-function validateFirstName(){
+function validateFirstName() {
 
     var firstname = document.getElementById('first_name');
 
     var regex = /^[a-zA-Z]{3,20}$/;
 
-    if (!firstname.value.match(regex)){
+    if (!firstname.value.match(regex)) {
         firstname.style.color = badColor;
         return false;
     }
@@ -19,13 +19,13 @@ function validateFirstName(){
     }
 }
 
-function validateLastName(){
+function validateLastName() {
 
     var lastname = document.getElementById('last_name');
 
     var regex = /^[a-zA-Z]{2,20}$/;
 
-    if (!lastname.value.match(regex)){
+    if (!lastname.value.match(regex)) {
         lastname.style.color = badColor;
         return false;
     }
@@ -35,13 +35,13 @@ function validateLastName(){
     }
 }
 
-function validateUsername(){
+function validateUsername() {
 
     var username = document.getElementById('username');
 
     var regex = /^[a-zA-Z]([a-zA-Z0-9]){7,24}$/;
 
-    if (!username.value.match(regex)){
+    if (!username.value.match(regex)) {
         username.style.color = badColor;
         return false;
     }
@@ -51,13 +51,13 @@ function validateUsername(){
     }
 }
 
-function validateEmail(){
+function validateEmail() {
 
     var email = document.getElementById('email');
 
     var regex = /^(\w+@\w+\.\w+){1,254}$/;
 
-    if (!email.value.match(regex)){
+    if (!email.value.match(regex)) {
         email.style.color = badColor;
         return false;
     }
@@ -67,13 +67,13 @@ function validateEmail(){
     }
 }
 
-function validateNif(){
+function validateNif() {
 
     var nif = document.getElementById('nif');
 
     var regex = /^[0-9]{9}$/;
 
-    if (!nif.value.match(regex)){
+    if (!nif.value.match(regex)) {
         nif.style.color = badColor;
         return false;
     }
@@ -83,14 +83,14 @@ function validateNif(){
     }
 }
 
-function validatePassword(){
+function validatePassword() {
 
     var password = document.getElementById('password');
     var message = document.getElementById('password_message');
 
     var regex = /^(?=.*[0-9])(?=.*[a-zA-Z])([a-zA-Z0-9!@#$%^&*]+){8,25}$/;
 
-    if (!password.value.match(regex)){
+    if (!password.value.match(regex)) {
         password.style.color = badColor;
         message.style.color = badColor;
         message.innerHTML = " Password must contain a number and a char at least";
@@ -103,13 +103,13 @@ function validatePassword(){
     }
 }
 
-function confirmPassword(){
+function confirmPassword() {
 
     var password = document.getElementById('password');
     var confirm = document.getElementById('confirm_password');
     var message = document.getElementById('confirm_password_message');
 
-    if (confirm.value != password.value){
+    if (confirm.value != password.value) {
         confirm.style.color = badColor;
         message.style.color = badColor;
         message.innerHTML = " Passwords must match";
@@ -122,6 +122,6 @@ function confirmPassword(){
     }
 }
 
-function validateAll(){
-    return validateFirstName() &&  validateLastName() && validateUsername() && validateEmail() && validateNif() && validatePassword() && confirmPassword();
+function validateAll() {
+    return validateFirstName() && validateLastName() && validateUsername() && validateEmail() && validateNif() && validatePassword() && confirmPassword();
 }

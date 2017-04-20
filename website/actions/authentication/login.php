@@ -18,8 +18,9 @@ if ($user == false) {
         $user_id = getUserIdFromAuthenticatedUser($username);
     }
     else{
-        echo '<script> alert("User doesn\'t exist.") </script>';
-        echo '<script> window.location.href = "../../index.php"; </script>';
+        $_SESSION['error_messages'] = 'User doesn\'t exist';
+        header('Location:../../pages/common/error.php');
+        exit;
     }
 
 } else {
@@ -33,12 +34,13 @@ if (isLoginCorrect($username, $password)) {
     $_SESSION['username'] = $username;
     $_SESSION['user_id'] = $user_id;
 
-    header('refresh:1; url=../../pages/user/user-homepage.php');
+    header('Location: ../../pages/user/user-homepage.php');
 }
 else {
 
-    echo '<script> alert("Incorrect password") </script>';
-    echo '<script> window.location.href = "../../index.php"; </script>';
+    $_SESSION['error_messages'] = 'Incorrect password';
+    header('Location: ../../pages/common/error.php');
+    exit;
 }
 
 ?>
