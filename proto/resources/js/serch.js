@@ -120,6 +120,7 @@ function doajaxeventcall(page, name, free, paid, nameOrPrice, asci) {
 		  if(!rateEvent){
 			  rateEvent = 0;
 		  }
+		  rateEvent = Math.floor(rateEvent);
 		  console.log(rateEvent);
 		  rateString.concat('<i class="fa fa-star fa-2x" aria-hidden="true"></i>'.repeat(rateEvent));
 		  rateString.concat('<i class="fa fa-star-o fa-2x" aria-hidden="true"></i>'.repeat(5-rateEvent));
