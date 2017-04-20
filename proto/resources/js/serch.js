@@ -85,7 +85,7 @@ function doajaxusercall(page, name, asc) {
 			  $('#usersPesq .usercadssech').append('<button type="button" class="btn btn-default see-more-evets find-more-users">See More</button>');
 			  $('.find-more-users').click(function() {
 					console.log('carrgou');
-					var antepage = $('#serch-num-page-user').text();
+					var antepage = parseInt($('#serch-num-page-user').text());
 					$('#serch-num-page-user').text(antepage + 1);
 					finMoreUsers(antepage + 1);
 			});
