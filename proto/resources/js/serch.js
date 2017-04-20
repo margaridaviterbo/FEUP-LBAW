@@ -84,7 +84,6 @@ function doajaxusercall(page, name, asc) {
 		if(ind == 10){
 			  $('#usersPesq .usercadssech').append('<button type="button" class="btn btn-default see-more-evets find-more-users">See More</button>');
 			  $('.find-more-users').click(function() {
-					console.log('carrgou');
 					var antepage = parseInt($('#serch-num-page-user').text());
 					$('#serch-num-page-user').text(antepage + 1);
 					finMoreUsers(antepage + 1);
@@ -167,6 +166,7 @@ function doajaxeventcall(page, name, free, paid, nameOrPrice, asci) {
 
 function finMoreUsers(page) {
 		if(canUpdateuser && canUpdateEvent){
+			$('#usersPesq .usercadssech').last().remove();
 			var name = $('#serch-input').val();
 			if(name == ''){
 				$('#tabs .button-users').html('Users (0)');
