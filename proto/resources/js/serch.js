@@ -81,7 +81,7 @@ function doajaxusercall(page, name, asc) {
       });
 		$('#tabs .button-users').html('Users (' + ind + ')');
 		if(ind == 10){
-			  $('#usersPesq .usercadssech').append('<button type="button" class="btn btn-default see-more-users">See More</button>');
+			  $('#usersPesq .usercadssech').append('<button type="button" class="btn btn-default see-more-evets">See More</button>');
 		}
 		canUpdateuser = true;
     });
@@ -152,7 +152,7 @@ function doajaxeventcall(page, name, free, paid, nameOrPrice, asci) {
       });
 		$('#tabs .button-events').html('Events (' + ind + ')');
 		if(ind == 10){
-			  $('#usersPesq .usercadssech').append('<button type="button" class="btn btn-default see-more-evets">See More</button>');
+			  $('#eventosPesq .eventcadssech').append('<button type="button" class="btn btn-default see-more-evets">See More</button>');
 		}
 		canUpdateEvent = true;
     });
