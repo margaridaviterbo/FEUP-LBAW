@@ -26,9 +26,9 @@
 		$stringpaid = " AND free = true";
 	
 	if($nameOrPrice){ //name
-		$stringnNOP = "public.Event.name"; //"name, price" falta implementar o price
+		$stringnNOP = "name"; //"name, price" falta implementar o price
 	}else{
-		$stringnNOP = "public.Event.name"; //"price, name" falta implementar o price
+		$stringnNOP = "name"; //"price, name" falta implementar o price
 	}
     $stmt = $conn->prepare('SELECT cityName, street, name, photo_url, beginning_date, ending_date, free, eventInfo.eveId, rate
 							FROM
@@ -37,14 +37,15 @@
 									 INNER JOIN public.Localization ON (public.Event.local_id = public.Localization.local_id))
 									 INNER JOIN public.City ON (public.City.city_id = public.Localization.city_id))
 								WHERE upper(public.Event.name) LIKE upper(?)' . $stringfreee . $stringpaid .
-								' ORDER BY ' . $stringnNOP . ' ' . $asc .
-								' LIMIT 10 OFFSET ? * 10) AS eventInfo,
+								') AS eventInfo,
 								(SELECT public.Event.event_id AS avgEvId, AVG(evaluation) as rate
 								FROM ((public.Rate 
 									 INNER JOIN public.Event_Content ON (public.Rate.event_content_id = public.Event_Content.event_content_id))
 									 RIGHT JOIN public.Event ON (public.Event.event_id = public.Event_Content.event_id))
 								GROUP BY public.Event.event_id) AS aveInfo
-							WHERE (eventInfo.eveId = aveInfo.avgEvId);');
+							WHERE (eventInfo.eveId = aveInfo.avgEvId)
+							ORDER BY ' . $stringnNOP . ' ' . $asc .
+							' LIMIT 10 OFFSET ? * 10;');
     $stmt->execute(array($param, $page));
     return $stmt->fetchAll();
   }
