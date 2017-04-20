@@ -86,18 +86,37 @@ function validateNif(){
 function validatePassword(){
 
     var password = document.getElementById('password');
-    var message = document.getElementById('confirm_password_message');
+    var message = document.getElementById('password_message');
 
-    var regex = /^(?=.*[0-9])[a-zA-Z0-9!@#$%^&*]{8,25}$/;
+    var regex = /^(?=.*[0-9])(?=.*[a-zA-Z])([a-zA-Z0-9!@#$%^&*]+){8,25}$/;
 
     if (!password.value.match(regex)){
-        password.style.backgroundColor = badColor;
+        password.style.color = badColor;
         message.style.color = badColor;
-        message.innerHTML = "Password size must be between 8 and 25";
+        message.innerHTML = " Password must contain a number and a char at least";
         return false;
     }
     else {
-        password.style.backgroundColor = goodColor;
+        password.style.color = goodColor;
+        message.innerHTML = "";
+        return true;
+    }
+}
+
+function confirmPassword(){
+
+    var password = document.getElementById('password');
+    var confirm = document.getElementById('confirm_password');
+    var message = document.getElementById('confirm_password_message');
+
+    if (confirm.value != password.value){
+        confirm.style.color = badColor;
+        message.style.color = badColor;
+        message.innerHTML = " Passwords must match";
+        return false;
+    }
+    else {
+        confirm.style.color = goodColor;
         message.innerHTML = "";
         return true;
     }

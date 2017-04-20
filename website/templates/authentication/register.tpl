@@ -35,14 +35,13 @@
                            required>
                     <span class="nif_message"></span>
 
-                    <label for="password">Password *</label>
+                    <label for="password">Password *<span id="password_message"></span></label>
                     <input name="password" type="password" id="password" class="form-control"
                            placeholder="Choose a password between 8 and 25 characters" onkeyup="validatePassword();"
                            required>
 
-                    <label>Confirm Password *</label>
-                    <input type="password" class="form-control" placeholder="Confirm the password" required>
-                    <span id="confirm_password_message"></span>
+                    <label>Confirm Password *<span id="confirm_password_message"></span></label>
+                    <input type="password" id="confirm_password" class="form-control" placeholder="Confirm the password" onkeyup="confirmPassword();" required>
                     <br></br>
 
                     <label>Profile picture</label>
