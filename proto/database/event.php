@@ -44,7 +44,7 @@
 									 INNER JOIN public.Event_Content ON (public.Rate.event_content_id = public.Event_Content.event_content_id))
 									 INNER JOIN public.Event ON (public.Event.event_id = public.Event_Content.event_id))
 								GROUP BY public.Event.event_id) AS aveInfo
-							WHERE (eventInfo.eveId = eventInfo.avgEvId);');
+							WHERE (eventInfo.eveId = aveInfo.avgEvId);');
     $stmt->execute(array($param, $page));
     return $stmt->fetchAll();
   }
