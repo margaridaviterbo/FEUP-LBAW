@@ -51,7 +51,7 @@
                     </div>
 
                     <div class="modal-footer">
-                        <button type="submit" class="btn btn-success" onclick="return validateFirstName()">Register
+                        <button type="submit" class="btn btn-success" onclick="return validateAll();">Register
                         </button>
                         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
                     </div>

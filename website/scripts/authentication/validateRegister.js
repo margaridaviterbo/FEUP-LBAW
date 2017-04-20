@@ -121,3 +121,7 @@ function confirmPassword(){
         return true;
     }
 }
+
+function validateAll(){
+    return validateFirstName() &&  validateLastName() && validateUsername() && validateEmail() && validateNif() && validatePassword() && confirmPassword();
+}
