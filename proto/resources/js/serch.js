@@ -166,7 +166,7 @@ function doajaxeventcall(page, name, free, paid, nameOrPrice, asci) {
 
 function finMoreUsers(page) {
 		if(canUpdateuser && canUpdateEvent){
-			console.log($('.find-more-users').html());
+			console.log($('.find-more-users').parent().html());
 			var name = $('#serch-input').val();
 			if(name == ''){
 				$('#tabs .button-users').html('Users (0)');
