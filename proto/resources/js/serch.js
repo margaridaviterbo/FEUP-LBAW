@@ -177,5 +177,4 @@ function finMoreUsers(page) {
 			var ascUser = $('input[name=alfa-order-users]:checked').val();
 			doajaxusercall(page, name, ascUser);
 		}
-	}
 }
