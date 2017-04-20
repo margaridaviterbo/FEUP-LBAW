@@ -40,6 +40,7 @@ function testCanUpdate() {
 			$('#usersPesq .usercadssech').html("");
 			$('#eventosPesq .eventcadssech').html("");
 			$('#serch-num-page-user').text(0);
+			$('#serch-num-page-event').text(0);
 			var name = $('#serch-input').val();
 			if(name == ''){
 				$('#tabs .button-users').html('Users (0)');
