@@ -1,12 +1,5 @@
 <?php
 
-function createAuthenticatedUser($user_id, $username, $password){
-    global $conn;
-    $state = 'active';
-    $stmt = $conn->prepare('INSERT INTO public.authenticated_user(user_id, username, password, user_state) VALUES (?, ?, ?, ?)');
-    $stmt->execute(array($user_id, $username, sha1($password), $state));
-}
-
 function countryAlreadyRegistered($name){
     global $conn;
     $stmt = $conn->prepare('SELECT country_id FROM public.country WHERE public.country.name = ?');

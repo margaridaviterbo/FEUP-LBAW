@@ -128,7 +128,7 @@ function codeLatLng(lat, lng) {
             console.log(results)
             if (results[1]) {
                 //formatted address
-                alert(results[0].formatted_address)
+                //alert(results[0].formatted_address)
                 //find country name
                 for (var i=0; i<results[0].address_components.length; i++) {
                     for (var b=0;b<results[0].address_components[i].types.length;b++) {
@@ -145,7 +145,6 @@ function codeLatLng(lat, lng) {
                     }
                 }
                 //city data
-                alert(city.short_name + " " + city.long_name)
                 document.getElementById('city').value = city.long_name;
                 document.getElementById('country').value = country.long_name;
 

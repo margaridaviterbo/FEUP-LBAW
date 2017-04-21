@@ -73,7 +73,7 @@ CREATE TABLE public.Administrator
 	administrator_id serial PRIMARY KEY,
 	username varchar(20) UNIQUE NOT NULL,
 	email varchar(254) UNIQUE NOT NULL,
-	password varchar(100) NOT NULL,
+	password varchar(200) NOT NULL,
 	active boolean NOT NULL,
 	CONSTRAINT min_size CHECK (LENGTH(username) >= 8 AND LENGTH(password) >= 8)
 );
@@ -95,8 +95,8 @@ CREATE TABLE public.Authenticated_User
 (
 	user_id integer PRIMARY KEY,
 	username varchar(20) UNIQUE NOT NULL,
-	password varchar(25) NOT NULL,
-	photo_url varchar(1000),
+	password varchar(200) NOT NULL,
+	photo_url varchar(500),
 	user_state user_state NOT NULL,
 	FOREIGN KEY(user_id) REFERENCES Users(user_id),
 	CONSTRAINT min_size CHECK (LENGTH(username) >= 8 AND LENGTH(password) >= 8)
@@ -111,15 +111,15 @@ CREATE TABLE public.Category
 CREATE TABLE public.Country
 (
 	country_id serial PRIMARY KEY,
-	name varchar(1000) UNIQUE NOT NULL
+	name varchar(50) UNIQUE NOT NULL
 );
 
 CREATE TABLE public.City
 (
 	city_id serial PRIMARY KEY,
-	name varchar(1000) NOT NULL,
+	name varchar(100) NOT NULL,
 	country_id integer,
-	FOREIGN KEY(city_id) REFERENCES Country(country_id)
+	FOREIGN KEY(country_id) REFERENCES Country(country_id)
 );
 
 CREATE TABLE public.Localization
@@ -135,11 +135,11 @@ CREATE TABLE public.Localization
 CREATE TABLE public.Meta_Event
 (
 	meta_event_id serial PRIMARY KEY,
-	name varchar(1000) NOT NULL,
+	name varchar(100) NOT NULL,
 	description varchar(20000) NOT NULL,
 	recurrence recurrence NOT NULL,
 	meta_event_state boolean NOT NULL,
-  photo_url varchar(1000),
+  photo_url varchar(500),
 	expiration_date timestamp,
 	free boolean NOT NULL,
 	public boolean NOT NULL,
@@ -163,7 +163,6 @@ CREATE TABLE public.Event
   event_state boolean NOT NULL,
 	photo_url varchar(1000),
 	free boolean NOT NULL,
-	public boolean NOT NULL,
 	meta_event_id integer NOT NULL,
 	local_id integer NOT NULL,
 	FOREIGN KEY(meta_event_id) REFERENCES Meta_Event(meta_event_id),

@@ -30,8 +30,6 @@ if ($public == "on")
 else
     $public = 0;
 
-$state = true;
-
 //Get Country
 $country_id = countryAlreadyRegistered($country);
 
@@ -56,11 +54,10 @@ if ($local_id == null || $local_id == false){
     $local_id = $conn->lastInsertId();
 }
 
-createMetaEvent($name, $description, $recurrence, $state, $photo, $ending_date, $ending_time, $free, $public, $_SESSION['user_id'], $category, $local_id);
+createMetaEvent($name, $description, $recurrence, $photo, $ending_date, $ending_time, $free, $public, $_SESSION['user_id'], $category, $local_id);
 $meta_id = $conn->lastInsertId();
-var_dump($meta_id);
 
-createEvent($name, $description, $beginning_date, $beginning_time, $ending_date, $ending_time, $photo, $free, $meta_id, $local_id, $state);
+createEvent($name, $description, $beginning_date, $beginning_time, $ending_date, $ending_time, $photo, $free, $meta_id, $local_id);
 
 echo '<script> window.location.href = "../../index.php"; </script>';
 
