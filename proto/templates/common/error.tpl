@@ -1,11 +1,9 @@
 <div class="container-fluid text-left">
     <div class="row">
-        <div class="col-lg-offset-3 col-lg-6">
-        <div class="page-title">
+        <div class="col-lg-offset-4 col-lg-4">
+        <div class="error-message">
             <h1>ERROR</h1>
-        </div>
-        <div class="page">
-            <h1>{$ERROR_MESSAGES}. Redirecting...</h1>
+            <p>{$ERROR_MESSAGES}. Redirecting...</p>
         </div>
         </div>
     </div>
