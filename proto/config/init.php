@@ -36,8 +36,8 @@
 
   error_reporting(E_ERROR | E_WARNING); // E_NOTICE by default
 
-  $BASE_DIR = '/opt/lbaw/lbaw1622/public_html/rui/FEUP-LBAW/proto/';
-  $BASE_URL = '/~lbaw1622/rui/FEUP-LBAW/proto/';
+  $BASE_DIR = '/opt/lbaw/lbaw1622/public_html/FEUP-LBAW/proto/';
+  $BASE_URL = '/~lbaw1622/FEUP-LBAW/proto/';
 
   $conn = new PDO('pgsql:host=dbm;dbname=lbaw1622', 'lbaw1622', 'aj47ud76');
   $conn->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
