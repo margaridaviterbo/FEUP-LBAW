@@ -1,11 +1,11 @@
 <?php
 
-    /*session_set_cookie_params(3600);
+    session_set_cookie_params(3600);
     session_start();
 
     error_reporting(E_ERROR | E_WARNING); // E_NOTICE by default
 
-    $BASE_DIR = '/home/catarina/Desktop/FEUP/3ºano/LBAW/FEUP-LBAW/website/';
+    $BASE_DIR = '/home/catarina/Desktop/FEUP/3ºano/LBAW/FEUP-LBAW/proto/';
     $BASE_URL = '/';
 
     $conn = new PDO('pgsql:host=localhost;port=5432;dbname=postgres', 'postgres', 'postgres');
@@ -28,9 +28,9 @@
     unset($_SESSION['success_messages']);
     unset($_SESSION['error_messages']);
     unset($_SESSION['field_errors']);
-    unset($_SESSION['form_values']);*/
+    unset($_SESSION['form_values']);
 
-
+/*
   session_set_cookie_params(3600, '/~lbaw1622/FEUP-LBAW/');
   session_start();
 
@@ -62,5 +62,6 @@
   unset($_SESSION['error_messages']);
   unset($_SESSION['field_errors']);
   unset($_SESSION['form_values']);
+*/
 
 ?>

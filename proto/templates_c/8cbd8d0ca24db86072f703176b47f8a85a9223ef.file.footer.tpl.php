@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2017-04-20 18:16:50
+<?php /* Smarty version Smarty-3.1.15, created on 2017-04-22 16:53:31
          compiled from "/home/catarina/Desktop/FEUP/3ºano/LBAW/FEUP-LBAW/website/templates/common/footer.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:143349275958f8d5bed4f784-25568743%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '8cbd8d0ca24db86072f703176b47f8a85a9223ef' => 
     array (
       0 => '/home/catarina/Desktop/FEUP/3ºano/LBAW/FEUP-LBAW/website/templates/common/footer.tpl',
-      1 => 1492705003,
+      1 => 1492872805,
       2 => 'file',
     ),
   ),

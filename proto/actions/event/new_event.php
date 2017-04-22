@@ -20,6 +20,9 @@ $longitude = $_POST["lng"];
 $city = $_POST["city"];
 $country = $_POST["country"];
 
+if(!isset($_SESSION['username']))
+    exit();
+
 if ($free == "on")
     $free = 1;
 else
@@ -57,7 +60,7 @@ if ($local_id == null || $local_id == false){
 createMetaEvent($name, $description, $recurrence, $photo, $ending_date, $ending_time, $free, $public, $_SESSION['user_id'], $category, $local_id);
 $meta_id = $conn->lastInsertId();
 
-createEvent($name, $description, $beginning_date, $beginning_time, $ending_date, $ending_time, $photo, $free, $meta_id, $local_id);
+createEvent($name, $description, $beginning_date, $beginning_time, $ending_date, $ending_time, $photo, $free, $public, $meta_id, $local_id);
 
 echo '<script> window.location.href = "../../index.php"; </script>';
 

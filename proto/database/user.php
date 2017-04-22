@@ -19,15 +19,23 @@
         $stmt->execute(array($user_id, $username, sha1($password), $state));
     }
 
-    function authenticatedUserExists($username, $email){
+    function authenticatedUserExists($username, $email, $nif){
 
         $r_email = getAuthenticatedUserByEmail($email);
         $r_username = getAuthenticatedUserByUsername($username);
+        $r_nif = checkIfNifExists($nif);
 
-        if ($r_email == NULL && $r_username == NULL)
+        if ($r_email == NULL && $r_username == NULL && $r_nif == NULL)
             return false;
         else
             return true;
+    }
+
+    function checkIfNifExists($nif){
+        global $conn;
+        $stmt = $conn->prepare('SELECT * FROM public.users WHERE public.users.nif = ?');
+        $stmt->execute(array($nif));
+        return $stmt->fetch();
     }
 
     function getAuthenticatedUserByUsername($username){

@@ -1,13 +1,9 @@
 {include file='common/header.tpl'}
-
-{if $USERNAME}
-    {include file='common/aside-menu.tpl'}
-{/if}
-
+{include file='common/aside-menu.tpl'}
 
 <div class="container-fluid text-left">
     <div class="row">
-        <content class="col-lg-offset-2 col-sm-8 col-sm-offset-1 col-xs-12 page">
+        <content class="col-lg-offset-3 col-lg-6 col-sm-8 col-sm-offset-1 col-xs-12 page">
             <div class="page-header">
                 <h1>Upcoming events </h1>
             </div>
