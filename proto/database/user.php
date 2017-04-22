@@ -1,9 +1,9 @@
 <?php
 
-    function createUser($firstname, $lastname, $email, $nif){
+    function createUser($firstname, $lastname, $email){
         global $conn;
-        $stmt = $conn->prepare('INSERT INTO public.users(first_name, last_name, email, nif) VALUES (?, ?, ?, ?)');
-        $stmt->execute(array($firstname, $lastname, $email, $nif));
+        $stmt = $conn->prepare('INSERT INTO public.users(first_name, last_name, email) VALUES (?, ?, ?)');
+        $stmt->execute(array($firstname, $lastname, $email));
     }
 
     function updateUser($firstname, $lastname, $email){
@@ -69,21 +69,6 @@
         return $id;
     }
 
-    function getUserFromId($id){
-        global $conn;
-        $stmt = $conn->prepare('SELECT * FROM public.users WHERE public.users.user_id = ?');
-        $stmt->execute(array($id));
-
-        return $stmt->fetch();
-    }
-
-    function getAuthenticatedUserFromId($id){
-        global $conn;
-        $stmt = $conn->prepare('SELECT * FROM public.authenticated_user WHERE public.authenticated_user.user_id = ?');
-        $stmt->execute(array($id));
-        return $stmt->fetch();
-    }
-
     function getUserIdFromAuthenticatedUser($username){
 
         global $conn;
@@ -92,6 +77,7 @@
 
         $row = $stmt->fetch();
         $id = intval($row['user_id']);
+
         return $id;
     }
 
@@ -113,22 +99,14 @@
         $stmt->execute(array($username, sha1($password)));
         return $stmt->fetch() == true;
     }
-	  function getAllUsers($page) {
-    global $conn;
-    $stmt = $conn->prepare('SELECT * FROM public.Users LIMIT 10 OFFSET ? * 10;');
-    $stmt->execute(array($page));
-    return $stmt->fetchAll();
-  }
-  
-   function getSearchUsers($page, $name, $asc) {
-    global $conn;
-	$param = "%$name%";
-    $stmt = $conn->prepare('SELECT public.Users.first_name, public.Users.last_name, public.Users.email, public.Authenticated_User.photo_url, public.Authenticated_User.username
-							FROM public.Authenticated_User INNER JOIN public.Users ON (public.Authenticated_User.user_id = public.Users.user_id)
-							WHERE (upper(last_name) LIKE upper(?) OR upper(first_name) LIKE upper(?) OR upper(username) LIKE upper(?)) 
-							ORDER BY first_name ' . $asc . 
-							' LIMIT 10 OFFSET ? * 10;');
-    $stmt->execute(array($param, $param, $param, $page));
-    return $stmt->fetchAll();
-  }
+
+
+    function searchByUsername($username) {
+        global $conn;
+        $stmt = $conn->prepare("SELECT * 
+                                FROM public.authenticated_user 
+                                WHERE username like '%?%'");
+        $stmt->execute(array($username));
+        return $stmt->fetchAll();
+    }
 ?>
