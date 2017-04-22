@@ -8,7 +8,7 @@
     $BASE_DIR = '/home/margarida/Documents/3ºano/2ºsemestre/LBAW/FEUP-LBAW/proto/';
     $BASE_URL = '/';
 
-    $conn = new PDO('pgsql:host=localhost;dbname=postgres', 'postgres', 'postgres');
+    $conn = new PDO('pgsql:host=dbm;dbname=lbaw1622', 'lbaw1622', 'aj47ud76');
     $conn->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
