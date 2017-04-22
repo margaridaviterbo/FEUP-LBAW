@@ -63,7 +63,7 @@ function testCanUpdate() {
 function doajaxusercall(page, name, asc) {
 	  var ind = 0;
 	  canUpdateuser = false;
-	  $.getJSON(BASE_URL + "actions/user/serchusers.php", {page: page, serch: name, asc: asc}, function(data) {
+	  $.getJSON(BASE_URL + "api/serch/serchusers.php", {page: page, serch: name, asc: asc}, function(data) {
       $.each(data, function(i, asc) {
 		  ind += 1;
 		 $('#usersPesq .usercadssech').append(
@@ -116,7 +116,7 @@ function doajaxeventcall(page, name, free, paid, nameOrPrice, asci) {
 		  bNameOrPrice = 1;
 	  else
 		  bNameOrPrice = 0;
-	  $.getJSON(BASE_URL + "actions/user/serchevents.php", {page: page, serch: name, free: bFree, paid: bPaid, nameOrPrice: bNameOrPrice, asc: asci}, function(data) {
+	  $.getJSON(BASE_URL + "api/serch/serchevents.php", {page: page, serch: name, free: bFree, paid: bPaid, nameOrPrice: bNameOrPrice, asc: asci}, function(data) {
       $.each(data, function(i, asc) {
 		  ind += 1;
 		  var vfree = 'Free';
