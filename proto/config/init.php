@@ -1,16 +1,16 @@
 <?php
 
-    /*session_set_cookie_params(3600);
+   /* session_set_cookie_params(3600);
     session_start();
 
     error_reporting(E_ERROR | E_WARNING); // E_NOTICE by default
 
-    $BASE_DIR = '/home/catarina/Desktop/FEUP/3ºano/LBAW/FEUP-LBAW/website/';
+    $BASE_DIR = '/home/margarida/Documents/3ºano/2ºsemestre/LBAW/FEUP-LBAW/proto/';
     $BASE_URL = '/';
 
-    $conn = new PDO('pgsql:host=localhost;port=5432;dbname=postgres', 'postgres', 'postgres');
+    $conn = new PDO('pgsql:host=localhost;dbname=postgres', 'postgres', 'postgres');
     $conn->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
-    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);       # permite que um erro seja detetado
+    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
     include_once($BASE_DIR . 'lib/smarty/Smarty.class.php');
 
