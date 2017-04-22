@@ -165,6 +165,8 @@ CREATE TABLE public.Event
 	free boolean NOT NULL,
 	meta_event_id integer NOT NULL,
 	local_id integer NOT NULL,
+	/*TODO: Acrescentar depois ao criar evento */
+	rating integer NOT NULL,
 	FOREIGN KEY(meta_event_id) REFERENCES Meta_Event(meta_event_id),
 	FOREIGN KEY(local_id) REFERENCES Localization(local_id),
 	CONSTRAINT beginning_date CHECK (beginning_date > current_date),

@@ -1,30 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2017-04-20 22:23:03
-         compiled from "/home/catarina/Desktop/FEUP/3ºano/LBAW/FEUP-LBAW/website/templates/common/menu.tpl" */ ?>
-<?php /*%%SmartyHeaderCode:127155670758f8d3e8599837-82394470%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
-$_valid = $_smarty_tpl->decodeProperties(array (
-  'file_dependency' => 
-  array (
-    '765d26d0083524bfcd1f229458860691c8147e62' => 
-    array (
-      0 => '/home/catarina/Desktop/FEUP/3ºano/LBAW/FEUP-LBAW/website/templates/common/menu.tpl',
-      1 => 1492716450,
-      2 => 'file',
-    ),
-  ),
-  'nocache_hash' => '127155670758f8d3e8599837-82394470',
-  'function' => 
-  array (
-  ),
-  'version' => 'Smarty-3.1.15',
-  'unifunc' => 'content_58f8d3e879a423_02422530',
-  'variables' => 
-  array (
-    'BASE_URL' => 0,
-    'USERNAME' => 0,
-  ),
-  'has_nocache_code' => false,
-),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_58f8d3e879a423_02422530')) {function content_58f8d3e879a423_02422530($_smarty_tpl) {?><header>
+<header>
     <nav class="navbar navbar-fixed-top text-center">
         <div class="container-fluid header cbp-af-header">
             <div class="navbar-header">
@@ -40,8 +14,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
                 </button>
 
                 <div class="hidden-sm hidden-md hidden-lg" id="title">
-                    <a href="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
-index.php"><h2>Eventify</h2></a>
+                    <a href="{$BASE_URL}index.php"><h2>Eventify</h2></a>
                 </div>
 
             </div>
@@ -50,8 +23,7 @@ index.php"><h2>Eventify</h2></a>
 
                 <div class="col-sm-3 hidden-xs">
                     <div id="title">
-                        <a href="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
-index.php"><h2>Eventify</h2></a>
+                        <a href="{$BASE_URL}index.php"><h2>Eventify</h2></a>
                     </div>
                 </div>
 
@@ -75,24 +47,21 @@ index.php"><h2>Eventify</h2></a>
                             <div class="col-sm-5 pull-right">
                                 <ul class="nav navbar-nav navbar-right" id="login">
 
-                                    <?php if ($_smarty_tpl->tpl_vars['USERNAME']->value) {?>
-                                        <li><a href="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
-pages/user/my-page-my-information.php"><span
-                                                        class="glyphicon glyphicon-pencil"></span><?php echo $_smarty_tpl->tpl_vars['USERNAME']->value;?>
-
+                                    {if $USERNAME}
+                                        <li><a href="{$BASE_URL}pages/user/my-page-my-information.php"><span
+                                                        class="glyphicon glyphicon-pencil"></span>{$USERNAME}
                                             </a>
                                         </li>
-                                        <li><a href="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
-actions/authentication/logout.php"><span
+                                        <li><a href="{$BASE_URL}actions/authentication/logout.php"><span
                                                         class="glyphicon glyphicon-log-out"></span> Logout</a>
                                         </li>
-                                    <?php } else { ?>
+                                    {else}
                                         <li><a href="#" data-toggle="modal" data-target="#modalLogin"><span
                                                         class="glyphicon glyphicon-log-in"></span> Login</a></li>
                                         <li><a href="#" data-toggle="modal" data-target="#modalRegister"><span
                                                         class="glyphicon glyphicon-pencil"></span> Register</a>
                                         </li>
-                                    <?php }?>
+                                    {/if}
                                 </ul>
                             </div>
                         </div>
@@ -101,4 +70,4 @@ actions/authentication/logout.php"><span
             </div>
         </div>
     </nav>
-</header><?php }} ?>
+</header>

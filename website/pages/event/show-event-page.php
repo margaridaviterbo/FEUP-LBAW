@@ -7,4 +7,5 @@ if (!isset($_SESSION['username'])){
 }
 
 $smarty->display('event/show-event-page.tpl');
+
 ?>

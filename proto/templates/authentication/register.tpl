@@ -1,29 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2017-04-20 22:23:03
-         compiled from "/home/catarina/Desktop/FEUP/3ºano/LBAW/FEUP-LBAW/website/templates/authentication/register.tpl" */ ?>
-<?php /*%%SmartyHeaderCode:124944227158f8d92e443848-06202155%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
-$_valid = $_smarty_tpl->decodeProperties(array (
-  'file_dependency' => 
-  array (
-    'b51962d0cc2173d338ac3f74a5ddd072ec053a76' => 
-    array (
-      0 => '/home/catarina/Desktop/FEUP/3ºano/LBAW/FEUP-LBAW/website/templates/authentication/register.tpl',
-      1 => 1492716682,
-      2 => 'file',
-    ),
-  ),
-  'nocache_hash' => '124944227158f8d92e443848-06202155',
-  'function' => 
-  array (
-  ),
-  'version' => 'Smarty-3.1.15',
-  'unifunc' => 'content_58f8d92e4444d5_44680002',
-  'variables' => 
-  array (
-    'BASE_URL' => 0,
-  ),
-  'has_nocache_code' => false,
-),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_58f8d92e4444d5_44680002')) {function content_58f8d92e4444d5_44680002($_smarty_tpl) {?><!-- Modal Register -->
+<!-- Modal Register -->
 <div id="modalRegister" class="modal fade" role="dialog">
     <div class="modal-dialog">
 
@@ -36,8 +11,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
             <div class="modal-body">
                 <p>
 
-                <form action="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
-actions/authentication/register.php" method="post"
+                <form action="{$BASE_URL}actions/authentication/register.php" method="post"
                       enctype="multipart/>form-data">
 
                     <label>First Name *</label>
@@ -89,4 +63,4 @@ actions/authentication/register.php" method="post"
             </div>
         </div>
     </div>
-</div><?php }} ?>
+</div>
