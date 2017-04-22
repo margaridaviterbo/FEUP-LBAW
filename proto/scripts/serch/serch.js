@@ -116,6 +116,7 @@ function doajaxeventcall(page, name, free, paid, nameOrPrice, asci) {
 		  bNameOrPrice = 1;
 	  else
 		  bNameOrPrice = 0;
+	  console.log('doajaxeventcall');
 	  $.getJSON(BASE_URL + "api/serch/serchevents.php", {page: page, serch: name, free: bFree, paid: bPaid, nameOrPrice: bNameOrPrice, asc: asci}, function(data) {
       $.each(data, function(i, asc) {
 		  ind += 1;
