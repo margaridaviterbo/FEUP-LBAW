@@ -10,12 +10,19 @@
     $password = $_POST["password"];
     $nif = $_POST["nif"];
 
-    $bool = authenticatedUserExists($username, $email);
-
-    if ($bool === true){
-
-        $_SESSION['error_messages'] = 'User already exists';
-        header('Location: {$BASE_URL}pages/common/error.php');
+    if (getAuthenticatedUserByEmail($email) != NULL){
+        $_SESSION['error_messages'] = 'Email already exists';
+        header('Location: ../../pages/common/error.php');
+        exit;
+    }
+    else if(getAuthenticatedUserByUsername($username) != NULL){
+        $_SESSION['error_messages'] = 'Username already exists';
+        header('Location: ../../pages/common/error.php');
+        exit;
+    }
+    else if(checkIfNifExists($nif) != NULL){
+        $_SESSION['error_messages'] = 'Nif already registered';
+        header('Location: ../../pages/common/error.php');
         exit;
     }
     else {
@@ -44,7 +51,7 @@
         }
         else{
             $_SESSION['error_messages'] = 'Login Failed';
-            header('Location: {$BASE_URL}pages/common/error.php');
+            header('Location: ../../pages/common/error.php');
             exit;
         }
     }

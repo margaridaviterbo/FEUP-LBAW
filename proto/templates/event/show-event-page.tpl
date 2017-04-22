@@ -7,8 +7,7 @@
 <div class="container-fluid">
 
     <div class="row event-page-header">
-
-        <div class="col-lg-6 col-lg-offset-2 col-md-6 col-md-offset-1 hidden-sm hidden-xs event-page-image-section white-page">
+        <div class="col-lg-offset-3 col-lg-4 col-md-6 col-md-offset-1 hidden-sm hidden-xs event-page-image-section white-page">
             <img src="../../resources/images/1.jpg" alt="Event" class="event-page-photo img-responsive "/>
         </div>
 
@@ -72,7 +71,7 @@
 
     <div class="row">
 
-        <div class="col-lg-offset-2 col-sm-8 col-sm-offset-1 event-page-body white-page">
+        <div class="col-lg-offset-3 col-lg-6 col-sm-8 col-sm-offset-1 event-page-body white-page">
 
             <div class="row">
                 <div class="col-sm-9">

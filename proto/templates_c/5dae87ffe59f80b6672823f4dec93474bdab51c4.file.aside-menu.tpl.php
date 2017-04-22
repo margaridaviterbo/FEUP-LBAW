@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2017-04-20 21:27:05
+<?php /* Smarty version Smarty-3.1.15, created on 2017-04-22 16:54:25
          compiled from "/home/catarina/Desktop/FEUP/3ºano/LBAW/FEUP-LBAW/website/templates/common/aside-menu.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:56837666058f90b89385db6-48737590%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '5dae87ffe59f80b6672823f4dec93474bdab51c4' => 
     array (
       0 => '/home/catarina/Desktop/FEUP/3ºano/LBAW/FEUP-LBAW/website/templates/common/aside-menu.tpl',
-      1 => 1492448435,
+      1 => 1492872805,
       2 => 'file',
     ),
   ),
@@ -15,9 +15,9 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   'function' => 
   array (
   ),
-  'has_nocache_code' => false,
   'version' => 'Smarty-3.1.15',
   'unifunc' => 'content_58f90b893862c3_36279575',
+  'has_nocache_code' => false,
 ),false); /*/%%SmartyHeaderCode%%*/?>
 <?php if ($_valid && !is_callable('content_58f90b893862c3_36279575')) {function content_58f90b893862c3_36279575($_smarty_tpl) {?><div class="container-fluid text-left">
     <div class="row">
