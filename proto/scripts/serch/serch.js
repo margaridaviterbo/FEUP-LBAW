@@ -6,7 +6,7 @@ $(document).ready(function() {
   askedToUpdate = true;
   testCanUpdate();
 });
-BASE_URL = 'http://gnomo.fe.up.pt/~lbaw1622/rui/FEUP-LBAW/proto/';
+BASE_URL = 'http://localhost/rui/proto/';
 
 var canUpdateuser = true;
 var canUpdateEvent = true;
@@ -116,7 +116,6 @@ function doajaxeventcall(page, name, free, paid, nameOrPrice, asci) {
 		  bNameOrPrice = 1;
 	  else
 		  bNameOrPrice = 0;
-	  console.log('doajaxeventcall');
 	  $.getJSON(BASE_URL + "api/serch/serchevents.php", {page: page, serch: name, free: bFree, paid: bPaid, nameOrPrice: bNameOrPrice, asc: asci}, function(data) {
       $.each(data, function(i, asc) {
 		  ind += 1;
@@ -124,9 +123,6 @@ function doajaxeventcall(page, name, free, paid, nameOrPrice, asci) {
 		  var address = asc.cityname;
 		  var rateEvent = asc.rate;
 		  var rateString = '';
-		  if(asc.street){
-			  address = address + ', ' +  asc.street;
-		  }
 		  if(!asc.free){
 			  vfree = 'Paid';
 		  }
