@@ -6,7 +6,7 @@ $(document).ready(function() {
   askedToUpdate = true;
   testCanUpdate();
 });
-BASE_URL = 'http://localhost/rui/proto/';
+BASE_URL = 'http://gnomo.fe.up.pt/~lbaw1622/rui/FEUP-LBAW/proto/';
 
 var canUpdateuser = true;
 var canUpdateEvent = true;
