@@ -1,170 +1,34 @@
 <?php
-include('../../templates/common/header.php');
 include('../../config/init.php');
-include('../../templates/common/menu.php');
+include('../../database/event.php');
 
-if(isset($_SESSION['authenticated'])) {
-    if ($_SESSION['authenticated'] == true) {
-        include('../../templates/common/aside-menu.php');
-    }
+if (!isset($_SESSION['username'])){
+    header('Location: ../../index.php');
+    exit();
 }
+
+$events = getEventsCreatedByUser($_SESSION['username']);
+
+$smarty->display('common/header.tpl');
+
+foreach ($events as $event){
+
+    unset($date);
+    unset($time);
+
+    $teste = $event['beginning_date'];
+    //$date = getdate($event['beginning_date']);
+    $date = date('Y-m-d H:i:s', $teste);
+
+    var_dump($teste);
+    var_dump($date);
+
+    $event['date'] = $date;
+    $event['time'] = $time;
+}
+$smarty->assign('events', $events);
+
+$smarty->display('event/show-all-events.tpl');
+$smarty->display('common/footer.tpl');
+
 ?>
-
-    <div class="container-fluid text-left">
-        <div class="row">
-            <content class="col-lg-offset-2 col-sm-8 col-sm-offset-1 col-xs-12 page">
-                <div class="page-header">
-                    <h1>Events that I created</h1>
-                </div>
-                <div class="container-fluid event-card-medium">
-                    <p class="titulo-card">Sessão de Demonstração para o Desenvolvimento em Comunicação</p>
-                    <div class="row">
-                        <div class="col-sm-3">
-                            <img src="../../resources/images/2.jpg" />
-                        </div>
-                        <div class="col-sm-9">
-                            <p class="text-card"> Quinta, 9 de Março às 19:45</p>
-                            <p class="text-card">ISG<p>
-                            <p class="text-card">Gratuito</p>
-                            <div class="container-fluid">
-                                <div class="row">
-
-                                    <button onclick="window.location.href='../event/show-event-page.php'" type="button" class="btn btn-default col-sm-5">See Event</button>
-                                    <button onclick="window.location.href='../event/my-page-edit-event.php'" type="button" class="btn btn-default col-sm-5">Edit Event</button>
-
-                                    <div class="classifica-card col-sm-7">
-                                        <i class="fa fa-star fa-2x" aria-hidden="true"></i>
-                                        <i class="fa fa-star fa-2x" aria-hidden="true"></i>
-                                        <i class="fa fa-star fa-2x" aria-hidden="true"></i>
-                                        <i class="fa fa-star fa-2x" aria-hidden="true"></i>
-                                        <i class="fa fa-star-o fa-2x" aria-hidden="true"></i>
-                                    </div>
-                                </div>
-
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="container-fluid event-card-medium">
-                    <p class="titulo-card">Sessão de Demonstração para o Desenvolvimento em Comunicação</p>
-                    <div class="row">
-                        <div class="col-sm-3">
-                            <img src="../../resources/images/1.jpg" />
-                        </div>
-                        <div class="col-sm-9">
-                            <p class="text-card"> Quinta, 9 de Março às 19:45</p>
-                            <p class="text-card">ISG<p>
-                            <p class="text-card">Gratuito</p>
-                            <div class="container-fluid">
-                                <div class="row">
-
-                                    <button onclick="window.location.href='../event/show-event-page.php'" type="button" class="btn btn-default col-sm-5">See Event</button>
-                                    <button onclick="window.location.href='../event/my-page-edit-event.php'" type="button" class="btn btn-default col-sm-5">Edit Event</button>
-
-                                    <div class="classifica-card col-sm-7">
-                                        <i class="fa fa-star fa-2x" aria-hidden="true"></i>
-                                        <i class="fa fa-star fa-2x" aria-hidden="true"></i>
-                                        <i class="fa fa-star fa-2x" aria-hidden="true"></i>
-                                        <i class="fa fa-star-o fa-2x" aria-hidden="true"></i>
-                                        <i class="fa fa-star-o fa-2x" aria-hidden="true"></i>
-                                    </div>
-                                </div>
-
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="container-fluid event-card-medium">
-                    <p class="titulo-card">Sessão de Demonstração para o Desenvolvimento em Comunicação</p>
-                    <div class="row">
-                        <div class="col-sm-3">
-                            <img src="../../resources/images/4.png" />
-                        </div>
-                        <div class="col-sm-9">
-                            <p class="text-card"> Quinta, 9 de Março às 19:45</p>
-                            <p class="text-card">ISG<p>
-                            <p class="text-card">Gratuito</p>
-                            <div class="container-fluid">
-                                <div class="row">
-
-                                    <button onclick="window.location.href='../event/show-event-page.php'" type="button" class="btn btn-default col-sm-5">See Event</button>
-                                    <button onclick="window.location.href='../event/my-page-edit-event.php'" type="button" class="btn btn-default col-sm-5">Edit Event</button>
-
-                                    <div class="classifica-card col-sm-7">
-                                        <i class="fa fa-star fa-2x" aria-hidden="true"></i>
-                                        <i class="fa fa-star fa-2x" aria-hidden="true"></i>
-                                        <i class="fa fa-star fa-2x" aria-hidden="true"></i>
-                                        <i class="fa fa-star-o fa-2x" aria-hidden="true"></i>
-                                        <i class="fa fa-star-o fa-2x" aria-hidden="true"></i>
-                                    </div>
-                                </div>
-
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="container-fluid event-card-medium">
-                    <p class="titulo-card">Sessão de Demonstração para o Desenvolvimento em Comunicação</p>
-                    <div class="row">
-                        <div class="col-sm-3">
-                            <img src="../../resources/images/5.png" />
-                        </div>
-                        <div class="col-sm-9">
-                            <p class="text-card"> Quinta, 9 de Março às 19:45</p>
-                            <p class="text-card">ISG<p>
-                            <p class="text-card">Gratuito</p>
-                            <div class="container-fluid">
-                                <div class="row">
-
-                                    <button onclick="window.location.href='../event/show-event-page.php'" type="button" class="btn btn-default col-sm-5">See Event</button>
-                                    <button onclick="window.location.href='../event/my-page-edit-event.php'" type="button" class="btn btn-default col-sm-5">Edit Event</button>
-
-                                    <div class="classifica-card col-sm-7">
-                                        <i class="fa fa-star fa-2x" aria-hidden="true"></i>
-                                        <i class="fa fa-star fa-2x" aria-hidden="true"></i>
-                                        <i class="fa fa-star fa-2x" aria-hidden="true"></i>
-                                        <i class="fa fa-star fa-2x" aria-hidden="true"></i>
-                                        <i class="fa fa-star fa-2x" aria-hidden="true"></i>
-                                    </div>
-                                </div>
-
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="container-fluid event-card-medium">
-                    <p class="titulo-card">Sessão de Demonstração para o Desenvolvimento em Comunicação</p>
-                    <div class="row">
-                        <div class="col-sm-3">
-                            <img src="../../resources/images/6.png" />
-                        </div>
-                        <div class="col-sm-9">
-                            <p class="text-card"> Quinta, 9 de Março às 19:45</p>
-                            <p class="text-card">ISG<p>
-                            <p class="text-card">Gratuito</p>
-                            <div class="container-fluid">
-                                <div class="row">
-
-                                    <button onclick="window.location.href='../event/show-event-page.php'" type="button" class="btn btn-default col-sm-5">See Event</button>
-                                    <button onclick="window.location.href='../event/my-page-edit-event.php'" type="button" class="btn btn-default col-sm-5">Edit Event</button>
-
-                                    <div class="classifica-card col-sm-7">
-                                        <i class="fa fa-star-o fa-2x" aria-hidden="true"></i>
-                                        <i class="fa fa-star-o fa-2x" aria-hidden="true"></i>
-                                        <i class="fa fa-star-o fa-2x" aria-hidden="true"></i>
-                                        <i class="fa fa-star-o fa-2x" aria-hidden="true"></i>
-                                        <i class="fa fa-star-o fa-2x" aria-hidden="true"></i>
-                                    </div>
-                                </div>
-
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-
-            </content>
-        </div>
-    </div>
-
-<?php include('../../templates/common/footer.php'); ?>

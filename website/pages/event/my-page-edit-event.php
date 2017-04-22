@@ -1,11 +1,11 @@
 <?php
-include('../../templates/common/header.php');
+include('../../templates/common/header.tpl');
 include('../../config/init.php');
-include('../../templates/common/menu.php');
+include('../../templates/common/menu.tpl');
 
 if(isset($_SESSION['authenticated'])) {
     if ($_SESSION['authenticated'] == true) {
-        include('../../templates/common/aside-menu.php');
+        include('../../templates/common/aside-menu.tpl');
     }
 }
 ?>
@@ -70,4 +70,4 @@ if(isset($_SESSION['authenticated'])) {
         </div>
     </div>
 
-<?php include('../../templates/common/footer.php'); ?>
+<?php include('../../templates/common/footer.tpl'); ?>

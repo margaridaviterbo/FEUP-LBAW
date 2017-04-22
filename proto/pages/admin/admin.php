@@ -1,5 +1,5 @@
 <?php
-include('../../templates/common/header.php');
+include('../../templates/common/header.tpl');
 include('../../config/init.php');
 include('../../templates/menu-admin.php');
 ?>
@@ -236,4 +236,4 @@ include('../../templates/menu-admin.php');
      </div>
   </div>
 
-<?php include('../../templates/common/footer.php'); ?>
+<?php include('../../templates/common/footer.tpl'); ?>
