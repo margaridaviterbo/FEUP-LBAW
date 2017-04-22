@@ -1,6 +1,6 @@
 <?php
 
-    session_set_cookie_params(3600);
+   /* session_set_cookie_params(3600);
     session_start();
 
     error_reporting(E_ERROR | E_WARNING); // E_NOTICE by default
@@ -8,7 +8,7 @@
     $BASE_DIR = '/home/margarida/Documents/3ºano/2ºsemestre/LBAW/FEUP-LBAW/proto/';
     $BASE_URL = '/';
 
-    $conn = new PDO('pgsql:host=dbm;dbname=lbaw1622', 'lbaw1622', 'aj47ud76');
+    $conn = new PDO('pgsql:host=localhost;dbname=postgres', 'postgres', 'postgres');
     $conn->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
@@ -28,10 +28,10 @@
     unset($_SESSION['success_messages']);
     unset($_SESSION['error_messages']);
     unset($_SESSION['field_errors']);
-    unset($_SESSION['form_values']);
+    unset($_SESSION['form_values']);*/
 
 
-  /*session_set_cookie_params(3600, '/~lbaw1622/FEUP-LBAW/');
+  session_set_cookie_params(3600, '/~lbaw1622/FEUP-LBAW/');
   session_start();
 
   error_reporting(E_ERROR | E_WARNING); // E_NOTICE by default
@@ -61,6 +61,6 @@
   unset($_SESSION['success_messages']);
   unset($_SESSION['error_messages']);
   unset($_SESSION['field_errors']);
-  unset($_SESSION['form_values']);*/
+  unset($_SESSION['form_values']);
 
 ?>
