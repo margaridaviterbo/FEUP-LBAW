@@ -1,5 +1,9 @@
 {include file='common/header.tpl'}
 
+{if $USERNAME}
+    {include file='common/aside-menu.tpl'}
+{/if}
+
 <div class="container-fluid text-left page">
 <div class="page-header">
     <h1>Search Results for "{$serch}" </h1>
@@ -266,4 +270,4 @@
 </div>
 		
 {include file='common/footer.tpl'}
-<script src="{$BASE_URL}scripts/serch/serch.js"></script>
+<script src="{$BASE_URL}scripts/search/search.js"></script>

@@ -1,14 +1,8 @@
-<?php
-include('../../templates/common/header.tpl');
-include('../../config/init.php');
-include('../../templates/common/menu.tpl');
+{include file='common/header.tpl'}
 
-if(isset($_SESSION['authenticated'])) {
-    if ($_SESSION['authenticated'] == true) {
-        include('../../templates/common/aside-menu.tpl');
-    }
-}
-?>
+{if $USERNAME}
+    {include file='common/aside-menu.tpl'}
+{/if}
 
     <div class="container-fluid text-left">
         <div class="page-title">
@@ -70,4 +64,4 @@ if(isset($_SESSION['authenticated'])) {
         </div>
     </div>
 
-<?php include('../../templates/common/footer.tpl'); ?>
+{include file='common/footer.tpl'}

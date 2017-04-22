@@ -20,8 +20,8 @@
                             <div class="container-fluid">
                                 <div class="row">
 
-                                    <button onclick="window.location.href='../event/show-event-page.php'" type="button" class="btn btn-default col-sm-5">See Event</button>
-                                    <button onclick="window.location.href='../event/my-page-edit-event.php'" type="button" class="btn btn-default col-sm-5">Edit Event</button>
+                                    <button onclick="window.location.href='../../pages/event/show-event-page.php'" type="button" class="btn btn-default col-sm-5">See Event</button>
+                                    <button onclick="window.location.href='../../pages/event/edit-event.php'" type="button" class="btn btn-default col-sm-5">Edit Event</button>
 
                                     <div class="classifica-card col-sm-7">
                                         <i class="fa fa-star fa-2x" aria-hidden="true"></i>
@@ -49,8 +49,8 @@
                             <div class="container-fluid">
                                 <div class="row">
 
-                                    <button onclick="window.location.href='../event/show-event-page.php'" type="button" class="btn btn-default col-sm-5">See Event</button>
-                                    <button onclick="window.location.href='../event/my-page-edit-event.php'" type="button" class="btn btn-default col-sm-5">Edit Event</button>
+                                    <button onclick="window.location.href='../../pages/event/show-event-page.php'" type="button" class="btn btn-default col-sm-5">See Event</button>
+                                    <button onclick="window.location.href='../../pages/event/edit-event.php'" type="button" class="btn btn-default col-sm-5">Edit Event</button>
 
                                     <div class="classifica-card col-sm-7">
                                         <i class="fa fa-star fa-2x" aria-hidden="true"></i>

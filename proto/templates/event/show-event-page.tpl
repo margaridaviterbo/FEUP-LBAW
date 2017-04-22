@@ -86,7 +86,7 @@
                 </div>
 
                 <div class="col-sm-3">
-                    <a href="../ticket/checkout-payment.php">
+                    <a href="../../pages/ticket/checkout-payment.php">
                         <button class="btn btn-default btn-primary form-control">Buy Tickets</button>
                     </a>
                 </div>
