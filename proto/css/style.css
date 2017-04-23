@@ -69,11 +69,19 @@ header h2{
     color: darkslategrey;
 }
 
+.navbar-form .search{
+    display: inline;
+}
+
+#search-button button.btn.btn-default{
+    margin-left: 700%;
+}
+
 .input-mysize{
-    width: 100%;
+    width: 280%;
     height: 34px;
     display: block;
-    padding: 1px 200px;
+    padding: 1px 0px;
     font-size: 14px;
     line-height: 1.42857143;
     color: #555;
