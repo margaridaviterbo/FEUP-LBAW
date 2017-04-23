@@ -6,10 +6,10 @@
         $stmt->execute(array($firstname, $lastname, $email));
     }
 
-    function updateUser($firstname, $lastname, $email){
+    function updateUser($firstname, $lastname, $email, $nif){
         global $conn;
-        $stmt = $conn->prepare('INSERT INTO public.users(first_name, last_name) VALUES (?, ?)'); //TODO: Fazer update
-        $stmt->execute(array($firstname, $lastname, $email));
+        $stmt = $conn->prepare('UPDATE public.users SET first_name = ?, last_name = ?, email=?, nif=?'); //TODO: Fazer update
+        $stmt->execute(array($firstname, $lastname, $email, $nif));
     }
 
     function createAuthenticatedUser($user_id, $username, $password){
