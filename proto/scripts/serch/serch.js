@@ -6,7 +6,7 @@ $(document).ready(function() {
   askedToUpdate = true;
   testCanUpdate();
 });
-BASE_URL = 'http://gnomo.fe.up.pt/~lbaw1622/rui/FEUP-LBAW/proto/';
+BASE_URL = 'http://gnomo.fe.up.pt/~lbaw1622/proto/';
 
 var canUpdateuser = true;
 var canUpdateEvent = true;
@@ -25,6 +25,8 @@ function addeventChange() {
 		askedToUpdate = true;
 		testCanUpdate();
 	});
+	console.log('vai');
+	$('form .serch').removeAttr("action");
 }
 
 function addorderlisteners() {
@@ -112,10 +114,12 @@ function doajaxeventcall(page, name, free, paid, nameOrPrice, asci) {
 	  else
 		  bPaid = 0;
 	  
-	  if(nameOrPrice)
+	  if(nameOrPrice == 0)
+		  bNameOrPrice = 0;
+	  else if(nameOrPrice == 1)
 		  bNameOrPrice = 1;
 	  else
-		  bNameOrPrice = 0;
+		  bNameOrPrice = 2;
 	  $.getJSON(BASE_URL + "api/serch/serchevents.php", {page: page, serch: name, free: bFree, paid: bPaid, nameOrPrice: bNameOrPrice, asc: asci}, function(data) {
       $.each(data, function(i, asc) {
 		  ind += 1;

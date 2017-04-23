@@ -1,11 +1,13 @@
-<?php
-include('../../config/init.php');
-include('../../database/user.php');
+<?php 
+include_once('../../config/init.php');
 
-if(isset($_GET['name'])) {
-    $name = $_GET['name'];
-    $res = searchByUsername($name);
-}
+$serch = strip_tags($_GET['serched']);
 
-$smarty->display('common/search.tpl');
+$smarty->assign('serch', $serch);
+$smarty->assign('events', $events); 
+$smarty->assign('users', $users);
+$smarty->assign('types', $types);
+
+$smarty->display('common/serch.tpl');
+
 ?>
