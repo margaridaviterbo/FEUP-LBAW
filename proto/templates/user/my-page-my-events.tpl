@@ -3,7 +3,7 @@
 
     <div class="container-fluid text-left">
         <div class="row">
-            <content class="col-lg-offset-2 col-sm-8 col-sm-offset-1 col-xs-12 page">
+            <content class="col-lg-offset-3 col-lg-6 col-sm-8 col-sm-offset-1 col-xs-12 page">
                 <div class="page-header">
                     <h1>Events that I created</h1>
                 </div>
@@ -20,8 +20,8 @@
                             <div class="container-fluid">
                                 <div class="row">
 
-                                    <button onclick="window.location.href='../event/show-event-page.php'" type="button" class="btn btn-default col-sm-5">See Event</button>
-                                    <button onclick="window.location.href='../event/my-page-edit-event.php'" type="button" class="btn btn-default col-sm-5">Edit Event</button>
+                                    <button onclick="window.location.href='../../pages/event/show-event-page.php'" type="button" class="btn btn-default col-sm-5">See Event</button>
+                                    <button onclick="window.location.href='../../pages/event/edit-event.php'" type="button" class="btn btn-default col-sm-5">Edit Event</button>
 
                                     <div class="classifica-card col-sm-7">
                                         <i class="fa fa-star fa-2x" aria-hidden="true"></i>
@@ -49,8 +49,8 @@
                             <div class="container-fluid">
                                 <div class="row">
 
-                                    <button onclick="window.location.href='../event/show-event-page.php'" type="button" class="btn btn-default col-sm-5">See Event</button>
-                                    <button onclick="window.location.href='../event/my-page-edit-event.php'" type="button" class="btn btn-default col-sm-5">Edit Event</button>
+                                    <button onclick="window.location.href='../../pages/event/show-event-page.php'" type="button" class="btn btn-default col-sm-5">See Event</button>
+                                    <button onclick="window.location.href='../../pages/event/edit-event.php'" type="button" class="btn btn-default col-sm-5">Edit Event</button>
 
                                     <div class="classifica-card col-sm-7">
                                         <i class="fa fa-star fa-2x" aria-hidden="true"></i>

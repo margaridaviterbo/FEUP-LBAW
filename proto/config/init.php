@@ -1,6 +1,6 @@
 <?php
 
-    session_set_cookie_params(3600);
+  /*  session_set_cookie_params(3600);
     session_start();
 
     error_reporting(E_ERROR | E_WARNING); // E_NOTICE by default
@@ -28,10 +28,10 @@
     unset($_SESSION['success_messages']);
     unset($_SESSION['error_messages']);
     unset($_SESSION['field_errors']);
-    unset($_SESSION['form_values']);
+    unset($_SESSION['form_values']);*/
 
 
-  /*session_set_cookie_params(3600, '/~lbaw1622/FEUP-LBAW/');
+  session_set_cookie_params(3600, '/~lbaw1622/FEUP-LBAW/');
   session_start();
 
   error_reporting(E_ERROR | E_WARNING); // E_NOTICE by default
@@ -61,6 +61,6 @@
   unset($_SESSION['success_messages']);
   unset($_SESSION['error_messages']);
   unset($_SESSION['field_errors']);
-  unset($_SESSION['form_values']);*/
+  unset($_SESSION['form_values']);
 
 ?>

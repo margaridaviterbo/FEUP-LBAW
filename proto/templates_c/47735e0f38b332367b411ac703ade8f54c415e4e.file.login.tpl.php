@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2017-04-20 17:51:22
+<?php /* Smarty version Smarty-3.1.15, created on 2017-04-22 16:53:31
          compiled from "/home/catarina/Desktop/FEUP/3ºano/LBAW/FEUP-LBAW/website/templates/authentication/login.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:190904049058f8d8fa2dfdf7-79602506%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '47735e0f38b332367b411ac703ade8f54c415e4e' => 
     array (
       0 => '/home/catarina/Desktop/FEUP/3ºano/LBAW/FEUP-LBAW/website/templates/authentication/login.tpl',
-      1 => 1492703414,
+      1 => 1492872805,
       2 => 'file',
     ),
   ),
@@ -15,9 +15,9 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   'function' => 
   array (
   ),
-  'has_nocache_code' => false,
   'version' => 'Smarty-3.1.15',
   'unifunc' => 'content_58f8d8fa2e0652_75856088',
+  'has_nocache_code' => false,
 ),false); /*/%%SmartyHeaderCode%%*/?>
 <?php if ($_valid && !is_callable('content_58f8d8fa2e0652_75856088')) {function content_58f8d8fa2e0652_75856088($_smarty_tpl) {?><!-- Modal Login -->
 <div id="modalLogin" class="modal fade" role="dialog">
