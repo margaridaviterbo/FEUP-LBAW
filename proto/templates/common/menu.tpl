@@ -31,9 +31,9 @@
                     <div class="row">
                         <div class="collapse navbar-collapse" id="menu">
                             <div class="col-sm-5 search">
-                                    <form class="navbar-form navbar-center" role="search" action="{$BASE_URL}pages/common/search.php#eventosPesq" method="get">
+                                    <form class="navbar-form navbar-center search" role="search" action="{$BASE_URL}pages/common/search.php#eventosPesq" method="get">
                                         <div class="form-group input-group">
-                                            <input type="text" class="form-control" name="serched" placeholder="Search Event..." id="serch-input">
+                                            <input type="text" class="search-query input-mysize" name="serched" placeholder="Search..." id="serch-input">
                                             <span class="input-group-btn">
                                                             <button class="btn btn-default" type="submit">
                                                               <span class="glyphicon glyphicon-search"></span>
