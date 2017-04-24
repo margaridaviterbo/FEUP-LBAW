@@ -20,7 +20,7 @@
         header('Location: ../../pages/common/error.php');
         exit;
     }
-    else if(checkIfNifExists($nif) != NULL){
+    else if($nif.length != 0 && checkIfNifExists($nif) != NULL){
         $_SESSION['error_messages'] = 'Nif already registered';
         header('Location: ../../pages/common/error.php');
         exit;

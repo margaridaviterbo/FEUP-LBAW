@@ -50,13 +50,13 @@
                         <label>Ending Date</label>
                         <input type="date" id="datepicker" name="ending-event-date" class="form-control"
                                placeholder="Date"
-                               aria-describedby="basic-addon1" required>
+                               aria-describedby="basic-addon1">
 
                     </content>
                     <content class="col-xs-6">
                         <label>Ending Time</label>
                         <input type="time" name="ending-event-time" class="form-control" placeholder="Time"
-                               aria-describedby="basic-addon1" required>
+                               aria-describedby="basic-addon1">
                     </content>
                 </div>
 

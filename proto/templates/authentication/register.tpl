@@ -30,8 +30,7 @@
                            required>
 
                     <label>NIF</label>
-                    <input name="nif" id="nif" type="number" class="form-control" placeholder="Insert your nif" onkeyup="validateNif();"
-                           required>
+                    <input name="nif" id="nif" type="number" class="form-control" placeholder="Insert your nif" onkeyup="validateNif();">
                     <span class="nif_message"></span>
 
                     <label for="password">Password *<span id="password_message"></span></label>
