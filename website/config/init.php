@@ -45,7 +45,7 @@
 
   //$conn->exec('SET SCHEMA \'proto\''); //FIXME?
 
-  include_once($BASE_DIR . 'lib/smarty/libs/Smarty.class.php');
+  include_once($BASE_DIR . 'lib/smarty/Smarty.class.php');
 
   $smarty = new Smarty;
   $smarty->template_dir = $BASE_DIR . 'templates/';

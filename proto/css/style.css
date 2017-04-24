@@ -69,6 +69,35 @@ header h2{
     color: darkslategrey;
 }
 
+.navbar-form .search{
+    display: inline;
+}
+
+#search-button button.btn.btn-default{
+    margin-left: 700%;
+}
+
+.input-mysize{
+    width: 280%;
+    height: 34px;
+    display: block;
+    padding: 1px 0px;
+    font-size: 14px;
+    line-height: 1.42857143;
+    color: #555;
+    background-color: #fff;
+    background-image: none;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+    -webkit-transition: border-color ease-in-out .15s, -webkit-box-shadow ease-in-out .15s;
+    -o-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+    transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+
+}
+
+
 /**
  * Side menu
  **/
@@ -277,6 +306,23 @@ a.list-group-item:focus, a.list-group-item:hover, button.list-group-item:focus, 
     padding-left: 20px;
     padding-right: 20px;
 
+}
+
+.error-message{
+    margin-top: 100px;
+    margin-right: 0px;
+    padding-bottom: 100px;
+    padding-top: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+    background-color:  rgba(255, 255, 255, 1);
+    border: 1px solid rgba(0, 0, 0, 1);
+    border-radius: 5px;
+    text-align: center;
+}
+
+.error-message h1{
+    margin-bottom: 100px;
 }
 
 .page-title{

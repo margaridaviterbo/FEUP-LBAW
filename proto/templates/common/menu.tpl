@@ -28,23 +28,22 @@
                 </div>
 
                 <div class="col-sm-9">
-                    <div class="row">
+
                         <div class="collapse navbar-collapse" id="menu">
-                            <div class="col-sm-5 search">
-                                <form class="navbar-form navbar-center" role="search"
-                                      action="../../pages/search.php#eventosPesq">
-                                    <div class="form-group input-group">
-                                        <input type="text" class="form-control" placeholder="Search Event...">
-                                        <span class="input-group-btn">
+                            <div class="col-lg-5 col-sm-5 search">
+                                    <form class="navbar-form search" role="search" action="{$BASE_URL}pages/common/search.php#eventosPesq" method="get">
+                                        <div class="form-group input-group">
+                                            <input type="text" class="search-query input-mysize" name="serched" placeholder="Search..." id="serch-input">
+                                            <div class="input-group-btn" id="search-button">
                                                             <button class="btn btn-default" type="submit">
                                                               <span class="glyphicon glyphicon-search"></span>
                                                             </button>
-                                                        </span>
-                                    </div>
-                                </form>
-                            </div>
+                                                        </div>
+                                        </div>
+                                    </form>
+                           </div>
 
-                            <div class="col-sm-5 pull-right">
+                           <!-- <div class="col-sm-5 pull-right">-->
                                 <ul class="nav navbar-nav navbar-right" id="login">
 
                                     {if $USERNAME}
@@ -63,8 +62,8 @@
                                         </li>
                                     {/if}
                                 </ul>
-                            </div>
-                        </div>
+                           <!-- </div>
+                        </div>-->
                     </div>
                 </div>
             </div>

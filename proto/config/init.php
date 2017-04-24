@@ -1,16 +1,16 @@
 <?php
 
-    session_set_cookie_params(3600);
+  /*  session_set_cookie_params(3600);
     session_start();
 
     error_reporting(E_ERROR | E_WARNING); // E_NOTICE by default
 
-    $BASE_DIR = '/home/catarina/Desktop/FEUP/3ºano/LBAW/FEUP-LBAW/proto/';
+    $BASE_DIR = '/home/margarida/Documents/3ºano/2ºsemestre/LBAW/FEUP-LBAW/proto/';
     $BASE_URL = '/';
 
-    $conn = new PDO('pgsql:host=localhost;port=5432;dbname=postgres', 'postgres', 'postgres');
+    $conn = new PDO('pgsql:host=localhost;dbname=postgres', 'postgres', 'postgres');
     $conn->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
-    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);       # permite que um erro seja detetado
+    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
     include_once($BASE_DIR . 'lib/smarty/Smarty.class.php');
 
@@ -28,9 +28,9 @@
     unset($_SESSION['success_messages']);
     unset($_SESSION['error_messages']);
     unset($_SESSION['field_errors']);
-    unset($_SESSION['form_values']);
+    unset($_SESSION['form_values']);*/
 
-/*
+
   session_set_cookie_params(3600, '/~lbaw1622/FEUP-LBAW/');
   session_start();
 
@@ -45,7 +45,7 @@
 
   //$conn->exec('SET SCHEMA \'proto\''); //FIXME?
 
-  include_once($BASE_DIR . 'lib/smarty/libs/Smarty.class.php');
+  include_once($BASE_DIR . 'lib/smarty/Smarty.class.php');
 
   $smarty = new Smarty;
   $smarty->template_dir = $BASE_DIR . 'templates/';
@@ -62,6 +62,5 @@
   unset($_SESSION['error_messages']);
   unset($_SESSION['field_errors']);
   unset($_SESSION['form_values']);
-*/
 
 ?>
