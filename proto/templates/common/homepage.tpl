@@ -1,7 +1,73 @@
 {include file='common/header.tpl'}
 
-<div class="homepage">
-  <div class="container-fluid text-left">
+<div class="col-lg-8 col-lg-offset-2 homepage">
+
+
+  <div id="myCarousel" class="carousel slide" data-ride="carousel">
+    <ol class="carousel-indicators">
+      <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+      <li data-target="#myCarousel" data-slide-to="1"></li>
+      <li data-target="#myCarousel" data-slide-to="2"></li>
+      <li data-target="#myCarousel" data-slide-to="3"></li>
+    </ol>
+
+
+    <div class="carousel-inner" role="listbox">
+      <div class="item active">
+        <img src="../../resources/images/1.jpg" alt="Chania"> <!--por foto do evento-->
+        <div class="carousel-caption">
+          <h3>NOME DO EVENTO</h3>
+          <h6>DATA DO EVENTO</h6>
+          <p>POR AQUI DESCRIÇAO DOS EVENTOS</p>
+        </div>
+      </div>
+
+      <div class="item">
+        <img src="../../resources/images/2.jpg" alt="Chania"> <!--por foto do evento-->
+        <div class="carousel-caption">
+          <h3>NOME DO EVENTO</h3>
+          <h6>DATA DO EVENTO</h6>
+          <p>POR AQUI DESCRIÇAO DOS EVENTOS</p>
+        </div>
+      </div>
+
+      <div class="item">
+        <img src="../../resources/images/3.jpg" alt="Flower"> <!--por foto do evento-->
+        <div class="carousel-caption">
+          <h3>NOME DO EVENTO</h3>
+          <h6>DATA DO EVENTO</h6>
+          <p>POR AQUI DESCRIÇAO DOS EVENTOS</p>
+        </div>
+      </div>
+
+      <div class="item">
+        <img src="../../resources/images/4.png" alt="Flower"> <!--por foto do evento-->
+        <div class="carousel-caption">
+          <h3>NOME DO EVENTO</h3>
+          <h6>DATA DO EVENTO</h6>
+          <p>POR AQUI DESCRIÇAO DOS EVENTOS</p>
+        </div>
+      </div>
+    </div>
+
+    <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+      <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+      <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+      <span class="sr-only">Next</span>
+    </a>
+  </div>
+
+
+
+
+
+
+
+
+  <!--<div class="container-fluid text-left">
     <div class="page-title text-center">
       <h1>Popular Events: </h1>
       <br>
@@ -260,7 +326,7 @@
         <div class="clearfix visible-md-block"></div>
       </content>
     </div>
-  </div>
+  </div>-->
 </div>
 
 {include file='common/footer.tpl'}
