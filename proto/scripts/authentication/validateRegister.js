@@ -73,7 +73,12 @@ function validateNif() {
 
     var regex = /^[0-9]{9}$/;
 
-    if (!nif.value.match(regex)) {
+    console.log(nif.value.length);
+
+    if (nif.value.length == 0){
+        return true;
+    }
+    else if (!nif.value.match(regex)) {
         nif.style.color = badColor;
         return false;
     }
