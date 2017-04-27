@@ -6,16 +6,10 @@ html{
 body{
     font-family: 'Open Sans', sans-serif;
 
-    /*background-image: url("../images/wallpaper1.png");
-    background-image: url("../images/wallpaper2.png");
-    background-image: url("../images/wallpaper3.jpg");
-    background-image: url("../images/wallpaper4.jpg");
-    background-image: url("../images/wallpaper5.jpg");*/
-    background-image: url("../resources/images/wallpaper6.jpg");
-    /*background-image: url("../images/wallpaper7.jpg");
-    background-image: url("../images/wallpaper8.jpg");
-    background-image: url("../images/backimga.webp");
-    background-image: url("../images/COLOURlovers.com-Slices_of_Life.png");*/
+    /*background-image: url("../resources/images/background1.jpg");*/
+    background-image: url("../resources/images/background2.jpg");
+    /*background-image: url("../resources/images/background3.jpg");
+    background-image: url("../resources/images/wallpaper6.jpg");*/
     background-color: lightslategrey;
     background-attachment:fixed;
     background-size: cover;
@@ -38,7 +32,7 @@ header .container-fluid{
 
 
 .header{
-    background-color: rgba(0, 0, 0, 0.6);
+    background-color: rgba(255, 255, 255, 0.7);
     transition: all 0.2s;
 }
 
@@ -53,12 +47,17 @@ header a, #title a:hover, #title a:focus{
 header h2{
   font-size: 50px;
   font-family: 'Baloo', cursive;
+  color: #5bc0de;
   margin-top: 10px;
   margin-bottom: 10px;
 }
 
 #title{
     margin-top: -1rem;
+}
+
+#login a{
+    color: #5bc0de;
 }
 
 #login :hover{
@@ -75,6 +74,10 @@ header h2{
 
 #search-button button.btn.btn-default{
     margin-left: 700%;
+}
+
+#search-button .glyphicon-search{
+    color: #5bc0de;
 }
 
 .input-mysize{
@@ -97,6 +100,38 @@ header h2{
 
 }
 
+
+
+/**
+*homepage
+ */
+
+#myCarousel .carousel-inner {
+    margin-top: 150px;
+    position: relative;
+    width: 100%;
+    height: 400px;  /*TODO POR ALTURA RESPONSIVA*/
+    overflow: hidden;
+}
+
+#myCarousel .carousel-control.left {
+    background-image: -webkit-linear-gradient(left, rgba(255, 255, 255, .5) 0%, rgba(255, 255, 255, .0001) 100%);
+    background-image:      -o-linear-gradient(left, rgba(255, 255, 255, .5) 0%, rgba(255, 255, 255, .0001) 100%);
+    background-image: -webkit-gradient(linear, left top, right top, from(rgba(255, 255, 255, .5)), to(rgba(255, 255, 255, .0001)));
+    background-image:         linear-gradient(to right, rgba(255, 255, 255, .5) 0%, rgba(255, 255, 255, .0001) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#80000000', endColorstr='#00000000', GradientType=1);
+    background-repeat: repeat-x;
+}
+.carousel-control.right {
+    right: 0;
+    left: auto;
+    background-image: -webkit-linear-gradient(left, rgba(255, 255, 255, .0001) 0%, rgba(255, 255, 255, .5) 100%);
+    background-image: -o-linear-gradient(left, rgba(255, 255, 255, .0001) 0%, rgba(255, 255, 255, .5) 100%);
+    background-image: -webkit-gradient(linear, left top, right top, from(rgba(0, 0, 0, .0001)), to(rgba(255, 255, 255, .5)));
+    background-image: linear-gradient(to right, rgba(255, 255, 255, .0001) 0%, rgba(255, 255, 255, .5) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#00000000', endColorstr='#80000000', GradientType=1);
+    background-repeat: repeat-x;
+}
 
 /**
  * Side menu
@@ -168,8 +203,8 @@ a.list-group-item:focus, a.list-group-item:hover, button.list-group-item:focus, 
  **/
 #footer{
 
-    color:white;
-    background-color: rgba(0, 0, 0, 0.6);
+    color: #5bc0de;
+    background-color: rgba(255, 255, 255, 0.7);
     position: absolute;
     bottom:0;
     width:100%;
