@@ -17,6 +17,7 @@ $public = $_POST["public"];
 $photo = $_POST["event-photo"];
 $latitude = $_POST["lat"];
 $longitude = $_POST["lng"];
+$street = $_POST["street"];
 $city = $_POST["city"];
 $country = $_POST["country"];
 
@@ -53,14 +54,11 @@ if ($city_id == null || $city_id == false) {
 $local_id = localAlreadyRegistered($latitude, $longitude);
 
 if ($local_id == null || $local_id == false){
-    registerLocal($latitude, $longitude, $city_id);
+    registerLocal($latitude, $longitude, $street, $city_id);
     $local_id = $conn->lastInsertId();
 }
 
-createMetaEvent($name, $description, $recurrence, $photo, $ending_date, $ending_time, $free, $public, $_SESSION['user_id'], $category, $local_id);
-$meta_id = $conn->lastInsertId();
-
-createEvent($name, $description, $beginning_date, $beginning_time, $ending_date, $ending_time, $photo, $free, $public, $meta_id, $local_id);
+createMetaEvent($name, $description, $beginning_date, $beginning_time, $ending_date, $ending_time, $photo, $free, $public, $_SESSION['user_id'], $category, $local_id);
 
 echo '<script> window.location.href = "../../index.php"; </script>';
 

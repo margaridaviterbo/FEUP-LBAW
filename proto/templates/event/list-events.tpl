@@ -25,13 +25,13 @@
                                 <img src="../../resources/images/2.jpg"/>
                             </div>
                             <div class="col-sm-9">
-                                <p class="text-card"> Dia da semana, {$day} {$month} {$year} at {$time}</p>
-                                <p class="text-card">ISG
+                                <p class="text-card"> {$event.date}</p>
+                                <p class="text-card"> {$event.location}
                                 <p>
                                     {if $event.free}
-                                <p class="text-card">Gratuito</p>
+                                <p class="text-card">Free</p>
                                 {else}
-                                <p class="text-card">Pago</p>
+                                <p class="text-card">Paid</p>
                                 {/if}
                                 <div class="container-fluid">
                                     <div class="row">

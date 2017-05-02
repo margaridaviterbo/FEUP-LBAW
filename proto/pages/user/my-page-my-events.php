@@ -11,32 +11,21 @@ $events = getEventsCreatedByUser($_SESSION['username']);
 
 foreach ($events as $key => $event){
 
-    unset($month);
-    unset($time);
-    unset($day);
-    unset($year);
+    unset($date);
+    unset($location);
+    unset($name);
 
-    $parsed_date = date_parse($event['beginning_date']);
+    $date = date('l, jS \of F Y \a\t h:i A', strtotime($event[beginning_date]));
 
-    $monthNum = $parsed_date["month"];
-    $dateObj   = DateTime::createFromFormat('!m', $monthNum);
-    $month = $dateObj->format('F');
+    $location = $event[city] . ", " . $event[country];
 
-    $minute = $parsed_date["minute"];
+    $name = $event[name];
 
-    if (strlen($minute) == 1){
-        $minute = "0" . $parsed_date["minute"];
-    }
-
-    $time = $parsed_date["hour"].":" . $minute;
-
-    //$event[$key]['month'] = $month; //TODO: not working
-
-    $smarty->assign('month', $month);
-    $smarty->assign('day', $parsed_date["day"]);
-    $smarty->assign('year', $parsed_date["year"]);
-    $smarty->assign('time', $time);
+    $events[$key]['date'] = $date;
+    $events[$key]['location'] = $location;
+    $events[$key]['name'] = $name;
 }
+
 $smarty->assign('events', $events);
 
 $smarty->display('event/list-events.tpl');
