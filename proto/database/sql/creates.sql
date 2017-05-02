@@ -137,10 +137,10 @@ CREATE TABLE public.Meta_Event
 	meta_event_id serial PRIMARY KEY,
 	name varchar(100) NOT NULL,
 	description varchar(20000) NOT NULL,
-	recurrence recurrence NOT NULL,
+	beginning_date timestamp NOT NULL,
+	ending_date timestamp,
 	meta_event_state boolean NOT NULL,
   photo_url varchar(500),
-	expiration_date timestamp,
 	free boolean NOT NULL,
 	public boolean NOT NULL,
 	owner_id integer NOT NULL,
@@ -149,10 +149,9 @@ CREATE TABLE public.Meta_Event
 	FOREIGN KEY(owner_id) REFERENCES Authenticated_User(user_id),
 	FOREIGN KEY(category_id) REFERENCES Category(category_id),
 	FOREIGN KEY(local_id) REFERENCES Localization(local_id),
-	CONSTRAINT expiration_date CHECK (expiration_date > current_date)
+	CONSTRAINT beginning_date CHECK (beginning_date > current_date)
 );
 
-/*TODO: fazer trigger para quando se adiciona um evento verificar o tipo de meta_event */
 CREATE TABLE public.Event
 (
 	event_id serial PRIMARY KEY,
@@ -298,11 +297,8 @@ CREATE TABLE public.Type_of_Ticket
 CREATE TABLE public.Ticket
 (
 	ticket_id serial PRIMARY KEY,
-	name varchar(1000) NOT NULL,
-	nif integer NOT NULL,
 	user_id integer NOT NULL,
 	type_of_ticket_id integer NOT NULL,
 	FOREIGN KEY(user_id) REFERENCES Users(user_id),
-	FOREIGN KEY(type_of_ticket_id) REFERENCES Type_of_Ticket(type_of_ticket_id),
-	CONSTRAINT valid_nif CHECK (LENGTH(nif::TEXT) = 9)
+	FOREIGN KEY(type_of_ticket_id) REFERENCES Type_of_Ticket(type_of_ticket_id)
 );

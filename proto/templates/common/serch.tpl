@@ -1,5 +1,9 @@
 {include file='common/header.tpl'}
 
+{if $USERNAME}
+    {include file='common/aside-menu.tpl'}
+{/if}
+
 <div class="container-fluid text-left page">
 <div class="page-header">
     <h1>Search Results for "{$serch}" </h1>
@@ -29,16 +33,15 @@
       <input type="checkbox" name="paid-order-event" value="paid" checked=""> Paid
 
 		<div class='alfabetic-ordering'>
-			Order:
+			Alfabetic order:
 			<input type="radio" name="alfa-order-event" value="ASC" checked>Ascending
 			<input type="radio" name="alfa-order-event" value="DESC">Descending
 		</div>
 		
 		<div class='alfabetic-ordering'>
 			By:
-			<input type="radio" name="type-order-event" value="1" checked>Relevance
-			<input type="radio" name="type-order-event" value="2" checked>Name
-			<input type="radio" name="type-order-event" value="3">Price
+			<input type="radio" name="type-order-event" value="true" checked>Name
+			<input type="radio" name="type-order-event" value="false">Price
 		</div>
     </div>
 	
@@ -267,4 +270,4 @@
 </div>
 		
 {include file='common/footer.tpl'}
-<script src="{$BASE_URL}scripts/serch/serch.js"></script>
+<script src="{$BASE_URL}scripts/search/search.js"></script>

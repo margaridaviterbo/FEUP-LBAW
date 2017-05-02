@@ -446,8 +446,7 @@ a.list-group-item:focus, a.list-group-item:hover, button.list-group-item:focus, 
 
 
 .page{
-    background-color: rgba(255, 255, 255, 0.7);
-    /*background-color: rgba(255, 255, 255, 1);*/
+    background-color: rgba(255, 255, 255, 1);
 }
 
 .icon-bar{
@@ -757,4 +756,17 @@ textarea {
     height: 30px;
     color: #555;
     border: 1px solid #ccc;
+}
+
+/***
+**** EVENTS
+***/
+
+/* Hide all fieldsets except first one */
+#msform fieldset:not(:first-of-type) {
+    display: none;
+}
+
+#error{
+    color: red;
 }
