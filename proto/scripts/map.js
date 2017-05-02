@@ -2,11 +2,14 @@
 
 //Set up some of our variables.
 var map; //Will contain map object.
+var geocoder;
 var marker = false; ////Has the user plotted their location marker?
 
 //Function called to initialize / create the map.
 //This is called when the page has loaded.
 function initMap() {
+
+    geocoder = new google.maps.Geocoder();
 
     //The center location of our map.
     var centerOfMap = new google.maps.LatLng(41.1621417, -8.6219528);
@@ -117,37 +120,32 @@ function markerLocation(){
 
 function codeLatLng(lat, lng) {
 
-    console.log(lat + " " + lng);
-
     var latlng = new google.maps.LatLng(lat, lng);
 
-    var geocoder = new google.maps.Geocoder();
-
     geocoder.geocode({'latLng': latlng}, function(results, status) {
+
+        //teste
         if (status == google.maps.GeocoderStatus.OK) {
-            console.log(results)
             if (results[1]) {
                 //formatted address
-                //alert(results[0].formatted_address)
+                street = results[0].formatted_address;
                 //find country name
                 for (var i=0; i<results[0].address_components.length; i++) {
                     for (var b=0;b<results[0].address_components[i].types.length;b++) {
 
                         //there are different types that might hold a city admin_area_lvl_1 usually does in come cases looking for sublocality type will be more appropriate
-                        if (results[0].address_components[i].types[b] == "administrative_area_level_1") {
+                        if (results[0].address_components[i].types[b] == "locality") {
                             //this is the object you are looking for
                             city = results[0].address_components[i];
-                            break;
                         }
                         if(results[0].address_components[i].types[b] == "country"){
                             country = results[0].address_components[i];
                         }
                     }
                 }
-                //city data
                 document.getElementById('city').value = city.long_name;
                 document.getElementById('country').value = country.long_name;
-
+                document.getElementById('street').value = street;
 
             } else {
                 //alert("No results found");

@@ -108,6 +108,7 @@
                     <input type="text" name="lng" id="lng" hidden="true" required>
                     <input type="text" name="city" id="city" hidden="true" required>
                     <input type="text" name="country" id="country" hidden="true" required>
+                    <input type="text" name="street" id="street" hidden="true" required>
 
                     <p></p>
                     <input type="button" name="previous" class="previous btn btn-default" value="Previous"/>
@@ -123,6 +124,7 @@
                     <label>Invite people</label>
 
                     <br></br>
+                    <input type="button" name="previous" class="previous btn btn-default" value="Previous"/>
                     <button type="submit" class="btn btn-default btn-lg">Create event!</button>
                     <br></br>
 

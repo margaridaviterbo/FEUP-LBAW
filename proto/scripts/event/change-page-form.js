@@ -25,8 +25,7 @@ $("#page1 .next").click(function () {
 
         if ($(".ending_date").val().length != 0 || $(".ending_time").val().length != 0) {
 
-            var ed_split = $(".ending_date").val().split('-');
-            var ending = (ed_split[2] + "-" + ed_split[1] + "-" + ed_split[0] + " " + $(".ending_time").val());
+            var ending = ($(".ending_date").val() + " " + $(".ending_time").val());
             e_date = new Date(ending);
         }
 
