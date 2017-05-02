@@ -127,6 +127,7 @@ CREATE TABLE public.Localization
 	local_id serial PRIMARY KEY,
 	latitude FLOAT NOT NULL,
 	longitude FLOAT NOT NULL,
+	street varchar(300),
 	city_id INTEGER,
 	UNIQUE(latitude, longitude),
 	FOREIGN KEY(city_id) REFERENCES City(city_id)

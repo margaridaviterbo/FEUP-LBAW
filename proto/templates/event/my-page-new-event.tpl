@@ -15,7 +15,7 @@
                   onSubmit="showValues(this)">
 
                 <fieldset id="page1">
-                    <span id="error"></span>
+                    <span class="error" id="error"></span>
                     <div class="row">
                         <content class="col-md-8 col-xs-8">
                             <label class="special-label">Event Name *</label>
@@ -96,6 +96,8 @@
 
                 <fieldset id="page2">
 
+                    <span class="error" id="error2"></span>
+                    <p></p>
                     <label>Local *</label>
                     <input id="local-searchbox" name="local-searchbox" class="form-control" type="text"
                            placeholder="Search Location" aria-describedby="basic-addon1">

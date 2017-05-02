@@ -767,6 +767,6 @@ textarea {
     display: none;
 }
 
-#error{
+.error{
     color: red;
 }
