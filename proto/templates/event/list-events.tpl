@@ -17,7 +17,6 @@
             {else}
 
                 {foreach $events as $event}
-
                     <div class="container-fluid event-card-medium">
                         <p class="titulo-card">{$event.name}</p>
                         <div class="row">
@@ -26,31 +25,31 @@
                             </div>
                             <div class="col-sm-9">
                                 <p class="text-card"> {$event.date}</p>
-                                <p class="text-card"> {$event.location}
-                                <p>
-                                    {if $event.free}
-                                <p class="text-card">Free</p>
+                                <p class="text-card"> {$event.location}</p>
+                                <p></p>
+                                {if $event.free}
+                                    <p class="text-card">Free</p>
                                 {else}
-                                <p class="text-card">Paid</p>
+                                    <p class="text-card">Paid</p>
                                 {/if}
-                                <div class="container-fluid">
-                                    <div class="row">
-
-                                        <button onclick="window.location.href='../../pages/event/show-event-page.php'"
-                                                type="button" class="btn btn-default col-sm-5">See Event
-                                        </button>
-                                        <button onclick="window.location.href='../../pages/event/edit-event.php'"
-                                                type="button" class="btn btn-default col-sm-5">Edit Event
-                                        </button>
-
-                                        <div class="classifica-card col-sm-7">
-                                            <i class="fa fa-star fa-2x" aria-hidden="true"></i>
-                                            <i class="fa fa-star fa-2x" aria-hidden="true"></i>
-                                            <i class="fa fa-star fa-2x" aria-hidden="true"></i>
-                                            <i class="fa fa-star fa-2x" aria-hidden="true"></i>
-                                            <i class="fa fa-star-o fa-2x" aria-hidden="true"></i>
-                                        </div>
+                                <div class="row">
+                                    <div class="classifica-card col-sm-7">
+                                        <i class="fa fa-star fa-2x" aria-hidden="true"></i>
+                                        <i class="fa fa-star fa-2x" aria-hidden="true"></i>
+                                        <i class="fa fa-star fa-2x" aria-hidden="true"></i>
+                                        <i class="fa fa-star fa-2x" aria-hidden="true"></i>
+                                        <i class="fa fa-star-o fa-2x" aria-hidden="true"></i>
                                     </div>
+                                </div>
+
+                                <div class="row">
+                                    <p></p>
+                                    <button onclick="window.location.href='{$BASE_URL}pages/event/show-event-page.php?id={$event.event_id}'"
+                                            type="button" class="btn btn-default col-sm-5">See Event
+                                    </button>
+                                    <button onclick="window.location.href='../../pages/event/edit-event.php'"
+                                            type="button" class="btn btn-default col-sm-5">Edit Event
+                                    </button>
                                 </div>
                             </div>
                         </div>

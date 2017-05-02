@@ -8,20 +8,20 @@
 
     <div class="row event-page-header">
         <div class="col-lg-offset-3 col-lg-4 col-md-6 col-md-offset-1 hidden-sm hidden-xs event-page-image-section white-page">
-            <img src="../../resources/images/1.jpg" alt="Event" class="event-page-photo img-responsive "/>
+            <img src="{$BASE_URL}resources/images/1.jpg" alt="Event" class="event-page-photo img-responsive "/>
         </div>
 
         <div class="col-lg-2 col-md-2 hidden-sm hidden-xs event-page-info-square-section">
             <div class="event-date">
-                THURSDAY, 9TH MARCH, 19h45
+                {$date}
             </div>
 
             <div class="event-name">
-                <strong>Sessão de Demonstração para o Desenvolvimento em Comunicação</strong>
+                <strong>{$event.name}</strong>
             </div>
 
             <div class="event-creator">
-                created by ...
+                created by <strong>{$event.username}</strong>
             </div>
 
             <div class="event-rate">
@@ -43,7 +43,7 @@
     <div class="row event-page-header-small">
 
         <div class="col-sm-8 col-sm-offset-1 col-xs-12 hidden-lg hidden-md event-page-image-section white-page">
-            <img src="../../resources/images/1.jpg" alt="Event" class="event-page-photo img-responsive "/>
+            <img src="{$BASE_URL}resources/images/1.jpg" alt="Event" class="event-page-photo img-responsive "/>
         </div>
     </div>
 
@@ -51,15 +51,15 @@
 
         <div class="col-sm-8 col-sm-offset-1 col-xs-12 hidden-lg hidden-md event-page-info-square-section">
             <div class="">
-                THURSDAY, 9TH MARCH, 19h45
+                {$date}
             </div>
 
             <div class="">
-                <strong>Sessão de Demonstração para o Desenvolvimento em Comunicação</strong>
+                <strong>{$event.name}</strong>
             </div>
 
             <div class="">
-                created by ...
+                created by <strong>{$event.username}</strong>
             </div>
 
             <div class="">
@@ -86,7 +86,7 @@
                 </div>
 
                 <div class="col-sm-3">
-                    <a href="../../pages/ticket/checkout-payment.php">
+                    <a href="{$BASE_URL}pages/ticket/checkout-payment.php">
                         <button class="btn btn-default btn-primary form-control">Buy Tickets</button>
                     </a>
                 </div>
@@ -97,32 +97,8 @@
             </div>
             <div class="text">
 
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec dapibus nibh sed tincidunt laoreet.
-                    Nulla elementum, turpis eget laoreet vestibulum, enim mi eleifend quam, ut ultricies sem nibh varius
-                    mi. Integer hendrerit lacus nunc, pulvinar luctus lacus venenatis accumsan. Curabitur quam quam,
-                    ultricies ac interdum a, blandit a odio. Suspendisse viverra ipsum in arcu feugiat, ut blandit dui
-                    interdum. Nulla varius massa eget mi sodales posuere. Nulla aliquet, tortor commodo venenatis
-                    sodales, tortor sem vulputate elit, non scelerisque nibh metus sed velit. Ut mi lorem, tincidunt a
-                    erat vel, sodales ultricies diam. Donec dictum lobortis tellus id faucibus.</p>
-
-                <p>Donec justo sem, iaculis at tempus sed, consequat eget ex. Curabitur efficitur sit amet urna sit amet
-                    fermentum. Integer aliquet porta tortor in finibus. Morbi eleifend, velit sed cursus tempor, ante
-                    arcu egestas leo, a gravida tellus nunc id quam. Sed ac semper lectus. Etiam odio orci, lobortis
-                    eget posuere elementum, volutpat eget tellus. Phasellus consequat auctor turpis euismod finibus. Ut
-                    accumsan dui quis mi aliquam, in malesuada ante facilisis. Etiam nec consectetur arcu. Etiam
-                    pulvinar vestibulum scelerisque. Fusce ipsum dui, rhoncus ac sem at, vehicula efficitur purus.
-                    Curabitur vitae tincidunt ligula. Nam sit amet malesuada tellus. Vivamus et dolor fringilla nibh
-                    tincidunt egestas vel sit amet nulla. Maecenas in accumsan est. </p>
-
-                <p>Cras lacus ligula, ultricies tempor erat quis, accumsan accumsan erat. Vivamus malesuada eros eget
-                    lectus egestas egestas. Ut nunc magna, gravida eu mauris in, volutpat tincidunt tellus. Quisque
-                    convallis ipsum nisl, in ornare sapien pellentesque a. Integer porttitor ipsum sem, ac vehicula
-                    sapien vehicula vel. Fusce ullamcorper bibendum enim at congue. Quisque non pharetra tortor.
-                    Maecenas tristique nibh vel magna pharetra, posuere aliquet justo ultrices. Fusce ac nisl non dolor
-                    facilisis euismod eget id turpis. Pellentesque mattis ante id mi ultrices faucibus. Nunc dictum
-                    lorem eget nunc cursus auctor. Quisque sit amet sapien laoreet, hendrerit nulla vel, maximus massa.
-                    Nam suscipit, erat eu dictum commodo, sapien ipsum fringilla nibh, sed sodales purus risus et
-                    sem.</p>
+                {$event.description}
+                
             </div>
 
             <div class="page-header">
@@ -130,7 +106,7 @@
             </div>
 
             <div class="map-section text-center">
-                <img src="../../resources/images/map.png" class="map-image"/>
+                <img src="{$BASE_URL}resources/images/map.png" class="map-image"/>
                 <h4> 131 Rua de Sá da Bandeira, 4000-427 Porto </h4>
             </div>
 
@@ -141,7 +117,7 @@
             <div class="row">
                 <div class="col-sm-1">
                     <div class="thumbnail">
-                        <img class="img-responsive user-photo" src="../../resources/images/user.png">
+                        <img class="img-responsive user-photo" src="{$BASE_URL}resources/images/user.png">
                     </div>
                 </div>
 
@@ -165,7 +141,7 @@
             <div class="row">
                 <div class="col-sm-1">
                     <div class="thumbnail">
-                        <img class="img-responsive user-photo" src="../../resources/images/user.png">
+                        <img class="img-responsive user-photo" src="{$BASE_URL}resources/images/user.png">
                     </div>
                 </div>
 
@@ -186,7 +162,7 @@
             <div class="row">
                 <div class="col-sm-1">
                     <div class="thumbnail">
-                        <img class="img-responsive user-photo" src="../../resources/images/user.png">
+                        <img class="img-responsive user-photo" src="{$BASE_URL}resources/images/user.png">
                     </div>
                 </div>
 
@@ -199,7 +175,7 @@
                             <div class="comment">
                                 OMG, look at us!!
                             </div>
-                            <img src="../../resources/images/3.jpg">
+                            <img src="{$BASE_URL}resources/images/3.jpg">
                         </div>
                     </div>
                 </div>

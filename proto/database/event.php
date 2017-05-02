@@ -29,17 +29,26 @@ function createEvent($name, $description, $beginning_date, $beginning_time, $end
     $stmt->execute(array($name, $description, $beginning, $ending, $state, $photo, $free, $public, $meta_event_id, $local));
 }
 
-function getEventsCreatedByUser($username){
+function getEventsCreatedByUser($username, $page){
     global $conn;
-    $stmt = $conn->prepare('SELECT meta_event.name as name, meta_event.description, meta_event.beginning_date, meta_event.ending_date, meta_event.free, localization.street, city.name as city, country.name as country FROM public.meta_event 
+    $stmt = $conn->prepare('SELECT meta_event.meta_event_id as id, meta_event.name as name, meta_event.beginning_date, meta_event.free, city.name as city, country.name as country FROM public.meta_event 
                             INNER JOIN public.authenticated_user ON public.meta_event.owner_id = public.authenticated_user.user_id
                             INNER JOIN public.localization ON public.meta_event.local_id = public.localization.local_id
                             INNER JOIN public.city ON public.city.city_id = public.localization.city_id
                             INNER JOIN public.country ON public.country.country_id = public.city.country_id
                             WHERE public.authenticated_user.username = ?
-                            LIMIT 10');
-    $stmt->execute(array($username));
+                            LIMIT 10 OFFSET ? * 10');
+    $stmt->execute(array($username, $page));
     return $stmt->fetchAll();
+}
+
+function getMetaEvent($event_id){
+    global $conn;
+    $stmt = $conn->prepare('SELECT * FROM public.meta_event 
+                            INNER JOIN public.authenticated_user ON public.meta_event.owner_id = public.authenticated_user.user_id
+                            WHERE public.meta_event.meta_event_id = ?');
+    $stmt->execute(array($event_id));
+    return $stmt->fetch();
 }
   /**
   $page, numero da pagina

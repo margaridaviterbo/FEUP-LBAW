@@ -7,23 +7,33 @@ if (!isset($_SESSION['username'])){
     exit();
 }
 
-$events = getEventsCreatedByUser($_SESSION['username']);
+$page;
+
+$events = getEventsCreatedByUser($_SESSION['username'], $page);
 
 foreach ($events as $key => $event){
 
     unset($date);
     unset($location);
     unset($name);
+    unset($id);
 
     $date = date('l, jS \of F Y \a\t h:i A', strtotime($event[beginning_date]));
+    $ending = date('l, jS \of F Y \a\t h:i A', strtotime($event[ending_date]));
+
+    if ($ending != null)
+        $date = $date . " - " . $ending;
 
     $location = $event[city] . ", " . $event[country];
 
     $name = $event[name];
 
+    $id = $event[id];
+
     $events[$key]['date'] = $date;
     $events[$key]['location'] = $location;
     $events[$key]['name'] = $name;
+    $events[$key]['event_id'] = $id;
 }
 
 $smarty->assign('events', $events);
