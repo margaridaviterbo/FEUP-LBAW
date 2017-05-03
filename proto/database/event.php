@@ -44,8 +44,11 @@ function getEventsCreatedByUser($username, $page){
 
 function getMetaEvent($event_id){
     global $conn;
-    $stmt = $conn->prepare('SELECT * FROM public.meta_event 
+    $stmt = $conn->prepare('SELECT authenticated_user.username, meta_event.name as name, meta_event.beginning_date, meta_event.free, meta_event.description, meta_event.photo_url, city.name as city, country.name as country, localization.street, localization.latitude, localization.longitude FROM public.meta_event 
                             INNER JOIN public.authenticated_user ON public.meta_event.owner_id = public.authenticated_user.user_id
+                            INNER JOIN public.localization ON public.meta_event.local_id = public.localization.local_id
+                            INNER JOIN public.city ON public.city.city_id = public.localization.city_id
+                            INNER JOIN public.country ON public.country.country_id = public.city.country_id
                             WHERE public.meta_event.meta_event_id = ?');
     $stmt->execute(array($event_id));
     return $stmt->fetch();

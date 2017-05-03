@@ -19,10 +19,6 @@ foreach ($events as $key => $event){
     unset($id);
 
     $date = date('l, jS \of F Y \a\t h:i A', strtotime($event[beginning_date]));
-    $ending = date('l, jS \of F Y \a\t h:i A', strtotime($event[ending_date]));
-
-    if ($ending != null)
-        $date = $date . " - " . $ending;
 
     $location = $event[city] . ", " . $event[country];
 

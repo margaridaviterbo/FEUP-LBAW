@@ -771,3 +771,7 @@ textarea {
 .error{
     color: red;
 }
+
+.text{
+    text-align: justify;
+}

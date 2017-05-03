@@ -34,7 +34,11 @@
             </div>
 
             <div class="event-price">
-                13 - 20€
+                {if $event.free}
+                    <p class="text-card">Free</p>
+                {else}
+                    <p class="text-card">Paid</p>
+                {/if}
             </div>
         </div>
 
@@ -63,7 +67,11 @@
             </div>
 
             <div class="">
-                Gratuito
+                {if $event.free}
+                    <p class="text-card">Free</p>
+                {else}
+                    <p class="text-card">Paid</p>
+                {/if}
             </div>
         </div>
 
@@ -86,9 +94,11 @@
                 </div>
 
                 <div class="col-sm-3">
-                    <a href="{$BASE_URL}pages/ticket/checkout-payment.php">
-                        <button class="btn btn-default btn-primary form-control">Buy Tickets</button>
-                    </a>
+                    {if !$event.free}
+                        <a href="{$BASE_URL}pages/ticket/checkout-payment.php">
+                            <button class="btn btn-default btn-primary form-control">Buy Tickets</button>
+                        </a>
+                    {/if}
                 </div>
             </div>
 
@@ -98,7 +108,7 @@
             <div class="text">
 
                 {$event.description}
-                
+
             </div>
 
             <div class="page-header">
@@ -106,8 +116,11 @@
             </div>
 
             <div class="map-section text-center">
-                <img src="{$BASE_URL}resources/images/map.png" class="map-image"/>
-                <h4> 131 Rua de Sá da Bandeira, 4000-427 Porto </h4>
+                <div id="map" style="width: 100%; height: 300px;">
+                    <input type="text" id="lat" value="{$event.latitude}" hidden/>
+                    <input type="text" id="lon" value="{$event.longitude}" hidden/>
+                </div>
+                <h4> {$event.street} </h4>
             </div>
 
             <div class="page-header">
@@ -182,5 +195,8 @@
             </div>
         </div>
     </div>
+</div>
 
-    {include file='common/footer.tpl'}
+{include file='common/footer.tpl'}
+
+<script type="text/javascript" src="../../scripts/event/show-map-location.js"></script>

@@ -17,6 +17,11 @@ $event = getMetaEvent($meta_event_id);
 
 $date = date('l, jS \of F Y \a\t h:i A', strtotime($event[beginning_date]));
 
+$ending = date('l, jS \of F Y \a\t h:i A', strtotime($event[ending_date]));
+
+if ($ending != null)
+    $date = $date . " - " . $ending;
+
 $smarty->assign('event', $event);
 $smarty->assign('date', $date);
 
