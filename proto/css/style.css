@@ -28,7 +28,7 @@ header .container-fluid{
 
 
 .header{
-    background-color: rgba(255, 255, 255, 0.7);
+    background-color: #F0F8FF;
     transition: all 0.2s;
 }
 
@@ -43,7 +43,7 @@ header a, #title a:hover, #title a:focus{
 header h2{
   font-size: 50px;
   font-family: 'Baloo', cursive;
-  color: #5bc0de;
+  color: #337ab7;
   margin-top: 10px;
   margin-bottom: 10px;
 }
@@ -53,7 +53,7 @@ header h2{
 }
 
 #login a{
-    color: #5bc0de;
+    color: #337ab7;
 }
 
 #login :hover{
@@ -62,6 +62,48 @@ header h2{
 
 #login :focus{
     color: darkslategrey;
+}
+
+#modalLogin .btn-success{
+    color: white;
+    background-color: #337ab7;
+    border-color: #337ab7;
+}
+
+#modalLogin .btn-success:hover{
+    background-color: #9acfea;
+}
+
+#modalLogin .btn-default{
+    color: #337ab7;
+    background-color: white;
+    border-color: #337ab7;
+}
+
+#modalLogin .btn-default:hover{
+    color: white;
+    background-color: #9acfea;
+}
+
+#modalRegister .btn-success{
+    color: white;
+    background-color: #337ab7;
+    border-color: #337ab7;
+}
+
+#modalRegister .btn-success:hover{
+    background-color: #9acfea;
+}
+
+#modalRegister .btn-default{
+    color: #337ab7;
+    background-color: white;
+    border-color: #337ab7;
+}
+
+#modalRegister .btn-default:hover{
+    color: white;
+    background-color: #9acfea;
 }
 
 .navbar-form .search{
@@ -80,7 +122,7 @@ header h2{
 }
 
 #search-button .glyphicon-search{
-    color: #5bc0de;
+    color: #337ab7;
 }
 
 .input-mysize{
@@ -139,6 +181,34 @@ header h2{
 /**
  * Side menu
  **/
+
+
+#sidebar.well.sidebar-nav{
+    background-color: #F0F8FF;
+}
+
+#sidebar #createEventBtn{
+    display: block;
+    margin-top : 20px;
+    padding-top: 20px;
+    border-top: rgba(51, 122, 183, 0.5) solid 1px;
+    color: #337ab7;
+    margin-bottom: 20px;
+}
+
+#sidebar #createEventBtn a{
+    font-family: inherit;
+    font-size: medium;
+    font-weight: bold;
+}
+
+#sidebar a:target{      /*TODO por butoes sublinhados quando estou na sua pagina*/
+    background-color: #337ab7;
+}
+
+
+
+
 
 .aside-user-buttons {
     padding: 20px;
@@ -206,8 +276,8 @@ a.list-group-item:focus, a.list-group-item:hover, button.list-group-item:focus, 
  **/
 #footer{
 
-    color: #5bc0de;
-    background-color: rgba(255, 255, 255, 0.7);
+    color: #337ab7;
+    background-color: #F0F8FF;
     position: absolute;
     bottom:0;
     width:100%;
@@ -233,7 +303,7 @@ a.list-group-item:focus, a.list-group-item:hover, button.list-group-item:focus, 
 }
 
 .user-card-medium{
-    background-color: rgba(255, 255, 255, 0.8);
+    background-color: #F0F8FF;
     color: black;
     transition: box-shadow 0.3s ease-in-out;
     padding: 10px;
@@ -244,7 +314,7 @@ a.list-group-item:focus, a.list-group-item:hover, button.list-group-item:focus, 
 .event-card-medium{
     transition: box-shadow 0.3s ease-in-out;
     padding: 10px 10px 10px 10px;
-    border-bottom: 1px white;
+    border-bottom: 2px white;
     border-style: solid;
 }
 
@@ -252,7 +322,7 @@ a.list-group-item:focus, a.list-group-item:hover, button.list-group-item:focus, 
     transition: box-shadow 0.3s ease-in-out;
     padding: 10px;
     margin:0;
-    border-bottom: 1px rgba(255, 255, 255, 0.7);
+    border-bottom: 2px white;
 }
 
 .event-card-medium:hover, .user-card-medium:hover {
@@ -373,7 +443,7 @@ a.list-group-item:focus, a.list-group-item:hover, button.list-group-item:focus, 
     padding: 10px 10px 40px 10px;
     margin-bottom: 20px;
     position: relative;
-    border-bottom: 1px white;
+    border-bottom: 2px white;
     border-style: solid;
 }
 
@@ -432,7 +502,7 @@ a.list-group-item:focus, a.list-group-item:hover, button.list-group-item:focus, 
 }
 
 .new-event-card {
-    background-color: rgba(255, 255, 255, 0.8);
+    background-color: #F0F8FF;
     color: black;
     padding: 10px;
     margin-bottom: 20px;
@@ -449,7 +519,7 @@ a.list-group-item:focus, a.list-group-item:hover, button.list-group-item:focus, 
 
 
 .page{
-    background-color: rgba(255, 255, 255, 1);
+    background-color: #F0F8FF;
     padding-bottom: 10px;
 }
 
@@ -464,6 +534,10 @@ a, a:hover, a:focus{
 /**
  *  Show-event-page.php
  **/
+
+.page-header{
+    border-bottom-color: rgba(154, 207, 234, 0.5);
+}
 
 .event-page-header{
     display: flex;
@@ -864,7 +938,7 @@ you can use the generic selector below, but it's slower:
     width: 14px;
     height: 14px;
     font-size: 14px;
-    color: #5bc0de;
+    color: #337ab7;
 }
 
 .searchsubmit {
