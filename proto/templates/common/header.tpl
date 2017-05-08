@@ -12,7 +12,6 @@
     <link rel="stylesheet" href="{$BASE_URL}css/font-awesome.min.css">
     <link rel="stylesheet" href="{$BASE_URL}css/reset.css">
     <link rel="stylesheet" href="{$BASE_URL}lib/bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" href="{$BASE_URL}lib/wmd-new/wmd.css">
     <link rel="stylesheet" href="{$BASE_URL}css/style.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
