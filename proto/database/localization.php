@@ -41,10 +41,10 @@ function localAlreadyRegistered($lat, $long){
     return $id;
 }
 
-function registerLocal($lat, $long, $city_id){
+function registerLocal($lat, $long, $street, $city_id){
     global $conn;
-    $stmt = $conn->prepare('INSERT INTO public.localization(latitude, longitude, city_id) VALUES(?, ?, ?)');
-    $stmt->execute(array($lat, $long, $city_id));
+    $stmt = $conn->prepare('INSERT INTO public.localization(latitude, longitude, street, city_id) VALUES(?, ?, ?, ?)');
+    $stmt->execute(array($lat, $long, $street, $city_id));
 }
 
 function getCityAndCountry($local_id){

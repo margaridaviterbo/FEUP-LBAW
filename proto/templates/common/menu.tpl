@@ -29,41 +29,43 @@
 
                 <div class="col-sm-9">
 
-                        <div class="collapse navbar-collapse" id="menu">
-                            <div class="col-lg-5 col-sm-5 search">
-                                    <form class="navbar-form search" role="search" action="{$BASE_URL}pages/common/search.php#eventosPesq" method="get">
-                                        <div class="form-group input-group">
-                                            <input type="text" class="search-query input-mysize" name="serched" placeholder="Search..." id="serch-input">
-                                            <div class="input-group-btn" id="search-button">
-                                                            <button class="btn btn-default" type="submit">
-                                                              <span class="glyphicon glyphicon-search"></span>
-                                                            </button>
-                                                        </div>
-                                        </div>
-                                    </form>
-                           </div>
+                    <div class="collapse navbar-collapse" id="menu">
+                        <div class="col-lg-5 col-sm-5 search">
+                            <form class="navbar-form search" role="search"
+                                  action="{$BASE_URL}pages/common/search.php#eventosPesq" method="get">
+                                <div class="form-group input-group">
+                                    <input type="text" class="search-query input-mysize" name="serched"
+                                           placeholder="Search..." id="serch-input">
+                                    <div class="input-group-btn" id="search-button">
+                                        <button class="btn btn-default" type="submit">
+                                            <span class="glyphicon glyphicon-search"></span>
+                                        </button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
 
-                           <!-- <div class="col-sm-5 pull-right">-->
-                                <ul class="nav navbar-nav navbar-right" id="login">
+                        <!-- <div class="col-sm-5 pull-right">-->
+                        <ul class="nav navbar-nav navbar-right" id="login">
 
-                                    {if $USERNAME}
-                                        <li><a href="{$BASE_URL}pages/user/my-page-my-information.php"><span
-                                                        class="glyphicon glyphicon-pencil"></span>{$USERNAME}
-                                            </a>
-                                        </li>
-                                        <li><a href="{$BASE_URL}actions/authentication/logout.php"><span
-                                                        class="glyphicon glyphicon-log-out"></span> Logout</a>
-                                        </li>
-                                    {else}
-                                        <li><a href="#" data-toggle="modal" data-target="#modalLogin"><span
-                                                        class="glyphicon glyphicon-log-in"></span> Login</a></li>
-                                        <li><a href="#" data-toggle="modal" data-target="#modalRegister"><span
-                                                        class="glyphicon glyphicon-pencil"></span> Register</a>
-                                        </li>
-                                    {/if}
-                                </ul>
-                           <!-- </div>
-                        </div>-->
+                            {if $USERNAME}
+                                <li><a href="{$BASE_URL}pages/user/my-page-my-information.php"><span
+                                                class="glyphicon glyphicon-pencil"></span>{$USERNAME}
+                                    </a>
+                                </li>
+                                <li><a href="{$BASE_URL}actions/authentication/logout.php"><span
+                                                class="glyphicon glyphicon-log-out"></span> Logout</a>
+                                </li>
+                            {else}
+                                <li><a href="#" data-toggle="modal" data-target="#modalLogin"><span
+                                                class="glyphicon glyphicon-log-in"></span> Login</a></li>
+                                <li><a href="#" data-toggle="modal" data-target="#modalRegister"><span
+                                                class="glyphicon glyphicon-pencil"></span> Register</a>
+                                </li>
+                            {/if}
+                        </ul>
+                        <!-- </div>
+                     </div>-->
                     </div>
                 </div>
             </div>

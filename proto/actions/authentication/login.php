@@ -6,7 +6,6 @@ include_once('../../database/user.php');
 $emailUsername = $_POST["email-login"];
 $password = $_POST["password-login"];
 
-
 $user = getUserByEmail($emailUsername);
 //Se o mail não existir, procura o username
 if ($user == false) {

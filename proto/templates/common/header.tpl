@@ -12,8 +12,15 @@
     <link rel="stylesheet" href="{$BASE_URL}css/font-awesome.min.css">
     <link rel="stylesheet" href="{$BASE_URL}css/reset.css">
     <link rel="stylesheet" href="{$BASE_URL}lib/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{$BASE_URL}lib/wmd-new/wmd.css">
     <link rel="stylesheet" href="{$BASE_URL}css/style.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <script src="{$BASE_URL}lib/ckeditor/ckeditor.js"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
     <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
     <script type="text/javascript"
             src='http://maps.google.com/maps/api/js?key=AIzaSyA3phNNq0EMPtIndXE0ncMDoHGHxzw3iDk&libraries=places'></script>
     <script src="https://maps.googleapis.com/maps/api/geocode/json?address=1600+Amphitheatre+Parkway,+Mountain+View,+CA&key=AIzaSyA3phNNq0EMPtIndXE0ncMDoHGHxzw3iDk"></script>
