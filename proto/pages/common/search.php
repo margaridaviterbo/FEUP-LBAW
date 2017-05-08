@@ -8,6 +8,6 @@ $smarty->assign('events', $events);
 $smarty->assign('users', $users);
 $smarty->assign('types', $types);
 
-$smarty->display('common/serch.tpl');
+$smarty->display('common/search.tpl');
 
 ?>

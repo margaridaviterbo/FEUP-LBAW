@@ -20,17 +20,16 @@
                 <strong>{$event.name}</strong>
             </div>
 
-            <div class="event-creator">
-                created by <strong>{$event.username}</strong>
+            <div class="event-rate">
+                <i class="fa fa-star fa-2x" aria-hidden="true"></i>
+                <i class="fa fa-star fa-2x" aria-hidden="true"></i>
+                <i class="fa fa-star fa-2x" aria-hidden="true"></i>
+                <i class="fa fa-star-o fa-2x" aria-hidden="true"></i>
+                <i class="fa fa-star-o fa-2x" aria-hidden="true"></i>
             </div>
 
-            <div class="event-rate">
-                Rate:
-                <i class="fa fa-star fa-2x" aria-hidden="true"></i>
-                <i class="fa fa-star fa-2x" aria-hidden="true"></i>
-                <i class="fa fa-star fa-2x" aria-hidden="true"></i>
-                <i class="fa fa-star-o fa-2x" aria-hidden="true"></i>
-                <i class="fa fa-star-o fa-2x" aria-hidden="true"></i>
+            <div class="event-creator">
+                created by <strong>{$event.username}</strong>
             </div>
 
             <div class="event-price">
@@ -54,19 +53,19 @@
     <div class="row event-page-header-small">
 
         <div class="col-sm-8 col-sm-offset-1 col-xs-12 hidden-lg hidden-md event-page-info-square-section">
-            <div class="">
+            <div class="header_event_member">
                 {$date}
             </div>
 
-            <div class="">
+            <div class="header_event_member">
                 <strong>{$event.name}</strong>
             </div>
 
-            <div class="">
+            <div class="header_event_member">
                 created by <strong>{$event.username}</strong>
             </div>
 
-            <div class="">
+            <div class="header_event_member">
                 {if $event.free}
                     <p class="text-card">Free</p>
                 {else}
@@ -105,7 +104,7 @@
             <div class="page-header">
                 <h3>Description</h3>
             </div>
-            <div class="text">
+            <div class="description">
 
                 {$event.description}
 
@@ -128,13 +127,13 @@
             </div>
 
             <div class="row">
-                <div class="col-sm-1">
+                <div class="col-sm-2 hidden-xs">
                     <div class="thumbnail">
                         <img class="img-responsive user-photo" src="{$BASE_URL}resources/images/user.png">
                     </div>
                 </div>
 
-                <div class="col-sm-11">
+                <div class="col-sm-10 col-xs-12">
                     <div class="panel panel-default">
                         <div class="panel-heading">
                             <strong>awesome1</strong> <span class="text-muted">commented 5 days ago</span>
@@ -152,13 +151,13 @@
             </div>
 
             <div class="row">
-                <div class="col-sm-1">
+                <div class="col-sm-2 hidden-xs">
                     <div class="thumbnail">
                         <img class="img-responsive user-photo" src="{$BASE_URL}resources/images/user.png">
                     </div>
                 </div>
 
-                <div class="col-sm-11">
+                <div class="col-sm-10 col-xs-12">
                     <div class="panel panel-default">
                         <div class="panel-heading">
                             <strong>awesome2</strong> <span class="text-muted">commented 4 days ago</span>
@@ -173,13 +172,13 @@
             </div>
 
             <div class="row">
-                <div class="col-sm-1">
+                <div class="col-sm-2 hidden-xs">
                     <div class="thumbnail">
                         <img class="img-responsive user-photo" src="{$BASE_URL}resources/images/user.png">
                     </div>
                 </div>
 
-                <div class="col-sm-11">
+                <div class="col-sm-10 col-xs-12">
                     <div class="panel panel-default">
                         <div class="panel-heading">
                             <strong>awesome3</strong> <span class="text-muted">commented 4 days ago</span>
@@ -193,6 +192,35 @@
                     </div>
                 </div>
             </div>
+            <div class="row">
+
+                <div class="col-sm-2 hidden-xs">
+                    <div class="thumbnail">
+                        <img class="img-responsive user-photo" src="{$BASE_URL}resources/images/user.png">
+                    </div>
+                </div>
+
+                <div class="col-sm-10">
+
+                    <form id="comment-form" action="#">
+
+                       <textarea name="comment" id="comment" rows="10" cols="80">
+                           Write a comment...
+                       </textarea>
+
+                        <a onClick="CKupdate();$('#comment-form').ajaxSubmit();">Submit</a>
+
+                        <script>
+                            CKEDITOR.replace('comment');
+                            function CKupdate(){
+                                for ( instance in CKEDITOR.instances )
+                                    CKEDITOR.instances[instance].updateElement();
+                            }
+                        </script>
+                    </form>
+                </div>
+            </div>
+
         </div>
     </div>
 </div>

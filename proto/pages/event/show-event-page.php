@@ -16,14 +16,18 @@ $meta_event_id = $_GET['id'];
 $event = getMetaEvent($meta_event_id);
 
 $date = date('l, jS \of F Y \a\t h:i A', strtotime($event[beginning_date]));
+$date_small_format = $date;
 
 $ending = date('l, jS \of F Y \a\t h:i A', strtotime($event[ending_date]));
-
-if ($ending != null)
+$ending_small_format = date('m/d/Y H:i', strtotime($event[ending_date]));
+/*
+if ($ending != null) {
     $date = $date . " - " . $ending;
+}*/
 
 $smarty->assign('event', $event);
 $smarty->assign('date', $date);
+$smarty->assign('date_small_format', $date_small_format);
 
 //print_r(array_values($event));
 
