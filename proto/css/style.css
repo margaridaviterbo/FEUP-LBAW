@@ -24,6 +24,9 @@ header .container-fluid{
   height: 100px;
   padding-top: 25px;
   padding-bottom: 25px;
+  border-bottom-width: 1px;
+  border-bottom: solid;
+  border-bottom-color: #cce6ff;
 }
 
 
@@ -186,7 +189,29 @@ header h2{
 
 #sidebar.well.sidebar-nav{
     background-color: #F0F8FF;
+    position: fixed;
+    width: 200%;
 }
+
+#sidebar #createEventBtn{
+    display: block;
+    margin-top : 20px;
+    padding-top: 20px;
+    border-top: rgba(51, 122, 183, 0.5) solid 1px;
+    color: #337ab7;
+    margin-bottom: 20px;
+}
+
+#sidebar #createEventBtn a{
+    font-family: inherit;
+    font-size: medium;
+    font-weight: bold;
+}
+
+#sidebar a:focus{      /*TODO por butoes sublinhados quando estou na sua pagina*/
+    background-color: #337ab7;
+}
+
 
 #sidebar #createEventBtn{
     display: block;
@@ -243,6 +268,7 @@ a.list-group-item:focus, a.list-group-item:hover, button.list-group-item:focus, 
     background-color: rgb(215,243,235);
 }
 
+*/
 /**
  * Footer
  **/
@@ -253,6 +279,9 @@ a.list-group-item:focus, a.list-group-item:hover, button.list-group-item:focus, 
     position: absolute;
     bottom:0;
     width:100%;
+    border-top-width: 1px;
+    border-top: solid;
+    border-top-color: #cce6ff;
 }
 
 
@@ -491,8 +520,11 @@ a.list-group-item:focus, a.list-group-item:hover, button.list-group-item:focus, 
 
 
 .page{
-    background-color: #F0F8FF;
+    background-color: #fcfdff;
     padding-bottom: 10px;
+    border-width: 1px;
+    border-color: #eee;
+    border: solid;
 }
 
 .icon-bar{
