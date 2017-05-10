@@ -126,7 +126,17 @@
                 <h3>Comments</h3>
             </div>
 
-            <div class="row">
+
+
+
+
+
+
+
+{foreach from=$comments item=cmt}
+
+
+<div class="row">
                 <div class="col-sm-2 hidden-xs">
                     <div class="thumbnail">
                         <img class="img-responsive user-photo" src="{$BASE_URL}resources/images/user.png">
@@ -136,62 +146,21 @@
                 <div class="col-sm-10 col-xs-12">
                     <div class="panel panel-default">
                         <div class="panel-heading">
-                            <strong>awesome1</strong> <span class="text-muted">commented 5 days ago</span>
+                            <strong>{$cmt.user_id}</strong> <span class="text-muted">{$cmt.comment_date}</span>
                         </div>
                         <div class="panel-body">
-                            On it differed repeated wandered required in. Then girl neat why yet knew rose spot.
-                            Moreover property we he kindness greatest be oh striking laughter. In me he at collecting
-                            affronting principles apartments. Has visitor law attacks pretend you calling own excited
-                            painted. Contented attending smallness it oh ye unwilling. Turned favour man two but lovers.
-                            Suffer should if waited common person little oh. Improved civility graceful sex few smallest
-                            screened settling. Likely active her warmly has.
+                            {$cmt.content}
                         </div>
                     </div>
                 </div>
             </div>
 
-            <div class="row">
-                <div class="col-sm-2 hidden-xs">
-                    <div class="thumbnail">
-                        <img class="img-responsive user-photo" src="{$BASE_URL}resources/images/user.png">
-                    </div>
-                </div>
+{/foreach}
 
-                <div class="col-sm-10 col-xs-12">
-                    <div class="panel panel-default">
-                        <div class="panel-heading">
-                            <strong>awesome2</strong> <span class="text-muted">commented 4 days ago</span>
-                        </div>
-                        <div class="panel-body">
-                            Offered say visited elderly and. Waited period are played family man formed. He ye body or
-                            made on pain part meet. You one delay nor begin our folly abode. By disposed replying mr me
-                            unpacked no. As moonlight of my resolving unwilling.
-                        </div>
-                    </div>
-                </div>
-            </div>
 
-            <div class="row">
-                <div class="col-sm-2 hidden-xs">
-                    <div class="thumbnail">
-                        <img class="img-responsive user-photo" src="{$BASE_URL}resources/images/user.png">
-                    </div>
-                </div>
 
-                <div class="col-sm-10 col-xs-12">
-                    <div class="panel panel-default">
-                        <div class="panel-heading">
-                            <strong>awesome3</strong> <span class="text-muted">commented 4 days ago</span>
-                        </div>
-                        <div class="panel-body">
-                            <div class="comment">
-                                OMG, look at us!!
-                            </div>
-                            <img src="{$BASE_URL}resources/images/3.jpg">
-                        </div>
-                    </div>
-                </div>
-            </div>
+
+
             <div class="row">
 
                 <div class="col-sm-2 hidden-xs">
@@ -202,14 +171,16 @@
 
                 <div class="col-sm-10">
 
-                    <form id="comment-form" action="#">
+                    <form id="comment-form" action="../../actions/event/new_comment.php" method="POST">
 
                        <textarea name="comment" id="comment" rows="10" cols="80">
                            Write a comment...
                        </textarea>
 
-                        <a onClick="CKupdate();$('#comment-form').ajaxSubmit();">Submit</a>
+                        <!--<a onClick="CKupdate();$('#comment-form').ajaxSubmit();">Submit</a>-->
 
+                        <input type="submit" class="btn btn-default" value="Comment"/>
+                        <input type="hidden" name="id" value="{$event_id}" />
                         <script>
                             CKEDITOR.replace('comment');
                             function CKupdate(){

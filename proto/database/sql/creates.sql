@@ -184,11 +184,13 @@ CREATE TABLE public.Event_Content
 
 CREATE TABLE public.Comments
 (
-	comment_id integer PRIMARY KEY,
+	comment_id serial PRIMARY KEY,
 	content varchar(10000),
 	photo_url varchar(2000),
 	comment_date timestamp NOT NULL DEFAULT now(),
-	FOREIGN KEY(comment_id) REFERENCES Event_Content(event_content_id),
+	event_id integer NOT NULL,
+	user_id integer NOT NULL,
+	#FOREIGN KEY(comment_id) REFERENCES Event_Content(event_content_id),
 	CONSTRAINT valid_content CHECK (photo_url IS NOT NULL OR content IS NOT NULL)
 );
 

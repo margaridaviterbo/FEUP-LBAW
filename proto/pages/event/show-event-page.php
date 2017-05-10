@@ -25,6 +25,11 @@ if ($ending != null) {
     $date = $date . " - " . $ending;
 }*/
 
+$cmts = getComments($meta_event_id);
+
+$smarty->assign('comments', $cmts);
+
+$smarty->assign('event_id', $meta_event_id);
 $smarty->assign('event', $event);
 $smarty->assign('date', $date);
 $smarty->assign('date_small_format', $date_small_format);
