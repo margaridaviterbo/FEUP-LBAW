@@ -20,12 +20,28 @@
                 <strong>{$event.name}</strong>
             </div>
 
-            <div class="event-rate">
-                <i class="fa fa-star fa-2x" aria-hidden="true"></i>
-                <i class="fa fa-star fa-2x" aria-hidden="true"></i>
-                <i class="fa fa-star fa-2x" aria-hidden="true"></i>
-                <i class="fa fa-star-o fa-2x" aria-hidden="true"></i>
-                <i class="fa fa-star-o fa-2x" aria-hidden="true"></i>
+
+            <form id="rform" action="../../actions/event/rate_event.php" method="POST">
+                <input id="rate" type="hidden" name="rating"/>
+                <input type="hidden" name="id" value="{$event_id}" />
+            </form>
+
+            <script type="text/javascript">
+                function rate(val) {
+                    $("#rate").val(val);
+                    $("#rform").submit();
+                }
+            </script>
+
+            <div class="event-rate" style="display:block inline;">
+
+            {for $i=1 to $rate}
+                <i onclick="rate(1)" class="fa fa-star fa-2x" aria-hidden="true"></i>
+            {/for}
+            {for $i=$rate+1 to 5}
+                <i onclick="rate(1)" class="fa fa-star-o fa-2x" aria-hidden="true"></i>
+            {/for}
+
             </div>
 
             <div class="event-creator">

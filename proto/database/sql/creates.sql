@@ -268,8 +268,9 @@ CREATE TABLE public.JoinPoll_UnitToAuthenticated_User
 CREATE TABLE public.Rate
 (
 	event_content_id integer PRIMARY KEY,
+	user_id integer UNIQUE NOT NULL,
 	evaluation integer NOT NULL,
-	FOREIGN KEY(event_content_id) REFERENCES Event_Content(event_content_id),
+	#FOREIGN KEY(event_content_id) REFERENCES Event_Content(event_content_id),
 	CONSTRAINT check_evaluation CHECK (evaluation <= 10 AND evaluation > 0)
 );
 
