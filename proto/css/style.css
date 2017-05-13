@@ -5,8 +5,8 @@ html{
 
 body{
     font-family: 'Open Sans', sans-serif;
-    background-image: url("../resources/images/background2.jpg");
-    background-color: lightslategrey;
+    /*background-image: url("../resources/images/background2.jpg");
+    background-color: lightslategrey;*/
     background-attachment:fixed;
     background-size: cover;
     background-position:center;
@@ -15,29 +15,45 @@ body{
     margin-bottom: 60px;
 }
 
-
 /**
- *Header
- **/
+    COMMON
+ */
 
-header .container-fluid{
-  height: 100px;
-  padding-top: 25px;
-  padding-bottom: 25px;
-  border-bottom-width: 1px;
-  border-bottom: solid;
-  border-bottom-color: #cce6ff;
+
+/*
+header{
+    position: fixed;
+    top: 0;
+    background-color: #F0F8FF;
 }
 
+.navbar-center {
+    float: left !important;
+}*/
+/*
+.navbar-center {
+    float: left !important;
+}
+
+.header{
+    height: 100px;
+    padding-top: 25px;
+    padding-bottom: 25px;
+    border-bottom-width: 1px;
+    border-bottom: solid;
+    border-bottom-color: #cce6ff;
+}
 
 .header{
     background-color: #F0F8FF;
     transition: all 0.2s;
-    box-shadow: 0 2px rgba(0, 0, 0, .075);
 }
 
-header{
-    transition: all 0.5s;
+.header h2{
+    font-size: 50px;
+    font-family: 'Baloo', cursive;
+    color: #337ab7;
+    padding-bottom: 20px;
 }
 
 header a, #title a:hover, #title a:focus{
@@ -45,13 +61,13 @@ header a, #title a:hover, #title a:focus{
 }
 
 header h2{
-  font-size: 50px;
-  font-family: 'Baloo', cursive;
-  color: #337ab7;
-  margin-top: 10px;
-  margin-bottom: 10px;
-}
-
+    font-size: 50px;
+    font-family: 'Baloo', cursive;
+    color: #337ab7;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}*/
+/*
 #title{
     margin-top: -1rem;
 }
@@ -66,7 +82,7 @@ header h2{
 
 #login :focus{
     color: darkslategrey;
-}
+}*/
 
 #modalLogin .btn-success{
     color: white;
@@ -212,63 +228,6 @@ header h2{
     background-color: #337ab7;
 }
 
-
-#sidebar #createEventBtn{
-    display: block;
-    margin-top : 20px;
-    padding-top: 20px;
-    border-top: rgba(51, 122, 183, 0.5) solid 1px;
-    color: #337ab7;
-    margin-bottom: 20px;
-}
-
-#sidebar #createEventBtn a{
-    font-family: inherit;
-    font-size: medium;
-    font-weight: bold;
-}
-
-#sidebar a:target{      /*TODO por butoes sublinhados quando estou na sua pagina*/
-    background-color: #337ab7;
-}
-
-
-#sidebar a:active, #sidebar a:checked {
-    background-color: #337ab7;
-}
-
-@media (min-width: 768px) {
-    .sidebar-nav{
-        position: fixed;
-        width: 20%;
-    }
-}
-
-.list-group-item.active, .list-group-item.active:focus, .list-group-item.active:hover {
-    color: rgb(43,163,141);
-    background-color: rgb(215,243,235);
-    border-color: white;
-}
-
-.list-group-item {
-    background-color: rgb(43,163,141);
-    border: 1px solid white;
-    font-size: 1.8rem;
-    margin-top: 5px;
-}
-
-a.list-group-item {
-    color: white;
-    text-align: center;
-    background-color:  rgba(0, 174, 93, 1);
-}
-
-a.list-group-item:focus, a.list-group-item:hover, button.list-group-item:focus, button.list-group-item:hover {
-    color: rgb(0, 174, 93);
-    background-color: rgb(215,243,235);
-}
-
-*/
 /**
  * Footer
  **/
@@ -499,7 +458,7 @@ a.list-group-item:focus, a.list-group-item:hover, button.list-group-item:focus, 
 
 .purchased-tickets ul li{
     margin-bottom: 10px;
-   font-size: 2rem;
+    font-size: 2rem;
 }
 
 .new-event-card {
@@ -522,9 +481,9 @@ a.list-group-item:focus, a.list-group-item:hover, button.list-group-item:focus, 
 .page{
     background-color: #fcfdff;
     padding-bottom: 10px;
-    border-width: 1px;
+    /*border-width: 1px;
     border-color: #eee;
-    border: solid;
+    border: solid;*/
 }
 
 .icon-bar{
@@ -687,7 +646,7 @@ a, a:hover, a:focus{
 **/
 
 #tabs {
-	list-style-type: none;
+    list-style-type: none;
     padding: 0;
     margin: 0;
     overflow: hidden;
@@ -697,38 +656,38 @@ a, a:hover, a:focus{
 }
 
 #tabs li {
-	float: left;
+    float: left;
     padding-right: 6%;
 }
 
 #tabs li a{
-  display: block;
-  color: black;
-  text-align: center;
-  padding: 5px 5px;
-  text-decoration: none;
-  font-size: 17px;
+    display: block;
+    color: black;
+    text-align: center;
+    padding: 5px 5px;
+    text-decoration: none;
+    font-size: 17px;
 }
 
 #tabs li a:hover {
-	background-color: #ddd;
+    background-color: #ddd;
 }
 
 #tabs li a:active {
-	background-color: #ddd;
+    background-color: #ddd;
 }
 
 .tabContent {
-	overflow:hidden;
-	border-top: none;
+    overflow:hidden;
+    border-top: none;
     width: 100%;
     max-height: 0px;
 }
 
 .tabContent:target {
-	display: block;
-	border: 1px solid #ccc;
-	border-top: none;
+    display: block;
+    border: 1px solid #ccc;
+    border-top: none;
     max-height:10000px;
     z-index: 1;
     padding: 6px 12px;
@@ -747,11 +706,11 @@ div .dropdown {
 }
 
 .user-card-medium a {
-  color: black;
+    color: black;
 }
 
 .user-card-medium a:hover {
-  text-decoration: underline;
+    text-decoration: underline;
 }
 
 .user-card-medium ul {
@@ -776,18 +735,18 @@ div .dropdown {
 }
 
 .homepage .event-card-medium{
-  background-color: rgba(000, 000, 000, 0.7);
-  color: white;
-  margin: 10px;
+    background-color: rgba(000, 000, 000, 0.7);
+    color: white;
+    margin: 10px;
 }
 
 .homepage .page-title h1{
-  background-color: rgba(000, 000, 000, 0.7);
-  color: white;
+    background-color: rgba(000, 000, 000, 0.7);
+    color: white;
 }
 
 .homepage .page-title{
-  margin-top: 50px;
+    margin-top: 50px;
 }
 
 label{
@@ -841,12 +800,12 @@ textarea {
 .payed-card a {
     margin-bottom: 10px;
 }
-
+/*
 @media (max-width: 768px) {
-	#menu {
-		background-color: rgba(0, 0, 0, 0.6);
-	}
-}
+    #menu {
+        background-color: rgba(0, 0, 0, 0.6);
+    }
+}*/
 
 .checkbox-form{
     display: block;
@@ -931,18 +890,8 @@ you can use the generic selector below, but it's slower:
 /* End Font */
 
 .inner {
-    width: 100%;
+    width: 50%;
     position: relative;
-}
-
-.search-btn {
-    position: absolute;
-    right: 8px;
-    top: 10px;
-    width: 14px;
-    height: 14px;
-    font-size: 14px;
-    color: #337ab7;
 }
 
 .searchsubmit {
@@ -961,12 +910,14 @@ you can use the generic selector below, but it's slower:
 }
 
 .content-list {
-    width: 100%;
+    width: 50%;
     background: #FFF;
     float: left;
     border: 1px solid #E1E1E1;
     border-color: rgba(0, 0, 0, 0.2);
-    border: 0;
+    border-left: 0;
+    border-right: 0;
+    border-top: 0;
     -moz-box-shadow: 0 3px 5px 0 rgba(0, 0, 0, 0.25);
     -webkit-box-shadow: 0 3px 5px 0 rgba(0, 0, 0, 0.25);
     box-shadow: 0 3px 5px 0 rgba(0, 0, 0, 0.25);
@@ -980,19 +931,21 @@ you can use the generic selector below, but it's slower:
 
 .drop-list {
     list-style-type: none;
-    background: white;
+    margin: 0;
+    padding: 0;
+    background: white
 }
 
 .drop-list li {
     border: none;
     padding: 0;
-    color: white;
+    color: white
 }
 
 .drop-list li a {
     width: 100%;
     display: block;
-    float: left;
+    float: left
 }
 
 .drop-list li a:hover {

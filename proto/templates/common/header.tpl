@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="{$BASE_URL}css/reset.css">
     <link rel="stylesheet" href="{$BASE_URL}lib/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="{$BASE_URL}css/style.css">
+    <link rel="stylesheet" href="{$BASE_URL}css/menu.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
     <script src="{$BASE_URL}lib/ckeditor/ckeditor.js"></script>

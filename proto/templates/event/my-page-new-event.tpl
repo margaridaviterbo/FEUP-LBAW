@@ -126,7 +126,7 @@
 
                                 <div class="inner">
                                     <input id="search" type="search" class="form-control"
-                                           Placeholder="Search for people..." autocomplete="true"/>
+                                           Placeholder="Search..." autocomplete="true"/>
                                     <span data-icon="&#xe000;" aria-hidden="true" class="search-btn">
                                         <input type="submit" class="searchsubmit" value="">
                                     </span>

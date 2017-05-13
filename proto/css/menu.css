@@ -1,0 +1,80 @@
+
+.header{
+    padding-bottom: 80px;
+}
+
+.header .navbar{
+
+    background: linear-gradient(100deg, #1c6669, #21a9af);
+    padding-top: 12px;
+    padding-bottom: 10px;
+    color: white;
+    border-radius: 0;
+}
+
+@media (max-width:767px){
+    .header .navbar{
+        padding-top: 0;
+        padding-bottom: 0;
+    }
+
+    .header .navbar .navbar-header{
+        padding: 10px 0;
+    }
+
+    .header .navbar .navbar-right{
+        margin-bottom: 20px;
+    }
+}
+
+.header .navbar .navbar-brand{
+    font-family: 'Baloo', cursive;
+    color: inherit;
+}
+
+.header .navbar .navbar-collapse{
+    margin-right: 10px;
+    margin-bottom: 0;
+}
+
+.header .navbar .navbar-right #login{
+    color: white;
+    margin-right: 10px;
+    text-decoration: none;
+}
+
+.header .navbar .navbar-right #login{
+    color: white;
+    margin-right: 10px;
+    text-decoration: none;
+}
+
+.header .navbar .navbar-toggle {
+    border-color: rgba(255, 255, 255, 0.3);
+}
+
+.header .navbar-form {
+    width: 700px;
+}
+
+.test{
+    position: absolute;
+    width: 100%;
+}
+
+#search{
+    width: 100%;
+}
+
+.search-btn {
+    position: absolute;
+    right: 10px;
+    top: 8px;
+    color: #337ab7;
+}
+
+@media (max-width: 768px) {
+    #menu {
+        background-color: transparent;
+    }
+}
