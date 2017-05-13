@@ -43,21 +43,11 @@
     text-decoration: none;
 }
 
-.header .navbar .navbar-right #login{
-    color: white;
-    margin-right: 10px;
-    text-decoration: none;
-}
-
 .header .navbar .navbar-toggle {
     border-color: rgba(255, 255, 255, 0.3);
 }
 
-.header .navbar-form {
-    width: 700px;
-}
-
-.test{
+.search-div{
     position: absolute;
     width: 100%;
 }
@@ -73,8 +63,107 @@
     color: #337ab7;
 }
 
+
+.test {
+    width: 50%;
+    position: relative;
+}
+
 @media (max-width: 768px) {
     #menu {
         background-color: transparent;
     }
+
+    #login{
+        margin-top: 20px;
+    }
+
+    #search{
+
+    }
+
+    .header .navbar .navbar-collapse{
+        margin-right: 0;
+    }
+
+    .test {
+        width: 100%;
+    }
 }
+
+
+
+/*
+@media (max-width: 768px) {
+
+    .header .navbar .navbar-collapse{
+        position: absolute;
+        left: 0;
+        right: 0;
+    }
+}*/
+
+
+/*
+header{
+    position: fixed;
+    top: 0;
+    background-color: #F0F8FF;
+}
+
+.navbar-center {
+    float: left !important;
+}*/
+/*
+.navbar-center {
+    float: left !important;
+}
+
+.header{
+    height: 100px;
+    padding-top: 25px;
+    padding-bottom: 25px;
+    border-bottom-width: 1px;
+    border-bottom: solid;
+    border-bottom-color: #cce6ff;
+}
+
+.header{
+    background-color: #F0F8FF;
+    transition: all 0.2s;
+}
+
+.header h2{
+    font-size: 50px;
+    font-family: 'Baloo', cursive;
+    color: #337ab7;
+    padding-bottom: 20px;
+}
+
+header a, #title a:hover, #title a:focus{
+    color:white;
+}
+
+header h2{
+    font-size: 50px;
+    font-family: 'Baloo', cursive;
+    color: #337ab7;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}*/
+/*
+#title{
+    margin-top: -1rem;
+}
+
+#login a{
+    color: #337ab7;
+}
+
+#login :hover{
+    color: lightslategrey;
+}
+
+#login :focus{
+    color: darkslategrey;
+}*/

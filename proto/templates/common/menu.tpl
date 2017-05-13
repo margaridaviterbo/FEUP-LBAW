@@ -15,12 +15,13 @@
 
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="menu">
-                <div class="nav navbar-nav container inner">
-                    <div class="col-lg-offset-4 col-sm-offset-1 col-xs-offset-1">
+                <div class="nav navbar-nav test">
+
+                    <div class="col-lg-offset-4 col-md-offset-2 col-xs-12">
                         <form class="navbar-form search" name="form" role="search"
                               action="{$BASE_URL}pages/common/search.php#eventosPesq" method="get">
 
-                            <div class="test">
+                                <div class="search-div">
                                 <input id="search" type="search" name="serched" class="form-control search-query"
                                        Placeholder="Search..." autocomplete="true" id="serch-input"/>
                                 <span data-icon="&#xe000;" aria-hidden="true" class="search-btn">
