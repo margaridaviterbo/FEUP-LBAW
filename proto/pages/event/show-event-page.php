@@ -35,5 +35,5 @@ $smarty->assign('month', $month);
 
 //print_r(array_values($event));
 
-$smarty->display('event/show-event-page-teste.tpl');
+$smarty->display('event/show-event-page.tpl');
 ?>
