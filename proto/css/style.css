@@ -5,8 +5,8 @@ html{
 
 body{
     font-family: 'Open Sans', sans-serif;
-    /*background-image: url("../resources/images/background2.jpg");
-    background-color: lightslategrey;*/
+    /*background-image: url("../resources/images/background2.jpg");*/
+    background-color: #fcfdff;
     background-attachment:fixed;
     background-size: cover;
     background-position:center;
@@ -18,71 +18,6 @@ body{
 /**
     COMMON
  */
-
-
-/*
-header{
-    position: fixed;
-    top: 0;
-    background-color: #F0F8FF;
-}
-
-.navbar-center {
-    float: left !important;
-}*/
-/*
-.navbar-center {
-    float: left !important;
-}
-
-.header{
-    height: 100px;
-    padding-top: 25px;
-    padding-bottom: 25px;
-    border-bottom-width: 1px;
-    border-bottom: solid;
-    border-bottom-color: #cce6ff;
-}
-
-.header{
-    background-color: #F0F8FF;
-    transition: all 0.2s;
-}
-
-.header h2{
-    font-size: 50px;
-    font-family: 'Baloo', cursive;
-    color: #337ab7;
-    padding-bottom: 20px;
-}
-
-header a, #title a:hover, #title a:focus{
-    color:white;
-}
-
-header h2{
-    font-size: 50px;
-    font-family: 'Baloo', cursive;
-    color: #337ab7;
-    margin-top: 10px;
-    margin-bottom: 10px;
-}*/
-/*
-#title{
-    margin-top: -1rem;
-}
-
-#login a{
-    color: #337ab7;
-}
-
-#login :hover{
-    color: lightslategrey;
-}
-
-#login :focus{
-    color: darkslategrey;
-}*/
 
 #modalLogin .btn-success{
     color: white;
@@ -126,25 +61,6 @@ header h2{
     background-color: #9acfea;
 }
 
-.navbar-form .search{
-    display: inline;
-}
-
-#search-button button.btn.btn-default{
-    /* TODO: change this pls xD */
-    margin-left: 700%;
-    cursor: pointer;
-    text-shadow: none;
-    border: none;
-    -moz-box-shadow: none;
-    -webkit-box-shadow: none;
-    background: rgba(0, 0, 0, 0);
-}
-
-#search-button .glyphicon-search{
-    color: #337ab7;
-}
-
 .input-mysize{
     width: 280%;
     height: 34px;
@@ -164,8 +80,6 @@ header h2{
     transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
 
 }
-
-
 
 /**
 *homepage
@@ -202,7 +116,6 @@ header h2{
  * Side menu
  **/
 
-
 #sidebar.well.sidebar-nav{
     background-color: #F0F8FF;
     position: fixed;
@@ -233,26 +146,16 @@ header h2{
  **/
 #footer{
 
-    color: #337ab7;
-    background-color: #F0F8FF;
+    background: linear-gradient(100deg, #1c6669, #21a9af);
+    color: white;
+    /*color: #337ab7;
+    background-color: #F0F8FF;*/
     position: absolute;
     bottom:0;
-    width:100%;
+    width:100%;/*
     border-top-width: 1px;
     border-top: solid;
-    border-top-color: #cce6ff;
-}
-
-
-/* */
-
-.aside-menu-list {
-    font-weight: bold;
-    font-size: 1.2rem;
-    background-color: rgb(245, 245, 220);
-    transition: box-shadow 0.3s ease-in-out;
-    margin-bottom: 20px;
-    margin-top: 20px;
+    border-top-color: #cce6ff;*/
 }
 
 
@@ -268,47 +171,6 @@ header h2{
     transition: box-shadow 0.3s ease-in-out;
     padding: 10px;
     margin-bottom: 50px;
-}
-
-
-.event-card-medium{
-    transition: box-shadow 0.3s ease-in-out;
-    padding: 10px 10px 10px 10px;
-    border-bottom: 2px white;
-    border-style: solid;
-}
-
-.event-card-medium:last-child{
-    transition: box-shadow 0.3s ease-in-out;
-    padding: 10px;
-    margin:0;
-    border-bottom: 2px white;
-}
-
-.event-card-medium:hover, .user-card-medium:hover {
-    box-shadow: 2px 2px 20px grey;
-    transition: box-shadow 0.3s ease-in-out;
-}
-
-.event-card-medium img, .user-card-medium img {
-    width: 100%;
-    height: auto;
-}
-
-.classifica-card {
-    color: rgb(225,121,89);
-}
-
-.text-card {
-    font-weight: bold;
-}
-
-.titulo-card {
-    font-weight: bold;
-    font-size: 1.8rem;
-    margin-bottom: 0px;
-    height: 40px;
-    overflow: hidden;
 }
 
 .recomendacoes-publicas h1 {
@@ -342,29 +204,6 @@ ul {
     left: 50%;
     transform: translate(-50%, -50%);
     font-size: 5rem;
-}
-
-.list-group-item.active, .list-group-item.active:focus, .list-group-item.active:hover {
-    color: rgb(43,163,141);
-    background-color: rgb(215,243,235);
-    border-color: white;
-}
-
-.list-group-item {
-    background-color: rgb(43,163,141);
-    border: 1px solid white;
-    font-size: 1.8rem;
-    margin-top: 5px;
-}
-
-a.list-group-item {
-    color: white;
-    text-align: center;
-}
-
-a.list-group-item:focus, a.list-group-item:hover, button.list-group-item:focus, button.list-group-item:hover {
-    color: rgb(43,163,141);
-    background-color: rgb(215,243,235);
 }
 
 .page-title h1{
@@ -461,33 +300,13 @@ a.list-group-item:focus, a.list-group-item:hover, button.list-group-item:focus, 
     font-size: 2rem;
 }
 
-.new-event-card {
-    background-color: #F0F8FF;
-    color: black;
-    padding: 10px;
-    margin-bottom: 20px;
-}
-
 .content-new-event p, .content-new-event input {
     display: inline;
 }
 
-.navbar-brand {
-    font-family: 'Baloo', cursive;
-    font-size: 30px;
-}
-
-
 .page{
-    background-color: #fcfdff;
+    background-color: inherit;
     padding-bottom: 10px;
-    /*border-width: 1px;
-    border-color: #eee;
-    border: solid;*/
-}
-
-.icon-bar{
-    background-color: white;
 }
 
 a, a:hover, a:focus{
@@ -756,7 +575,6 @@ label{
 textarea {
     max-width: 100%;
 }
-
 
 /*ckeckout CARD*/
 .ckeckout-card {

@@ -2,7 +2,7 @@
     <div class="row">
         <content class="col-lg-offset-10 col-lg-2 col-md-offset-9 col-md-3   col-sm-3 col-sm-offset-9">
             <!-- It can be fixed with bootstrap affix http://getbootstrap.com/javascript/#affix-->
-            <div id="sidebar" class="well sidebar-nav">
+            <!--<div id="sidebar" class="well sidebar-nav">
                 <h5><i class="glyphicon glyphicon-home"></i>
                     <small><b>Events</b></small>
                 </h5>
@@ -25,7 +25,7 @@
 
 <div class="container-fluid text-left">
     <div class="row">
-        <content class="col-lg-offset-10 col-lg-2 col-md-offset-9 col-md-3   col-sm-3 col-sm-offset-9">
+        <content class="col-lg-offset-10 col-lg-2 col-md-offset-9 col-md-3 col-sm-3 col-sm-offset-9">
             <div id="sidebar" class="well sidebar-nav">
                 <h5><i class="glyphicon glyphicon-home"></i>
                     <small><b>Events</b></small>

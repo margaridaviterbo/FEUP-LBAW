@@ -12,7 +12,7 @@
             <content class="col-sm-9">
 
                 <div class="container-fluid">
-                    <div class="row new-event-card">
+                    <div class="row">
                         <div class="col-sm-4 tags-personal-card">
                             <div class="content-new-event">
                                 <p class="tag-new-event-card">Event Name:</p>

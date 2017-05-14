@@ -21,12 +21,12 @@
                         <form class="navbar-form search" name="form" role="search"
                               action="{$BASE_URL}pages/common/search.php#eventosPesq" method="get">
 
-                                <div class="search-div">
+                            <div class="search-div">
                                 <input id="search" type="search" name="serched" class="form-control search-query"
                                        Placeholder="Search..." autocomplete="true" id="serch-input"/>
                                 <span data-icon="&#xe000;" aria-hidden="true" class="search-btn">
-                                            <input type="submit" class="searchsubmit" id="search-button" value="">
-                                        </span>
+                                    <input type="submit" class="searchsubmit" id="search-button" value="">
+                                </span>
                             </div>
                         </form>
                     </div>
@@ -43,8 +43,10 @@
                                         class="glyphicon glyphicon-log-out"></span> Logout</a>
                         </li>
                     {else}
-                        <li><a href="#" data-toggle="modal" data-target="#modalLogin">Login</a></li>
-                        <li><a href="#" data-toggle="modal" data-target="#modalRegister">Sign Up</a>
+                        <li><a href="#" data-toggle="modal" data-target="#modalLogin"><span
+                                        class="glyphicon glyphicon-log-in"></span>Login</a></li>
+                        <li><a href="#" data-toggle="modal" data-target="#modalRegister"><span
+                                        class="glyphicon glyphicon-pencil"></span>Register</a>
                         </li>
                     {/if}
                 </ul>

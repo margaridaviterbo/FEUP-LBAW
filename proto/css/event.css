@@ -1,0 +1,41 @@
+
+
+.event-card-medium{
+    transition: box-shadow 0.3s ease-in-out;
+    padding: 10px 10px 10px 10px;
+    border-bottom: 2px white;
+    border-style: solid;
+}
+
+.event-card-medium:last-child{
+    transition: box-shadow 0.3s ease-in-out;
+    padding: 10px;
+    margin:0;
+    border-bottom: 2px white;
+}
+
+.event-card-medium:hover, .user-card-medium:hover {
+    box-shadow: 2px 2px 20px grey;
+    transition: box-shadow 0.3s ease-in-out;
+}
+
+.event-card-medium img, .user-card-medium img {
+    width: 100%;
+    height: auto;
+}
+
+.text-card {
+    font-weight: bold;
+}
+
+.classifica-card {
+    color: rgb(225,121,89);
+}
+
+.titulo-card {
+    font-weight: bold;
+    font-size: 1.8rem;
+    margin-bottom: 0px;
+    height: 40px;
+    overflow: hidden;
+}

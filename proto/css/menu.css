@@ -1,35 +1,24 @@
-
-.header{
-    padding-bottom: 80px;
+.header{/*
+    height: 50px;
+    transition: height 2s linear 1s;*/
 }
 
 .header .navbar{
 
     background: linear-gradient(100deg, #1c6669, #21a9af);
+    /*background: linear-gradient(135deg, #6790ff, #cce6ff);*/
+    /*background-color: #cce6ff;*/
     padding-top: 12px;
     padding-bottom: 10px;
     color: white;
     border-radius: 0;
-}
-
-@media (max-width:767px){
-    .header .navbar{
-        padding-top: 0;
-        padding-bottom: 0;
-    }
-
-    .header .navbar .navbar-header{
-        padding: 10px 0;
-    }
-
-    .header .navbar .navbar-right{
-        margin-bottom: 20px;
-    }
+    border-bottom: 1px solid #dddddd;
 }
 
 .header .navbar .navbar-brand{
     font-family: 'Baloo', cursive;
     color: inherit;
+    font-size: 30px;
 }
 
 .header .navbar .navbar-collapse{
@@ -40,7 +29,6 @@
 .header .navbar .navbar-right #login{
     color: white;
     margin-right: 10px;
-    text-decoration: none;
 }
 
 .header .navbar .navbar-toggle {
@@ -63,27 +51,30 @@
     color: #337ab7;
 }
 
-
 .test {
     width: 50%;
     position: relative;
 }
 
 @media (max-width: 768px) {
+
     #menu {
         background-color: transparent;
     }
 
     #login{
         margin-top: 20px;
-    }
-
-    #search{
-
+        margin-bottom: 10px;
     }
 
     .header .navbar .navbar-collapse{
-        margin-right: 0;
+        margin-right: 10px;
+        margin-left: 10px;
+    }
+
+    .header .navbar .navbar-right{
+        margin-right: 0px;
+        margin-left: 0px;
     }
 
     .test {
@@ -91,6 +82,23 @@
     }
 }
 
+.header a{
+    text-decoration: none;
+    color: inherit;
+}
+
+.header .icon-bar{
+    background-color: white;
+}
+
+.header .glyphicon{
+    margin-right: 8px;
+}
+
+#login :hover, #login :focus{
+    color: darkslategrey;
+    background-color: lightblue;
+}
 
 
 /*
