@@ -379,13 +379,6 @@ a, a:hover, a:focus{
     top: 5%;
 }
 
-.event-name{
-    font-size: 23px;
-    font-family: 'Open Sans', sans-serif;
-    position: absolute;
-    top: 25%;
-}
-
 .event-rate{
     position: absolute;
     top: 53%;
@@ -402,6 +395,10 @@ a, a:hover, a:focus{
     position: absolute;
     top: 90%;
     font-size: 15px;
+}
+
+#sidebar li .active{
+    background-color: yellow;
 }
 
 @media all and (max-width: 1500px) {
@@ -799,4 +796,18 @@ you can use the generic selector below, but it's slower:
 
 .people {
     background: #69F
+}
+
+
+.glyphicon{
+    margin-right: 8px;
+}
+
+.glyphicon.glyphicon-one-fine-dot {
+    margin: 0 0 .2em .2em;
+    overflow: hidden;
+}
+.glyphicon.glyphicon-one-fine-dot:before {
+    content:"\25cf";
+    font-size: 0.7em;
 }

@@ -91,10 +91,6 @@
     background-color: white;
 }
 
-.header .glyphicon{
-    margin-right: 8px;
-}
-
 #login :hover, #login :focus{
     color: darkslategrey;
     background-color: lightblue;
