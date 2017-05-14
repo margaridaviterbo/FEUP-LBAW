@@ -353,50 +353,6 @@ a, a:hover, a:focus{
     flex-direction: column;
 }
 
-.event-page-image-section{
-    overflow: hidden;
-    padding: 0;
-}
-
-.event-page-photo{
-    width:100%;
-}
-
-.event-page-info-square-section{
-    overflow: hidden;
-    background-color: ghostwhite;
-    padding: 0;
-    position: relative;
-}
-
-.event-page-info-square-section > *{
-    margin-left: 5%;
-}
-
-.event-date{
-    font-size: 15px;
-    position: absolute;
-    top: 5%;
-}
-
-.event-rate{
-    position: absolute;
-    top: 53%;
-    font-size: 15px;
-}
-
-.event-creator{
-    position: absolute;
-    top: 73%;
-    font-size: 15px;
-}
-
-.event-price{
-    position: absolute;
-    top: 90%;
-    font-size: 15px;
-}
-
 #sidebar li .active{
     background-color: yellow;
 }

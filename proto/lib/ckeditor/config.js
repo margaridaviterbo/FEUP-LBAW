@@ -19,5 +19,9 @@ CKEDITOR.editorConfig = function( config ) {
         { name: 'about', groups: [ 'about' ] }
     ];
 
+    config.uiColor = '#F0F8FF';
+    config.height = 100;
+    config.toolbarCanCollapse = true;
+
     config.removeButtons = 'Subscript,Superscript,Paste,PasteText,PasteFromWord,Copy,Cut,Scayt,Strike,RemoveFormat,Blockquote,About,Source,Maximize,Anchor';
 };
