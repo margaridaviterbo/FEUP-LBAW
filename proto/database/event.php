@@ -38,6 +38,13 @@ function getComments($event_id){
     return $stmt->fetchAll();
 }
 
+function listEvents(){
+    global $conn;
+    $stmt = $conn->prepare('SELECT * from Event');
+    $stmt->execute();
+    return $stmt->fetchAll();
+}
+
 
 function createMetaEvent($name, $description, $beginning_date, $beginning_time, $ending_date, $ending_time, $photo, $free, $public, $owner, $category, $local){
     global $conn;
