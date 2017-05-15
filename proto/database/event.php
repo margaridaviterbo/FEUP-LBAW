@@ -1,10 +1,43 @@
 <?php
-    //FALTA: user que fez comentário; id do evento
-    /*function insertComment($user, $eventid, $comment, $url){
+    
+    function insertComment($userid, $eventid, $comment, $url){
         global $conn;
-        $stmt = $conn->prepare('INSERT INTO public.users(content, photo_url,comment_date) VALUES (?, ?, NOW())');
-        $stmt->execute(array($comment, $lastname, $email));
-    }*/
+        $stmt = $conn->prepare('INSERT INTO public.comments(content, photo_url,comment_date,event_id,user_id) VALUES (?, ?, NOW(),?,?)');
+        $stmt->execute(array($comment, $url, $eventid, $userid));
+    }
+
+
+    function rateEvent($userid, $eventid, $rate){
+        global $conn;
+        $stmt = $conn->prepare('INSERT INTO public.rate(event_content_id, user_id,evaluation) VALUES (?, ?,?)');
+        $stmt->execute(array($eventid, $userid, $rate));
+    }
+
+function getRating($eventid) {
+    global $conn;
+        $stmt = $conn->prepare('select cast(AVG(evaluation) as int) as avg from rate where event_content_id=?;');
+        $stmt->execute(array($eventid));
+        return $stmt->fetchAll();
+}
+
+
+function hasVoted($userid) {
+    global $conn;
+    $stmt = $conn->prepare('select 1 as res from rate where event_content_id=?;');
+    $stmt->execute(array($userid));
+    return $stmt->fetchAll();
+}
+
+
+    
+
+function getComments($event_id){
+    global $conn;
+    $stmt = $conn->prepare('SELECT * from Comments where event_id=?');
+    $stmt->execute(array($event_id));
+    return $stmt->fetchAll();
+}
+
 
 function createMetaEvent($name, $description, $beginning_date, $beginning_time, $ending_date, $ending_time, $photo, $free, $public, $owner, $category, $local){
     global $conn;

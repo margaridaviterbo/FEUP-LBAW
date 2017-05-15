@@ -184,11 +184,13 @@ CREATE TABLE public.Event_Content
 
 CREATE TABLE public.Comments
 (
-	comment_id integer PRIMARY KEY,
+	comment_id serial PRIMARY KEY,
 	content varchar(10000),
 	photo_url varchar(2000),
 	comment_date timestamp NOT NULL DEFAULT now(),
-	FOREIGN KEY(comment_id) REFERENCES Event_Content(event_content_id),
+	event_id integer NOT NULL,
+	user_id integer NOT NULL,
+	#FOREIGN KEY(comment_id) REFERENCES Event_Content(event_content_id),
 	CONSTRAINT valid_content CHECK (photo_url IS NOT NULL OR content IS NOT NULL)
 );
 
@@ -266,8 +268,9 @@ CREATE TABLE public.JoinPoll_UnitToAuthenticated_User
 CREATE TABLE public.Rate
 (
 	event_content_id integer PRIMARY KEY,
+	user_id integer UNIQUE NOT NULL,
 	evaluation integer NOT NULL,
-	FOREIGN KEY(event_content_id) REFERENCES Event_Content(event_content_id),
+	#FOREIGN KEY(event_content_id) REFERENCES Event_Content(event_content_id),
 	CONSTRAINT check_evaluation CHECK (evaluation <= 10 AND evaluation > 0)
 );
 
