@@ -5,7 +5,7 @@
     <div class="row">
         <content class="col-lg-offset-3 col-lg-6 col-sm-8 col-sm-offset-1 col-xs-12 page">
             <div class="page-header">
-                <h1>Upcoming events </h1>
+                <h1>{$page_title} </h1>
             </div>
 
             {foreach $events as $event}

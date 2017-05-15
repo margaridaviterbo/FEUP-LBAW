@@ -40,8 +40,15 @@ function getComments($event_id){
 
 function listEvents(){
     global $conn;
-    $stmt = $conn->prepare('SELECT * from Event');
+    $stmt = $conn->prepare('SELECT * from Event where ending_date > now()');
     $stmt->execute();
+    return $stmt->fetchAll();
+}
+
+function getPastEvents($userid) {
+    global $conn;
+    $stmt = $conn->prepare('select event.* from event, guest where guest.user_id= ? and event.event_id = guest.event_id');
+    $stmt->execute(array($userid));
     return $stmt->fetchAll();
 }
 

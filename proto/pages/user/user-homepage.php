@@ -9,6 +9,6 @@ if (!isset($_SESSION['username'])){
 
 $events = listEvents();
 $smarty->assign('events', $events);
-
+$smarty->assign('page_title','Upcoming events');
 $smarty->display('user/user-homepage.tpl');
 ?>
