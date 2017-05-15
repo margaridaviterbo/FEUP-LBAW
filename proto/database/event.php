@@ -13,6 +13,13 @@
         $stmt->execute(array($eventid, $userid, $rate));
     }
 
+
+function saveEvent($userid, $eventid){
+    global $conn;
+    $stmt = $conn->prepare('insert into saved_event values(?,?)');
+    $stmt->execute(array($userid, $eventid));
+}
+
 function getRating($eventid) {
     global $conn;
         $stmt = $conn->prepare('select cast(AVG(evaluation) as int) as avg from rate where event_content_id=?;');
@@ -48,6 +55,14 @@ function listEvents(){
 function getPastEvents($userid) {
     global $conn;
     $stmt = $conn->prepare('select event.* from event, guest where guest.user_id= ? and event.event_id = guest.event_id');
+    $stmt->execute(array($userid));
+    return $stmt->fetchAll();
+}
+
+
+function getSavedEvents($userid) {
+    global $conn;
+    $stmt = $conn->prepare('select e.* from saved_event s, event e where s.meta_event_id =e.event_id and s.user_id=?;');
     $stmt->execute(array($userid));
     return $stmt->fetchAll();
 }

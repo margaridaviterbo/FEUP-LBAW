@@ -98,10 +98,13 @@
 
             <div class="row">
                 <div class="col-sm-9">
+                    <form id="comment-form" action="../../actions/event/save_event.php" method="POST" class="form-inline">
+                        <input type="hidden" name="id" value="{$event_id}" />
+                        <input type="submit" value="Save" class="btn btn-default form-control"/>
+                    </form>
+
                     <form class="form-inline">
-                        <a href="#">
-                            <button class="btn btn-default form-control">Save Event</button>
-                        </a>
+                        
                         <a href="#">
                             <button class="btn btn-default form-control">Share Event</button>
                         </a>
@@ -141,6 +144,9 @@
             <div class="page-header">
                 <h3>Comments</h3>
             </div>
+
+
+
 
 
 
