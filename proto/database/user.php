@@ -112,7 +112,16 @@
         $username = $row['username'];
         return $username;
     }
-
+	
+	function getByUsername($username) {
+        global $conn;
+        $stmt = $conn->prepare("SELECT * 
+                                FROM public.authenticated_user 
+                                WHERE username like ?");
+        $stmt->execute(array($username));
+        return $stmt->fetchAll();
+    }
+	
     function isLoginCorrect($username, $password) {
         global $conn;
         $stmt = $conn->prepare("SELECT * 

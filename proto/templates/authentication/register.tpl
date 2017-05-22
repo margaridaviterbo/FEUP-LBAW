@@ -22,14 +22,14 @@
                     <input name="last_name" id="last_name" type="text" class="form-control"
                            placeholder="Insert your last name" onkeyup="validateLastName();" required>
 
-                    <label>Username *</label>
-                    <input name="username" id="username" type="text" class="form-control" placeholder="Choose an username" onkeyup="validateUsername();" required>
+                    <label>Username * <span id="username-erro-label" ></span></label>
+                    <input name="username" id="username" type="text" class="form-control" onkeyup="validateUsername();" placeholder="Choose an username" required>
 
-                    <label>E-mail *</label>
+                    <label>E-mail *<span id="email-erro-label"></span></label>
                     <input name="email" id="email" type="email" class="form-control" placeholder="Insert your email" onkeyup="validateEmail();"
                            required>
 
-                    <label>NIF</label>
+                    <label>NIF<span id="nif-erro-label"></span></label>
                     <input name="nif" id="nif" type="number" class="form-control" placeholder="Insert your nif" onkeyup="validateNif();">
                     <span class="nif_message"></span>
 
