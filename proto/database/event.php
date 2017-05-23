@@ -1,5 +1,26 @@
 <?php
     
+    function numTickets($m_event_id) {
+        global $conn;
+        $stmt = $conn->prepare('select ((select num_tickets from type_of_ticket where meta_event_id=?) - count(ticket_id)) as num_tickets from ticket where type_of_ticket_id=?');
+        $stmt->execute(array($m_event_id,$m_event_id));
+        return $stmt->fetch();
+    }
+
+    function getTypeTicket($m_event_id){
+        global $conn;
+        $stmt = $conn->prepare('select * from type_of_ticket where meta_event_id=?;');
+        $stmt->execute(array($m_event_id));
+        return $stmt->fetch();
+    }
+
+
+    function buy_ticket($userid, $eventid)  {
+        global $conn;
+        $stmt = $conn->prepare('insert into ticket(user_id,type_of_ticket_id) values (?,(select type_of_ticket_id from type_of_ticket where event_id=?));');
+        $stmt->execute(array($userid, $eventid));
+    }
+
     function insertComment($userid, $eventid, $comment, $url){
         global $conn;
         $stmt = $conn->prepare('INSERT INTO public.comments(content, photo_url,comment_date,event_id,user_id) VALUES (?, ?, NOW(),?,?)');
@@ -14,25 +35,25 @@
     }
 
 
-function saveEvent($userid, $eventid){
-    global $conn;
-    $stmt = $conn->prepare('insert into saved_event values(?,?)');
-    $stmt->execute(array($userid, $eventid));
-}
+    function saveEvent($userid, $eventid){
+        global $conn;
+        $stmt = $conn->prepare('insert into saved_event values(?,?)');
+        $stmt->execute(array($userid, $eventid));
+    }
 
-function getRating($eventid) {
-    global $conn;
-        $stmt = $conn->prepare('select cast(AVG(evaluation) as int) as avg from rate where event_content_id=?;');
-        $stmt->execute(array($eventid));
+    function getRating($eventid) {
+        global $conn;
+            $stmt = $conn->prepare('select cast(AVG(evaluation) as int) as avg from rate where event_content_id=?;');
+            $stmt->execute(array($eventid));
+            return $stmt->fetchAll();
+    }
+
+
+    function hasVoted($userid) {
+        global $conn;
+        $stmt = $conn->prepare('select 1 as res from rate where event_content_id=?;');
+        $stmt->execute(array($userid));
         return $stmt->fetchAll();
-}
-
-
-function hasVoted($userid) {
-    global $conn;
-    $stmt = $conn->prepare('select 1 as res from rate where event_content_id=?;');
-    $stmt->execute(array($userid));
-    return $stmt->fetchAll();
 }
 
 

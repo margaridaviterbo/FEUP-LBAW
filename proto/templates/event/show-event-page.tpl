@@ -104,18 +104,18 @@
                     </form>
 
                     <form class="form-inline">
-                        
-                        <a href="#">
-                            <button class="btn btn-default form-control">Share Event</button>
-                        </a>
+                        <iframe src="https://www.facebook.com/plugins/share_button.php?href=https%3A%2F%2Fdevelopers.facebook.com%2Fdocs%2Fplugins%2F&layout=button&size=large&mobile_iframe=true&width=73&height=28&appId" width="73" height="28" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true"></iframe>
                     </form>
                 </div>
 
                 <div class="col-sm-3">
                     {if !$event.free}
-                        <a href="{$BASE_URL}pages/ticket/checkout-payment.php">
-                            <button class="btn btn-default btn-primary form-control">Buy Tickets</button>
+                        {if $tickets>0}
+                        <a href="{$BASE_URL}pages/ticket/checkout-payment.php?id={$event_id}" class="btn btn-default btn-primary form-control">Buy Ticket
                         </a>
+                        {else}
+                            <span class="btn btn-default form-control">Sold out!</span>
+                        {/if}
                     {/if}
                 </div>
             </div>
@@ -216,6 +216,7 @@
 
         </div>
     </div>
+
 </div>
 
 {include file='common/footer.tpl'}

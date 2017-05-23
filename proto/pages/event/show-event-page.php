@@ -13,6 +13,7 @@ if(isset($_POST['comment']) && isset($_POST['photo'])) {
 
 $meta_event_id = $_GET['id'];
 
+$num_tickets = numTickets($meta_event_id);
 $event = getMetaEvent($meta_event_id);
 
 $date = date('l, jS \of F Y \a\t h:i A', strtotime($event[beginning_date]));
@@ -36,6 +37,8 @@ $smarty->assign('event_id', $meta_event_id);
 $smarty->assign('event', $event);
 $smarty->assign('date', $date);
 $smarty->assign('date_small_format', $date_small_format);
+$smarty->assign('tickets', $num_tickets['num_tickets']);
+
 
 
 //print_r(array_values($event));
