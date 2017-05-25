@@ -1,5 +1,18 @@
 <?php
     
+
+
+    function updateMetaEvent($id, $evt, $price) {
+        global $conn;
+        $stmt = $conn->prepare('update meta_event set name=?, beginning_date=?, description=?, free=? where meta_event_id=?;');
+        $stmt->execute(array($evt["name"],$evt["beginning_date"],$evt["description"],$evt["free"],$id));
+        if($evt["free"]==0) {
+            $stmt = $conn->prepare('update type_of_ticket set price=? where meta_event_id=?;');
+            $stmt->execute(array($price,$id));
+        }
+        
+    }
+
     function numTickets($m_event_id) {
         global $conn;
         $stmt = $conn->prepare('select ((select num_tickets from type_of_ticket where meta_event_id=?) - count(ticket_id)) as num_tickets from ticket where type_of_ticket_id=?');

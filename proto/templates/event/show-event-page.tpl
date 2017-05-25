@@ -103,6 +103,7 @@
                         <input type="submit" value="Save" class="btn btn-default form-control"/>
                     </form>
 
+                    <a href="edit-event.php?id={$event_id}" class="btn btn-default">Edit</a>
                     <form class="form-inline">
                         <iframe src="https://www.facebook.com/plugins/share_button.php?href=https%3A%2F%2Fdevelopers.facebook.com%2Fdocs%2Fplugins%2F&layout=button&size=large&mobile_iframe=true&width=73&height=28&appId" width="73" height="28" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true"></iframe>
                     </form>
