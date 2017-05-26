@@ -16,17 +16,17 @@
     </div>
 </div>-->
 
-<!-- TODO POR O MENU A DESAPARECER NA VERSAO MOBILE-->
 
-<div class="container-fluid text-left">
+<div class="container">
     <div class="row">
-        <content class="col-lg-offset-10 col-lg-2 col-md-offset-9 col-md-3   col-sm-3 col-sm-offset-9">
+        <div class="col-md-4">
+            <!-- It can be fixed with bootstrap affix http://getbootstrap.com/javascript/#affix-->
             <div id="sidebar" class="well sidebar-nav">
                 <h5><i class="glyphicon glyphicon-home"></i>
                     <small><b>Events</b></small>
                 </h5>
                 <ul class="nav nav-pills nav-stacked">
-                    <li><a href="{$BASE_URL}pages/user/user-homepage.php">Upcoming Events</a></li>
+                    <li class="active"><a href="{$BASE_URL}pages/user/user-homepage.php">Upcoming Events</a></li>
                     <li><a href="{$BASE_URL}pages/user/my-page-attended.php">Past Events</a></li>
                     <li><a href="{$BASE_URL}pages/user/my-page-my-events.php">My Events</a></li>
                     <li><a href="{$BASE_URL}pages/user/my-page-saved-events.php">Saved Events</a></li>
@@ -45,6 +45,9 @@
                     </ul>
                 </div>
             </div>
-        </content>
+        </div>
+        <div class="col-md-8">
+            <!-- Content Here -->
+        </div>
     </div>
 </div>
