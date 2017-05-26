@@ -118,44 +118,29 @@
 
                 <fieldset id="page3">
                     <div class="row">
-                        <div class="col-sm-12">
+                        <content class="col-sm-12">
                             <label>Add Hosts</label>
 
                             <div class="inner">
                                 <input id="search-user" name="username" type="search" class="form-control"
-                                       Placeholder="Search..." autocomplete="false"/>
+                                       Placeholder="Search..." autocomplete="off"/>
                                 <span data-icon="&#xe000;" aria-hidden="true" class="search-btn">
                                         <input type="submit" class="searchsubmit" value="">
                                     </span>
                             </div>
                             <div class="content-list" id="host-list">
-                                <ul class="drop-list">
-                                    <li class="list-item">
-                                        <a href="">
-                                <span class="item">
-                                    <span class="icon people">
-                                        <span data-icon="&#xe001;" aria-hidden="true"></span>
-                                    </span>
-                                    <span class="text">catarina24</span>
-                                </span>
-                                        </a>
-                                    </li>
-                                    <li class="list-item">
-                                        <a href="">
-                                <span class="item">
-                                    <span class="icon people">
-                                        <span data-icon="&#xe001;" aria-hidden="true"></span>
-                                    </span>
-                                    <span class="text">maria</span>
-                                </span>
-                                        </a>
-                                    </li>
+                                <ul class="drop-list" id="drop-list">
+
                                 </ul>
                             </div>
-                        </div>
-                        <div class="col-sm-12">
+                        </content>
+                        <content class="col-sm-12" id="added-hosts">
+
+                        </content>
+
+                        <content class="col-sm-12">
                             <label>Invite People</label>
-                        </div>
+                        </content>
 
                         <!--<div class="inner">
                             <input id="search-user" name="username" type="search" class="form-control"

@@ -4,9 +4,14 @@ function findUsers(){
 
     var name = $('#search-user').val();
     var hostList = $("#host-list");
-    console.log(name);
+    var dropList = $("#drop-list");
 
     hostList.fadeIn("fast");
+
+    if(name.length == 0){
+        dropList.empty();
+        return;
+    }
 
     $.ajax({
         type: "POST",
@@ -19,10 +24,11 @@ function findUsers(){
             var process = JSON.parse(response);
 
             if(process.success === "success"){
-                hostList.empty();
-                console.log(process.users.length);
+                dropList.empty();
+                console.log(process.users);
                 for (var i=0; i<process.users.length; i++){
-                    hostList.append('<li class="list-item">'+
+                    //console.log(process.users[i].user_id);
+                    dropList.append('<li class="list-item">'+
                         '<a href="">'+
                         '<span class="item">'+
                         '<span class="icon people">'+
@@ -36,9 +42,9 @@ function findUsers(){
 
             }
             else{
-                hostList.empty();
-                hostList.append('<li class="list-item">'+
-                    '<a href="">'+
+                dropList.empty();
+                dropList.append('<li class="list-item">'+
+                    '<a href="#">'+
                     '<span class="item">'+
                     '<span class="icon people">'+
                     '<span data-icon="&#xe001;" aria-hidden="true"></span>'+
@@ -74,5 +80,13 @@ $(document).ready(function () {
 
     $('#search-user').keyup(function () {
         findUsers();
+    });
+
+    var member = $("#drop-list li").first();
+
+    console.log(member);
+
+    $('#drop-list li a').click(function(){
+        console.log("carreguei");
     });
 });
