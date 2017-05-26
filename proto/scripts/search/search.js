@@ -27,7 +27,6 @@ function addeventChange() {
 		askedToUpdate = true;
 		testCanUpdate();
 	});
-	console.log('vai');
 	$('form .serch').removeAttr("action");
 }
 

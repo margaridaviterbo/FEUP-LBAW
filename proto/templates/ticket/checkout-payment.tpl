@@ -14,13 +14,13 @@
                     <div class="row ckeckout-card">
                         <div class="col-sm-12 tags-personal-card">
                             <div class="content-ckeckout">
-                                <p class="tag-ckeckout-card">Nome:</p><p id="nome">Rui Paiva</p>
+                                <p class="tag-ckeckout-card">Nome:</p><p id="nome">{$NAME}</p>
                                 <a href="#"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
                             </div><div class="content-ckeckout">
-                                <p class="tag-ckeckout-card">Morada:</p>  <p id="morada">Rua das Flores, Porto, Portugal</p>
+                                <p class="tag-ckeckout-card">NIF:</p>  <p id="morada">{$NIF}</p>
                                 <a href="#"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
                             </div><div class="content-ckeckout">
-                                <p class="tag-ckeckout-card">Event:</p>    <p id="evento">Evento1</p>
+                                <p class="tag-ckeckout-card">Event:</p>    <p id="evento">{$EVENT}</p>
                             </div>
                           <div class="dropdown">
                             <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">
@@ -44,11 +44,17 @@
                           </div>
                           <div class="content-ckeckout">
                             <p class="tag-ckeckout-card">Custo:</p>
-                            <p id="custo">10€</p>
+                            <p id="custo">{$PRICE}€</p>
                           </div>
-                          <a href="confirmation-payment.php">
+
+                          <form method="POST" action="../../actions/event/buy_ticket.php">
+                                <input type="hidden" name="id" value="{$event_id}" />
+                                <input class="btn btn-default btn-primary form-control" type="submit" value="Confirm"/>
+                            </form>
+
+                          <!--<a href="confirmation-payment.php">
                             <button class="btn btn-default btn-primary form-control">Pay with paypal</button>
-                          </a>
+                          </a>-->
                     </div>
                 </div>
             </content>

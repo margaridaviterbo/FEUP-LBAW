@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 include('../../config/init.php');
 include('../../database/event.php');
 include('../../database/user.php');
@@ -9,10 +9,10 @@ if (!isset($_SESSION['username'])){
 }
 
 $id = getUserIdFromAuthenticatedUser($_SESSION['username']);
-$events = getPastEvents($id);
+$events = getSavedEvents($id);
 
 $smarty->assign('events', $events);
-$smarty->assign('page_title','Events that I attended');
+$smarty->assign('page_title','Saved events');
 
 $smarty->display('user/user-homepage.tpl');
 ?>

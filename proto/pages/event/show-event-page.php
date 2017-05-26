@@ -13,6 +13,7 @@ if(isset($_POST['comment']) && isset($_POST['photo'])) {
 
 $meta_event_id = $_GET['id'];
 
+$num_tickets = numTickets($meta_event_id);
 $event = getMetaEvent($meta_event_id);
 
 $date = date('l, jS \of F Y \a\t h:i A', strtotime($event[beginning_date]));
@@ -26,10 +27,19 @@ if ($ending != null) {
     $date = $date . " - " . $ending;
 }*/
 
+$rate = getRating($meta_event_id)[0]["avg"];
+
+//$cmts = getComments($meta_event_id);
+
+$smarty->assign('comments', $cmts);
+
+$smarty->assign('rate', $rate);
+$smarty->assign('event_id', $meta_event_id);
 $smarty->assign('event', $event);
 $smarty->assign('date', $date);
 $smarty->assign('day', $day);
 $smarty->assign('month', $month);
+$smarty->assign('tickets', $num_tickets['num_tickets']);
 
 
 

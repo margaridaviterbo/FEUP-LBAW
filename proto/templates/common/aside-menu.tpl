@@ -34,7 +34,7 @@
                     <li><a class="" href="{$BASE_URL}pages/user/user-homepage.php">Upcoming Events</a></li>
                     <li><a href="{$BASE_URL}pages/user/my-page-attended.php">Past Events</a></li>
                     <li><a href="{$BASE_URL}pages/user/my-page-my-events.php">My Events</a></li>
-                    <li><a href="#">Saved Events</a></li>
+                    <li><a href="{$BASE_URL}pages/user/my-page-saved-events.php">Saved Events</a></li>
                 </ul>
                 <br><h5><i class="glyphicon glyphicon-user"></i>
                     <small><b>Activity</b></small>

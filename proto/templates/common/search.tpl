@@ -30,24 +30,23 @@
                 <div class="tabContentGroup">
 
                     <div id="eventosPesq" class="tabContent">
+						<div class="tabOptions tabOptionsEvets">
+						  <input type="checkbox" name="free-order-event" value="free" checked=""> Free
+						  <input type="checkbox" name="paid-order-event" value="paid" checked=""> Paid
 
-                        <div class="tabOptions tabOptionsEvets">
-                            <input type="checkbox" name="free-order-event" value="free" checked=""> Free
-                            <input type="checkbox" name="paid-order-event" value="paid" checked=""> Paid
-
-                            <div class='alfabetic-ordering'>
-                                Alfabetic order:
-                                <input type="radio" name="alfa-order-event" value="ASC" checked>Ascending
-                                <input type="radio" name="alfa-order-event" value="DESC">Descending
-                            </div>
-
-                            <div class='alfabetic-ordering'>
-                                By:
-                                <input type="radio" name="type-order-event" value="true" checked>Name
-                                <input type="radio" name="type-order-event" value="false">Price
-                            </div>
-                        </div>
-
+							<div class='alfabetic-ordering'>
+								Order:
+								<input type="radio" name="alfa-order-event" value="ASC" checked>Ascending
+								<input type="radio" name="alfa-order-event" value="DESC">Descending
+							</div>
+							
+							<div class='alfabetic-ordering'>
+								By:
+								<input type="radio" name="type-order-event" value="1" checked>Relevance
+								<input type="radio" name="type-order-event" value="2" checked>Name
+								<input type="radio" name="type-order-event" value="3">Price
+							</div>
+						</div>
                         <div class="eventcadssech">
 
 

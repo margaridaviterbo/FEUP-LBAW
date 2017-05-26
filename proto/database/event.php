@@ -1,10 +1,106 @@
 <?php
-    //FALTA: user que fez comentário; id do evento
-    /*function insertComment($user, $eventid, $comment, $url){
+    
+
+
+    function updateMetaEvent($id, $evt, $price) {
         global $conn;
-        $stmt = $conn->prepare('INSERT INTO public.users(content, photo_url,comment_date) VALUES (?, ?, NOW())');
-        $stmt->execute(array($comment, $lastname, $email));
-    }*/
+        $stmt = $conn->prepare('update meta_event set name=?, beginning_date=?, description=?, free=? where meta_event_id=?;');
+        $stmt->execute(array($evt["name"],$evt["beginning_date"],$evt["description"],$evt["free"],$id));
+        if($evt["free"]==0) {
+            $stmt = $conn->prepare('update type_of_ticket set price=? where meta_event_id=?;');
+            $stmt->execute(array($price,$id));
+        }
+        
+    }
+
+    function numTickets($m_event_id) {
+        global $conn;
+        $stmt = $conn->prepare('select ((select num_tickets from type_of_ticket where meta_event_id=?) - count(ticket_id)) as num_tickets from ticket where type_of_ticket_id=?');
+        $stmt->execute(array($m_event_id,$m_event_id));
+        return $stmt->fetch();
+    }
+
+    function getTypeTicket($m_event_id){
+        global $conn;
+        $stmt = $conn->prepare('select * from type_of_ticket where meta_event_id=?;');
+        $stmt->execute(array($m_event_id));
+        return $stmt->fetch();
+    }
+
+
+    function buy_ticket($userid, $eventid)  {
+        global $conn;
+        $stmt = $conn->prepare('insert into ticket(user_id,type_of_ticket_id) values (?,(select type_of_ticket_id from type_of_ticket where event_id=?));');
+        $stmt->execute(array($userid, $eventid));
+    }
+
+    function insertComment($userid, $eventid, $comment, $url){
+        global $conn;
+        $stmt = $conn->prepare('INSERT INTO public.comments(content, photo_url,comment_date,event_id,user_id) VALUES (?, ?, NOW(),?,?)');
+        $stmt->execute(array($comment, $url, $eventid, $userid));
+    }
+
+
+    function rateEvent($userid, $eventid, $rate){
+        global $conn;
+        $stmt = $conn->prepare('INSERT INTO public.rate(event_content_id, user_id,evaluation) VALUES (?, ?,?)');
+        $stmt->execute(array($eventid, $userid, $rate));
+    }
+
+
+    function saveEvent($userid, $eventid){
+        global $conn;
+        $stmt = $conn->prepare('insert into saved_event values(?,?)');
+        $stmt->execute(array($userid, $eventid));
+    }
+
+    function getRating($eventid) {
+        global $conn;
+            $stmt = $conn->prepare('select cast(AVG(evaluation) as int) as avg from rate where event_content_id=?;');
+            $stmt->execute(array($eventid));
+            return $stmt->fetchAll();
+    }
+
+
+    function hasVoted($userid) {
+        global $conn;
+        $stmt = $conn->prepare('select 1 as res from rate where event_content_id=?;');
+        $stmt->execute(array($userid));
+        return $stmt->fetchAll();
+}
+
+
+    
+
+function getComments($event_id){
+    global $conn;
+    $stmt = $conn->prepare('SELECT * from Comments where event_id=?');
+    $stmt->execute(array($event_id));
+    return $stmt->fetchAll();
+}
+
+function listEvents(){
+    global $conn;
+    $stmt = $conn->prepare('SELECT * from Event where ending_date > now()');
+    $stmt->execute();
+    return $stmt->fetchAll();
+}
+
+function getPastEvents($userid) {
+    global $conn;
+    $stmt = $conn->prepare('select event.* from event, guest where guest.user_id= ? and event.event_id = guest.event_id');
+    $stmt->execute(array($userid));
+    return $stmt->fetchAll();
+}
+
+
+function getSavedEvents($userid) {
+    global $conn;
+    $stmt = $conn->prepare('select e.* from saved_event s, event e where s.meta_event_id =e.event_id and s.user_id=?;');
+    $stmt->execute(array($userid));
+    return $stmt->fetchAll();
+}
+
 
 function createMetaEvent($name, $description, $beginning_date, $beginning_time, $ending_date, $ending_time, $photo, $free, $public, $owner, $category, $local){
     global $conn;
