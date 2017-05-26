@@ -1,0 +1,173 @@
+.header{/*
+    height: 50px;
+    transition: height 2s linear 1s;*/
+}
+
+.header .navbar{
+
+    background: linear-gradient(100deg, #1c6669, #21a9af);
+    /*background: linear-gradient(135deg, #6790ff, #cce6ff);*/
+    /*background-color: #cce6ff;*/
+    padding-top: 12px;
+    padding-bottom: 10px;
+    color: white;
+    border-radius: 0;
+    border-bottom: 1px solid #dddddd;
+}
+
+.header .navbar .navbar-brand{
+    font-family: 'Baloo', cursive;
+    color: inherit;
+    font-size: 30px;
+}
+
+.header .navbar .navbar-collapse{
+    margin-right: 10px;
+    margin-bottom: 0;
+}
+
+.header .navbar .navbar-right #login{
+    color: white;
+    margin-right: 10px;
+}
+
+.header .navbar .navbar-toggle {
+    border-color: rgba(255, 255, 255, 0.3);
+}
+
+.search-div{
+    position: absolute;
+    width: 100%;
+}
+
+#search{
+    width: 100%;
+}
+
+.search-btn {
+    position: absolute;
+    right: 10px;
+    top: 8px;
+    color: #337ab7;
+}
+
+.test {
+    width: 50%;
+    position: relative;
+}
+
+@media (max-width: 768px) {
+
+    #menu {
+        background-color: transparent;
+    }
+
+    #login{
+        margin-top: 20px;
+        margin-bottom: 10px;
+    }
+
+    .header .navbar .navbar-collapse{
+        margin-right: 10px;
+        margin-left: 10px;
+    }
+
+    .header .navbar .navbar-right{
+        margin-right: 0px;
+        margin-left: 0px;
+    }
+
+    .test {
+        width: 100%;
+    }
+}
+
+.header a{
+    text-decoration: none;
+    color: inherit;
+}
+
+.header .icon-bar{
+    background-color: white;
+}
+
+#login :hover, #login :focus{
+    color: darkslategrey;
+    background-color: lightblue;
+}
+
+
+/*
+@media (max-width: 768px) {
+
+    .header .navbar .navbar-collapse{
+        position: absolute;
+        left: 0;
+        right: 0;
+    }
+}*/
+
+
+/*
+header{
+    position: fixed;
+    top: 0;
+    background-color: #F0F8FF;
+}
+
+.navbar-center {
+    float: left !important;
+}*/
+/*
+.navbar-center {
+    float: left !important;
+}
+
+.header{
+    height: 100px;
+    padding-top: 25px;
+    padding-bottom: 25px;
+    border-bottom-width: 1px;
+    border-bottom: solid;
+    border-bottom-color: #cce6ff;
+}
+
+.header{
+    background-color: #F0F8FF;
+    transition: all 0.2s;
+}
+
+.header h2{
+    font-size: 50px;
+    font-family: 'Baloo', cursive;
+    color: #337ab7;
+    padding-bottom: 20px;
+}
+
+header a, #title a:hover, #title a:focus{
+    color:white;
+}
+
+header h2{
+    font-size: 50px;
+    font-family: 'Baloo', cursive;
+    color: #337ab7;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}*/
+/*
+#title{
+    margin-top: -1rem;
+}
+
+#login a{
+    color: #337ab7;
+}
+
+#login :hover{
+    color: lightslategrey;
+}
+
+#login :focus{
+    color: darkslategrey;
+}*/

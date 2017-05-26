@@ -156,12 +156,25 @@
     function searchUserByUsername($name) {
         global $conn;
         $param = "%$name%";
-        $stmt = $conn->prepare('SELECT public.Users.first_name, public.Users.last_name, public.Authenticated_User.photo_url, public.Authenticated_User.user_id
+        $stmt = $conn->prepare('SELECT public.authenticated_user.username, public.Authenticated_User.photo_url, public.Authenticated_User.user_id
                                     FROM public.Authenticated_User 
-                                    INNER JOIN public.Users ON public.Authenticated_User.user_id = public.Users.user_id
-                                    WHERE (upper(email) LIKE upper(?) OR upper(username) LIKE upper(?)) 
-                                    ORDER BY first_name ASC');
-        $stmt->execute(array($param, $param));
+                                    WHERE (upper(username) LIKE upper(?)) 
+                                    ORDER BY username ASC');
+        $stmt->execute(array($param));
         return $stmt->fetchAll();
     }
+
+    //TODO: Usar full text search para pesquisa de nome completo, para username, talvez usar like (?)
+/*
+    function test($name) {
+        global $conn;
+        $param = "%$name%";
+        $stmt = $conn->prepare(
+            'SELECT public.Users.username
+            FROM public.Users
+            WHERE to_tsquery(?)'
+        );
+        $stmt->execute(array($param, $param));
+        return $stmt->fetchAll();
+    }*/
 ?>
