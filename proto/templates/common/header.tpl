@@ -9,6 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Baloo" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Fjalla+One" rel="stylesheet">
     <link rel="stylesheet" href="{$BASE_URL}css/font-awesome.min.css">
     <link rel="stylesheet" href="{$BASE_URL}css/reset.css">
     <link rel="stylesheet" href="{$BASE_URL}lib/bootstrap/css/bootstrap.min.css">
