@@ -5,7 +5,7 @@
 
 .header .navbar{
 
-    background: linear-gradient(100deg, #1c6669, #21a9af);
+    background: linear-gradient(100deg, #337ab7, #9acfea);
     /*background: linear-gradient(135deg, #6790ff, #cce6ff);*/
     /*background-color: #cce6ff;*/
     padding-top: 12px;
@@ -16,10 +16,13 @@
 }
 
 .header .navbar .navbar-brand{
-    font-family: 'Baloo', cursive;
-    color: inherit;
-    font-size: 30px;
+    font-size: 40px;
+    font-family: 'Fjalla One', sans-serif;
+    color: #fff;
+    margin-top: 10px;
+    margin-bottom: 10px;
 }
+
 
 .header .navbar .navbar-collapse{
     margin-right: 10px;
@@ -35,13 +38,27 @@
     border-color: rgba(255, 255, 255, 0.3);
 }
 
+.login-div{
+    margin-top: 6px;
+}
+
 .search-div{
     position: absolute;
     width: 100%;
 }
 
+input#search.form-control.search-query{
+    padding-left: 10px;
+}
+
 #search{
     width: 100%;
+
+}
+
+.search-div{
+    margin-left: 5%;
+    margin-top: 6px;
 }
 
 .search-btn {
@@ -93,7 +110,7 @@
 
 #login :hover, #login :focus{
     color: darkslategrey;
-    background-color: lightblue;
+    background-color: rgba(255, 255, 255, 0.3);
 }
 
 
