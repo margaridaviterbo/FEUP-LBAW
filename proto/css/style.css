@@ -139,9 +139,15 @@ body{
     font-weight: bold;
 }
 
-#sidebar a:focus{      /*TODO por butoes sublinhados quando estou na sua pagina*/
+ /*#sidebar a:focus{
     background-color: #337ab7;
+}*/
+
+.sidebar-nav li .selected{
+    background-color: #337ab7;
+    color: #fff;
 }
+
 
 /**
  * Footer
