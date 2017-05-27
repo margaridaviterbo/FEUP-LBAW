@@ -42,3 +42,39 @@
 </div>
 
 {include file='common/footer.tpl'}
+
+<script>
+
+    /*$(document).ready(function () {
+
+        $('.sidebar-nav li a').click(function () {
+
+            $('.sidebar-nav a').removeClass("selected");
+            $(this).addClass("selected");
+        });
+    });*/
+
+    /*document.getElementById("sidebar").onchange = function() {
+        localStorage.setItem('selectedtem', document.getElementById("sidebar").value);
+    }
+
+    if (localStorage.getItem('item')) {
+        document.getElementById("selectedtem").options[localStorage.getItem('selectedtem')].selected = true;
+    }*/
+
+
+    /*
+    $(function(){
+        var url = window.location;
+        // Will only work if string in href matches with location
+        $('.sidebar-nav li a'[href="'+ url +'"]').parent().addClass('selected');
+
+        // Will also work for relative and absolute hrefs
+        $('.sidebar-nav li a'').filter(function() {
+        return this.href == url;
+    }).parent().addClass('selected');
+    };*/
+
+
+
+</script>

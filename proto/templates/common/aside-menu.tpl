@@ -31,7 +31,7 @@
                     <small><b>Events</b></small>
                 </h5>
                 <ul class="nav nav-pills nav-stacked">
-                    <li><a class="" href="{$BASE_URL}pages/user/user-homepage.php">Upcoming Events</a></li>
+                    <li><a class="selected" href="{$BASE_URL}pages/user/user-homepage.php">Upcoming Events</a></li>
                     <li><a href="{$BASE_URL}pages/user/my-page-attended.php">Past Events</a></li>
                     <li><a href="{$BASE_URL}pages/user/my-page-my-events.php">My Events</a></li>
                     <li><a href="{$BASE_URL}pages/user/my-page-saved-events.php">Saved Events</a></li>
@@ -55,14 +55,16 @@
 </div>
 
 <script>
-/*
+
     $(document).ready(function () {
 
-        $('#sidebar li a').click(function () {
+        $('.sidebar-nav li a').click(function () {
 
-            $('#sidebar li a').removeClass("active");
-            $(this).addClass("active");
+            $('.sidebar-nav a').removeClass("selected");
+            $(this).addClass("selected");
         });
-    });*/
+    });
+
+
 
 </script>
