@@ -53,3 +53,16 @@
 </div>
 
 {include file='common/footer.tpl'}
+
+<script>
+    /*
+    $(document).ready(function () {
+
+        $('.sidebar-nav li a').click(function () {
+
+            $('.sidebar-nav a').removeClass("selected");
+            $(this).addClass("selected");
+        });
+    });*/
+
+</script>
