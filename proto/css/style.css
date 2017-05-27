@@ -43,9 +43,13 @@ header a, #title a:hover, #title a:focus{
     color:white;
 }
 
+.navbar-toggle.collapsed .icon-bar{
+    background-color: #337ab7;
+}
+
 header h2{
   font-size: 50px;
-  font-family: 'Baloo', cursive;
+  font-family: 'Fjalla One', sans-serif;
   color: #337ab7;
   margin-top: 10px;
   margin-bottom: 10px;
