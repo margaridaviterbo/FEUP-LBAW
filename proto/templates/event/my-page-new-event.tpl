@@ -117,101 +117,68 @@
                 </fieldset>-->
 
                 <fieldset id="page3">
+                    <div class="row">
+                        <content class="col-sm-12">
+                            <label>Add Hosts</label>
 
-                    <label>Add Hosts</label>
-                    <form class="navbar-form search" name="form" role="search" action="">
-                        <div class="inner">
-                            <input id="search" type="search" class="form-control"
-                                   Placeholder="Search for people..." autocomplete="true"/>
+                            <div class="inner">
+                                <input id="search-user" name="username" type="search" class="form-control"
+                                       Placeholder="Search..." autocomplete="off"/>
+                                <span data-icon="&#xe000;" aria-hidden="true" class="search-btn">
+                                        <input type="submit" class="searchsubmit" value="">
+                                    </span>
+                            </div>
+                            <div class="content-list" id="host-list">
+                                <ul class="drop-list" id="drop-list">
+
+                                </ul>
+                            </div>
+                        </content>
+                        <content class="col-sm-12" id="added-hosts">
+
+                        </content>
+
+                        <content class="col-sm-12">
+                            <label>Invite People</label>
+                        </content>
+
+                        <!--<div class="inner">
+                            <input id="search-user" name="username" type="search" class="form-control"
+                                   Placeholder="Search..." autocomplete="false"/>
                             <span data-icon="&#xe000;" aria-hidden="true" class="search-btn">
-					<input type="submit" class="searchsubmit" value="">
-				</span>
+                                    <input type="submit" class="searchsubmit" value="">
+                                </span>
                         </div>
                         <div class="content-list" id="host-list">
                             <ul class="drop-list">
                                 <li>
                                     <a href="">
-						<span class="item">
-							<span class="icon people">
-								<span data-icon="&#xe001;" aria-hidden="true"></span>
-							</span>
-							<span class="text">People I may know</span>
-						</span>
+                            <span class="item">
+                                <span class="icon people">
+                                    <span data-icon="&#xe001;" aria-hidden="true"></span>
+                                </span>
+                                <span class="text">People I may know</span>
+                            </span>
                                     </a>
                                 </li>
                             </ul>
-                        </div>
-                    </form>
+                        </div>-->
 
-                    <div>
-                        <label>Invite people</label>
+                        <br></br>
+                        <input type="button" name="previous" class="previous btn btn-default" value="Previous"/>
+                        <button type="submit" class="btn btn-default btn-lg">Create event!</button>
+                        <br></br>
                     </div>
-                    <!--<form class="navbar-form search" name="form" role="search" action="">
-                        <div class="inner">
-                            <input id="search" type="search" class="form-control"
-                                   Placeholder="Search for people..."/>
-                            <span data-icon="&#xe000;" aria-hidden="true" class="search-btn">
-					<input type="submit" class="searchsubmit" value="">
-				</span>
-                        </div>
-                        <div class="content-list" id="list">
-                            <ul class="drop-list">
-                                <li>
-                                    <a href="">
-						<span class="item">
-							<span class="icon people">
-								<span data-icon="&#xe001;" aria-hidden="true"></span>
-							</span>
-							<span class="text">People I may know</span>
-						</span>
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>
-
-                    </form>-->
-
-                    <br></br>
-                    <input type="button" name="previous" class="previous btn btn-default" value="Previous"/>
-                    <button type="submit" class="btn btn-default btn-lg">Create event!</button>
-                    <br></br>
-
-                </fieldset>
-            </form>
-        </content>
     </div>
+    </fieldset>
+    </form>
+    </content>
+</div>
 </div>
 
 {include file='common/footer.tpl'}
 
-<script>
-    $('#search').click(function (event) {
-
-        event.stopPropagation();
-
-
-        $("#host-list").fadeIn("fast");
-
-    });
-
-    $(document).click(function () {
-
-        $('#host-list').hide();
-
-    });
-
-    $('#search').keyup(function () {
-
-        event.stopPropagation();
-
-
-        $("#host-list").fadeIn("fast");
-
-        //window.location.assign('{$BASE_URL}pages/event/my-page-new-event.php?search=' + $('#search-bar').val());
-        //window.location.assign(document.URL.substring(0,document.URL.indexOf("?")) + "?search=" + document.form.search.value.replace(/ /g,"%20"))'
-    });
-</script>
-
 <script type="text/javascript" src="../../scripts/map.js"></script>
 <script type="text/javascript" src="../../scripts/event/change-page-form.js"></script>
 <script class="cssdeck" src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.8.0/jquery.min.js"></script>
+<script src="{$BASE_URL}scripts/search/create-event-search.js"></script>
