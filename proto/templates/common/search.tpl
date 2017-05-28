@@ -41,7 +41,6 @@
 								By:
 								<input type="radio" name="type-order-event" value="1" checked>Relevance
 								<input type="radio" name="type-order-event" value="2" checked>Name
-								<input type="radio" name="type-order-event" value="3">Price
 							</div>
 						</div>
                         <div class="eventcadssech">
@@ -52,8 +51,6 @@
                     <div id="usersPesq" class="tabContent">
 
                         <div class="tabOptions tabOptionsUsers">
-                            <input type="checkbox" name="match-events-users" value="free" checked>
-                            Matching events
                             <div class='alfabetic-ordering'>
                                 Alfabetic order:
                                 <input type="radio" name="alfa-order-users" value="ASC" checked>Ascending
