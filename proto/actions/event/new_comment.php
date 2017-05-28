@@ -2,18 +2,22 @@
 
 include_once('../../config/init.php');
 include_once('../../database/event.php');
-include_once('../../database/localization.php');
 
-$comment = $_POST["comment"];
-$id = $_POST['id'];
+$comment = $_POST['editor'];
+$user_id = $_POST['user_id'];
+$event_id = $_POST['event_id'];
 
 if(!isset($_SESSION['username']))
     exit();
 
+addContent($user_id, $event_id);
 
-//insertComment($_SESSION['user_id'], $id, $comment, '');
+$commentId = $conn->lastInsertId();
 
+addComment($commentId, $comment);
 
-echo '<script> window.location.href = "../../pages/event/show-event-page.php?id=',$id,'"; </script>';
+$path = "../../pages/event/show-event-page.php?id=".$event_id;
+
+header("location: $path");
 
 ?>
