@@ -137,107 +137,42 @@
 
             <div class="event-comments" id="comments">
 
-                <div class="comment">
+                {foreach $comments as $cmt}
+                    <div class="comment">
 
-                    <div class="row">
-                        <div class="col-xs-2 user-photo">
-                            <img class="center-block" src="{$BASE_URL}resources/images/user.png">
+                        <div class="row">
+                            <div class="col-xs-2 user-photo">
+                                <img class="center-block" src="{$BASE_URL}resources/images/user.png">
+                            </div>
+
+                            <div class="col-xs-4 user-photo">
+                                <strong>{$cmt.username}</strong>
+                                <p></p>
+                                {$cmt.comment_date}
+                            </div>
+
+                            <div class="col-xs-2 col-xs-offset-2">
+                                <button><span class="glyphicon glyphicon-share-alt"></span>Reply</button>
+                            </div>
+
+                            <div class="col-xs-2">
+                                <button><span class="glyphicon glyphicon-flag"></span>Report</button>
+                            </div>
                         </div>
-
-                        <div class="col-xs-4 user-photo">
-                            <strong>Awesome1</strong>
-                            <p></p>
-                            5 days ago
-                        </div>
-
-                        <div class="col-xs-2 col-xs-offset-2">
-                            <button><span class="glyphicon glyphicon-share-alt"></span>Reply</button>
-                        </div>
-
-                        <div class="col-xs-2">
-                            <button><span class="glyphicon glyphicon-flag"></span>Report</button>
-                        </div>
-                    </div>
-                    <div class="panel-body">
-                        On it differed repeated wandered required in. Then girl neat why yet knew rose spot.
-                        Moreover property we he kindness greatest be oh striking laughter. In me he at collecting
-                        affronting principles apartments. Has visitor law attacks pretend you calling own excited
-                        painted. Contented attending smallness it oh ye unwilling. Turned favour man two but lovers.
-                        Suffer should if waited common person little oh. Improved civility graceful sex few smallest
-                        screened settling. Likely active her warmly has.
-                    </div>
-
-                </div>
-
-                <div class="comment">
-
-                    <div class="row">
-                        <div class="col-xs-2 user-photo">
-                            <img class="center-block" src="{$BASE_URL}resources/images/user.png">
-                        </div>
-
-                        <div class="col-xs-4 user-photo">
-                            <strong>Awesome2</strong>
-                            <p></p>
-                            5 days ago
-                        </div>
-
-                        <div class="col-xs-2 col-xs-offset-2">
-                            <button><span class="glyphicon glyphicon-share-alt"></span>Reply</button>
-                        </div>
-
-                        <div class="col-xs-2">
-                            <button><span class="glyphicon glyphicon-flag"></span>Report</button>
+                        <div class="panel-body">
+                            {$cmt.content}
                         </div>
                     </div>
-                    <div class="panel-body">
-                        On it differed repeated wandered required in. Then girl neat why yet knew rose spot.
-                        Moreover property we he kindness greatest be oh striking laughter. In me he at collecting
-                        affronting principles apartments. Has visitor law attacks pretend you calling own excited
-                        painted. Contented attending smallness it oh ye unwilling. Turned favour man two but lovers.
-                        Suffer should if waited common person little oh. Improved civility graceful sex few smallest
-                        screened settling. Likely active her warmly has.
-                    </div>
+                {/foreach}
 
-                </div>
-
-                <div class="comment">
-
-                    <div class="row">
-                        <div class="col-xs-2 user-photo">
-                            <img class="center-block" src="{$BASE_URL}resources/images/user.png">
-                        </div>
-
-                        <div class="col-xs-4 user-photo">
-                            <strong>Awesome3</strong>
-                            <p></p>
-                            5 days ago
-                        </div>
-
-                        <div class="col-xs-2 col-xs-offset-2">
-                            <button><span class="glyphicon glyphicon-share-alt"></span>Reply</button>
-                        </div>
-
-                        <div class="col-xs-2">
-                            <button><span class="glyphicon glyphicon-flag"></span>Report</button>
-                        </div>
-                    </div>
-                    <div class="panel-body">
-                        On it differed repeated wandered required in. Then girl neat why yet knew rose spot.
-                        Moreover property we he kindness greatest be oh striking laughter. In me he at collecting
-                        affronting principles apartments. Has visitor law attacks pretend you calling own excited
-                        painted. Contented attending smallness it oh ye unwilling. Turned favour man two but lovers.
-                        Suffer should if waited common person little oh. Improved civility graceful sex few smallest
-                        screened settling. Likely active her warmly has.
-
-                    </div>
-                </div>
 
                 {if $USERNAME}
                     <div class="page-header">
                         <h3>Your Answer</h3>
                     </div>
-                    <form id="comment-form" action="#">
+                    <form id="comment-form" method="post" action="{$BASE_URL}actions/event/new_comment.php">
+                        <input type="text" name="user_id" hidden="true" value="{$USERID}">
+                        <input type="text" name="event_id" hidden="true" value="{$event_id}">
                         <textarea name="editor" id="editor">
                         </textarea>
                         <script>
@@ -248,94 +183,40 @@
 
                     </form>
                 {/if}
-
-                {foreach from=$comments item=cmt}
-                    <div class="row">
-                        <div class="col-sm-2 hidden-xs">
-                            <div class="thumbnail">
-                                <img class="img-responsive user-photo" src="{$BASE_URL}resources/images/user.png">
-                            </div>
-                        </div>
-
-                        <div class="col-sm-10 col-xs-12">
-                            <div class="panel panel-default">
-                                <div class="panel-heading">
-                                    <strong>{$cmt.user_id}</strong> <span class="text-muted">{$cmt.comment_date}</span>
-                                </div>
-                                <div class="panel-body">
-                                    {$cmt.content}
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                {/foreach}
-
-
-                <div class="row">
-
-                    <div class="col-sm-2 hidden-xs">
-                        <div class="thumbnail">
-                            <img class="img-responsive user-photo" src="{$BASE_URL}resources/images/user.png">
-                        </div>
-                    </div>
-
-                    <div class="col-sm-10">
-
-                        <form id="comment-form" action="../../actions/event/new_comment.php" method="POST">
-
-                       <textarea name="comment" id="comment" rows="10" cols="80">
-                           Write a comment...
-                       </textarea>
-
-                            <!--<a onClick="CKupdate();$('#comment-form').ajaxSubmit();">Submit</a>-->
-
-                            <input type="submit" class="btn btn-default" value="Comment"/>
-                            <input type="hidden" name="id" value="{$event_id}"/>
-                            <script>
-                                CKEDITOR.replace('comment');
-                                function CKupdate() {
-                                    for (instance in CKEDITOR.instances)
-                                        CKEDITOR.instances[instance].updateElement();
-                                }
-                            </script>
-                        </form>
-                    </div>
-                </div>
-
-
             </div>
         </div>
     </div>
+</div>
 
 
-    {include file='common/footer.tpl'}
+{include file='common/footer.tpl'}
 
-    <script>
+<script>
 
-        $(document).ready(function () {
+    $(document).ready(function () {
 
-            $('.navbar-nav li a').click(function () {
+        $('.navbar-nav li a').click(function () {
 
-                $('.navbar-nav a').removeClass("active");
-                $(this).addClass("active");
-            });
+            $('.navbar-nav a').removeClass("active");
+            $(this).addClass("active");
         });
+    });
 
 
-        $(document).ready(function () {
+    $(document).ready(function () {
 
-            $(window).scroll(function () {
-                console.log($(window).scrollTop())
-                if ($(window).scrollTop() > 480) {
-                    $('.navbar-slide').addClass('navbar-fixed-second-top');
-                }
-                if ($(window).scrollTop() <= 480) {
-                    $('.navbar-slide').removeClass('navbar-fixed-second-top');
-                }
-            });
+        $(window).scroll(function () {
+            console.log($(window).scrollTop())
+            if ($(window).scrollTop() > 480) {
+                $('.navbar-slide').addClass('navbar-fixed-second-top');
+            }
+            if ($(window).scrollTop() <= 480) {
+                $('.navbar-slide').removeClass('navbar-fixed-second-top');
+            }
         });
+    });
 
-    </script>
+</script>
 
 
-    <script type="text/javascript" src="../../scripts/event/show-map-location.js"></script>
+<script type="text/javascript" src="../../scripts/event/show-map-location.js"></script>
