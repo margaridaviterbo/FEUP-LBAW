@@ -16,41 +16,66 @@
             {else}
 
                 {foreach $events as $event}
-                    <div class="event-card-medium row">
-                        <div class="col-sm-12">
-                            <p class="titulo-card">{$event.name}</p>
-                        </div>
-
-                        <div class="col-sm-3">
-                            <img src="../../resources/images/2.jpg"/>
-                        </div>
-                        <div class="col-sm-9">
-                            <p class="text-card"> {$event.date}</p>
-                            <p class="text-card"> {$event.location}</p>
-                            <p></p>
-                            {if $event.free}
-                                <p class="text-card">Free</p>
-                            {else}
-                                <p class="text-card">Paid</p>
-                            {/if}
-                            <div class="row">
-                                <div class="classifica-card col-sm-7">
-                                    <i class="fa fa-star fa-2x" aria-hidden="true"></i>
-                                    <i class="fa fa-star fa-2x" aria-hidden="true"></i>
-                                    <i class="fa fa-star fa-2x" aria-hidden="true"></i>
-                                    <i class="fa fa-star fa-2x" aria-hidden="true"></i>
-                                    <i class="fa fa-star-o fa-2x" aria-hidden="true"></i>
-                                </div>
+                    <div id="event-card" class="event-card-medium">
+                        <p class="titulo-card">{$event.name}</p>
+                        <div class="row">
+                            <div id="img" class="col-sm-4">
+                                <img src="../../resources/images/2.jpg"/>
                             </div>
+                            <div class="col-sm-8">
+                                <p class="text-card"> {$event.date}</p>
+                                <p class="text-card"> {$event.location}</p>
+                                <div id="btns-row" class="row">
+                                    <a class="inactiveLink-text-card"></a>
+                                    {if $event.free}
+                                        <a class="text-card">Free</a>
+                                    {else}
+                                        <a class="text-card">Paid</a>
+                                    {/if}
 
-                            <div class="row">
-                                <p></p>
-                                <button onclick="window.location.href='{$BASE_URL}pages/event/show-event-page.php?id={$event.event_id}'"
-                                        type="button" class="btn btn-default col-sm-5">See Event
-                                </button>
-                                <button onclick="window.location.href='../../pages/event/edit-event.php'"
-                                        type="button" class="btn btn-default col-sm-5">Edit Event
-                                </button>
+                                    <div class="event-card-btns">
+                                        <a href="../event/show-event-page.php" class="btn btn-default col-sm-5">See More</a>
+                                        <button type="button" class="btn btn-default col-sm-3">Going</button>
+                                    </div>
+                                </div>
+
+                                <div class="container-fluid">
+                                    <div class="row">
+
+                                        <form id="rform" action="../../actions/event/rate_event.php" method="POST">
+                                            <input id="rate" type="hidden" name="rating"/>
+                                            <input type="hidden" name="id" value="{$event_id}"/>
+                                        </form>
+
+                                        <script type="text/javascript">
+                                            function rate(val) {
+                                                $("#rate").val(val);
+                                                $("#rform").submit();
+                                            }
+                                        </script>
+
+
+                                        <div class="event-rate">
+
+                                            {for $i=1 to $rate}
+                                                <i onclick="rate(1)" class="fa fa-star fa" aria-hidden="true"></i>
+                                            {/for}
+                                            {for $i=$rate+1 to 5}
+                                                <i onclick="rate(1)" class="fa fa-star-o fa" aria-hidden="true"></i>
+                                            {/for}
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <p></p>
+                                    <button onclick="window.location.href='{$BASE_URL}pages/event/show-event-page.php?id={$event.event_id}'"
+                                            type="button" class="btn btn-default col-sm-5">See Event
+                                    </button>
+                                    <button onclick="window.location.href='../../pages/event/edit-event.php'"
+                                            type="button" class="btn btn-default col-sm-5">Edit Event
+                                    </button>
+                                </div>
                             </div>
                         </div>
                     </div>
