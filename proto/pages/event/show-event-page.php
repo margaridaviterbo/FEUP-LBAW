@@ -1,6 +1,7 @@
 <?php
 include('../../config/init.php');
 include('../../database/event.php');
+include('../../database/host.php');
 
 $meta_event_id = $_GET['id'];
 
@@ -18,7 +19,10 @@ $rate = getRating($meta_event_id)[0]["avg"];
 
 $comments = getComments($meta_event_id);
 
+$hosts = getHosts($meta_event_id);
+
 $smarty->assign('comments', $comments);
+$smarty->assign('hosts', $hosts);
 
 $smarty->assign('rate', $rate);
 $smarty->assign('event_id', $meta_event_id);

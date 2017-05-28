@@ -11,10 +11,10 @@
                 <h1>Create new event</h1>
             </div>
 
-            <form action="../../actions/event/new_event.php" id="msform" method="post" enctype="multipart/>form-data"
+            <form action="../../actions/event/new_event.php" id="msform" method="post" enctype="multipart/form-data"
                   onSubmit="showValues(this)">
 
-                <!--<fieldset id="page1">
+                <fieldset id="page1">
                     <span class="error" id="error"></span>
                     <div class="row">
                         <content class="col-md-8 col-xs-8">
@@ -114,50 +114,41 @@
                     <input type="button" name="previous" class="previous btn btn-default" value="Previous"/>
                     <input type="button" name="next" class="next btn btn-default" value="Next"/>
                     <p></p>
-                </fieldset>-->
+                </fieldset>
 
                 <fieldset id="page3">
                     <div class="row">
                         <content class="col-sm-12">
                             <label>Add Hosts</label>
-                            <div class="inner">
 
-                                <select style="width: 100%;" class="js-example-basic-multiple" multiple="multiple">
-                                </select>
+                            <div class="inner">
+                                <input id="search-user" type="search" class="form-control" Placeholder="Search..."
+                                       autocomplete="off"/>
+                            </div>
+                            <div class="content-list" id="search-list">
+                                <ul class="drop-list">
+
+                                </ul>
                             </div>
                         </content>
-
-                        <content class="col-sm-12">
-                            <label>Invite People</label>
-                        </content>
-
-                        <!--<div class="inner">
-                            <input id="search-user" name="username" type="search" class="form-control"
-                                   Placeholder="Search..." autocomplete="false"/>
-                            <span data-icon="&#xe000;" aria-hidden="true" class="search-btn">
-                                    <input type="submit" class="searchsubmit" value="">
-                                </span>
-                        </div>
-                        <div class="content-list" id="host-list">
-                            <ul class="drop-list">
-                                <li>
-                                    <a href="">
-                            <span class="item">
-                                <span class="icon people">
-                                    <span data-icon="&#xe001;" aria-hidden="true"></span>
-                                </span>
-                                <span class="text">People I may know</span>
-                            </span>
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>-->
-
-                        <br></br>
-                        <input type="button" name="previous" class="previous btn btn-default" value="Previous"/>
-                        <button type="submit" class="btn btn-default" onclick="return false;">Create event!</button>
-                        <br></br>
                     </div>
+
+                    <div class="row">
+                        <content class="col-sm-6">
+                            <ul class="host-list oi[]">
+
+                            </ul>
+                        </content>
+                    </div>
+
+                    <content class="col-sm-12">
+                        <label>Invite People</label>
+                    </content>
+
+                    <br></br>
+                    <input type="button" name="previous" class="previous btn btn-default" value="Previous"/>
+                    <button type="submit" class="btn btn-default">Create event!</button>
+                    <br></br>
                 </fieldset>
             </form>
         </content>
