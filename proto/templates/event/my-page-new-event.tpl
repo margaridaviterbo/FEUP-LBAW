@@ -120,8 +120,15 @@
                     <div class="row">
                         <content class="col-sm-12">
                             <label>Add Hosts</label>
-
                             <div class="inner">
+
+                                <select style="width: 100%;" class="js-example-basic-multiple" multiple="multiple">
+                                    <option value="AL">Alabama</option>
+                                    <option value="WY">Wyoming</option>
+                                </select>
+                            </div>
+
+                            <!--<div class="inner">
                                 <input id="search-user" name="username" type="search" class="form-control"
                                        Placeholder="Search..." autocomplete="off"/>
                                 <span data-icon="&#xe000;" aria-hidden="true" class="search-btn">
@@ -132,7 +139,7 @@
                                 <ul class="drop-list" id="drop-list">
 
                                 </ul>
-                            </div>
+                            </div>-->
                         </content>
                         <content class="col-sm-12" id="added-hosts">
 
@@ -166,15 +173,73 @@
 
                         <br></br>
                         <input type="button" name="previous" class="previous btn btn-default" value="Previous"/>
-                        <button type="submit" class="btn btn-default btn-lg">Create event!</button>
+                        <button type="submit" class="btn btn-default">Create event!</button>
                         <br></br>
                     </div>
+                </fieldset>
+            </form>
+        </content>
     </div>
-    </fieldset>
-    </form>
-    </content>
 </div>
-</div>
+
+<script type="text/javascript">
+    BASE_URL = "/";
+    $(".js-example-basic-multiple").select2({
+        ajax: {
+            url: BASE_URL + "api/search/searchUsers.php",
+            dataType: 'json',
+            delay: 250,
+            data: function (params) {
+                return {
+                    q: params.term, // search term
+                    page: params.page
+                };
+            },
+            processResults: function (data, params) {
+                console.log(data);
+                params.page = params.page || 1;
+
+                var array = data.users;
+                var i = 0;
+                while (i < array.length) {
+                    array[i]["id"] = array[i]['user_id'];
+                    array[i]["text"] = array[i]['username'];
+                    delete array[i]["user_id"];
+                    delete array[i]["username"];
+                    i++;
+                }
+
+                return {
+                    results: data.users,
+                    pagination: {
+                        more: (params.page * 30) < data.users.length
+                    }
+                };
+            },
+            cache: true
+        },
+        escapeMarkup: function (markup) {
+            return markup;
+        },
+        minimumInputLength: 0,
+        templateResult: formatUser,
+        templateSelection: formatUserSelection
+    });
+
+    function formatUser(user) {
+
+        if (user.loading) return user.text;
+
+        var markup = "<option value='" + user.id + "'>" + user.text + "</option>";
+
+        return markup;
+    }
+
+    function formatUserSelection(user) {
+        return user.text;
+    }
+
+</script>
 
 {include file='common/footer.tpl'}
 

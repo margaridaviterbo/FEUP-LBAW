@@ -99,7 +99,7 @@ CREATE TABLE public.Authenticated_User
 	photo_url varchar(500),
 	user_state user_state NOT NULL,
 	FOREIGN KEY(user_id) REFERENCES Users(user_id),
-	CONSTRAINT min_size CHECK (LENGTH(username) >= 8 AND LENGTH(password) >= 8)
+	CONSTRAINT min_size CHECK (LENGTH(username) >= 4 AND LENGTH(password) >= 8)
 );
 
 CREATE TABLE public.Category
@@ -178,7 +178,7 @@ CREATE TABLE public.Event_Content
 	user_id integer NOT NULL,
 	event_id integer NOT NULL,
 	FOREIGN KEY(user_id) REFERENCES Authenticated_User(user_id),
-	FOREIGN KEY(event_id) REFERENCES Event(event_id)
+	FOREIGN KEY(event_id) REFERENCES Meta_Event(meta_event_id)
 );
 
 
@@ -190,7 +190,7 @@ CREATE TABLE public.Comments
 	comment_date timestamp NOT NULL DEFAULT now(),
 	event_id integer NOT NULL,
 	user_id integer NOT NULL,
-	#FOREIGN KEY(comment_id) REFERENCES Event_Content(event_content_id),
+	FOREIGN KEY(comment_id) REFERENCES Event_Content(event_content_id),
 	CONSTRAINT valid_content CHECK (photo_url IS NOT NULL OR content IS NOT NULL)
 );
 
@@ -201,7 +201,7 @@ CREATE TABLE public.Guest
 	event_id integer,
 	PRIMARY KEY(user_id, event_id),
 	FOREIGN KEY(user_id) REFERENCES Authenticated_User(user_id),
-	FOREIGN KEY(event_id) REFERENCES Event(event_id)
+	FOREIGN KEY(event_id) REFERENCES Meta_Event(meta_event_id)
 );
 
 CREATE TABLE public.Host
@@ -223,7 +223,7 @@ CREATE TABLE public.Notification
 	event_content_id integer,
 	user_id integer,
 	administrator_id integer,
-	FOREIGN KEY(event_id) REFERENCES Event(event_id),
+	FOREIGN KEY(event_id) REFERENCES Meta_Event(meta_event_id),
 	FOREIGN KEY(event_content_id) REFERENCES Event_Content(event_content_id),
 	FOREIGN KEY(user_id) REFERENCES Authenticated_User(user_id),
 	FOREIGN KEY(administrator_id) REFERENCES Administrator(administrator_id),
@@ -270,7 +270,7 @@ CREATE TABLE public.Rate
 	event_content_id integer PRIMARY KEY,
 	user_id integer UNIQUE NOT NULL,
 	evaluation integer NOT NULL,
-	#FOREIGN KEY(event_content_id) REFERENCES Event_Content(event_content_id),
+	FOREIGN KEY(event_content_id) REFERENCES Event_Content(event_content_id),
 	CONSTRAINT check_evaluation CHECK (evaluation <= 10 AND evaluation > 0)
 );
 
@@ -292,7 +292,7 @@ CREATE TABLE public.Type_of_Ticket
 	meta_event_id integer,
 	event_id integer,
 	FOREIGN KEY(meta_event_id) REFERENCES Meta_Event(meta_event_id),
-	FOREIGN KEY(event_id) REFERENCES Event(event_id),
+	FOREIGN KEY(event_id) REFERENCES Meta_Event(meta_event_id),
 	CONSTRAINT positive_price CHECK (price > 0),
 	CONSTRAINT valid_num_tickets CHECK (num_tickets > 0),
 	CONSTRAINT has_event CHECK (meta_event_id IS NOT NULL OR event_id IS NOT NULL)
