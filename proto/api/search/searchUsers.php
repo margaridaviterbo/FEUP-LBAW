@@ -1,24 +1,12 @@
 <?php
-
-include_once('../../config/init.php');
-include_once($BASE_DIR . 'database/user.php');
-
-//$name = $_POST['name'];
-
-$response = array();
-
-$name = $_POST['name'];
-
-$users = searchUserByUsername($name);
-
-if ($users == false){
-    $response['success'] = 'error';
-    $response['users'] = $users;
-}
-else{
-    $response['users'] = $users;
-    $response['success'] = 'success';
-}
-
-echo json_encode($response);
+	$name = $_GET['serch'];
+	$page = $_GET['page'];
+	$asc = $_GET['asc'];
+  
+	include_once('../../config/init.php');
+    include_once($BASE_DIR . 'database/user.php');
+	
+	$users = getSearchUsers($page, $name, $asc);
+	
+	echo json_encode($users);
 ?>
