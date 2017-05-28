@@ -162,15 +162,6 @@ function getEventName($event_id){
     return $stmt->fetch();
 }
 
-function getEventTickets($event_id){
-    global $conn;
-    $stmt = $conn->prepare('SELECT *
-							FROM public.Type_of_Ticket
-							WHERE public.Type_of_Ticket.event_id = ?');
-    $stmt->execute(array($event_id));
-    return $stmt->fetchAll();
-}
-
 function getMetaEventTickets($event_id){
     global $conn;
     $stmt = $conn->prepare('SELECT *

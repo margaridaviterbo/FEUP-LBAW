@@ -15,7 +15,7 @@
       <div class="container-fluid">
         <div class="row">
           <div class="col-sm-3">
-            <a href="#">{$ticket.ticket_type}</a>
+            <a href="{$BASE_URL}pages/event/show-event-page.php?id={$ticket.meta_event_id}">{$ticket.name} - {$ticket.ticket_type}</a>
           </div>
           <a href="{$BASE_URL}database/pdf/{$ticket.ticket_id}.pdf"><button class="btn btn-default btn-primary col-sm-5">Download Ticket</button></a>
           <div class="col-sm-5">

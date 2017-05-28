@@ -14,7 +14,7 @@ $event = getEventName($id);
 $smarty->assign('EVENT', $event['name']);
 $smarty->assign('event_id', $id);
 
-$tickets = getEventTickets($id);
+$tickets = getMetaEventTickets($id);
 $smarty->assign('TICKETS', $tickets);
 
 $tickettype = getTypeTicket($id);
