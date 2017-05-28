@@ -17,7 +17,7 @@
             <div class="collapse navbar-collapse" id="menu">
                 <div class="nav navbar-nav test">
 
-                    <div class="col-lg-offset-4 col-md-offset-2 col-xs-12">
+                    <div class="col-lg-offset-3 col-md-offset-2 col-xs-11">
                         <form class="navbar-form search" name="form" role="search"
                               action="{$BASE_URL}pages/common/search.php#eventosPesq" method="get">
 
@@ -32,24 +32,26 @@
                     </div>
                 </div>
 
-                <ul class="nav navbar-nav navbar-right text-center" id="login">
+                <div class="login-div">
+                    <ul class="nav navbar-nav navbar-right text-center" id="login">
 
-                    {if $USERNAME}
-                        <li><a href="{$BASE_URL}pages/user/my-page-my-information.php"><span
-                                        class="glyphicon glyphicon-pencil"></span>{$USERNAME}
-                            </a>
-                        </li>
-                        <li><a href="{$BASE_URL}actions/authentication/logout.php"><span
-                                        class="glyphicon glyphicon-log-out"></span> Logout</a>
-                        </li>
-                    {else}
-                        <li><a href="#" data-toggle="modal" data-target="#modalLogin"><span
-                                        class="glyphicon glyphicon-log-in"></span>Login</a></li>
-                        <li><a href="#" data-toggle="modal" data-target="#modalRegister"><span
-                                        class="glyphicon glyphicon-pencil"></span>Register</a>
-                        </li>
-                    {/if}
-                </ul>
+                        {if $USERNAME}
+                            <li><a href="{$BASE_URL}pages/user/my-page-my-information.php"><span
+                                            class="glyphicon glyphicon-pencil"></span>{$USERNAME}
+                                </a>
+                            </li>
+                            <li><a href="{$BASE_URL}actions/authentication/logout.php"><span
+                                            class="glyphicon glyphicon-log-out"></span> Logout</a>
+                            </li>
+                        {else}
+                            <li><a href="#" data-toggle="modal" data-target="#modalLogin"><span
+                                            class="glyphicon glyphicon-log-in"></span>Login</a></li>
+                            <li><a href="#" data-toggle="modal" data-target="#modalRegister"><span
+                                            class="glyphicon glyphicon-pencil"></span>Register</a>
+                            </li>
+                        {/if}
+                    </ul>
+                </div>
             </div><!-- /.navbar-collapse -->
         </div><!-- /.container-fluid -->
     </nav>

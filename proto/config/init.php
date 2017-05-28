@@ -5,7 +5,7 @@
 
     error_reporting(E_ERROR | E_WARNING); // E_NOTICE by default
 
-    $BASE_DIR = '/home/catarina/Desktop/FEUP/3ºano/LBAW/FEUP-LBAW/proto/';
+    $BASE_DIR = '/home/margarida/Documents/3ºano/2ºsemestre/LBAW/FEUP-LBAW/proto/';
     $BASE_URL = '/';
 
     $conn = new PDO('pgsql:host=localhost;dbname=postgres', 'postgres', 'postgres');
@@ -62,6 +62,6 @@
   unset($_SESSION['success_messages']);
   unset($_SESSION['error_messages']);
   unset($_SESSION['field_errors']);
-  unset($_SESSION['form_values']);*/
-
+  unset($_SESSION['form_values']);
+*/
 ?>

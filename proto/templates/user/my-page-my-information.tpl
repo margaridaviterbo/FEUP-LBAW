@@ -5,27 +5,27 @@
     <div class="row">
         <content class="col-lg-offset-3 col-lg-6 col-sm-8 col-sm-offset-1 col-xs-12 page">
             <div class="page-header">
-                <h1>My information</h1>
+                <h1>My Profile</h1>
             </div>
             <div class="row personal-card">
-                <div class="col-sm-4 tags-personal-card">
+                <div class="col-sm-6 tags-personal-card">
                     <div class="content-personal">
                         <p class="tag-personal-card">Username:</p>
-                        <p id="username">{$USERNAME}</p>
+                        <p class="info" id="username">{$USERNAME}</p>
                         <a href="#">
                             <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
                         </a>
                     </div>
                     <div class="content-personal">
                         <p class="tag-personal-card">Email:</p>
-                        <p id="email">{$EMAIL}</p>
+                        <p class="info" id="email">{$EMAIL}</p>
                         <a href="#">
                             <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
                         </a>
                     </div>
                     <div class="content-personal">
                         <p class="tag-personal-card">Name:</p>
-                        <p id="nome-utilizador">{$FIRSTNAME} {$LASTNAME}</p>
+                        <p class="info" id="nome-utilizador">{$FIRSTNAME} {$LASTNAME}</p>
                         <a href="#">
                             <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
                         </a>
@@ -33,7 +33,7 @@
                     {if $NIF != NULL}
                         <div class="content-personal">
                             <p class="tag-personal-card">NIF:</p>
-                            <p id="nome-utilizador">{$NIF}</p>
+                            <p class="info" id="nome-utilizador">{$NIF}</p>
                             <a href="#">
                                 <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
                             </a>
@@ -41,7 +41,7 @@
                     {/if}
                     <div class="content-personal">
                         <p class="tag-personal-card">Password:</p>
-                        <p id="password">********</p>
+                        <p class="info" id="password">********</p>
                         <a href="#">
                             <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
                         </a>
@@ -57,7 +57,7 @@
                         <img src="../../resources/images/image.jpeg" class="img-responsive img-thumbnail">
                     {/if}
                     <div>
-                        <label for="files" class="btn btn-default">Upload photo</label>
+                        <label id="upload-btn" for="files" class="btn btn-default">Upload photo</label>
                         <input id="files" style="visibility:hidden;" type="file">
                     </div>
                 </div>
