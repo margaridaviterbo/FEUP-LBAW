@@ -377,6 +377,42 @@ a, a:hover, a:focus{
     background-color: yellow;
 }
 
+.event-card-medium{
+    border-bottom-width: thin;
+    border-bottom-color: rgba(154, 207, 234, 0.5);
+    margin-bottom: 5px;
+}
+
+.event-card-medium .event-rate{
+    float: left;
+}
+
+.event-card-medium .btn-default{
+    width: 80px;
+    margin-left: 30px;
+    border-color: #337ab7;
+    color: #337ab7;
+}
+
+.inactiveLink-text-card{
+    pointer-events: none;
+    cursor: default;
+    color: #3D3D3D;
+    font-weight: bold;
+}
+
+
+.event-card-btns{
+    padding-top: 10px;
+    float: right;
+    height: 30px;
+}
+
+#btns-row{
+    display: inline;
+    vertical-align: text-bottom;
+}
+
 @media all and (max-width: 1500px) {
 
     .event-date{

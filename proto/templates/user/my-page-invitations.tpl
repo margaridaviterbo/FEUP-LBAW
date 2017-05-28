@@ -16,21 +16,41 @@
                         <div class="col-sm-9">
                             <p class="text-card"> Quinta, 9 de Março às 19:45</p>
                             <p class="text-card">ISG<p>
-                            <p class="text-card">Gratuito</p>
+                            <div id="btns-row" class="row">
+                                <a class="inactiveLink-text-card">Gratuito</a>
+                                <div class="event-card-btns">
+                                    <a href="../event/show-event-page.php" class="btn btn-default col-sm-5">See More</a>
+                                    <button type="button" class="btn btn-default col-sm-3">Going</button>
+                                </div>
+                            </div>
                             <div class="container-fluid">
                                 <div class="row">
-                                     <a href="../event/show-event-page.php" class="btn btn-default col-sm-5">See More...</a>
-                                    <button type="button" class="btn btn-default col-sm-3">Going</button>
-                                    <div class="classifica-card col-sm-6">
-                                        <i class="fa fa-star fa-2x" aria-hidden="true"></i>
-                                        <i class="fa fa-star fa-2x" aria-hidden="true"></i>
-                                        <i class="fa fa-star fa-2x" aria-hidden="true"></i>
-                                        <i class="fa fa-star fa-2x" aria-hidden="true"></i>
-                                        <i class="fa fa-star fa-2x" aria-hidden="true"></i>
+
+                                        <form id="rform" action="../../actions/event/rate_event.php" method="POST">
+                                            <input id="rate" type="hidden" name="rating"/>
+                                            <input type="hidden" name="id" value="{$event_id}"/>
+                                        </form>
+
+                                        <script type="text/javascript">
+                                            function rate(val) {
+                                                $("#rate").val(val);
+                                                $("#rform").submit();
+                                            }
+                                        </script>
+
+
+                                    <div class="event-rate">
+
+                                        {for $i=1 to $rate}
+                                            <i onclick="rate(1)" class="fa fa-star fa" aria-hidden="true"></i>
+                                        {/for}
+                                        {for $i=$rate+1 to 5}
+                                            <i onclick="rate(1)" class="fa fa-star-o fa" aria-hidden="true"></i>
+                                        {/for}
                                     </div>
                                 </div>
-
                             </div>
+
                         </div>
                     </div>
                 </div>
