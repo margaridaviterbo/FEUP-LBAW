@@ -120,10 +120,23 @@
                     <div class="row">
                         <content class="col-sm-12">
                             <label>Add Hosts</label>
-                            <div class="inner">
 
-                                <select style="width: 100%;" class="js-example-basic-multiple" multiple="multiple">
-                                </select>
+                            <div class="inner">
+                                <input id="search-user" type="search" class="form-control" Placeholder="Search..."
+                                       autocomplete="off"/>
+                            </div>
+                            <div class="content-list" id="search-list">
+                                <ul class="drop-list">
+
+                                </ul>
+                            </div>
+                        </content>
+
+                        <content class="col-sm-12">
+                            <div class="content-list">
+                                <ul class="porfavor" id="porfavor">
+
+                                </ul>
                             </div>
                         </content>
 

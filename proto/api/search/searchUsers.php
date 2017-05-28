@@ -3,15 +3,13 @@
 include_once('../../config/init.php');
 include_once($BASE_DIR . 'database/user.php');
 
-//$name = $_POST['name'];
-
 $response = array();
 
-$name = $_POST['q'];
+$name = $_POST['name'];
 
-$users = searchUserByUsername($name);
+$usernameLog = $_SESSION['username'];
 
-//$users2 = array_diff($users, [$_SESSION['username']]);
+$users = searchUserByUsername($name, $usernameLog);
 
 if ($users == false){
     $response['success'] = 'error';

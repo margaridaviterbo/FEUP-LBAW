@@ -153,14 +153,14 @@
         return $stmt->fetchAll();
 	}
 
-    function searchUserByUsername($name) {
+    function searchUserByUsername($name, $username) {
         global $conn;
         $param = "%$name%";
         $stmt = $conn->prepare('SELECT public.authenticated_user.username, public.Authenticated_User.photo_url, public.Authenticated_User.user_id
                                     FROM public.Authenticated_User 
-                                    WHERE (upper(username) LIKE upper(?)) 
+                                    WHERE (upper(username) LIKE upper(?) AND upper(username) <> upper(?)) 
                                     ORDER BY username ASC');
-        $stmt->execute(array($param));
+        $stmt->execute(array($param, $username));
         return $stmt->fetchAll();
     }
 
