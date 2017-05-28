@@ -377,10 +377,15 @@ a, a:hover, a:focus{
     background-color: yellow;
 }
 
-.event-card-medium{
-    border-bottom-width: thin;
+#event-card.event-card-medium{
+    border-bottom-width: 1px;
     border-bottom-color: rgba(154, 207, 234, 0.5);
-    margin-bottom: 5px;
+    border-style: dotted;
+}
+
+#event-card.event-card-medium:hover{
+    -webkit-box-shadow: 0 0 5px 2px rgba(154, 207, 234, 0.5);
+    box-shadow: 0 0 5px 2px rgba(154, 207, 234, 0.5);
 }
 
 .event-card-medium .event-rate{
@@ -394,6 +399,13 @@ a, a:hover, a:focus{
     color: #337ab7;
 }
 
+.event-card-medium .btn-default:hover{
+    background-color: #F0F8FF;
+}
+
+#img img{
+    height: 103px;
+}
 .inactiveLink-text-card{
     pointer-events: none;
     cursor: default;

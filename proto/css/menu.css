@@ -111,6 +111,7 @@ input#search.form-control.search-query{
 #login :hover, #login :focus{
     color: darkslategrey;
     background-color: rgba(255, 255, 255, 0.3);
+    border-radius: 5px;
 }
 
 
