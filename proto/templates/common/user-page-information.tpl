@@ -12,39 +12,24 @@
                     <div class="content-personal">
                         <p class="tag-personal-card">Username:</p>
                         <p class="info" id="username">{$USERNAME}</p>
-                        <a href="#">
-                            <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
-                        </a>
                     </div>
                     <div class="content-personal">
                         <p class="tag-personal-card">Email:</p>
                         <p class="info" id="email">{$EMAIL}</p>
-                        <a href="#">
-                            <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
-                        </a>
                     </div>
                     <div class="content-personal">
                         <p class="tag-personal-card">Name:</p>
                         <p class="info" id="nome-utilizador">{$FIRSTNAME} {$LASTNAME}</p>
-                        <a href="#">
-                            <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
-                        </a>
                     </div>
                     {if $NIF != NULL}
                         <div class="content-personal">
                             <p class="tag-personal-card">NIF:</p>
                             <p class="info" id="nome-utilizador">{$NIF}</p>
-                            <a href="#">
-                                <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
-                            </a>
                         </div>
                     {/if}
                     <div class="content-personal">
                         <p class="tag-personal-card">Password:</p>
                         <p class="info" id="password">********</p>
-                        <a href="#">
-                            <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
-                        </a>
                     </div>
                 </div>
 

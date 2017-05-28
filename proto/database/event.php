@@ -30,7 +30,7 @@ function getTypeTicket($m_event_id)
 }
 
 
-    function buy_ticket($userid, $type)  {
+function buy_ticket($userid, $type)  {
         global $conn;
         $stmt = $conn->prepare('insert into public.ticket(user_id, type_of_ticket_id) values (?, ?);');
         $stmt->execute(array($userid, $type));
