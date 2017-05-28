@@ -7,9 +7,11 @@ include_once($BASE_DIR . 'database/user.php');
 
 $response = array();
 
-$name = $_POST['name'];
+$name = $_POST['q'];
 
 $users = searchUserByUsername($name);
+
+//$users2 = array_diff($users, [$_SESSION['username']]);
 
 if ($users == false){
     $response['success'] = 'error';
