@@ -131,14 +131,15 @@
                                 </ul>
                             </div>
                         </content>
+                    </div>
 
+                    <div class="row">
                         <content class="col-sm-12">
-                            <div class="content-list">
-                                <ul class="porfavor" id="porfavor">
+                            <ul class="host-list">
 
-                                </ul>
-                            </div>
+                            </ul>
                         </content>
+                    </div>
 
                         <content class="col-sm-12">
                             <label>Invite People</label>

@@ -4,13 +4,18 @@ var uiia = $(".fdp");
 
 $(document).ready(function(){
 
+    $('#search-user').keyup(function () {
+        findUsers();
+    });
+
+    $(".drop-list").click(function(event) {
+        addToHostList(event);
+        return false;
+    });
+
     $('#search-user').click( function(event){
         event.stopPropagation();
         $("#search-list").fadeIn("fast");
-    });
-
-    $('#search-user').keyup(function () {
-        findUsers();
     });
 
     $(document).click( function(){
@@ -19,26 +24,24 @@ $(document).ready(function(){
 
     });
 
-    $(".drop-list").click(function(event) {
-        addToHostList(event);
-        return false;
-    });
-
 });
 
 function addToHostList(event){
     var html = $(event.target);
     var userId = html.attr("name");
     var username = html.html();
+    //console.log(userId);
 
     if (typeof userId === "undefined" || userId == 0){
         //nao faz nada
         console.log("oi??");
+
+        return false;
     }
     else{
         console.log("estou so a foder-te a cabeça ahah");
 
-        $(".porfavor").append(
+        $(".host-list").append(
             '<li class="list-item">' +
             '<a href="">' +
             '<div class="row">' +
@@ -48,34 +51,16 @@ function addToHostList(event){
             '</span>' +
             '</div>' +
             '<div class="col-sm-offset-3">' +
-            '<span class="text" value="' + userId + '">' + username + '</span>' +
+            '<span class="text" name="' + userId + '">' + username + '</span>' +
             '</div>' +
             '<div class="col-sm-offset-10">' +
             '</div>' +
             '</div>' +
             '</a>' +
             '</li>');
-
-        $("#porfavor").append(
-            '<li class="list-item">' +
-            '<a href="">' +
-            '<div class="row">' +
-            '<div class="col-sm-offset-1">' +
-            '<span class="icon people">' +
-            '<span data-icon="&#xe001;" aria-hidden="true"></span>' +
-            '</span>' +
-            '</div>' +
-            '<div class="col-sm-offset-3">' +
-            '<span class="text" value="' + userId + '">' + username + '</span>' +
-            '</div>' +
-            '<div class="col-sm-offset-10">' +
-            '</div>' +
-            '</div>' +
-            '</a>' +
-            '</li>');
+        return true;
     }
 
-    return false;
 }
 
 function findUsers(){
