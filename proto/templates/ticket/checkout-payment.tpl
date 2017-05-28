@@ -1,9 +1,5 @@
 ﻿{include file='common/header.tpl'}
-
-{if $USERNAME}
-    {include file='common/aside-menu.tpl'}
-{/if}
-
+{include file='common/aside-menu.tpl'}
 
 <div class="container-fluid text-left">
         <div class="row">
@@ -13,42 +9,27 @@
                 </div>
                     <div class="row ckeckout-card">
                         <div class="col-sm-12 tags-personal-card">
+						<form method="POST" action="../../actions/event/buy_ticket.php">
                             <div class="content-ckeckout">
-                                <p class="tag-ckeckout-card">Nome:</p><p id="nome">{$NAME}</p>
-                                <a href="#"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
+                                <p class="tag-ckeckout-card" name="name">Nome:</p><input type="text" name="user" value="{$NAME}">
                             </div><div class="content-ckeckout">
-                                <p class="tag-ckeckout-card">NIF:</p>  <p id="morada">{$NIF}</p>
-                                <a href="#"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
+							<p class="tag-ckeckout-card" name="email">Email:</p><input type="email" name="email" value="{$EMAIL}" required>
+							</div><div class="content-ckeckout">
+                                <p class="tag-ckeckout-card">NIF:</p> <input type="number" name="nif" value="{$NIF}">
                             </div><div class="content-ckeckout">
                                 <p class="tag-ckeckout-card">Event:</p>    <p id="evento">{$EVENT}</p>
                             </div>
-                          <div class="dropdown">
-                            <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">
-                              Type of ticket
-                              <span class="caret"></span>
-                            </button>
-                            <ul class="dropdown-menu">
-                              <li>
-                                <a href="#">Type 0</a>
-                              </li>
-                              <li>
-                                <a href="#">Type 1</a>
-                              </li>
-                              <li>
-                                <a href="#">Type 2</a>
-                              </li>
-                              <li>
-                                <a href="#">Type 3</a>
-                              </li>
-                            </ul>
-                          </div>
-                          <div class="content-ckeckout">
-                            <p class="tag-ckeckout-card">Custo:</p>
-                            <p id="custo">{$PRICE}€</p>
-                          </div>
-
-                          <form method="POST" action="../../actions/event/buy_ticket.php">
+							<p class="tag-ckeckout-card">Type:</p>
+                            <select name="ticketType">
+							{foreach $TICKETS as $ticket}
+                               <option value="{$ticket.type_of_ticket_id}">{$ticket.ticket_type} - {$ticket.price}€ </option>
+							 {/foreach}
+                            </select>
+								<div class="content-ckeckout">
                                 <input type="hidden" name="id" value="{$event_id}" />
+								</div><div class="content-ckeckout">
+								<p class="tag-ckeckout-card">Quantity:</p> <input type="number" name="quantity" value="1" required>
+								</div>
                                 <input class="btn btn-default btn-primary form-control" type="submit" value="Confirm"/>
                             </form>
 

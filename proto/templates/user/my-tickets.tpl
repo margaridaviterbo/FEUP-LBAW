@@ -10,42 +10,20 @@
   </h2>
 
   <ul>
+  {foreach $TICKETS as $ticket}
     <li>
       <div class="container-fluid">
         <div class="row">
           <div class="col-sm-3">
-            4/3/2017 <a href="#"> Event 1</a>
+            <a href="{$BASE_URL}pages/event/show-event-page.php?id={$ticket.meta_event_id}">{$ticket.name} - {$ticket.ticket_type}</a>
           </div>
-          <button class="btn btn-default btn-primary col-sm-5">Download Ticket</button>
+          <a href="{$BASE_URL}database/pdf/{$ticket.ticket_id}.pdf"><button class="btn btn-default btn-primary col-sm-5">Download Ticket</button></a>
           <div class="col-sm-5">
           </div>
         </div>
       </div>
     </li>
-    <li>
-      <div class="container-fluid">
-        <div class="row">
-          <div class="col-sm-3">
-            4/3/2017 <a href="#"> Event 2</a>
-          </div>
-          <button class="btn btn-default btn-primary col-sm-5">Download Ticket</button>
-          <div class="col-sm-5">
-          </div>
-        </div>
-      </div>
-    </li>
-    <li>
-      <div class="container-fluid">
-        <div class="row">
-          <div class="col-sm-3">
-            2/3/2017 <a href="#"> Event 3</a>
-          </div>
-          <button class="btn btn-default btn-primary col-sm-5">Download Ticket</button>
-          <div class="col-sm-5">
-          </div>
-        </div>
-      </div>
-    </li>
+	{/foreach}
   </ul>
 </div>
 </div>

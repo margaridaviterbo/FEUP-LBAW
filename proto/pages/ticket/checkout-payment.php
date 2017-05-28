@@ -1,22 +1,23 @@
 <?php
-include('../../config/init.php');
+include_once('../../config/init.php');
 include('../../database/user.php');
 include('../../database/event.php');
 
 $userid = $_SESSION['user_id'];
 $user = getUserFromId($userid);
-
-$smarty->assign('NAME', $user['last_name'].", ".$user['first_name']);
+$smarty->assign('NAME', $user['first_name'] . " " . $user['last_name']);
 $smarty->assign('EMAIL', $user['email']);
 $smarty->assign('NIF', $user['nif']);
 
 $id = $_GET['id'];
-$event = getMetaEvent($id);
+$event = getEventName($id);
 $smarty->assign('EVENT', $event['name']);
 $smarty->assign('event_id', $id);
 
+$tickets = getMetaEventTickets($id);
+$smarty->assign('TICKETS', $tickets);
+
 $tickettype = getTypeTicket($id);
-$smarty->assign('PRICE', $tickettype['price']);
 
 $smarty->display('ticket/checkout-payment.tpl');
 ?>
