@@ -126,10 +126,6 @@
                                     <option value="AL">Alabama</option>
                                     <option value="WY">Wyoming</option>
                                 </select>
-
-                                <select style="width: 100%;" class="js-data-example-ajax">
-                                    <option value="3620194" selected="selected">select2/select2</option>
-                                </select>
                             </div>
 
                             <!--<div class="inner">
@@ -190,38 +186,7 @@
     BASE_URL = "/";
     $(".js-example-basic-multiple").select2({
         ajax: {
-            url: BASE_URL+"api/search/searchUsers.php",
-            dataType: 'json',
-            delay: 250,
-            data: function (params) {
-                console.log(params);
-                return {
-                    q: params.term, // search term
-                    page: params.page
-                };
-            },
-            processResults: function (data, params) {
-                console.log(data.users);
-                params.page = params.page || 1;
-
-                return {
-                    results: data.users,
-                    pagination: {
-                        more: (params.page * 30) < data.users.length
-                    }
-                };
-            },
-            cache: true
-        },
-        escapeMarkup: function (markup) { return markup; },
-        minimumInputLength: 1,
-        templateResult: formatUser,
-        templateSelection: formatUserSelection
-    });
-/*
-    $(".js-example-basic-multiple").select2({
-        ajax: {
-            url: "https://api.github.com/search/repositories",
+            url: BASE_URL + "api/search/searchUsers.php",
             dataType: 'json',
             delay: 250,
             data: function (params) {
@@ -234,60 +199,44 @@
                 console.log(data);
                 params.page = params.page || 1;
 
+                var array = data.users;
+                var i = 0;
+                while (i < array.length) {
+                    array[i]["id"] = array[i]['user_id'];
+                    array[i]["text"] = array[i]['username'];
+                    delete array[i]["user_id"];
+                    delete array[i]["username"];
+                    i++;
+                }
+
                 return {
-                    results: data.items,
+                    results: data.users,
                     pagination: {
-                        more: (params.page * 30) < data.total_count
+                        more: (params.page * 30) < data.users.length
                     }
                 };
             },
             cache: true
         },
-        escapeMarkup: function (markup) { return markup; }, // let our custom formatter work
-        minimumInputLength: 1,
-        templateResult: formatRepo, // omitted for brevity, see the source of this page
-        templateSelection: formatRepoSelection
-    });*/
+        escapeMarkup: function (markup) {
+            return markup;
+        },
+        minimumInputLength: 0,
+        templateResult: formatUser,
+        templateSelection: formatUserSelection
+    });
 
-    function formatUser (user) {
+    function formatUser(user) {
+
         if (user.loading) return user.text;
 
-        var markup = "<div class='select2-result-repository clearfix'>" +
-            "<div class='select2-result-repository__meta'>" +
-            "<div class='select2-result-repository__title'>" + user.username + "</div>";
+        var markup = "<option value='" + user.id + "'>" + user.text + "</option>";
 
         return markup;
     }
 
-    function formatRepo (repo) {
-        if (repo.loading) return repo.text;
-
-        var markup = "<div class='select2-result-repository clearfix'>" +
-            "<div class='select2-result-repository__avatar'></div>" +
-            "<div class='select2-result-repository__meta'>" +
-            "<div class='select2-result-repository__title'>" + repo.full_name + "</div>";
-
-       /* if (repo.description) {
-            markup += "<div class='select2-result-repository__description'>" + repo.description + "</div>";
-        }
-
-        markup += "<div class='select2-result-repository__statistics'>" +
-            "<div class='select2-result-repository__forks'><i class='fa fa-flash'></i> " + repo.forks_count + " Forks</div>" +
-            "<div class='select2-result-repository__stargazers'><i class='fa fa-star'></i> " + repo.stargazers_count + " Stars</div>" +
-            "<div class='select2-result-repository__watchers'><i class='fa fa-eye'></i> " + repo.watchers_count + " Watchers</div>" +
-            "</div>" +
-            "</div></div>";*/
-
-        return markup;
-    }
-
-    function formatRepoSelection (repo) {
-        return repo.full_name || repo.text;
-    }
-
-    function formatUserSelection (user) {
-        console.log(user);
-        return user.username;
+    function formatUserSelection(user) {
+        return user.text;
     }
 
 </script>
