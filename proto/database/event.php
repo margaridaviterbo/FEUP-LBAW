@@ -28,10 +28,13 @@
     }
 
 
-    function buy_ticket($userid, $eventid)  {
+    function buy_ticket($userid, $type)  {
         global $conn;
-        $stmt = $conn->prepare('insert into ticket(user_id,type_of_ticket_id) values (?,(select type_of_ticket_id from type_of_ticket where event_id=?));');
-        $stmt->execute(array($userid, $eventid));
+        $stmt = $conn->prepare('insert into public.ticket(user_id, type_of_ticket_id) values (?, ?);');
+        $stmt->execute(array($userid, $type));
+		$stmt2 = $conn->prepare('select  max(ticket_id)from public.Ticket;');
+        $stmt2->execute();
+		return $stmt2->fetch();
     }
 
     function insertComment($userid, $eventid, $comment, $url){
@@ -148,6 +151,42 @@ function getMetaEvent($event_id){
                             WHERE public.meta_event.meta_event_id = ?');
     $stmt->execute(array($event_id));
     return $stmt->fetch();
+}
+
+function getEventName($event_id){
+    global $conn;
+    $stmt = $conn->prepare('SELECT public.meta_event.name as name
+							FROM public.meta_event
+							WHERE public.meta_event.meta_event_id = ?');
+    $stmt->execute(array($event_id));
+    return $stmt->fetch();
+}
+
+function getEventTickets($event_id){
+    global $conn;
+    $stmt = $conn->prepare('SELECT *
+							FROM public.Type_of_Ticket
+							WHERE public.Type_of_Ticket.event_id = ?');
+    $stmt->execute(array($event_id));
+    return $stmt->fetchAll();
+}
+
+function getMetaEventTickets($event_id){
+    global $conn;
+    $stmt = $conn->prepare('SELECT *
+							FROM public.Type_of_Ticket
+							WHERE public.Type_of_Ticket.meta_event_id = ?');
+    $stmt->execute(array($event_id));
+    return $stmt->fetchAll();
+}
+
+function getTicketInfo($ticket_id){
+    global $conn;
+    $stmt = $conn->prepare('SELECT *
+							FROM public.Type_of_Ticket
+							WHERE public.Type_of_Ticket.type_of_ticket_id = ?');
+    $stmt->execute(array($ticket_id));
+    return $stmt->fetchAll();
 }
   /**
   $page, numero da pagina

@@ -163,6 +163,16 @@
         $stmt->execute(array($param));
         return $stmt->fetchAll();
     }
+	
+	function getUserTickets($user_id) {
+        global $conn;
+        $stmt = $conn->prepare('SELECT *
+                                    FROM public.Ticket, public.Type_of_Ticket 
+                                    WHERE public.Ticket.user_id = ? AND
+									public.Ticket.type_of_ticket_id = public.Type_of_Ticket.type_of_ticket_id');
+        $stmt->execute(array($user_id));
+        return $stmt->fetchAll();
+    }
 
     //TODO: Usar full text search para pesquisa de nome completo, para username, talvez usar like (?)
 /*

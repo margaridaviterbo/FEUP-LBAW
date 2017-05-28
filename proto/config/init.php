@@ -5,10 +5,10 @@
 
     error_reporting(E_ERROR | E_WARNING); // E_NOTICE by default
 
-    $BASE_DIR = '/home/margarida/Documents/3ºano/2ºsemestre/LBAW/FEUP-LBAW/proto/';
-    $BASE_URL = '/';
+    $BASE_DIR = "C:/xampp/htdocs/lbaw/proto/";
+    $BASE_URL = 'http://localhost/lbaw/proto/';
 
-    $conn = new PDO('pgsql:host=localhost;dbname=postgres', 'postgres', 'postgres');
+    $conn = new PDO('pgsql:host=localhost;dbname=public', 'postgres', '123456789');
     $conn->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 

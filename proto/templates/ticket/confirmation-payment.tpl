@@ -33,12 +33,12 @@
             <p class="tag-ckeckout-card">Custo:</p>
             <p id="custo">10€</p>
           </div>
-          <a href="#">
-            <button class="btn btn-default btn-primary form-control">Download ticket</button>
+          <a href="{$BASE_URL}api/ticket/getPdf.php?id={$ID}" target="_blank">
+            <button class="btn btn-default btn-primary form-control" id="download-ticket">Download ticket</button>
           </a>
           <br>
             <br>
-              <a href="../event/show-event-page.php">
+              <a href="../event/show-event-page.php?id={$IDEVENT}">
                 <button class="btn btn-default btn-primary form-control">Go back to event</button>
               </a>
             </div>
@@ -48,3 +48,7 @@
 </div>
 
 {include file='common/footer.tpl'}
+
+<script>
+  document.getElementById("download-ticket").click(); // Click on the checkbox
+</script>

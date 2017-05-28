@@ -7,7 +7,7 @@ $(document).ready(function() {
   testCanUpdate();
 });
 
-BASE_URL = 'http://gnomo.fe.up.pt/~lbaw1622/FEUP-LBAW/proto/';
+BASE_URL = 'http://localhost/lbaw/proto/';
 //BASE_URL = '/';
 
 var canUpdateuser = true;
@@ -16,12 +16,12 @@ var askedToUpdate = false;
 
 function initserchname() {
 	var name = $('#searched-words').text();
-    $('#serch-input').val(name);
+    $('#search').val(name);
 }
 
 function addeventChange() {
-	$('#serch-input').on('input', function() {
-		var name = $('#serch-input').val();
+	$('#search').on('input', function() {
+		var name = $('#search').val();
 		$('#searched-words').text(name);
 		$('.page-header h1').text("Search Results for \"" + name + "\"");
 		askedToUpdate = true;
@@ -44,7 +44,7 @@ function testCanUpdate() {
 			$('#eventosPesq .eventcadssech').html("");
 			$('#serch-num-page-user').text(0);
 			$('#serch-num-page-event').text(0);
-			var name = $('#serch-input').val();
+			var name = $('#search').val();
 			if(name == ''){
 				$('#tabs .button-users').html('Users (0)');
 				$('#tabs .button-events').html('Events (0)');
@@ -180,7 +180,7 @@ function doajaxeventcall(page, name, free, paid, nameOrPrice, asci) {
 function finMoreUsers(page) {
 		if(canUpdateuser && canUpdateEvent){
 			$('.find-more-users').remove();
-			var name = $('#serch-input').val();
+			var name = $('#search').val();
 			if(name == ''){
 				$('#tabs .button-users').html('Users (0)');
 				$('#tabs .button-events').html('Events (0)');
@@ -195,7 +195,7 @@ function finMoreUsers(page) {
 function finMoreEvents(page) {
 		if(canUpdateuser && canUpdateEvent){
 			$('.find-more-events').remove();
-			var name = $('#serch-input').val();
+			var name = $('#search').val();
 			if(name == ''){
 				$('#tabs .button-users').html('Users (0)');
 				$('#tabs .button-events').html('Events (0)');
