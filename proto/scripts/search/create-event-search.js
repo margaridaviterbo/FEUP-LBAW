@@ -90,7 +90,7 @@ function findUsers(){
 
     $.ajax({
         type: "POST",
-        url: BASE_URL+"api/search/searchUsers.php",
+        url: BASE_URL+"api/search/searchHosts.php",
         data:   {
             name : name
         },
