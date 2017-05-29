@@ -34,7 +34,7 @@
                                     <p class="tag-checkout-card">NIF:</p>
                                 </div>
                                 <div class="col-sm-3">
-                                    <input type="text" name="nif" class="form-control nif" placeholder="NIF"  value="{$NIF}" aria-describedby="basic-addon1" required>
+                                    <input type="text" name="nif" class="form-control nif" placeholder="NIF"  value="{$NIF}" aria-describedby="basic-addon1">
                                 </div>
                             </div>
                             <div class="row"><p></p></div>
@@ -52,8 +52,7 @@
                                     <p class="tag-checkout-card">Type:</p>
                                 </div>
                                 <div class="col-sm-3">
-                                    <select class="form-control" name="ticketType">
-                                        <option value="1">---</option>
+                                    <select class="form-control" name="ticketType" required>
                                     {foreach $TICKETS as $ticket}
                                         <option value="{$ticket.type_of_ticket_id}">{$ticket.ticket_type} - {$ticket.price}€ </option>
                                      {/foreach}
@@ -61,9 +60,9 @@
                                 </div>
                             </div>
                             <div class="row"><p></p></div>
-                            <!--<div class="content-checkout">
+                            <div class="content-checkout">
                                 <input type="hidden" name="id" value="{$event_id}" />
-                            </div>-->
+                            </div>
                             <div class="row content-checkout">
                                 <div class="col-sm-2">
                                     <p class="tag-checkout-card">Quantity:</p>
