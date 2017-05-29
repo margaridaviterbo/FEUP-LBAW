@@ -135,7 +135,12 @@ function getComments($event_id)
 function listEvents()
 {
     global $conn;
-    $stmt = $conn->prepare('SELECT * from public.meta_event where public.meta_event.beginning_date > now()');
+    $stmt = $conn->prepare('SELECT meta_event.meta_event_id as id, meta_event.name as name, meta_event.beginning_date, meta_event.free, city.name as city, country.name as country  
+    from public.meta_event 
+    INNER JOIN public.localization ON public.meta_event.local_id = public.localization.local_id
+    INNER JOIN public.city ON public.city.city_id = public.localization.city_id
+    INNER JOIN public.country ON public.country.country_id = public.city.country_id                        
+    where public.meta_event.beginning_date > now() ORDER BY beginning_date ASC');
     $stmt->execute();
     return $stmt->fetchAll();
 }
