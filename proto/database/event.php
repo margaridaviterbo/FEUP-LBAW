@@ -228,9 +228,9 @@ function getSearchEvents($page, $name, $free, $paid, $nameOrPrice, $asc)
 
     if ($nameOrPrice == 2) { //name
         if (!($paid) || !($free))
-			$stringFP = ' WHERE upper(public.Event.name) LIKE upper(?) AND' . $stringFP;
+			$stringFP = ' WHERE upper(public.meta_event.name) LIKE upper(?) AND' . $stringFP;
 		else
-			$stringFP = ' WHERE upper(public.Event.name) LIKE upper(?)';
+			$stringFP = ' WHERE upper(public.meta_event.name) LIKE upper(?)';
 		$stringnNOP = "name $asc"; //"name, price" falta implementar o price
     } else {
         if (!($paid) || !($free))
@@ -241,26 +241,26 @@ function getSearchEvents($page, $name, $free, $paid, $nameOrPrice, $asc)
     $stmt = $conn->prepare('SELECT cityName, name, photo_url, beginning_date, ending_date, free, eventInfo.eveId, rate, score
 							FROM
 								(SELECT public.City.name AS cityName,
-										public.Event.name AS name,
-										public.Event.photo_url,
-										public.Event.beginning_date,
-										public.Event.ending_date,
-										public.Event.free,
-										public.Event.event_id AS eveId,
+										public.meta_event.name AS name,
+										public.meta_event.photo_url,
+										public.meta_event.beginning_date,
+										public.meta_event.ending_date,
+										public.meta_event.free,
+										public.meta_event.meta_event_id AS eveId,
 										ts_rank_cd(
-											 to_tsvector(\'portuguese\', concat_ws(\' \', public.Event.name::text, public.Event.description::text)),
+											 to_tsvector(\'portuguese\', concat_ws(\' \', public.meta_event.name::text, public.meta_event.description::text)),
 											 to_tsquery(\'portuguese\', ?)
 										) AS score
-								FROM ((public.Event 
-									 INNER JOIN public.Localization ON (public.Event.local_id = public.Localization.local_id))
+								FROM ((public.meta_event 
+									 INNER JOIN public.Localization ON (public.meta_event.local_id = public.Localization.local_id))
 									 INNER JOIN public.City ON (public.City.city_id = public.Localization.city_id))'
         . $stringFP .
 								') AS eventInfo,
-								(SELECT public.Event.event_id AS avgEvId, AVG(evaluation) as rate
+								(SELECT public.meta_event.meta_event_id AS avgEvId, AVG(evaluation) as rate
 								FROM ((public.Rate 
 									 INNER JOIN public.Event_Content ON (public.Rate.event_content_id = public.Event_Content.event_content_id))
-									 RIGHT JOIN public.Event ON (public.Event.event_id = public.Event_Content.event_id))
-								GROUP BY public.Event.event_id) AS aveInfo
+									 RIGHT JOIN public.Meta_event ON (public.Meta_event.meta_event_id = public.Event_Content.event_id))
+								GROUP BY public.meta_event.meta_event_id) AS aveInfo
 							WHERE (eventInfo.eveId = aveInfo.avgEvId)' . $stringConTotalSerch .
 							'ORDER BY ' . $stringnNOP .
 							' LIMIT 10 OFFSET ? * 10;');

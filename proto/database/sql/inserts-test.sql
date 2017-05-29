@@ -19,3 +19,26 @@ insert into city (name, country_id) VALUES ('Porto', 1);
 insert into localization (latitude, longitude, street, city_id) VALUES (22, 22, null, 1);
 
 insert into meta_event (name, description, beginning_date, ending_date, meta_event_state, photo_url, free, public, owner_id, category_id, local_id) VALUES ('Teste', 'neque duis bibendum morbi non quam nec dui luctus rutrum nulla tellus in sagittis dui vel nisl duis ac nibh fusce lacus purus aliquet at feugiat non pretium quis lectus suspendisse potenti in eleifend quam a odio in hac habitasse platea dictumst maecenas ut massa', '2017-06-28 01:40:59.273000', null, false, null, true, true, 1, 1, 1);
+insert into meta_event (name, description, beginning_date, ending_date, meta_event_state, photo_url, free, public, owner_id, category_id, local_id) VALUES ('Teste dois', 'este e um teste de resistencia', '2017-06-28 01:40:59.273000', null, false, null, true, true, 1, 1, 1);
+insert into meta_event (name, description, beginning_date, ending_date, meta_event_state, photo_url, free, public, owner_id, category_id, local_id) VALUES ('Teste tres', 'este e um teste de muita resistencia', '2017-06-28 01:40:59.273000', null, false, null, false, true, 1, 1, 1);
+
+insert into public.type_of_ticket (ticket_type, price, num_tickets, meta_event_id, event_id) values ('expensive', 1000, 470, 3,NULL);
+insert into public.type_of_ticket (ticket_type, price, num_tickets, meta_event_id, event_id) values ('more', 100, 33, 3,NULL);
+insert into public.type_of_ticket (ticket_type, price, num_tickets, meta_event_id, event_id) values ('cheap', 10, 186, 3,NULL);
+insert into public.type_of_ticket (ticket_type, price, num_tickets, meta_event_id, event_id) values ('almostfree', 1, 397, 3,NULL);
+
+insert into public.event_content (user_id, event_id) values (1, 1);
+insert into public.event_content (user_id, event_id) values (1, 1);
+insert into public.event_content (user_id, event_id) values (1, 1);
+insert into public.event_content (user_id, event_id) values (1, 2);
+insert into public.event_content (user_id, event_id) values (1, 2);
+insert into public.event_content (user_id, event_id) values (1, 2);
+insert into public.event_content (user_id, event_id) values (1, 2);
+insert into public.event_content (user_id, event_id) values (1, 3);
+insert into public.event_content (user_id, event_id) values (2, 3);
+insert into public.event_content (user_id, event_id) values (2, 3);
+insert into public.event_content (user_id, event_id) values (2, 3);
+
+insert into public.Rate (event_content_id, evaluation) values (0,3);
+insert into public.Rate (event_content_id, evaluation) values (3,2);
+insert into public.Rate (event_content_id, evaluation) values (7,2);
