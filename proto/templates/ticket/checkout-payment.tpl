@@ -29,9 +29,9 @@
                                  {/foreach}
                                 </select>
                             </div>
-                            <!--<div class="content-checkout">
+                            <div class="content-checkout">
                                 <input type="hidden" name="id" value="{$event_id}" />
-                            </div>-->
+                            </div>
                             <div class="content-checkout">
 								<p class="tag-checkout-card">Quantity:</p><input type="number" name="quantity" value="1" required>
                             </div>

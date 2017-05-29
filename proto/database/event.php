@@ -32,8 +32,8 @@ function getTypeTicket($m_event_id)
 
 function buy_ticket($userid, $type)  {
         global $conn;
-        $stmt = $conn->prepare('insert into public.ticket(user_id, type_of_ticket_id) values (?, ?);');
-        $stmt->execute(array($userid, $type));
+        $stmt = $conn->prepare('insert into public.ticket(user_id, type_of_ticket_id, ticket_purchase_date) values (?, ?, ?);');
+        $stmt->execute(array($userid, $type, date("d/m/Y")));
 		$stmt2 = $conn->prepare('select  max(ticket_id)from public.Ticket;');
         $stmt2->execute();
 		return $stmt2->fetch();

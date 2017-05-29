@@ -176,7 +176,7 @@
 	
 	function getUserTickets($user_id) {
         global $conn;
-        $stmt = $conn->prepare('SELECT ticket_type, name, ticket_id, public.Meta_Event.meta_event_id
+        $stmt = $conn->prepare('SELECT ticket_type, name, ticket_id, public.Meta_Event.meta_event_id, ticket_purchase_date
                                     FROM public.Ticket, public.Type_of_Ticket, public.Meta_Event
                                     WHERE public.Ticket.user_id = ? AND
 									public.Ticket.type_of_ticket_id = public.Type_of_Ticket.type_of_ticket_id AND
