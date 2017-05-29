@@ -105,8 +105,11 @@
 
                         <div class="row">
                             <content class="col-xs-4">
-                                Public
-                                <span class="glyphicon glyphicon-one-fine-dot"></span>
+                                {if $event.public}
+									Public
+								{else}
+									Private
+								{/if}	                                <span class="glyphicon glyphicon-one-fine-dot"></span>
                                 {if $event.free}
                                     Free
                                 {else}
