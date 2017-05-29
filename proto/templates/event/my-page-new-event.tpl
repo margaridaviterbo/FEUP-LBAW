@@ -135,7 +135,7 @@
 
                     <div class="row">
                         <content class="col-sm-6">
-                            <ul class="host-list oi[]">
+                            <ul class="host-list">
 
                             </ul>
                         </content>

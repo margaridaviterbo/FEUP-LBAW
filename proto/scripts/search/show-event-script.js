@@ -18,23 +18,40 @@ $(document).ready(function(){
         $("#search-list").fadeIn("fast");
     });
 
+    $(".remove").click(function(event){
+        var html = $(event.target);
+        var commentId = html.attr("value");
+        removeComment(commentId);
+    });
+
     $(document).click( function(){
 
         $('#search-list').hide();
-
     });
 
 });
+
+function removeComment(commentId){
+    $.ajax({
+        type: "POST",
+        url: BASE_URL+"api/event/deleteComment.php",
+        data:   {
+            comment : commentId
+        },
+        success: function(){
+            window.location.reload();
+        },
+        error: function(jqXHR, textStatus, errorThrown) {
+            console.log(textStatus, errorThrown);
+        }
+    });
+}
 
 function addToHostList(event){
     var html = $(event.target);
     var userId = html.attr("value");
     var username = html.html();
     var eventId = $("#event_id").val();
-
-    console.log(userId);
-    console.log(username);
-    console.log(eventId);
 
     if (typeof userId === "undefined" || userId == 0){
         //nao faz nada
@@ -53,10 +70,8 @@ function addToHostList(event){
 
                 var process = JSON.parse(response);
 
-                console.log(process);
-
                 if(process.success === "success"){
-                    console.log("oi");
+
                     $("#hosts").append(
                         '<content class="col-xs-1 col-xs-offset-1">'+
                         '<div class="user-photo">'+

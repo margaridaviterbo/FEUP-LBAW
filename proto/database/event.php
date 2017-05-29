@@ -86,6 +86,17 @@ function hasVoted($userid)
         return $stmt->fetchAll();
 }
 
+function deleteComment($commentId){
+    global $conn;
+    $stmt = $conn->prepare('DELETE FROM public.comments WHERE public.comments.comment_id = ?');
+    $stmt->execute(array($commentId));
+}
+
+function deleteContent($id){
+    global $conn;
+    $stmt = $conn->prepare('DELETE FROM public.event_content WHERE public.event_content.event_content_id = ?');
+    $stmt->execute(array($id));
+}
 
 function getComments($event_id)
 {

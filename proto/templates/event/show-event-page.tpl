@@ -157,17 +157,26 @@
                             {$cmt.comment_date}
                         </div>
 
-                        <div class="col-xs-2 col-xs-offset-2">
-                            <button><span class="glyphicon glyphicon-share-alt"></span>Reply</button>
-                        </div>
+                        {if $cmt.username = $USERNAME}
 
-                        <div class="col-xs-2">
-                            <button><span class="glyphicon glyphicon-flag"></span>Report</button>
+                            <div class="col-xs-offset-4 col-xs-2">
+                                <button class="remove" value="{$cmt.comment_id}"><span class="glyphicon glyphicon-remove"></span>Delete</button>
+                            </div>
+                        {else}
+                            <div class="col-xs-2 col-xs-offset-2">
+                                <button><span class="glyphicon glyphicon-share-alt"></span>Reply</button>
+                            </div>
+
+                            <div class="col-xs-2">
+                                <button><span class="glyphicon glyphicon-flag"></span>Report</button>
+                            </div>
+                        {/if}
+                    </div>
+                    <content class="col-xs-12">
+                        <div class="panel-body">
+                            {$cmt.content}
                         </div>
-                    </div>
-                    <div class="panel-body">
-                        {$cmt.content}
-                    </div>
+                    </content>
                 </div>
             {/foreach}
 
@@ -253,7 +262,6 @@
     $(document).ready(function () {
 
         $(window).scroll(function () {
-            console.log($(window).scrollTop())
             if ($(window).scrollTop() > 480) {
                 $('.navbar-slide').addClass('navbar-fixed-second-top');
             }
@@ -266,5 +274,5 @@
 </script>
 
 
-<script src="{$BASE_URL}scripts/search/show-event-search.js"></script>
+<script src="{$BASE_URL}scripts/search/show-event-script.js"></script>
 <script type="text/javascript" src="../../scripts/event/show-map-location.js"></script>
