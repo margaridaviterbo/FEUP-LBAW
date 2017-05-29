@@ -26,8 +26,6 @@
         exit;
     }
     else {
-        var_dump("oi4");
-
         //upload
         $uploaddir = '../../resources/images/users/';
         $uploadfile = $uploaddir . basename($_FILES['fileToUpload']['name']);

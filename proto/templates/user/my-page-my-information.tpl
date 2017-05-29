@@ -53,10 +53,11 @@
                     </div>
 
                     <div class="col-sm-4 photo-personal-card">
-                            <img src="{$PHOTOURL}" class="img-responsive img-thumbnail">
+                            <img src="{$PHOTOURL}" class="img-responsive img-thumbnail" style="height: 300px; overflow:hidden">
                         <div>
-                            <label id="upload-btn" for="files" class="btn btn-default">Upload photo</label>
-                            <input id="files" style="visibility:hidden;" type="file">
+                            <input type="hidden" name="MAX_FILE_SIZE" value="30000" />
+                            <label for="fileToUpload" class="btn btn-default">Upload photo</label>
+                            <input id="fileToUpload" name="fileToUpload" style="visibility:hidden;"type="file" accept="image/*">
                         </div>
                     </div>
 
