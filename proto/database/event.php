@@ -235,6 +235,10 @@ function getSearchEvents($page, $name, $free, $paid, $nameOrPrice, $asc)
     } else {
         if (!($paid) || !($free))
 				$stringFP = ' WHERE' . $stringFP;
+		if($asc == "ASC")
+			$asc = "DESC";
+		else
+			$asc = "ASC";
 		$stringnNOP = "score $asc"; //"price, name" falta implementar o price
 		$stringConTotalSerch = ' AND score > 0';
 	}
@@ -248,7 +252,8 @@ function getSearchEvents($page, $name, $free, $paid, $nameOrPrice, $asc)
 										public.meta_event.free,
 										public.meta_event.meta_event_id AS eveId,
 										ts_rank_cd(
-											 to_tsvector(\'portuguese\', concat_ws(\' \', public.meta_event.name::text, public.meta_event.description::text)),
+											 setweight(to_tsvector(\'portuguese\', coalesce(public.meta_event.name,\'\')), \'A\') ||
+											 setweight(to_tsvector(\'portuguese\', coalesce(public.meta_event.description,\'\')), \'D\'),
 											 to_tsquery(\'portuguese\', ?)
 										) AS score
 								FROM ((public.meta_event 
