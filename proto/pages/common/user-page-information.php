@@ -6,7 +6,8 @@ $id = $_GET['id'];
 
 $user = getTotalUsersFromId($id);
 
-$smarty->assign('USERNAME', $user['username']);
+$smarty->assign('USERNAMER', $user['username']);
+$smarty->assign('ID', $user['user_id']);
 $smarty->assign('FIRSTNAME', $user['first_name']);
 $smarty->assign('LASTNAME', $user['last_name']);
 $smarty->assign('EMAIL', $user['email']);

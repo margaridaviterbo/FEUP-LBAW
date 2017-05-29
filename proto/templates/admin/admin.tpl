@@ -1,5 +1,4 @@
 {include file='common/header.tpl'}
-{include file='admin/menu-admin.tpl'}
 
 
 <div class="admin">
@@ -8,226 +7,64 @@
         <div class="row">
             <content class="col-lg-offset-2 col-sm-8 col-sm-offset-1 col-xs-12 page">
                 <div class="page-header">
-                    <h1>Manage events</h1>
+                    <h1>Admin Notifications</h1>
                 </div>
-                <div class="container-fluid event-card-medium">
-                    <p class="titulo-card">Sessão de Demonstração para o Desenvolvimento em Comunicação</p>
+				
+				{foreach $notifications as $notification}
+				{if $notification.notification_type == 'userReport'}
+				<div class="notification-card-medium">
                     <div class="row">
-                        <div class="col-sm-3">
-                            <img src="../../resources/images/2.jpg" />
+                        <div class="col-sm-11">
+                            <a class="notification-content">
+                                Someone reported on the event
+								<a href="{$BASE_URL}pages/common/user-page-information.php?id={$notification.user_id}">{$notification.username}</a>.
+                            </a>
                         </div>
-                        <div class="col-sm-6">
-                            <p class="text-card"> Quinta, 9 de Março às 19:45</p>
-                            <p class="text-card">ISG<p>
-                            <p class="text-card">Gratuito</p>
-                            <div class="container-fluid">
-                                <div class="row">
-
-                                    <button type="button" class="btn btn-danger col-sm-5">Delete</button>
-
-
-                                    <div class="classifica-card col-sm-7">
-                                        <i class="fa fa-star fa-2x" aria-hidden="true"></i>
-                                        <i class="fa fa-star fa-2x" aria-hidden="true"></i>
-                                        <i class="fa fa-star fa-2x" aria-hidden="true"></i>
-                                        <i class="fa fa-star fa-2x" aria-hidden="true"></i>
-                                        <i class="fa fa-star-o fa-2x" aria-hidden="true"></i>
-                                    </div>
-                                </div>
-
-                            </div>
+                        <div class="notification-btn col-sm-1">
+                            <!--TODO fazer desaparecer a notificaçao-->
+                            <a href="#"><span class="glyphicon glyphicon-remove"></span></a>
                         </div>
-                        <div class="col-md-3">
-                            <h4>Comments</h4>
-                            <ul>
-                                <li>Comment 1 <a href="#">Delete</a></li>
-                                <li>Comment 2 <a href="#">Delete</a></li>
-                                <li>Comment 3 <a href="#">Delete</a></li>
-                                <li>Comment 4 <a href="#">Delete</a></li>
-                            </ul>
-                            <h4>Photos</h4>
-                            <ul>
-                                <li>Photo 1 <a href="#">Delete</a></li>
-                                <li>Photo 2 <a href="#">Delete</a></li>
-                            </ul>
-
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-11">
+                            <p class="notification-date"><span class="glyphicon glyphicon-time"></span>{$notification.notification_date}</p>
+                        </div>
+                        <div class="notification-btn col-sm-1">
+                            <!--TODO mostrar coisa que gerou notificaçao-->
+                            <a href="#"><span class="glyphicon glyphicon-eye-open"></span></a>
                         </div>
                     </div>
                 </div>
-
-                <div class="container-fluid event-card-medium">
-                    <p class="titulo-card">Sessão de Demonstração para o Desenvolvimento em Comunicação</p>
+				{/if}
+				
+				{if $notification.notification_type == 'eventInvitation'}
+				<div class="notification-card-medium">
                     <div class="row">
-                        <div class="col-sm-3">
-                            <img src="../../resources/images/1.jpg" />
+                        <div class="col-sm-11">
+                            <a class="notification-content">
+                                You Were invited for 
+								<a href="{$BASE_URL}pages/common/user-page-information.php?id={$notification.event_id}">{$notification.name}</a>.
+                            </a>
                         </div>
-                        <div class="col-sm-6">
-                            <p class="text-card"> Quinta, 9 de Março às 19:45</p>
-                            <p class="text-card">ISG<p>
-                            <p class="text-card">Gratuito</p>
-                            <div class="container-fluid">
-                                <div class="row">
-
-                                    <button type="button" class="btn btn-danger col-sm-5">Delete</button>
-
-                                    <div class="classifica-card col-sm-7">
-                                        <i class="fa fa-star fa-2x" aria-hidden="true"></i>
-                                        <i class="fa fa-star fa-2x" aria-hidden="true"></i>
-                                        <i class="fa fa-star fa-2x" aria-hidden="true"></i>
-                                        <i class="fa fa-star-o fa-2x" aria-hidden="true"></i>
-                                        <i class="fa fa-star-o fa-2x" aria-hidden="true"></i>
-                                    </div>
-                                </div>
-
-                            </div>
+                        <div class="notification-btn col-sm-1">
+                            <!--TODO fazer desaparecer a notificaçao-->
+                            <a href="#"><span class="glyphicon glyphicon-remove"></span></a>
                         </div>
-                        <div class="col-md-3">
-                            <h4>Comments</h4>
-                            <ul>
-                                <li>Comment 1 <a href="#">Delete</a></li>
-                                <li>Comment 2 <a href="#">Delete</a></li>
-                                <li>Comment 3 <a href="#">Delete</a></li>
-                                <li>Comment 4 <a href="#">Delete</a></li>
-                            </ul>
-                            <h4>Photos</h4>
-                            <ul>
-                                <li>Photo 1 <a href="#">Delete</a></li>
-                                <li>Photo 2 <a href="#">Delete</a></li>
-                            </ul>
-
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-11">
+                            <p class="notification-date"><span class="glyphicon glyphicon-time"></span>{$notification.notification_date}</p>
+                        </div>
+                        <div class="notification-btn col-sm-1">
+                            <!--TODO mostrar coisa que gerou notificaçao-->
+                            <a href="#"><span class="glyphicon glyphicon-eye-open"></span></a>
                         </div>
                     </div>
                 </div>
-                <div class="container-fluid event-card-medium">
-                    <p class="titulo-card">Sessão de Demonstração para o Desenvolvimento em Comunicação</p>
-                    <div class="row">
-                        <div class="col-sm-3">
-                            <img src="../../resources/images/4.png" />
-                        </div>
-                        <div class="col-sm-6">
-                            <p class="text-card"> Quinta, 9 de Março às 19:45</p>
-                            <p class="text-card">ISG<p>
-                            <p class="text-card">Gratuito</p>
-                            <div class="container-fluid">
-                                <div class="row">
-
-                                    <button type="button" class="btn btn-danger col-sm-5">Delete</button>
-
-                                    <div class="classifica-card col-sm-7">
-                                        <i class="fa fa-star fa-2x" aria-hidden="true"></i>
-                                        <i class="fa fa-star fa-2x" aria-hidden="true"></i>
-                                        <i class="fa fa-star fa-2x" aria-hidden="true"></i>
-                                        <i class="fa fa-star-o fa-2x" aria-hidden="true"></i>
-                                        <i class="fa fa-star-o fa-2x" aria-hidden="true"></i>
-                                    </div>
-                                </div>
-
-                            </div>
-                        </div>
-                        <div class="col-md-3">
-                            <h4>Comments</h4>
-                            <ul>
-                                <li>Comment 1 <a href="#">Delete</a></li>
-                                <li>Comment 2 <a href="#">Delete</a></li>
-                                <li>Comment 3 <a href="#">Delete</a></li>
-                                <li>Comment 4 <a href="#">Delete</a></li>
-                            </ul>
-                            <h4>Photos</h4>
-                            <ul>
-                                <li>Photo 1 <a href="#">Delete</a></li>
-                                <li>Photo 2 <a href="#">Delete</a></li>
-                            </ul>
-
-                        </div>
-                    </div>
-                </div>
-                <div class="container-fluid event-card-medium">
-                    <p class="titulo-card">Sessão de Demonstração para o Desenvolvimento em Comunicação</p>
-                    <div class="row">
-                        <div class="col-sm-3">
-                            <img src="../../resources/images/5.png" />
-                        </div>
-                        <div class="col-sm-6">
-                            <p class="text-card"> Quinta, 9 de Março às 19:45</p>
-                            <p class="text-card">ISG<p>
-                            <p class="text-card">Gratuito</p>
-                            <div class="container-fluid">
-                                <div class="row">
-
-                                    <button type="button" class="btn btn-danger col-sm-5">Delete</button>
-
-                                    <div class="classifica-card col-sm-7">
-                                        <i class="fa fa-star fa-2x" aria-hidden="true"></i>
-                                        <i class="fa fa-star fa-2x" aria-hidden="true"></i>
-                                        <i class="fa fa-star fa-2x" aria-hidden="true"></i>
-                                        <i class="fa fa-star fa-2x" aria-hidden="true"></i>
-                                        <i class="fa fa-star fa-2x" aria-hidden="true"></i>
-                                    </div>
-                                </div>
-
-                            </div>
-                        </div>
-                        <div class="col-md-3">
-                            <h4>Comments</h4>
-                            <ul>
-                                <li>Comment 1 <a href="#">Delete</a></li>
-                                <li>Comment 2 <a href="#">Delete</a></li>
-                                <li>Comment 3 <a href="#">Delete</a></li>
-                                <li>Comment 4 <a href="#">Delete</a></li>
-                            </ul>
-                            <h4>Photos</h4>
-                            <ul>
-                                <li>Photo 1 <a href="#">Delete</a></li>
-                                <li>Photo 2 <a href="#">Delete</a></li>
-                            </ul>
-
-                        </div>
-                    </div>
-                </div>
-                <div class="container-fluid event-card-medium">
-                    <p class="titulo-card">Sessão de Demonstração para o Desenvolvimento em Comunicação</p>
-                    <div class="row">
-                        <div class="col-sm-3">
-                            <img src="../../resources/images/6.png" />
-                        </div>
-                        <div class="col-sm-6">
-                            <p class="text-card"> Quinta, 9 de Março às 19:45</p>
-                            <p class="text-card">ISG<p>
-                            <p class="text-card">Gratuito</p>
-                            <div class="container-fluid">
-                                <div class="row">
-
-                                    <button type="button" class="btn btn-danger col-sm-5">Delete</button>
-
-                                    <div class="classifica-card col-sm-7">
-                                        <i class="fa fa-star-o fa-2x" aria-hidden="true"></i>
-                                        <i class="fa fa-star-o fa-2x" aria-hidden="true"></i>
-                                        <i class="fa fa-star-o fa-2x" aria-hidden="true"></i>
-                                        <i class="fa fa-star-o fa-2x" aria-hidden="true"></i>
-                                        <i class="fa fa-star-o fa-2x" aria-hidden="true"></i>
-                                    </div>
-                                </div>
-
-                            </div>
-                        </div>
-                        <div class="col-md-3">
-                            <h4>Comments</h4>
-                            <ul>
-                                <li>Comment 1 <a href="#">Delete</a></li>
-                                <li>Comment 2 <a href="#">Delete</a></li>
-                                <li>Comment 3 <a href="#">Delete</a></li>
-                                <li>Comment 4 <a href="#">Delete</a></li>
-                            </ul>
-                            <h4>Photos</h4>
-                            <ul>
-                                <li>Photo 1 <a href="#">Delete</a></li>
-                                <li>Photo 2 <a href="#">Delete</a></li>
-                            </ul>
-
-                        </div>
-                    </div>
-                </div>
-
+				{/if}
+				
+				
+				{/foreach}
 
             </content>
         </div>
