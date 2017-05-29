@@ -32,8 +32,8 @@ function getTypeTicket($m_event_id)
 
 function buy_ticket($userid, $type)  {
         global $conn;
-        $stmt = $conn->prepare('insert into public.ticket(user_id, type_of_ticket_id) values (?, ?);');
-        $stmt->execute(array($userid, $type));
+        $stmt = $conn->prepare('insert into public.ticket(user_id, type_of_ticket_id, ticket_purchase_date) values (?, ?, ?);');
+        $stmt->execute(array($userid, $type, date("d/m/Y")));
 		$stmt2 = $conn->prepare('select  max(ticket_id)from public.Ticket;');
         $stmt2->execute();
 		return $stmt2->fetch();
@@ -192,7 +192,7 @@ function getEventsCreatedByUser($username, $page)
 function getMetaEvent($event_id)
 {
     global $conn;
-    $stmt = $conn->prepare('SELECT authenticated_user.username, meta_event.name as name, meta_event.beginning_date, meta_event.free, meta_event.description, meta_event.photo_url, city.name as city, country.name as country, localization.street, localization.latitude, localization.longitude FROM public.meta_event 
+    $stmt = $conn->prepare('SELECT authenticated_user.username, meta_event.name as name, meta_event.public, meta_event.beginning_date, meta_event.free, meta_event.description, meta_event.photo_url, city.name as city, country.name as country, localization.street, localization.latitude, localization.longitude FROM public.meta_event 
                             INNER JOIN public.authenticated_user ON public.meta_event.owner_id = public.authenticated_user.user_id
                             INNER JOIN public.localization ON public.meta_event.local_id = public.localization.local_id
                             INNER JOIN public.city ON public.city.city_id = public.localization.city_id
@@ -228,6 +228,23 @@ function getTicketInfo($ticket_id){
 							WHERE public.Type_of_Ticket.type_of_ticket_id = ?');
     $stmt->execute(array($ticket_id));
     return $stmt->fetchAll();
+}	
+
+function responseEventGuest($meta_event_id, $user_id, $response) {
+	global $conn;
+    $stmt = $conn->prepare('Update Guest
+							SET is_going = ?
+							WHERE Guest.user_id = ? AND Guest.event_id = ?');
+    $stmt->execute(array($response, $user_id, $meta_event_id));
+}
+
+function responseGetResponse($meta_event_id, $user_id) {
+	global $conn;
+    $stmt = $conn->prepare('Select is_going 
+							From Guest
+							WHERE Guest.user_id = ? AND Guest.event_id = ?');
+    $stmt->execute(array($user_id, $meta_event_id));
+	return $stmt->fetch();
 }
   /**
   $page, numero da pagina
@@ -276,6 +293,7 @@ function getSearchEvents($page, $name, $free, $paid, $nameOrPrice, $asc)
 										public.meta_event.beginning_date,
 										public.meta_event.ending_date,
 										public.meta_event.free,
+										public.meta_event.public,
 										public.meta_event.meta_event_id AS eveId,
 										ts_rank_cd(
 											 setweight(to_tsvector(\'portuguese\', coalesce(public.meta_event.name,\'\')), \'A\') ||
@@ -292,7 +310,7 @@ function getSearchEvents($page, $name, $free, $paid, $nameOrPrice, $asc)
 									 INNER JOIN public.Event_Content ON (public.Rate.event_content_id = public.Event_Content.event_content_id))
 									 RIGHT JOIN public.Meta_event ON (public.Meta_event.meta_event_id = public.Event_Content.event_id))
 								GROUP BY public.meta_event.meta_event_id) AS aveInfo
-							WHERE (eventInfo.eveId = aveInfo.avgEvId)' . $stringConTotalSerch .
+							WHERE (eventInfo.eveId = aveInfo.avgEvId) AND eventInfo.public = \'true\'' . $stringConTotalSerch .
 							'ORDER BY ' . $stringnNOP .
 							' LIMIT 10 OFFSET ? * 10;');
 

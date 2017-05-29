@@ -225,7 +225,7 @@ CREATE TABLE public.Notification
 	FOREIGN KEY(event_content_id) REFERENCES Event_Content(event_content_id),
 	FOREIGN KEY(user_id) REFERENCES Authenticated_User(user_id),
 	FOREIGN KEY(administrator_id) REFERENCES Administrator(administrator_id),
-	CONSTRAINT report CHECK (notification_type IN ('userReport', 'contentReport', 'eventReport') AND administrator_id IS NOT NULL),
+	CONSTRAINT report CHECK ((notification_type IN ('userReport', 'contentReport', 'eventReport') AND administrator_id IS NOT NULL) OR notification_type NOT IN ('userReport', 'contentReport', 'eventReport') AND administrator_id IS NULL),
 	CONSTRAINT valid_user CHECK (XOR(user_id IS NOT NULL, administrator_id IS NOT NULL))
 );
 
@@ -300,6 +300,7 @@ CREATE TABLE public.Ticket
 	ticket_id serial PRIMARY KEY,
 	user_id integer NOT NULL,
 	type_of_ticket_id integer NOT NULL,
+	ticket_purchase_date Date,
 	FOREIGN KEY(user_id) REFERENCES Users(user_id),
 	FOREIGN KEY(type_of_ticket_id) REFERENCES Type_of_Ticket(type_of_ticket_id)
 );

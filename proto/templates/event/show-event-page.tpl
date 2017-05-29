@@ -3,6 +3,8 @@
 {if $USERNAME}
     {include file='common/aside-menu.tpl'}
 {/if}
+<p hidden id="au_user_id">{$au_user_id}</p>
+<p hidden id="this_event_id">{$event_id}</p>
 
 <div class="container-fluid event-main-page">
 
@@ -27,12 +29,12 @@
                     </ul>
                 </div>
                 <div class="col-xs-3 col-sm-3">
-
+					{if $USERNAME && $isGuest}
                     <select class="going-select" data-show-icon="true">
-                        <option data-icon="glyphicon-heart">Not Going</option>
-                        <option value="two">Going</option>
-
+                        <option data-icon="glyphicon-heart" value="one" {if !$going}selected{/if}>Not Going</option>
+                        <option value="two" {if $going}selected{/if}>Going</option>
                     </select>
+					{/if}
                 </div>
             </div>
         </nav>
@@ -50,8 +52,8 @@
                     <div class="row">
 
                         <div class="col-xs-4 event-name">
-                            {$event.name}
-                        </div>
+                        {$event.name}
+                    </div>
                         <div class="col-xs-1">
                             <form id="rform" action="../../actions/event/rate_event.php" method="POST">
                                 <input id="rate" type="hidden" name="rating"/>
@@ -69,42 +71,45 @@
                         <div class="event-rate">
 
 
-                            <div class="rating">
-                                <input type="radio" id="star5" name="rating" value="10"/><label class="full"
-                                                                                                for="star5"></label>
-                                <input type="radio" id="star4half" name="rating" value="9"/><label class="half"
-                                                                                                   for="star4half"></label>
-                                <input type="radio" id="star4" name="rating" value="8"/><label class="full"
-                                                                                               for="star4"></label>
-                                <input type="radio" id="star3half" name="rating" value="7"/><label class="half"
-                                                                                                   for="star3half"></label>
-                                <input type="radio" id="star3" name="rating" value="6"/><label class="full"
-                                                                                               for="star3"></label>
-                                <input type="radio" id="star2half" name="rating" value="5"/><label class="half"
-                                                                                                   for="star2half"></label>
-                                <input type="radio" id="star2" name="rating" value="4"/><label class="full"
-                                                                                               for="star2"></label>
-                                <input type="radio" id="star1half" name="rating" value="3"/><label class="half"
-                                                                                                   for="star1half"></label>
-                                <input type="radio" id="star1" name="rating" value="2"/><label class="full"
-                                                                                               for="star1"></label>
-                                <input type="radio" id="starhalf" name="rating" value="1"/><label class="half"
-                                                                                                  for="starhalf"></label>
-                            </div>
+                        <div class="rating">
+                            <input type="radio" id="star5" name="rating" value="10"/><label class="full"
+                                                                                            for="star5"></label>
+                            <input type="radio" id="star4half" name="rating" value="9"/><label class="half"
+                                                                                               for="star4half"></label>
+                            <input type="radio" id="star4" name="rating" value="8"/><label class="full"
+                                                                                           for="star4"></label>
+                            <input type="radio" id="star3half" name="rating" value="7"/><label class="half"
+                                                                                               for="star3half"></label>
+                            <input type="radio" id="star3" name="rating" value="6"/><label class="full"
+                                                                                           for="star3"></label>
+                            <input type="radio" id="star2half" name="rating" value="5"/><label class="half"
+                                                                                               for="star2half"></label>
+                            <input type="radio" id="star2" name="rating" value="4"/><label class="full"
+                                                                                           for="star2"></label>
+                            <input type="radio" id="star1half" name="rating" value="3"/><label class="half"
+                                                                                               for="star1half"></label>
+                            <input type="radio" id="star1" name="rating" value="2"/><label class="full"
+                                                                                           for="star1"></label>
+                            <input type="radio" id="starhalf" name="rating" value="1"/><label class="half"
+                                                                                              for="starhalf"></label>
                         </div>
-
-                        <content class="col-xm-3 col-md-2 text-center user-photo">
-
-                            <button><img src="{$BASE_URL}resources/images/user.jpeg">{$USERNAME}</button>
-
-                        </content>
-
                     </div>
+
+                <content class="col-xm-3 col-md-2 text-center user-photo">
+
+                    <button><img src="{$BASE_URL}resources/images/user.jpeg">{$USERNAME}</button>
+
+                </content>
+
+            </div>
 
                         <div class="row">
                             <content class="col-xs-4">
-                                Public
-                                <span class="glyphicon glyphicon-one-fine-dot"></span>
+                                {if $event.public}
+									Public
+								{else}
+									Private
+								{/if}	                                <span class="glyphicon glyphicon-one-fine-dot"></span>
                                 {if $event.free}
                                     Free
                                 {else}
@@ -113,7 +118,7 @@
                             </content>
                             {if !$event.free}
                                 <div class="buy-btn col-xs-offset-1 col-xs-4">
-                                    <a href="../ticket/checkout-payment.php" class="btn btn-default">Buy Ticket</a>
+                                    <a href="../ticket/checkout-payment.php?id={$event_id}" class="btn btn-default">Buy Ticket</a>
                                 </div>
                             {/if}
 
@@ -372,4 +377,5 @@
 {include file='common/footer.tpl'}
 
 <script src="{$BASE_URL}scripts/search/show-event-script.js"></script>
+<script src="{$BASE_URL}scripts/event/response-event.js"></script>
 <script type="text/javascript" src="../../scripts/event/show-map-location.js"></script>
