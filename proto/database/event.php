@@ -93,8 +93,15 @@ function saveEvent($userid, $eventid)
 
 function getRating($eventid)
 {
-        global $conn;
-            $stmt = $conn->prepare('select cast(AVG(evaluation) as int) as avg from rate where event_content_id=?');
+    global $conn;
+
+    $stmt = $conn->prepare('SELECT cast(avg(evaluation) as int) as eval
+                                      FROM public.rate
+                                      INNER JOIN public.event_content
+                                      ON public.event_content.event_content_id = public.rate.event_content_id
+                                      INNER JOIN public.meta_event
+                                      ON public.meta_event.meta_event_id = public.event_content.event_id
+                                      WHERE public.meta_event.meta_event_id = ?');
             $stmt->execute(array($eventid));
             return $stmt->fetchAll();
 }

@@ -19,7 +19,7 @@ $day = date('d', strtotime($event[beginning_date]));
 $ending = date('l, jS \of F Y \a\t h:i A', strtotime($event[ending_date]));
 $ending_small_format = date('m/d/Y H:i', strtotime($event[ending_date]));
 
-$rate = getRating($meta_event_id)[0]["avg"];
+$rate = getRating($meta_event_id)[0]['eval'];
 
 $comments = getComments($meta_event_id);
 

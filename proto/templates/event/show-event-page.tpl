@@ -81,6 +81,7 @@
                                                                                                       for="starhalf"></label>
                                 </div>
                             </div>
+                            (Rate: {$rate})
                         </div>
 
                         <content class="col-xs-2 col-md-2 text-center user-photo">
