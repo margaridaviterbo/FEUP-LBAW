@@ -3,6 +3,8 @@
 {if $USERNAME}
     {include file='common/aside-menu.tpl'}
 {/if}
+<p hidden id="au_user_id">{$au_user_id}</p>
+<p hidden id="this_event_id">{$event_id}</p>
 
 <div class="container-fluid event-main-page">
 
@@ -27,12 +29,12 @@
                     </ul>
                 </div>
                 <div class="col-xs-3 col-sm-3">
-
+					{if $USERNAME && $isGuest}
                     <select class="going-select" data-show-icon="true">
-                        <option data-icon="glyphicon-heart">Not Going</option>
-                        <option value="two">Going</option>
-
+                        <option data-icon="glyphicon-heart" value="one" {if !$going}selected{/if}>Not Going</option>
+                        <option value="two" {if $going}selected{/if}>Going</option>
                     </select>
+					{/if}
                 </div>
             </div>
         </nav>
@@ -52,7 +54,11 @@
                     </div>
                     <div class="row">
                         <content class="col-xs-4">
-                            Public
+							{if $event.public}
+								Public
+							{else}
+                                Private
+                            {/if}							
                             <span class="glyphicon glyphicon-one-fine-dot"></span>
                             {if $event.free}
                                 Free
@@ -289,4 +295,5 @@
 {include file='common/footer.tpl'}
 
 <script src="{$BASE_URL}scripts/search/show-event-script.js"></script>
+<script src="{$BASE_URL}scripts/event/response-event.js"></script>
 <script type="text/javascript" src="../../scripts/event/show-map-location.js"></script>
