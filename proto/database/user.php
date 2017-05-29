@@ -178,6 +178,18 @@
 
     function searchUserByUsername($name, $username) {
         global $conn;
+        //$param = "%$name%";
+        $stmt = $conn->prepare('SELECT public.authenticated_user.username, public.Authenticated_User.photo_url, public.Authenticated_User.user_id, ts_rank(to_tsvector(username), query) AS rank
+                                        FROM public.Authenticated_User , to_tsquery(?) AS query
+                                        WHERE (upper(username) <> upper(?))
+                                        ORDER BY rank DESC');
+        $name = $name.":*";
+        $stmt->execute(array($name, $username));
+        return $stmt->fetchAll();
+    }
+
+    /*function searchUserByUsername($name, $username) {
+        global $conn;
         $param = "%$name%";
         $stmt = $conn->prepare('SELECT public.authenticated_user.username, public.Authenticated_User.photo_url, public.Authenticated_User.user_id
                                     FROM public.Authenticated_User 
@@ -185,7 +197,7 @@
                                     ORDER BY username ASC');
         $stmt->execute(array($param, $username));
         return $stmt->fetchAll();
-    }
+    }*/
 	
 	function getUserTickets($user_id) {
         global $conn;
