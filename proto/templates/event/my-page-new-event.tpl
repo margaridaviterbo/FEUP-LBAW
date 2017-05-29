@@ -17,19 +17,12 @@
                 <fieldset id="page1">
                     <span class="error" id="error"></span>
                     <div class="row">
-                        <content class="col-md-8 col-xs-8">
+                        <content class="col-md-12 col-xs-12">
                             <label class="special-label">Event Name *</label>
                             <input type="text" name="event-name" class="form-control event_name" placeholder="Event Name"
                                    aria-describedby="basic-addon1" required>
                         </content>
-                        <content class="col-md-offset-1 col-md-1 col-xs-2">
-                            <label>Public</label>
-                            <input type="checkbox" class="checkbox-form" name="public">
-                        </content>
-                        <content class="col-md-offset-1 col-md-1 col-xs-2">
-                            <label>Free</label>
-                            <input type="checkbox" class="checkbox-form" name="free">
-                        </content>
+
                     </div>
 
                     <div class="row">
@@ -75,6 +68,18 @@
                                 <option value="6">Music</option>
                             </select>
                         </content>
+                        <content class="checkboxes-event col-md-offset-0 col-md-1 col-xs-2">
+                            <label>Public</label>
+                        </content>
+                        <content class="checkboxes-event col-md-offset-0 col-md-1 col-xs-2">
+                            <input type="checkbox" class="checkbox-form" name="public">
+                        </content>
+                        <content class="checkboxes-event col-md-offset-0 col-md-1 col-xs-2">
+                            <label>Free</label>
+                        </content>
+                        <content class="checkboxes-event col-md-offset-0 col-md-1 col-xs-2">
+                            <input type="checkbox" class="checkbox-form" name="free">
+                        </content>
                     </div>
 
                     <label>Description *</label>
@@ -82,7 +87,7 @@
                               class="form-control description"
                               required></textarea>
 
-                    <div>
+                    <div class="event-photo">
                         <label for="event-photo" class="btn btn-default">Upload photo</label>
                         <input id="event-photo" style="visibility:hidden;" name="event-photo" type="file">
                     </div>
@@ -141,13 +146,13 @@
                         </content>
                     </div>
 
-                    <content class="col-sm-12">
+                    <content class="invites col-sm-12">
                         <label>Invite People</label>
                     </content>
 
                     <br></br>
                     <input type="button" name="previous" class="previous btn btn-default" value="Previous"/>
-                    <button type="submit" class="btn btn-default">Create event!</button>
+                    <button type="submit" class="create btn btn-default">Create event!</button>
                     <br></br>
                 </fieldset>
             </form>

@@ -661,10 +661,7 @@ input.tag-checkout-card{
     margin-right: 20px;
 }
 
-.content-checkout {
-    padding-bottom: 0px;
-    margin: 0px;
-}
+
 
 .content-checkout p{
     padding-left: 0px;
@@ -746,6 +743,49 @@ input.tag-checkout-card{
 
 .search-bar{
     width: 50%;
+}
+
+.event-photo label.btn.btn-default{
+    margin-top: 15px;
+    margin-left: 0px;
+}
+
+input.next.btn.btn-default{
+    background-color: #337ab7;
+    color: white;
+}
+
+input.next.btn.btn-default:hover{
+    background-color: #2e6da4;
+}
+
+content.checkboxes-event{
+    padding-top: 40px;
+    padding-right: 0px;
+    padding-left: 0px;
+    text-align: right;
+}
+
+content.checkboxes-event label{
+    margin-left: 0px;
+}
+
+content.checkboxes-event input.checkbox-form{
+    width:20px;
+    margin-left: 5px;
+}
+
+content.invites{
+    padding-left: 0px;
+}
+
+.create.btn.btn-default{
+    background-color: #337ab7;
+    color: white;
+}
+
+.create.btn.btn-default:hover{
+    background-color: #2e6da4;
 }
 
 /*TESTE*/
