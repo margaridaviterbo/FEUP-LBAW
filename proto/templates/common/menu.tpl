@@ -36,10 +36,12 @@
                     <ul class="nav navbar-nav navbar-right text-center" id="login">
 
                         {if $USERNAME}
+							{if $USERID != -1}
                             <li><a href="{$BASE_URL}pages/user/my-page-my-information.php"><span
                                             class="glyphicon glyphicon-pencil"></span>{$USERNAME}
                                 </a>
                             </li>
+							{/if}
                             <li><a href="{$BASE_URL}actions/authentication/logout.php"><span
                                             class="glyphicon glyphicon-log-out"></span> Logout</a>
                             </li>
