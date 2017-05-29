@@ -26,6 +26,15 @@
         exit;
     }
     else {
+        //upload
+        $uploaddir = '../../resources/images/users/';
+        $uploadfile = $uploaddir . basename($_FILES['fileToUpload']['name']);
+
+        if (move_uploaded_file($_FILES['fileToUpload']['tmp_name'], $uploadfile)) {
+            $photo = $uploadfile;
+        } else {
+            $photo = '../../resources/images/users/user.png';
+        }
 
         $user = getUserByEmail($email);
 
@@ -38,7 +47,7 @@
 
         $user_id = getUserIdFromUser($email);
 
-        createAuthenticatedUser($user_id, $username, $password);
+        createAuthenticatedUser($user_id, $username, $password, $photo);
 
         //Login - pode existir algum erro na base de dados
         if (isLoginCorrect($username, $password)) {

@@ -8,28 +8,34 @@
 
     function updateUser($firstname, $lastname, $email, $nif, $userId){
         global $conn;
-        $stmt = $conn->prepare('UPDATE public.users SET first_name = ?, last_name = ?, email=?, nif=? WHERE user_id = ?'); //TODO: Fazer update
-        $stmt->execute(array($firstname, $lastname, $email, $nif, $userId));
+        if ($nif == null || $nif == '') {
+            $stmt = $conn->prepare('UPDATE public.users SET first_name = ?, last_name = ?, email=? WHERE user_id = ?'); //TODO: Fazer update
+            $stmt->execute(array($firstname, $lastname, $email, $userId));
+        }
+        else {
+            $stmt = $conn->prepare('UPDATE public.users SET first_name = ?, last_name = ?, email=?, nif=? WHERE user_id = ?'); //TODO: Fazer update
+            $stmt->execute(array($firstname, $lastname, $email, $nif, $userId));
+        }
     }
 
-    function updateAuthenticatedUser($username, $password, $userId){
+    function updateAuthenticatedUser($username, $password, $userId, $photo){
         global $conn;
 
         if ($password == null || $password == ''){
-            $stmt = $conn->prepare('UPDATE public.authenticated_user SET username = ? WHERE user_id = ?');
-            $stmt->execute(array($username, $userId));
+            $stmt = $conn->prepare('UPDATE public.authenticated_user SET username = ?, photo_url = ? WHERE user_id = ?');
+            $stmt->execute(array($username, $photo, $userId));
         }
         else{
-            $stmt = $conn->prepare('UPDATE public.authenticated_user SET username = ?, password = ? WHERE user_id = ?');
-            $stmt->execute(array($username, sha1($password), $userId));
+            $stmt = $conn->prepare('UPDATE public.authenticated_user SET username = ?, password = ?, photo_url = ? WHERE user_id = ?');
+            $stmt->execute(array($username, sha1($password), $photo, $userId));
         }
     }
 
-    function createAuthenticatedUser($user_id, $username, $password){
+    function createAuthenticatedUser($user_id, $username, $password, $photo){
         global $conn;
         $state = 'active';
-        $stmt = $conn->prepare('INSERT INTO public.authenticated_user(user_id, username, password, user_state) VALUES (?, ?, ?, ?)');
-        $stmt->execute(array($user_id, $username, sha1($password), $state));
+        $stmt = $conn->prepare('INSERT INTO public.authenticated_user(user_id, username, password, photo_url, user_state) VALUES (?, ?, ?, ?, ?)');
+        $stmt->execute(array($user_id, $username, sha1($password), $photo, $state));
     }
 
     function authenticatedUserExists($username, $email, $nif){
