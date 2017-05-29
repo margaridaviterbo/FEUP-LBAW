@@ -6,6 +6,13 @@ function addHost($userId, $eventId){
     $stmt->execute(array($userId, $eventId));
 }
 
+function isHost($userId, $eventId){
+    global $conn;
+    $stmt = $conn->prepare('SELECT * FROM public.host WHERE host.meta_event_id = ? AND host.user_id = ?');
+    $stmt->execute(array( $eventId, $userId));
+    return $stmt->fetch();
+}
+
 function getHosts($eventId){
     global $conn;
     $stmt = $conn->prepare('SELECT authenticated_user.username, authenticated_user.photo_url FROM public.authenticated_user
