@@ -11,7 +11,7 @@ $eventId = $_POST['event'];
 $add = isHost($userId, $eventId);
 
 if ($add == false){
-    //addHost($userId, $event); //TODO: wtf???
+    addHost($userId, $eventId); //TODO: wtf???
     $response['success'] = 'success';
 }
 else{
