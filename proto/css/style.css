@@ -615,31 +615,56 @@ textarea {
 }
 
 /*ckeckout CARD*/
-.ckeckout-card {
+.checkout-card {
     padding: 10px;
     margin-bottom: 20px;
 }
 
-.ckeckout-card p{
+.checkout-card p{
     display: inline;
     padding-left: 5px;
-    font-size: 2rem;
+    /*font-size: 2rem;*/
 }
 
-.tag-ckeckout-card {
+.checkout-card input{
+    display: inline;
+    padding-left: 5px;
+    /*font-size: 2rem;*/
+}
+
+.tag-checkout-card {
     font-weight: bold;
+    font-size: 15px;
+    color: #337ab7;
 }
 
-
-.content-ckeckout {
-    padding-bottom: 10px;
-    margin: 10px 0px;
+p.tag-checkout-card{
+    display: inline-block;
+    width: 85px;
+    text-align: right;
+    margin-right: 20px;
 }
 
-.content-ckeckout {
-    display: block;
+input.tag-checkout-card{
+    display: inline-block;
+    width: 85px;
+    text-align: right;
+    margin-right: 20px;
 }
 
+.content-checkout {
+    padding-bottom: 0px;
+    margin: 0px;
+}
+
+.content-checkout p{
+    padding-left: 0px;
+}
+
+.tags-personal-card .btn{
+    width: 90px;
+    margin-top: 30px;
+}
 
 /*payed card*/
 .payed-card {
@@ -668,8 +693,11 @@ textarea {
     width: 120px;
     text-align: center;
     margin-bottom: 10px;
-    padding: 0px
+    padding: 0px;
 }
+
+
+
 /*
 @media (max-width: 768px) {
     #menu {
