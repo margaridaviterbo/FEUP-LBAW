@@ -139,6 +139,10 @@
 
         <div class="event-comments" id="comments">
 
+            {if count($comments) == 0}
+                <h4>No comments yet.</h4>
+            {/if}
+
             {foreach $comments as $cmt}
                 <div class="comment">
 
@@ -174,7 +178,7 @@
                 </div>
                 <form id="comment-form" method="post" action="{$BASE_URL}actions/event/new_comment.php">
                     <input type="text" name="user_id" hidden="true" value="{$USERID}">
-                    <input type="text" name="event_id" hidden="true" value="{$event_id}">
+                    <input type="text" name="event_id" id="event_id" hidden="true" value="{$event_id}">
                     <textarea name="editor" id="editor">
                         </textarea>
                     <script>
@@ -187,11 +191,30 @@
             {/if}
         </div>
 
+
         <div class="page-header">
-            <h3>Hosts</h3>
+            <div class="row">
+                <content class="col-xs-9">
+                    <h3 style="margin: 0px;">Hosts</h3>
+                </content>
+                <content class="col-xs-3">
+                    {foreach $hosts as $host}
+                        {if $host.username == $USERNAME}
+                            <input id="search-user" type="search" class="form-control" placeholder="Add hosts..."
+                                       autocomplete="off"/>
+                            <div class="content-list" id="search-list" style="width: 100%;">
+                                <ul class="drop-list">
+
+                                </ul>
+                            </div>
+                        {/if}
+                    {/foreach}
+                </content>
+            </div>
         </div>
+
         <div id="hosts">
-            
+
             {for $i = 0; $i < count($hosts); $i++}
 
                 {if $i == 0}
@@ -206,12 +229,8 @@
                             <button><img src="{$BASE_URL}resources/images/user.jpeg">{$hosts[$i].username}</button>
                         </div>
                     </content>
-
                 {/if}
-
             {/for}
-
-
         </div>
     </div>
 </div>
@@ -247,4 +266,5 @@
 </script>
 
 
+<script src="{$BASE_URL}scripts/search/show-event-search.js"></script>
 <script type="text/javascript" src="../../scripts/event/show-map-location.js"></script>
