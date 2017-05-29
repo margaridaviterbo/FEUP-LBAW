@@ -216,3 +216,21 @@ CREATE TRIGGER addNotificationCommented
 AFTER INSERT ON Comments
 FOR EACH ROW
 EXECUTE PROCEDURE addNotificationCommented();
+
+
+/* Cria Notificaçao quando se e convidado */
+CREATE OR REPLACE FUNCTION addNotificationInviation() RETURNS TRIGGER AS
+$BODY$
+BEGIN
+	IF tg_op = 'INSERT' THEN
+		INSERT INTO Notification(notification_type, checked, user_id, event_id) VALUES('eventInvitation', false, NEW.user_id, NEW.event_id);
+	END IF;
+	RETURN NEW;
+END;
+$BODY$
+LANGUAGE plpgsql;
+
+CREATE TRIGGER addNotificationInviation
+AFTER INSERT ON Guest
+FOR EACH ROW
+EXECUTE PROCEDURE addNotificationInviation();

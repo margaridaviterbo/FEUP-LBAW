@@ -184,6 +184,17 @@
         $stmt->execute(array($user_id));
         return $stmt->fetchAll();
     }
+	
+	function getNotifications($user_id) {
+		global $conn;
+        $stmt = $conn->prepare('SELECT *
+                                    FROM (public.Notification
+									LEFT JOIN public.Meta_Event ON public.Meta_Event.meta_event_id = public.Notification.event_id)
+									LEFT JOIN public.Authenticated_User ON public.Authenticated_User.user_id = public.Notification.user_id 
+                                    WHERE public.Notification.user_id = ?;');
+        $stmt->execute(array($user_id));
+        return $stmt->fetchAll();
+	}
 
     //TODO: Usar full text search para pesquisa de nome completo, para username, talvez usar like (?)
 /*
