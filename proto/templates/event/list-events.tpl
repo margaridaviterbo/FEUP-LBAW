@@ -25,12 +25,21 @@
                             <div class="col-sm-8">
                                 <p class="text-card"> {$event.date}</p>
                                 <p class="text-card"> {$event.location}</p>
-                                <div id="btns-row" class="row">
                                     <a class="inactiveLink-text-card"></a>
                                     {if $event.free}
-                                        <a class="text-card">Free</a>
+                                        <a class="inactiveLink-text-card">Free</a>
                                     {else}
-                                        <a class="text-card">Paid</a>
+                                        <a class="inactiveLink-text-card">Paid</a>
+                                    {/if}
+                                </div>
+                                <div class="event-card-btns">
+                                    {if !$event.pastEvent}
+                                        <button onclick="window.location.href='{$BASE_URL}pages/event/show-event-page.php?id={$event.event_id}'"
+                                                type="button" class="btn btn-default col-sm-5">See Event
+                                        </button>
+                                        <button onclick="window.location.href='../../pages/event/edit-event.php?id={$event.event_id}'"
+                                                type="button" class="btn btn-default col-sm-5">Edit Event
+                                        </button>
                                     {/if}
                                 </div>
 
@@ -62,21 +71,10 @@
                                     </div>
                                 </div>
 
-                                <div class="row">
-                                    <p></p>
-                                    {if !$event.pastEvent}
-                                    <button onclick="window.location.href='{$BASE_URL}pages/event/show-event-page.php?id={$event.event_id}'"
-                                            type="button" class="btn btn-default col-sm-5">See Event
-                                    </button>
-                                    <button onclick="window.location.href='../../pages/event/edit-event.php?id={$event.event_id}'"
-                                            type="button" class="btn btn-default col-sm-5">Edit Event
-                                    </button>
-                                    {/if}
-                                </div>
+
                             </div>
                         </div>
-                    </div>
-                {/foreach}
+                    {/foreach}
             {/if}
         </content>
     </div>
