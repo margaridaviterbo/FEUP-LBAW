@@ -1,11 +1,14 @@
 <div class="container-fluid text-left">
     <div class="row">
-        <div class="col-lg-offset-4 col-lg-4">
-        <div class="error-message">
-            <h1>ERROR</h1>
-            <p>{$ERROR_MESSAGES}. Redirecting...</p>
-        </div>
-        </div>
+        <content class="col-lg-offset-3 col-lg-6 col-sm-8 col-sm-8 col-sm-offset-1 col-xs-12 page">
+            <div class="error-message">
+                <div class="row">
+                    <h1><span class="glyphicon glyphicon-flash"></span>ERROR</h1>
+                </div>
+                <div class="row">
+                    <p>{$ERROR_MESSAGES}Redirecting...</p>
+                </div>
+            </div>
+        </content>
     </div>
-
 </div>
