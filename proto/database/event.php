@@ -135,7 +135,7 @@ function getComments($event_id)
 function listEvents()
 {
     global $conn;
-    $stmt = $conn->prepare('SELECT * from Event where ending_date > now()');
+    $stmt = $conn->prepare('SELECT * from public.meta_event where public.meta_event.beginning_date > now()');
     $stmt->execute();
     return $stmt->fetchAll();
 }

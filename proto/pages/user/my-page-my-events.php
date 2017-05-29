@@ -40,6 +40,7 @@ foreach ($events as $key => $event){
 }
 
 $smarty->assign('events', $events);
+$smarty->assign('page_title', 'Events that I\'ve created');
 
 $smarty->display('event/list-events.tpl');
 

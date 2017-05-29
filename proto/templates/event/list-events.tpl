@@ -8,11 +8,11 @@
     <div class="row">
         <content class="col-lg-offset-3 col-lg-6 col-sm-8 col-sm-offset-1 col-xs-12 page">
             <div class="page-header">
-                <h1>Events that I created</h1>
+                <h1>{$page_title}</h1>
             </div>
 
             {if $events==NULL}
-                <h3>You haven't created any events yet.</h3>
+                <h3>There are no events yet.</h3>
             {else}
 
                 {foreach $events as $event}
