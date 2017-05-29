@@ -32,11 +32,6 @@
                                     {else}
                                         <a class="text-card">Paid</a>
                                     {/if}
-
-                                    <div class="event-card-btns">
-                                        <a href="../event/show-event-page.php" class="btn btn-default col-sm-5">See More</a>
-                                        <button type="button" class="btn btn-default col-sm-3">Going</button>
-                                    </div>
                                 </div>
 
                                 <div class="container-fluid">

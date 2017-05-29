@@ -143,7 +143,9 @@ function listEvents()
 function getPastEvents($userid)
 {
     global $conn;
-    $stmt = $conn->prepare('select event.* from event, guest where guest.user_id= ? and event.event_id = guest.event_id');
+    $stmt = $conn->prepare('SELECT * FROM public.meta_event 
+                              INNER JOIN public.guest ON public.meta_event.meta_event_id = public.guest.event_id
+                              WHERE public.guest.user_id= ? AND public.meta_event.beginning_date < now()');
     $stmt->execute(array($userid));
     return $stmt->fetchAll();
 }

@@ -20,6 +20,15 @@ foreach ($events as $key => $event){
 
     $date = date('l, jS \of F Y \a\t h:i A', strtotime($event[beginning_date]));
 
+    $current = date('m/d/Y h:i:s a', time());
+
+    if ($event[beginning_date]<$current){
+        $smarty->assign('pastEvent', true);
+    }
+    else{
+        $smarty->assign('pastEvent', false);
+    }
+
     $dateTime = new DateTime();
     //var_dump($dateTime);
     //var_dump($date);
