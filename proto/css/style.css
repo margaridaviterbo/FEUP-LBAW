@@ -316,9 +316,20 @@ p.tag-personal-card{
     height: auto;
 }
 
-.purchased-tickets ul li{
+.ticket-info{
+    margin-top: 10px;
+    border-bottom-width: 1px;
+    border-bottom-color: rgba(154, 207, 234, 0.5);
+    border-style: dotted;
+}
+
+.ticket-specification a{
     margin-bottom: 10px;
-    font-size: 2rem;
+    color: #0f0f0f;
+}
+
+.ticket-specification a:hover{
+    color: #8a8a8a;
 }
 
 .content-new-event p, .content-new-event input {
