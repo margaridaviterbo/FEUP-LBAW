@@ -67,10 +67,8 @@ if($latitude != null && $longitude != null) {
     }
 }
 
-var_dump($name, $description, $beginning_date, $beginning_time, $ending_date, $ending_time, $photo, $free, $public, $category, $local_id, $eventId);
-
 updateEvent($name, $description, $beginning_date, $beginning_time, $ending_date, $ending_time, $photo, $free, $public, $category, $local_id, $eventId);
 
-//header('Location: ../../pages/event/show-event-page.php?id=' . $eventId);
+header('Location: ../../pages/event/show-event-page.php?id=' . $eventId);
 
 ?>

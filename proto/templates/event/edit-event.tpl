@@ -25,19 +25,12 @@
                         </content>
                         <content class="col-md-offset-1 col-md-1 col-xs-2">
                             <label>Public</label>
-                            {if $event.public}
-                            <input type="checkbox" class="checkbox-form" value="{$event.public}" name="public">
-                            {else}
-                            <input type="checkbox" class="checkbox-form" value="{$event.public}" name="public">
-                            {/if}
+                            <input type="checkbox" class="checkbox-form"  checked="{if $event.public}{/if}" value="{$event.public}" name="public">
+
                         </content>
                         <content class="col-md-offset-1 col-md-1 col-xs-2">
                             <label>Free</label>
-                            {if $event.free}
-                                <input type="checkbox" class="checkbox-form" name="free" checked>
-                            {else}
-                                <input type="checkbox" class="checkbox-form" name="free">
-                            {/if}
+                            <input type="checkbox" class="checkbox-form" name="free" checked="{if $event.free}{/if}">
 
                         </content>
                     </div>
@@ -107,7 +100,7 @@
 
                     <span class="error" id="error2"></span>
                     <p></p>
-                    <label>Local *</label>
+                    <label>Local</label>
                     <input id="local-searchbox" name="local-searchbox" class="form-control" type="text"
                            placeholder="Search Location" aria-describedby="basic-addon1">
 

@@ -12,29 +12,13 @@ function updateMetaEvent($id, $evt, $price)
     }
 }
 
-function updateEvent($name, $description, $beginning_date, $beginning_time, $ending_date, $ending_time, $photo_url, $free, $public, $categoryId, $localId, $eventId)
-{
+function updateEvent($name, $description, $beginning_date, $beginning_time, $ending_date, $ending_time, $photo_url, $free, $public, $categoryId, $localId, $eventId){
     global $conn;
     $beginning = date('Y-m-d H:i:s', strtotime("$beginning_date $beginning_time"));
     $ending = date('Y-m-d H:i:s', strtotime("$ending_date $ending_time"));
 
-    /*if (($localId == '' || $localId == null) && ($categoryId == '' || $categoryId == null)) {
-        $stmt = $conn->prepare('UPDATE public.meta_event SET name=?, description=?, beginning_date=?, ending_date = ?, photo_url = ?, free=?, public = ? WHERE meta_event_id=?;');
-        $stmt->execute($name, $description, $beginning, $ending, $photo_url, $free, $public, $eventId);
-    }
-
-    else if ($localId == '' || $localId == null) {
-        $stmt = $conn->prepare('UPDATE public.meta_event SET name=?, description=?, beginning_date=?, ending_date = ?, photo_url = ?, free=?, public = ?, category_id = ? WHERE meta_event_id=?;');
-        $stmt->execute($name, $description, $beginning, $ending, $photo_url, $free, $public, $categoryId, $eventId);
-    }
-    else if ($categoryId == '' || $categoryId == null) {
-        $stmt = $conn->prepare('UPDATE public.meta_event SET name=?, description=?, beginning_date=?, ending_date = ?, photo_url = ?, free=?, public = ?, local_id = ? WHERE meta_event_id=?;');
-        $stmt->execute($name, $description, $beginning, $ending, $photo_url, $free, $public, $localId, $eventId);
-    }
-    else {*/
-        $stmt = $conn->prepare('UPDATE public.meta_event SET name=?, description=?, beginning_date=?, ending_date = ?, photo_url = ?, free=?, public = ?, category_id = ?, local_id = ? WHERE meta_event_id=?;');
-        $stmt->execute($name, $description, $beginning, $ending, $photo_url, $free, $public, $categoryId, $localId, $eventId);
-    //}
+    $stmt = $conn->prepare('UPDATE public.meta_event SET name=?, description=?, beginning_date=?, ending_date = ?, photo_url = ?, free=?, public = ?, category_id = ?, local_id = ? WHERE meta_event_id=?;');
+    $stmt->execute(array($name, $description, $beginning, $ending, $photo_url, $free, $public, $categoryId, $localId, $eventId));
 }
 
 function numTickets($m_event_id)
@@ -216,7 +200,7 @@ function getEventsCreatedByUser($username, $page)
 function getMetaEvent($event_id)
 {
     global $conn;
-    $stmt = $conn->prepare('SELECT authenticated_user.username, meta_event.name as name, meta_event.beginning_date, meta_event.free, meta_event.description, meta_event.photo_url, city.name as city, country.name as country, localization.street, localization.latitude, localization.longitude FROM public.meta_event 
+    $stmt = $conn->prepare('SELECT authenticated_user.username, meta_event.name as name, meta_event.beginning_date, meta_event.free, meta_event.public, meta_event.description, meta_event.photo_url, city.name as city, country.name as country, localization.street, localization.latitude, localization.longitude FROM public.meta_event 
                             INNER JOIN public.authenticated_user ON public.meta_event.owner_id = public.authenticated_user.user_id
                             INNER JOIN public.localization ON public.meta_event.local_id = public.localization.local_id
                             INNER JOIN public.city ON public.city.city_id = public.localization.city_id

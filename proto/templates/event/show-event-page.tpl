@@ -31,7 +31,6 @@
                     <select class="going-select" data-show-icon="true">
                         <option data-icon="glyphicon-heart">Not Going</option>
                         <option value="two">Going</option>
-
                     </select>
                 </div>
             </div>
@@ -52,8 +51,10 @@
                     </div>
                     <div class="row">
                         <content class="col-xs-4">
+                            {if $event.public}
                             Public
                             <span class="glyphicon glyphicon-one-fine-dot"></span>
+                            {/if}
                             {if $event.free}
                                 Free
                             {else}
@@ -118,7 +119,7 @@
             <h3>Description</h3>
         </div>
 
-        <div class="event-description">
+        <div class="event-description" style="text-align: justify">
             {$event.description}
         </div>
 
