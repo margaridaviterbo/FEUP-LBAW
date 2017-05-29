@@ -148,8 +148,11 @@ function listEvents()
 function getPastEvents($userid)
 {
     global $conn;
-    $stmt = $conn->prepare('SELECT * FROM public.meta_event 
+    $stmt = $conn->prepare('SELECT public.meta_event.meta_event_id as id, meta_event.name as name, meta_event.beginning_date, meta_event.free, city.name as city, country.name as country FROM public.meta_event 
                               INNER JOIN public.guest ON public.meta_event.meta_event_id = public.guest.event_id
+                               INNER JOIN public.localization ON public.meta_event.local_id = public.localization.local_id
+                            INNER JOIN public.city ON public.city.city_id = public.localization.city_id
+                            INNER JOIN public.country ON public.country.country_id = public.city.country_id
                               WHERE public.guest.user_id= ? AND public.meta_event.beginning_date < now()');
     $stmt->execute(array($userid));
     return $stmt->fetchAll();
