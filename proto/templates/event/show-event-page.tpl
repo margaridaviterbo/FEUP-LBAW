@@ -17,7 +17,7 @@
 
             <div class="row">
 
-                <div class="col-xs-offset-1 col-xs-7 col-sm-8">
+                <div class="col-xs-offset-1 col-xs-7 col-sm-offset-0 col-sm-9">
                     <ul class="nav navbar-nav">
                         <li><a class="active" href="#">Overview</a></li>
                         <li><a href="#location">Location</a></li>

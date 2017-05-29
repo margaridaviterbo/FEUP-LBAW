@@ -6,7 +6,7 @@
     error_reporting(E_ERROR | E_WARNING); // E_NOTICE by default
 
 
-    $BASE_DIR = "/home/margarida/Documents/3ºano/2ºsemestre/LBAW/FEUP-LBAW/proto/";
+    $BASE_DIR = "/home/catarina/Desktop/FEUP/3ºano/LBAW/FEUP-LBAW/proto/";
     $BASE_URL = '/';
 
     $conn = new PDO('pgsql:host=localhost;dbname=postgres', 'postgres', 'postgres');
