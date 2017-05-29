@@ -59,28 +59,29 @@
 
                                 <div class="rating">
 
-                                    <input type="radio" id="star5" name="rating" value="10"/><label class="full"
+                                    <input type="radio" id="star5" name="rating" {if $rateUser == 10}checked{/if} value="10"/><label class="full"
                                                                                                     for="star5"></label>
-                                    <input type="radio" id="star4half" name="rating" value="9"/><label class="half"
+                                    <input type="radio" id="star4half" name="rating" {if $rateUser == 9} checked {/if} value="9"/><label class="half"
                                                                                                        for="star4half"></label>
-                                    <input type="radio" id="star4" name="rating" value="8"/><label class="full"
+                                    <input type="radio" id="star4" name="rating" {if $rateUser == 8} checked {/if} value="8"/><label class="full"
                                                                                                    for="star4"></label>
-                                    <input type="radio" id="star3half" name="rating" value="7"/><label class="half"
+                                    <input type="radio" id="star3half" name="rating" {if $rateUser == 7} checked {/if} value="7"/><label class="half"
                                                                                                        for="star3half"></label>
-                                    <input type="radio" id="star3" name="rating" value="6"/><label class="full"
+                                    <input type="radio" id="star3" name="rating" {if $rateUser == 6} checked {/if} value="6"/><label class="full"
                                                                                                    for="star3"></label>
-                                    <input type="radio" id="star2half" name="rating" value="5"/><label class="half"
+                                    <input type="radio" id="star2half" name="rating" {if $rateUser == 5} checked {/if} value="5"/><label class="half"
                                                                                                        for="star2half"></label>
-                                    <input type="radio" id="star2" name="rating" value="4"/><label class="full"
+                                    <input type="radio" id="star2" name="rating" {if $rateUser == 4} checked {/if} value="4"/><label class="full"
                                                                                                    for="star2"></label>
-                                    <input type="radio" id="star1half" name="rating" value="3"/><label class="half"
+                                    <input type="radio" id="star1half" name="rating" {if $rateUser == 3} checked {/if} value="3"/><label class="half"
                                                                                                        for="star1half"></label>
-                                    <input type="radio" id="star1" name="rating" value="2"/><label class="full"
+                                    <input type="radio" id="star1" name="rating" {if $rateUser == 2} checked {/if} value="2"/><label class="full"
                                                                                                    for="star1"></label>
-                                    <input type="radio" id="starhalf" name="rating" value="1"/><label class="half"
+                                    <input type="radio" id="starhalf" name="rating" {if $rateUser == 1} checked {/if} value="1"/><label class="half"
                                                                                                       for="starhalf"></label>
                                 </div>
                             </div>
+                            (Rate: {$rate})
                         </div>
 
                         <content class="col-xs-2 col-md-2 text-center user-photo">

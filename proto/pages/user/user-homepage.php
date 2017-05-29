@@ -19,8 +19,6 @@ foreach ($events as $key => $event){
     $date = date('l, jS \of F Y \a\t h:i A', strtotime($event[beginning_date]));
 
     $dateTime = new DateTime();
-    //var_dump($dateTime);
-    //var_dump($date);
     if ($date > $dateTime) {
         $events[$key]['pastEvent'] = true;
     }

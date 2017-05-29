@@ -1,3 +1,5 @@
+BASE_URL = "/";
+
 $(".going-select").change(function () {
 	var going =$(".going-select").val();
 	var user_id = $("#au_user_id").text();

@@ -64,7 +64,7 @@ function addComment($commentId, $content){
 
 function hasRated($eventId, $userId){
     global $conn;
-    $stmt = $conn->prepare('SELECT public.rate.event_content_id FROM public.rate
+    $stmt = $conn->prepare('SELECT public.rate.event_content_id, public.rate.evaluation FROM public.rate
                               INNER JOIN public.event_content ON public.event_content.event_content_id = public.rate.event_content_id
                               WHERE public.event_content.event_id = ? AND public.event_content.user_id = ?');
     $stmt->execute(array($eventId, $userId));
@@ -93,8 +93,15 @@ function saveEvent($userid, $eventid)
 
 function getRating($eventid)
 {
-        global $conn;
-            $stmt = $conn->prepare('select cast(AVG(evaluation) as int) as avg from rate where event_content_id=?');
+    global $conn;
+
+    $stmt = $conn->prepare('SELECT cast(avg(evaluation) as int) as eval
+                                      FROM public.rate
+                                      INNER JOIN public.event_content
+                                      ON public.event_content.event_content_id = public.rate.event_content_id
+                                      INNER JOIN public.meta_event
+                                      ON public.meta_event.meta_event_id = public.event_content.event_id
+                                      WHERE public.meta_event.meta_event_id = ?');
             $stmt->execute(array($eventid));
             return $stmt->fetchAll();
 }
@@ -135,7 +142,12 @@ function getComments($event_id)
 function listEvents()
 {
     global $conn;
-    $stmt = $conn->prepare('SELECT * from public.meta_event where public.meta_event.beginning_date > now()');
+    $stmt = $conn->prepare('SELECT meta_event.meta_event_id as id, meta_event.name as name, meta_event.beginning_date, meta_event.free, city.name as city, country.name as country  
+    from public.meta_event 
+    INNER JOIN public.localization ON public.meta_event.local_id = public.localization.local_id
+    INNER JOIN public.city ON public.city.city_id = public.localization.city_id
+    INNER JOIN public.country ON public.country.country_id = public.city.country_id                        
+    where public.meta_event.beginning_date > now() ORDER BY beginning_date ASC');
     $stmt->execute();
     return $stmt->fetchAll();
 }
@@ -143,8 +155,11 @@ function listEvents()
 function getPastEvents($userid)
 {
     global $conn;
-    $stmt = $conn->prepare('SELECT * FROM public.meta_event 
+    $stmt = $conn->prepare('SELECT public.meta_event.meta_event_id as id, meta_event.name as name, meta_event.beginning_date, meta_event.free, city.name as city, country.name as country FROM public.meta_event 
                               INNER JOIN public.guest ON public.meta_event.meta_event_id = public.guest.event_id
+                               INNER JOIN public.localization ON public.meta_event.local_id = public.localization.local_id
+                            INNER JOIN public.city ON public.city.city_id = public.localization.city_id
+                            INNER JOIN public.country ON public.country.country_id = public.city.country_id
                               WHERE public.guest.user_id= ? AND public.meta_event.beginning_date < now()');
     $stmt->execute(array($userid));
     return $stmt->fetchAll();
@@ -238,7 +253,7 @@ function getTicketInfo($ticket_id){
 							WHERE public.Type_of_Ticket.type_of_ticket_id = ?');
     $stmt->execute(array($ticket_id));
     return $stmt->fetchAll();
-}	
+}
 
 function responseEventGuest($meta_event_id, $user_id, $response) {
 	global $conn;
