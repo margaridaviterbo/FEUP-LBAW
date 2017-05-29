@@ -64,7 +64,7 @@ function addComment($commentId, $content){
 
 function hasRated($eventId, $userId){
     global $conn;
-    $stmt = $conn->prepare('SELECT public.rate.event_content_id FROM public.rate
+    $stmt = $conn->prepare('SELECT public.rate.event_content_id, public.rate.evaluation FROM public.rate
                               INNER JOIN public.event_content ON public.event_content.event_content_id = public.rate.event_content_id
                               WHERE public.event_content.event_id = ? AND public.event_content.user_id = ?');
     $stmt->execute(array($eventId, $userId));
