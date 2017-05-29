@@ -6,7 +6,7 @@
 	
 	$user = getByUsername($username);
 	$return['exists'];
-	
+
 	if(sizeof($user) == 0){
 		$return['exists'] = false;
 	} else {

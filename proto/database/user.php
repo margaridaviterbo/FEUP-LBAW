@@ -6,10 +6,23 @@
         $stmt->execute(array($firstname, $lastname, $email));
     }
 
-    function updateUser($firstname, $lastname, $email, $nif){
+    function updateUser($firstname, $lastname, $email, $nif, $userId){
         global $conn;
-        $stmt = $conn->prepare('UPDATE public.users SET first_name = ?, last_name = ?, email=?, nif=?'); //TODO: Fazer update
-        $stmt->execute(array($firstname, $lastname, $email, $nif));
+        $stmt = $conn->prepare('UPDATE public.users SET first_name = ?, last_name = ?, email=?, nif=? WHERE user_id = ?'); //TODO: Fazer update
+        $stmt->execute(array($firstname, $lastname, $email, $nif, $userId));
+    }
+
+    function updateAuthenticatedUser($username, $password, $userId){
+        global $conn;
+
+        if ($password == null || $password == ''){
+            $stmt = $conn->prepare('UPDATE public.authenticated_user SET username = ? WHERE user_id = ?');
+            $stmt->execute(array($username, $userId));
+        }
+        else{
+            $stmt = $conn->prepare('UPDATE public.authenticated_user SET username = ?, password = ? WHERE user_id = ?');
+            $stmt->execute(array($username, sha1($password), $userId));
+        }
     }
 
     function createAuthenticatedUser($user_id, $username, $password){
@@ -125,9 +138,9 @@
 	
 	function getByUsername($username) {
         global $conn;
-        $stmt = $conn->prepare("SELECT * 
+        $stmt = $conn->prepare('SELECT * 
                                 FROM public.authenticated_user 
-                                WHERE username like ?");
+                                WHERE username = ?');
         $stmt->execute(array($username));
         return $stmt->fetchAll();
     }

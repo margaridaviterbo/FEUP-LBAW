@@ -62,6 +62,8 @@
                         </content>
 
                         <div class="rating">
+
+                            {if $USERNAME}
                             <input type="radio" id="star5" name="rating" value="10"/><label class="full"
                                                                                             for="star5"></label>
                             <input type="radio" id="star4half" name="rating" value="9"/><label class="half"
@@ -82,6 +84,7 @@
                                                                                            for="star1"></label>
                             <input type="radio" id="starhalf" name="rating" value="1"/><label class="half"
                                                                                               for="starhalf"></label>
+                            {/if}
                         </div>
                     </div>
                 </content>

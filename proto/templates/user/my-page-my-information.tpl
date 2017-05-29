@@ -7,66 +7,70 @@
             <div class="page-header">
                 <h1>My Profile</h1>
             </div>
-            <div class="row personal-card">
-                <div class="col-sm-6 tags-personal-card">
-                    <div class="content-personal">
-                        <p class="tag-personal-card">Username:</p>
-                        <p class="info" id="username">{$USERNAME}</p>
-                        <a href="#">
-                            <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
-                        </a>
+
+            <form action="{$BASE_URL}actions/user/updateUser.php" method="post"
+                  enctype="multipart/>form-data">
+                <div class="row personal-card">
+
+                    <div class="col-sm-8">
+
+                        <label>First Name *</label>
+                        <input name="first_name" type="text" class="form-control first_name"
+                               placeholder="Insert your first name" value="{$FIRSTNAME}" onkeyup="validateFirstName();"
+                               required>
+
+                        <label>Last Name *</label>
+                        <input name="last_name" type="text" class="form-control last_name"
+                               placeholder="Insert your last name" value="{$LASTNAME}" onkeyup="validateLastName();"
+                               required>
+
+                        <label>Username * <span class="username-erro-label"></span></label>
+                        <input name="username" type="text" class="form-control username" value="{$USERNAME}"
+                               onkeyup="validateUsername();" placeholder="Choose an username" required>
+
+                        <label>E-mail *<span class="email-erro-label"></span></label>
+                        <input name="email" type="email" class="form-control email" placeholder="Insert your email"
+                               value="{$EMAIL}" onkeyup="validateEmail();"
+                               required>
+
+                        <label>NIF<span class="nif-erro-label"></span></label>
+                        <input name="nif" type="number" class="form-control nif" placeholder="Insert your nif"
+                               value="{$NIF}" onkeyup="validateNif();">
+                        <span class="nif_message"></span>
+
+                        <label for="password">Password *<span class="password_message"></span></label>
+                        <input name="password" type="password" class="form-control password"
+                               placeholder="Choose a password between 8 and 25 characters"
+                               onkeyup="validatePassword();">
+
+                        <label>Confirm Password *<span class="confirm_password_message"></span></label>
+                        <input type="password" class="form-control confirm_password" placeholder="Confirm the password"
+                               onkeyup="confirmPassword();">
+                        <br></br>
+
+                        <button type="submit" class="btn btn-primary form-control" onclick="return validateAll();">Edit
+
                     </div>
-                    <div class="content-personal">
-                        <p class="tag-personal-card">Email:</p>
-                        <p class="info" id="email">{$EMAIL}</p>
-                        <a href="#">
-                            <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
-                        </a>
-                    </div>
-                    <div class="content-personal">
-                        <p class="tag-personal-card">Name:</p>
-                        <p class="info" id="nome-utilizador">{$FIRSTNAME} {$LASTNAME}</p>
-                        <a href="#">
-                            <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
-                        </a>
-                    </div>
-                    {if $NIF != NULL}
-                        <div class="content-personal">
-                            <p class="tag-personal-card">NIF:</p>
-                            <p class="info" id="nome-utilizador">{$NIF}</p>
-                            <a href="#">
-                                <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
-                            </a>
+
+                    <div class="col-sm-4 photo-personal-card">
+                        {if $PHOTO_URL == NULL}
+                            <img src="../../resources/images/user.png" class="img-responsive img-thumbnail">
+                        {else}
+                            <img src="../../resources/images/image.jpeg" class="img-responsive img-thumbnail">
+                        {/if}
+                        <div>
+                            <label id="upload-btn" for="files" class="btn btn-default">Upload photo</label>
+                            <input id="files" style="visibility:hidden;" type="file">
                         </div>
-                    {/if}
-                    <div class="content-personal">
-                        <p class="tag-personal-card">Password:</p>
-                        <p class="info" id="password">********</p>
-                        <a href="#">
-                            <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
-                        </a>
                     </div>
+
                 </div>
 
-                <div class="col-sm-3 inoformation-personal-card">
-                </div>
-                <div class="col-sm-4 photo-personal-card">
-                    {if $PHOTO_URL == NULL}
-                        <img src="../../resources/images/user.png" class="img-responsive img-thumbnail">
-                    {else}
-                        <img src="../../resources/images/image.jpeg" class="img-responsive img-thumbnail">
-                    {/if}
-                    <div>
-                        <label id="upload-btn" for="files" class="btn btn-default">Upload photo</label>
-                        <input id="files" style="visibility:hidden;" type="file">
-                    </div>
-                </div>
-
-                <div class="col-sm-1 inoformation-personal-card">
-                </div>
-            </div>
+            </form>
         </content>
     </div>
 </div>
 
 {include file='common/footer.tpl'}
+
+<script src="{$BASE_URL}scripts/user/validateUpdateUser.js"></script>
