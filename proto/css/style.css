@@ -643,18 +643,32 @@ textarea {
 
 /*payed card*/
 .payed-card {
-    padding: 10px;
-    margin-bottom: 20px;
+    margin-top: 100px;
+    margin-right: 0px;
+    padding-bottom: 50px;
+    padding-top: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+    background-color:  rgba(255, 255, 255, 1);
+    border: 1px solid #337ab7;
+    border-radius: 5px;
+    text-align: center;
+    background-color: #F0F8FF;
 }
 
-.payed-card p{
-    display: inline;
-    padding-left: 5px;
-    font-size: 2rem;
+.payed-card h1{
+    margin-bottom: 60px;
 }
 
 .payed-card a {
     margin-bottom: 10px;
+}
+
+.payed-card .btn{
+    width: 120px;
+    text-align: center;
+    margin-bottom: 10px;
+    padding: 0px
 }
 /*
 @media (max-width: 768px) {
