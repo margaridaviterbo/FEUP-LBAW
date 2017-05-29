@@ -1,7 +1,5 @@
 BASE_URL = "/";
 
-var usersAdded = [];
-
 $(document).ready(function(){
 
     $('#search-user').keyup(function () {

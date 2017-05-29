@@ -63,7 +63,6 @@
 
                         <div class="rating">
 
-                            {if $USERNAME}
                             <input type="radio" id="star5" name="rating" value="10"/><label class="full"
                                                                                             for="star5"></label>
                             <input type="radio" id="star4half" name="rating" value="9"/><label class="half"
@@ -84,7 +83,6 @@
                                                                                            for="star1"></label>
                             <input type="radio" id="starhalf" name="rating" value="1"/><label class="half"
                                                                                               for="starhalf"></label>
-                            {/if}
                         </div>
                     </div>
                 </content>
@@ -203,69 +201,78 @@
             {/if}
         </div>
 
-        <div class="page-header">
-            <div class="row">
-                <content class="col-xs-9">
-                    <h3 style="margin: 0px;">Hosts</h3>
-                </content>
-                <content class="col-xs-3">
-                    {foreach $hosts as $host}
-                        {if $host.username == $USERNAME}
-                            <input id="search-user" type="search" class="form-control" placeholder="Add hosts..."
-                                   autocomplete="off"/>
-                            <div class="content-list" id="search-list" style="width: 100%;">
-                                <ul class="drop-list">
+        <div class="row">
+            <div class="page-header">
+                <div class="row">
+                    <content class="col-xs-9">
+                        <h3 style="margin: 0px;">Hosts</h3>
+                    </content>
+                    <content class="col-xs-3">
+                        {foreach $hosts as $host}
+                            {if $host.username == $USERNAME}
+                                <input id="search-user" type="search" class="form-control" placeholder="Add hosts..."
+                                       autocomplete="off"/>
+                                <div class="content-list" id="search-list" style="width: 100%;">
+                                    <ul class="drop-list">
 
-                                </ul>
+                                    </ul>
+                                </div>
+                            {/if}
+                        {/foreach}
+                    </content>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+
+            <div id="hosts">
+
+                {for $i = 0; $i < count($hosts); $i++}
+
+                    {if $i == 0}
+                        <content class="col-xs-1">
+                            <div class="user-photo">
+                                <button><img src="{$BASE_URL}resources/images/user.jpeg">{$hosts[$i].username}</button>
                             </div>
-                        {/if}
-                    {/foreach}
-                </content>
+                        </content>
+                    {else}
+                        <content class="col-xs-1 col-xs-offset-1">
+                            <div class="user-photo">
+                                <button><img src="{$BASE_URL}resources/images/user.jpeg">{$hosts[$i].username}</button>
+                            </div>
+                        </content>
+                    {/if}
+                {/for}
             </div>
         </div>
 
-        <div id="hosts">
+        <div class="row">
 
-            {for $i = 0; $i < count($hosts); $i++}
+            <div class="page-header">
+                <div class="row">
+                    <content class="col-xs-9">
+                        <h3 style="margin: 0px;">Guests</h3>
+                    </content>
+                    <content class="col-xs-3">
+                        {foreach $hosts as $host}
+                            {if $host.username == $USERNAME}
+                                <input id="search-guest" type="search" class="form-control" placeholder="Add guests..."
+                                       autocomplete="off"/>
+                                <div class="content-list" id="search-list-guest" style="width: 100%;">
+                                    <ul class="drop-list-guest">
 
-                {if $i == 0}
-                    <content class="col-xs-1">
-                        <div class="user-photo">
-                            <button><img src="{$BASE_URL}resources/images/user.jpeg">{$hosts[$i].username}</button>
-                        </div>
+                                    </ul>
+                                </div>
+                            {/if}
+                        {/foreach}
                     </content>
-                {else}
-                    <content class="col-xs-1 col-xs-offset-1">
-                        <div class="user-photo">
-                            <button><img src="{$BASE_URL}resources/images/user.jpeg">{$hosts[$i].username}</button>
-                        </div>
-                    </content>
-                {/if}
-            {/for}
+                </div>
+            </div>
+
         </div>
 
         <div></div>
 
-        <div class="page-header">
-            <div class="row">
-                <content class="col-xs-9">
-                    <h3 style="margin: 0px;">Guests</h3>
-                </content>
-                <content class="col-xs-3">
-                    {foreach $hosts as $host}
-                        {if $host.username == $USERNAME}
-                            <input id="search-guest" type="search" class="form-control" placeholder="Add guests..."
-                                   autocomplete="off"/>
-                            <div class="content-list" id="search-list-guest" style="width: 100%;">
-                                <ul class="drop-list-guest">
-
-                                </ul>
-                            </div>
-                        {/if}
-                    {/foreach}
-                </content>
-            </div>
-        </div>
 
         <div id="guests">
 

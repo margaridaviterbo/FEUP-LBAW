@@ -17,7 +17,7 @@ if ($contentId == false){
     rateEvent($lastId, $rate);
 }
 else{
-    //updateRateUser($contentId['event_content_id'], intval($rate));
+    updateRateUser($contentId['event_content_id'], intval($rate));
 }
 
 echo json_encode($response);

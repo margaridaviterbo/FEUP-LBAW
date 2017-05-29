@@ -73,7 +73,7 @@
                                     <button onclick="window.location.href='{$BASE_URL}pages/event/show-event-page.php?id={$event.event_id}'"
                                             type="button" class="btn btn-default col-sm-5">See Event
                                     </button>
-                                    <button onclick="window.location.href='../../pages/event/edit-event.php'"
+                                    <button onclick="window.location.href='../../pages/event/edit-event.php?id={$event.event_id}'"
                                             type="button" class="btn btn-default col-sm-5">Edit Event
                                     </button>
                                     {/if}
