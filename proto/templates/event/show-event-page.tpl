@@ -22,8 +22,8 @@
                         <li><a class="active" href="#">Overview</a></li>
                         <li><a href="#location">Location</a></li>
                         <li><a href="#comments">Comments</a></li>
-                        <li><a href="#">Hosts</a></li>
-                        <li><a href="#">Guests</a></li>
+                        <li><a href="#hosts">Hosts</a></li>
+                        <li><a href="#guests">Guests</a></li>
                     </ul>
                 </div>
                 <div class="col-sm-3">
@@ -47,19 +47,10 @@
 
                 <content class="col-sm-8 col-md-9">
 
-                    <div class="event-name">
-                        {$event.name}
-                    </div>
                     <div class="row">
-                        <content class="col-xs-4">
-                            Public
-                            <span class="glyphicon glyphicon-one-fine-dot"></span>
-                            {if $event.free}
-                                Free
-                            {else}
-                                Paid
-                            {/if}
-                        </content>
+                        <div class="col-xs-4 event-name">
+                            {$event.name}
+                        </div>
                         <div class="col-xs-1">
                             <form id="rform" action="../../actions/event/rate_event.php" method="POST">
                                 <input id="rate" type="hidden" name="rating"/>
@@ -83,6 +74,22 @@
                                 <i onclick="rate(1)" class="fa fa-star-o fa" aria-hidden="true"></i>
                             {/for}
                         </div>
+                    </div>
+                    <div class="row">
+                        <content class="col-xs-4">
+                            Public
+                            <span class="glyphicon glyphicon-one-fine-dot"></span>
+                            {if $event.free}
+                                Free
+                            {else}
+                                Paid
+                            {/if}
+                        </content>
+                        {if !$event.free}
+                            <div class="buy-btn col-xs-offset-1 col-xs-4">
+                                <a href="../ticket/checkout-payment.php" class="btn btn-default">Buy Ticket</a>
+                            </div>
+                        {/if}
                     </div>
                 </content>
 
@@ -184,9 +191,9 @@
                     <script>
                         CKEDITOR.replace('editor');
                     </script>
-
-                    <input id="submit_editor" type="submit" value="Submit">
-
+                    <div class="submit-btn col-xs-1">
+                        <input id="submit_editor" type="submit" value="Submit" class="form-control">
+                    </div>
                 </form>
             {/if}
         </div>
@@ -227,6 +234,48 @@
                     <content class="col-xs-1 col-xs-offset-1">
                         <div class="user-photo">
                             <button><img src="{$BASE_URL}resources/images/user.jpeg">{$hosts[$i].username}</button>
+                        </div>
+                    </content>
+                {/if}
+            {/for}
+        </div>
+
+
+        <div class="page-header">
+            <div class="row">
+                <content class="col-xs-9">
+                    <h3 style="margin: 0px;">Guests</h3>
+                </content>
+                <content class="col-xs-3">
+                    {foreach $guests as $guest}
+                        {if $guest.username == $USERNAME}
+                            <input id="search-user" type="search" class="form-control" placeholder="Add Guests..."
+                                   autocomplete="off"/>
+                            <div class="content-list" id="search-list" style="width: 100%;">
+                                <ul class="drop-list">
+
+                                </ul>
+                            </div>
+                        {/if}
+                    {/foreach}
+                </content>
+            </div>
+        </div>
+
+        <div id="guests">
+
+            {for $i = 0; $i < count($hosts); $i++}
+
+                {if $i == 0}
+                    <content class="col-xs-1">
+                        <div class="user-photo">
+                            <button><img src="{$BASE_URL}resources/images/user.jpeg">{$guests[$i].username}</button>
+                        </div>
+                    </content>
+                {else}
+                    <content class="col-xs-1 col-xs-offset-1">
+                        <div class="user-photo">
+                            <button><img src="{$BASE_URL}resources/images/user.jpeg">{$guests[$i].username}</button>
                         </div>
                     </content>
                 {/if}
