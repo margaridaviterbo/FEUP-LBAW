@@ -243,7 +243,7 @@ function getTicketInfo($ticket_id){
 							WHERE public.Type_of_Ticket.type_of_ticket_id = ?');
     $stmt->execute(array($ticket_id));
     return $stmt->fetchAll();
-}	
+}
 
 function responseEventGuest($meta_event_id, $user_id, $response) {
 	global $conn;
