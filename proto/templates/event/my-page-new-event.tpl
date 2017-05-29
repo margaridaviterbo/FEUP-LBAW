@@ -135,15 +135,35 @@
 
                     <div class="row">
                         <content class="col-sm-6">
-                            <ul class="host-list oi[]">
+                            <ul class="host-list">
 
                             </ul>
                         </content>
                     </div>
 
-                    <content class="col-sm-12">
-                        <label>Invite People</label>
-                    </content>
+                    <div class="row">
+                        <content class="col-sm-12">
+                            <label>Invite People</label>
+
+                            <div class="inner">
+                                <input id="search-guest" type="search" class="form-control" Placeholder="Search..."
+                                       autocomplete="off"/>
+                            </div>
+                            <div class="content-list" id="search-list-guest">
+                                <ul class="drop-guest-list">
+
+                                </ul>
+                            </div>
+                        </content>
+                    </div>
+
+                    <div class="row">
+                        <content class="col-sm-6">
+                            <ul class="guest-list">
+
+                            </ul>
+                        </content>
+                    </div>
 
                     <br></br>
                     <input type="button" name="previous" class="previous btn btn-default" value="Previous"/>

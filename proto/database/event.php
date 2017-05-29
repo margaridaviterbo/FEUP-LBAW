@@ -54,11 +54,25 @@ function addComment($commentId, $content){
 
 }
 
-function rateEvent($userid, $eventid, $rate)
-{
+function hasRated($eventId, $userId){
+    global $conn;
+    $stmt = $conn->prepare('SELECT public.rate.event_content_id FROM public.rate
+                              INNER JOIN public.event_content ON public.event_content.event_content_id = public.rate.event_content_id
+                              WHERE public.event_content.event_id = ? AND public.event_content.user_id = ?');
+    $stmt->execute(array($eventId, $userId));
+    return $stmt->fetch();
+}
+
+function rateEvent($eventid, $rate){
         global $conn;
-        $stmt = $conn->prepare('INSERT INTO public.rate(event_content_id, user_id,evaluation) VALUES (?, ?,?)');
-        $stmt->execute(array($eventid, $userid, $rate));
+        $stmt = $conn->prepare('INSERT INTO public.rate(event_content_id, evaluation) VALUES (?, ?)');
+        $stmt->execute(array($eventid, $rate));
+}
+
+function updateRateUser($contentId, $rate){
+    global $conn;
+    $stmt = $conn->prepare('UPDATE public.rate SET public.rate.evaluation = ? WHERE public.rate.event_content_id = ?');
+    $stmt->execute(array($rate, $contentId));
 }
 
 
@@ -72,7 +86,7 @@ function saveEvent($userid, $eventid)
 function getRating($eventid)
 {
         global $conn;
-            $stmt = $conn->prepare('select cast(AVG(evaluation) as int) as avg from rate where event_content_id=?;');
+            $stmt = $conn->prepare('select cast(AVG(evaluation) as int) as avg from rate where event_content_id=?');
             $stmt->execute(array($eventid));
             return $stmt->fetchAll();
 }
@@ -86,6 +100,17 @@ function hasVoted($userid)
         return $stmt->fetchAll();
 }
 
+function deleteComment($commentId){
+    global $conn;
+    $stmt = $conn->prepare('DELETE FROM public.comments WHERE public.comments.comment_id = ?');
+    $stmt->execute(array($commentId));
+}
+
+function deleteContent($id){
+    global $conn;
+    $stmt = $conn->prepare('DELETE FROM public.event_content WHERE public.event_content.event_content_id = ?');
+    $stmt->execute(array($id));
+}
 
 function getComments($event_id)
 {
@@ -194,6 +219,7 @@ function getMetaEventTickets($event_id){
     $stmt->execute(array($event_id));
     return $stmt->fetchAll();
 }
+
 
 function getTicketInfo($ticket_id){
     global $conn;
