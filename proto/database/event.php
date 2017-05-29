@@ -16,7 +16,7 @@ function updateMetaEvent($id, $evt, $price)
 function numTickets($m_event_id)
 {
         global $conn;
-        $stmt = $conn->prepare('select ((select num_tickets from type_of_ticket where meta_event_id=?) - count(ticket_id)) as num_tickets from ticket where type_of_ticket_id=?');
+        $stmt = $conn->prepare('select ((select SUM(num_tickets) from type_of_ticket where meta_event_id=?) - count(ticket_id)) as num_tickets from ticket where type_of_ticket_id=?');
     $stmt->execute(array($m_event_id, $m_event_id));
         return $stmt->fetch();
 }
