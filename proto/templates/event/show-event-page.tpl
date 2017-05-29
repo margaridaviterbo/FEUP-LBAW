@@ -17,7 +17,7 @@
 
             <div class="row">
 
-                <div class="col-sm-9">
+                <div class="col-xs-offset-1 col-xs-7 col-sm-8">
                     <ul class="nav navbar-nav">
                         <li><a class="active" href="#">Overview</a></li>
                         <li><a href="#location">Location</a></li>
@@ -26,7 +26,7 @@
                         <li><a href="#">Guests</a></li>
                     </ul>
                 </div>
-                <div class="col-sm-3">
+                <div class="col-xs-3 col-sm-3">
 
                     <select class="going-select" data-show-icon="true">
                         <option data-icon="glyphicon-heart">Not Going</option>
@@ -45,7 +45,7 @@
                     <span class="event-day">{$day}</span>
                 </content>
 
-                <content class="col-sm-8 col-md-9">
+                <content class="col-xs-8 col-md-9">
 
                     <div class="event-name">
                         {$event.name}
@@ -60,33 +60,33 @@
                                 Paid
                             {/if}
                         </content>
-                        <div class="col-xs-1">
-                            <form id="rform" action="../../actions/event/rate_event.php" method="POST">
-                                <input id="rate" type="hidden" name="rating"/>
-                                <input type="hidden" name="id" value="{$event_id}"/>
-                            </form>
 
-                            <script type="text/javascript">
-                                function rate(val) {
-                                    $("#rate").val(val);
-                                    $("#rform").submit();
-                                }
-                            </script>
-                        </div>
-
-                        <div class="event-rate">
-
-                            {for $i=1 to $rate}
-                                <i onclick="rate(1)" class="fa fa-star fa" aria-hidden="true"></i>
-                            {/for}
-                            {for $i=$rate+1 to 5}
-                                <i onclick="rate(1)" class="fa fa-star-o fa" aria-hidden="true"></i>
-                            {/for}
+                        <div class="rating">
+                            <input type="radio" id="star5" name="rating" value="10"/><label class="full"
+                                                                                            for="star5"></label>
+                            <input type="radio" id="star4half" name="rating" value="9"/><label class="half"
+                                                                                               for="star4half"></label>
+                            <input type="radio" id="star4" name="rating" value="8"/><label class="full"
+                                                                                           for="star4"></label>
+                            <input type="radio" id="star3half" name="rating" value="7"/><label class="half"
+                                                                                               for="star3half"></label>
+                            <input type="radio" id="star3" name="rating" value="6"/><label class="full"
+                                                                                           for="star3"></label>
+                            <input type="radio" id="star2half" name="rating" value="5"/><label class="half"
+                                                                                               for="star2half"></label>
+                            <input type="radio" id="star2" name="rating" value="4"/><label class="full"
+                                                                                           for="star2"></label>
+                            <input type="radio" id="star1half" name="rating" value="3"/><label class="half"
+                                                                                               for="star1half"></label>
+                            <input type="radio" id="star1" name="rating" value="2"/><label class="full"
+                                                                                           for="star1"></label>
+                            <input type="radio" id="starhalf" name="rating" value="1"/><label class="half"
+                                                                                              for="starhalf"></label>
                         </div>
                     </div>
                 </content>
 
-                <content class="col-sm-3 col-md-2 text-center user-photo">
+                <content class="col-xm-3 col-md-2 text-center user-photo">
 
                     <button><img src="{$BASE_URL}resources/images/user.jpeg">{$USERNAME}</button>
 
@@ -158,15 +158,15 @@
                         </div>
 
                         {if $cmt.username = $USERNAME}
-
                             <div class="col-xs-offset-4 col-xs-2">
-                                <button class="remove" value="{$cmt.comment_id}"><span class="glyphicon glyphicon-remove"></span>Delete</button>
+                                <button class="remove" value="{$cmt.comment_id}"><span
+                                            class="glyphicon glyphicon-remove"></span>Delete
+                                </button>
                             </div>
                         {else}
                             <div class="col-xs-2 col-xs-offset-2">
                                 <button><span class="glyphicon glyphicon-share-alt"></span>Reply</button>
                             </div>
-
                             <div class="col-xs-2">
                                 <button><span class="glyphicon glyphicon-flag"></span>Report</button>
                             </div>
@@ -186,7 +186,7 @@
                     <h3>Your Answer</h3>
                 </div>
                 <form id="comment-form" method="post" action="{$BASE_URL}actions/event/new_comment.php">
-                    <input type="text" name="user_id" hidden="true" value="{$USERID}">
+                    <input type="text" name="user_id" id="user_id" hidden="true" value="{$USERID}">
                     <input type="text" name="event_id" id="event_id" hidden="true" value="{$event_id}">
                     <textarea name="editor" id="editor">
                         </textarea>
@@ -210,7 +210,7 @@
                     {foreach $hosts as $host}
                         {if $host.username == $USERNAME}
                             <input id="search-user" type="search" class="form-control" placeholder="Add hosts..."
-                                       autocomplete="off"/>
+                                   autocomplete="off"/>
                             <div class="content-list" id="search-list" style="width: 100%;">
                                 <ul class="drop-list">
 
@@ -244,35 +244,7 @@
     </div>
 </div>
 
-
 {include file='common/footer.tpl'}
-
-<script>
-
-    $(document).ready(function () {
-
-        $('.navbar-nav li a').click(function () {
-
-            $('.navbar-nav a').removeClass("active");
-            $(this).addClass("active");
-        });
-    });
-
-
-    $(document).ready(function () {
-
-        $(window).scroll(function () {
-            if ($(window).scrollTop() > 480) {
-                $('.navbar-slide').addClass('navbar-fixed-second-top');
-            }
-            if ($(window).scrollTop() <= 480) {
-                $('.navbar-slide').removeClass('navbar-fixed-second-top');
-            }
-        });
-    });
-
-</script>
-
 
 <script src="{$BASE_URL}scripts/search/show-event-script.js"></script>
 <script type="text/javascript" src="../../scripts/event/show-map-location.js"></script>

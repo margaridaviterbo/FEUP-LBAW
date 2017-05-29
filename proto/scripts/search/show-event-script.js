@@ -24,12 +24,56 @@ $(document).ready(function(){
         removeComment(commentId);
     });
 
+    $(".rating").click(function(event){
+        var inputVal = $(event.target).val();
+        var eventId = $("#event_id").val();
+        var userId = $("#user_id").val();
+        rate(inputVal, eventId, userId);
+
+    })
+
     $(document).click( function(){
 
         $('#search-list').hide();
     });
 
+    $('.navbar-nav li a').click(function () {
+
+        $('.navbar-nav a').removeClass("active");
+        $(this).addClass("active");
+    });
+
+    $(window).scroll(function () {
+        if ($(window).scrollTop() > 480) {
+            $('.navbar-slide').addClass('navbar-fixed-second-top');
+        }
+        if ($(window).scrollTop() <= 480) {
+            $('.navbar-slide').removeClass('navbar-fixed-second-top');
+        }
+    });
+
 });
+
+function rate(val, eventId, userId){
+
+    if (val == "")
+        return;
+    $.ajax({
+        type: "POST",
+        url: BASE_URL+"api/event/rate.php",
+        data:   {
+            value : val,
+            event : eventId,
+            user : userId
+        },
+        success: function(response){
+
+        },
+        error: function(jqXHR, textStatus, errorThrown) {
+            console.log(textStatus, errorThrown);
+        }
+    });
+}
 
 function removeComment(commentId){
     $.ajax({
