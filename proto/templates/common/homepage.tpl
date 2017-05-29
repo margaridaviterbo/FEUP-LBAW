@@ -1,8 +1,19 @@
 {include file='common/header.tpl'}
 
-<div class="col-lg-8 col-lg-offset-2 homepage">
+<div class="col-lg-12 homepage">
 
 
+
+
+
+
+
+
+
+
+
+
+<!--
   <div id="myCarousel" class="carousel slide" data-ride="carousel">
     <ol class="carousel-indicators">
       <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
@@ -14,7 +25,7 @@
 
     <div class="carousel-inner" role="listbox">
       <div class="item active">
-        <img src="../../resources/images/1.jpg" alt="Chania"> <!--por foto do evento-->
+        <img src="../../resources/images/1.jpg" alt="Chania"> <!--por foto do evento
         <div class="carousel-caption">
           <h3>NOME DO EVENTO</h3>
           <h6>DATA DO EVENTO</h6>
@@ -23,7 +34,7 @@
       </div>
 
       <div class="item">
-        <img src="../../resources/images/2.jpg" alt="Chania"> <!--por foto do evento-->
+        <img src="../../resources/images/2.jpg" alt="Chania">
         <div class="carousel-caption">
           <h3>NOME DO EVENTO</h3>
           <h6>DATA DO EVENTO</h6>
@@ -32,7 +43,7 @@
       </div>
 
       <div class="item">
-        <img src="../../resources/images/3.jpg" alt="Flower"> <!--por foto do evento-->
+        <img src="../../resources/images/3.jpg" alt="Flower">
         <div class="carousel-caption">
           <h3>NOME DO EVENTO</h3>
           <h6>DATA DO EVENTO</h6>
@@ -41,7 +52,7 @@
       </div>
 
       <div class="item">
-        <img src="../../resources/images/4.png" alt="Flower"> <!--por foto do evento-->
+        <img src="../../resources/images/4.png" alt="Flower">
         <div class="carousel-caption">
           <h3>NOME DO EVENTO</h3>
           <h6>DATA DO EVENTO</h6>
@@ -59,6 +70,200 @@
       <span class="sr-only">Next</span>
     </a>
   </div>
+-->
+
+
+  <div class="container">
+    <div id="products" class="row list-group">
+      <div class="row">
+      <div class="eventThumb col-lg-4 col-md-4 col-sm-4">
+        <div class="thumbnail ">
+          <img class="group list-group-image" src="../../resources/images/sunset.jpg" alt="" />
+          <div class="caption">
+            <h4 class="group inner list-group-item-heading">
+              Event Name</h4>
+            <p class="event-date"><span class="glyphicon glyphicon-time"></span>26 de Junho 2017</p>
+            <div class="row">
+              <div class="col-xs-12 col-md-6">
+                <p class="lead">
+                  Free</p>
+              </div>
+              <div class="col-xs-12 col-md-6">
+                <a class="view-event btn btn-success" href="../event/show-event-page.php">See more</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+        <div class="eventThumb col-lg-4 col-md-4 col-sm-4">
+          <div class="thumbnail ">
+            <img class="group list-group-image" src="../../resources/images/sunset.jpg" alt="" />
+            <div class="caption">
+              <h4 class="group inner list-group-item-heading">
+                Event Name</h4>
+              <p class="event-date"><span class="glyphicon glyphicon-time"></span>26 de Junho 2017</p>
+              <div class="row">
+                <div class="col-xs-12 col-md-6">
+                  <p class="lead">
+                    $21.00</p>
+                </div>
+                <div class="col-xs-12 col-md-6">
+                  <a class="view-event btn btn-success" href="../event/show-event-page.php">See more</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+        <div class="eventThumb col-lg-4 col-md-4 col-sm-4">
+            <div class="thumbnail ">
+              <img class="group list-group-image" src="../../resources/images/sunset.jpg" alt="" />
+              <div class="caption">
+                <h4 class="group inner list-group-item-heading">
+                  Event Name</h4>
+                <p class="event-date"><span class="glyphicon glyphicon-time"></span>26 de Junho 2017</p>
+                <div class="row">
+                  <div class="col-xs-12 col-md-6">
+                    <p class="lead">
+                      Free</p>
+                  </div>
+                  <div class="col-xs-12 col-md-6">
+                    <a class="view-event btn btn-success" href="../event/show-event-page.php">See more</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+      </div>
+        <div class="row">
+          <div class="eventThumb col-lg-4 col-md-4 col-sm-4">
+            <div class="thumbnail ">
+              <img class="group list-group-image" src="../../resources/images/sunset.jpg" alt="" />
+              <div class="caption">
+                <h4 class="group inner list-group-item-heading">
+                  Event Name</h4>
+                <p class="event-date"><span class="glyphicon glyphicon-time"></span>26 de Junho 2017</p>
+                <div class="row">
+                  <div class="col-xs-12 col-md-6">
+                    <p class="lead">
+                      $21.00</p>
+                  </div>
+                  <div class="col-xs-12 col-md-6">
+                    <a class="view-event btn btn-success" href="../event/show-event-page.php">See more</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+          <div class="eventThumb col-lg-4 col-md-4 col-sm-4">
+              <div class="thumbnail ">
+                <img class="group list-group-image" src="../../resources/images/sunset.jpg" alt="" />
+                <div class="caption">
+                  <h4 class="group inner list-group-item-heading">
+                    Event Name</h4>
+                  <p class="event-date"><span class="glyphicon glyphicon-time"></span>26 de Junho 2017</p>
+                  <div class="row">
+                    <div class="col-xs-12 col-md-6">
+                      <p class="lead">
+                        Free</p>
+                    </div>
+                    <div class="col-xs-12 col-md-6">
+                      <a class="view-event btn btn-success" href="../event/show-event-page.php">See more</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          <div class="eventThumb col-lg-4 col-md-4 col-sm-4">
+              <div class="thumbnail ">
+                <img class="group list-group-image" src="../../resources/images/sunset.jpg" alt="" />
+                <div class="caption">
+                  <h4 class="group inner list-group-item-heading">
+                    Event Name</h4>
+                  <p class="event-date"><span class="glyphicon glyphicon-time"></span>26 de Junho 2017</p>
+                  <div class="row">
+                    <div class="col-xs-12 col-md-6">
+                      <p class="lead">
+                        $21.00</p>
+                    </div>
+                    <div class="col-xs-12 col-md-6">
+                      <a class="view-event btn btn-success" href="../event/show-event-page.php">See more</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+        </div>
+      <div class="row">
+        <div class="eventThumb col-lg-4 col-md-4 col-sm-4">
+          <div class="thumbnail ">
+            <img class="group list-group-image" src="../../resources/images/sunset.jpg" alt="" />
+            <div class="caption">
+              <h4 class="group inner list-group-item-heading">
+                Event Name</h4>
+              <p class="event-date"><span class="glyphicon glyphicon-time"></span>26 de Junho 2017</p>
+              <div class="row">
+                <div class="col-xs-12 col-md-6">
+                  <p class="lead">
+                    Free</p>
+                </div>
+                <div class="col-xs-12 col-md-6">
+                  <a class="view-event btn btn-success" href="../event/show-event-page.php">See more</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+        <div class="eventThumb col-lg-4 col-md-4 col-sm-4">
+          <div class="thumbnail ">
+            <img class="group list-group-image" src="../../resources/images/sunset.jpg" alt="" />
+            <div class="caption">
+              <h4 class="group inner list-group-item-heading">
+                Event Name</h4>
+              <p class="event-date"><span class="glyphicon glyphicon-time"></span>26 de Junho 2017</p>
+              <div class="row">
+                <div class="col-xs-12 col-md-6">
+                  <p class="lead">
+                    $21.00</p>
+                </div>
+                <div class="col-xs-12 col-md-6">
+                  <a class="view-event btn btn-success" href="../event/show-event-page.php">See more</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="eventThumb col-lg-4 col-md-4 col-sm-4">
+          <div class="thumbnail ">
+            <img class="group list-group-image" src="../../resources/images/sunset.jpg" alt="" />
+            <div class="caption">
+              <h4 class="group inner list-group-item-heading">
+                Event Name</h4>
+              <p class="event-date"><span class="glyphicon glyphicon-time"></span>26 de Junho 2017</p>
+              <div class="row">
+                <div class="col-xs-12 col-md-6">
+                  <p class="lead">
+                    Free</p>
+                </div>
+                <div class="col-xs-12 col-md-6">
+                  <a class="view-event btn btn-success" href="../event/show-event-page.php">See more</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+
+
+      </div>
+    </div>
 
 
 
