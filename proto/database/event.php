@@ -235,7 +235,11 @@ function getSearchEvents($page, $name, $free, $paid, $nameOrPrice, $asc)
     } else {
         if (!($paid) || !($free))
 				$stringFP = ' WHERE' . $stringFP;
-		$stringnNOP = "score $asc"; //"price, name" falta implementar o price
+		if($asc == "ASC")
+			$asc = "DESC";
+		else
+			$asc = "ASC";
+		$stringnNOP = "score ". $asc; //"price, name" falta implementar o price
 		$stringConTotalSerch = ' AND score > 0';
 	}
     $stmt = $conn->prepare('SELECT cityName, name, photo_url, beginning_date, ending_date, free, eventInfo.eveId, rate, score
@@ -248,7 +252,8 @@ function getSearchEvents($page, $name, $free, $paid, $nameOrPrice, $asc)
 										public.Event.free,
 										public.Event.event_id AS eveId,
 										ts_rank_cd(
-											 to_tsvector(\'portuguese\', concat_ws(\' \', public.Event.name::text, public.Event.description::text)),
+											 setweight(to_tsvector(\'portuguese\', coalesce(public.Event.name,\'\')), \'A\') ||
+											 setweight(to_tsvector(\'portuguese\', coalesce(public.Event.description,\'\')), \'D\'),
 											 to_tsquery(\'portuguese\', ?)
 										) AS score
 								FROM ((public.Event 
