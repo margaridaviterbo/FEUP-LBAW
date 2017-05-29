@@ -247,31 +247,37 @@ ul {
 
 .notification-card-medium {
     transition: box-shadow 0.3s ease-in-out;
-    padding: 10px 10px 40px 10px;
-    margin-bottom: 20px;
+    padding: 10px 10px 10px 10px;
     position: relative;
-    border-bottom: 2px white;
-    border-style: solid;
+    border-bottom-width: 1px;
+    border-bottom-color: rgba(154, 207, 234, 0.5);
+    border-style: dotted;
 }
 
 .notification-card-medium:hover {
-    box-shadow: 2px 2px 20px grey;
-    transition: box-shadow 0.3s ease-in-out;
+    -webkit-box-shadow: 0 0 5px 2px rgba(154, 207, 234, 0.5);
+    box-shadow: 0 0 5px 2px rgba(154, 207, 234, 0.5);
 }
 
-.notification-date {
-    position: absolute;
-    top: 10px;
-    right: 20px;
+
+.notification-btn .glyphicon{
+    color: #dff1ff;
+    margin-top: 5px;
 }
 
-.notification-content {
-    margin-top: 20px;
+.notification-btn .glyphicon:hover{
+    color: #9acfea;
+}
+
+.notification-date{
+    margin-top: 10px;
+    margin-bottom: 0px;
+    color: #7b8087;
 }
 
 @media (max-width: 768px) {
     .notification-card-medium {
-        padding: 10px 10px 20px 10px;
+        padding: 10px 10px 10px 10px;
     }
 }
 
@@ -310,9 +316,20 @@ p.tag-personal-card{
     height: auto;
 }
 
-.purchased-tickets ul li{
+.ticket-info{
+    margin-top: 10px;
+    border-bottom-width: 1px;
+    border-bottom-color: rgba(154, 207, 234, 0.5);
+    border-style: dotted;
+}
+
+.ticket-specification a{
     margin-bottom: 10px;
-    font-size: 2rem;
+    color: #0f0f0f;
+}
+
+.ticket-specification a:hover{
+    color: #8a8a8a;
 }
 
 .content-new-event p, .content-new-event input {
@@ -598,47 +615,89 @@ textarea {
 }
 
 /*ckeckout CARD*/
-.ckeckout-card {
+.checkout-card {
     padding: 10px;
     margin-bottom: 20px;
 }
 
-.ckeckout-card p{
+.checkout-card p{
     display: inline;
     padding-left: 5px;
-    font-size: 2rem;
+    /*font-size: 2rem;*/
 }
 
-.tag-ckeckout-card {
+.checkout-card input{
+    display: inline;
+    padding-left: 5px;
+    /*font-size: 2rem;*/
+}
+
+.tag-checkout-card {
     font-weight: bold;
+    font-size: 15px;
+    color: #337ab7;
 }
 
-
-.content-ckeckout {
-    padding-bottom: 10px;
-    margin: 10px 0px;
+p.tag-checkout-card{
+    display: inline-block;
+    width: 85px;
+    text-align: right;
+    margin-right: 20px;
 }
 
-.content-ckeckout {
-    display: block;
+input.tag-checkout-card{
+    display: inline-block;
+    width: 85px;
+    text-align: right;
+    margin-right: 20px;
 }
 
+.content-checkout {
+    padding-bottom: 0px;
+    margin: 0px;
+}
+
+.content-checkout p{
+    padding-left: 0px;
+}
+
+.tags-personal-card .btn{
+    width: 90px;
+    margin-top: 30px;
+}
 
 /*payed card*/
 .payed-card {
-    padding: 10px;
-    margin-bottom: 20px;
+    margin-top: 100px;
+    margin-right: 0px;
+    padding-bottom: 50px;
+    padding-top: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+    background-color:  rgba(255, 255, 255, 1);
+    border: 1px solid #337ab7;
+    border-radius: 5px;
+    text-align: center;
+    background-color: #F0F8FF;
 }
 
-.payed-card p{
-    display: inline;
-    padding-left: 5px;
-    font-size: 2rem;
+.payed-card h1{
+    margin-bottom: 60px;
 }
 
 .payed-card a {
     margin-bottom: 10px;
 }
+
+.payed-card .btn{
+    width: 120px;
+    text-align: center;
+    margin-bottom: 10px;
+    padding: 0px;
+}
+
+
+
 /*
 @media (max-width: 768px) {
     #menu {
