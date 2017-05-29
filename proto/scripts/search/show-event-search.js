@@ -13,11 +13,6 @@ $(document).ready(function(){
         return false;
     });
 
-    $(".host-list").click(function(event) {
-        removeFromHostList(event);
-        return false;
-    });
-
     $('#search-user').click( function(event){
         event.stopPropagation();
         $("#search-list").fadeIn("fast");
@@ -31,17 +26,15 @@ $(document).ready(function(){
 
 });
 
-function removeFromHostList(event){
-    var html = $(event.target);
-    var userId = html.attr("value");
-    //TODO: remover utilizadores
-    //console.log(html.html());
-}
-
 function addToHostList(event){
     var html = $(event.target);
     var userId = html.attr("value");
     var username = html.html();
+    var eventId = $("#event_id").val();
+
+    console.log(userId);
+    console.log(username);
+    console.log(eventId);
 
     if (typeof userId === "undefined" || userId == 0){
         //nao faz nada
@@ -49,32 +42,36 @@ function addToHostList(event){
     }
     else{
 
-        for(var i=0; i<usersAdded.length; i++){
-            if (usersAdded[i] == userId)
-                return false;
-        }
+        $.ajax({
+            type: "POST",
+            url: BASE_URL+"api/event/addHosts.php",
+            data:   {
+                user : userId,
+                event: eventId
+            },
+            success: function(response){
 
-        usersAdded.push(userId);
+                var process = JSON.parse(response);
 
-        $(".host-list").append(
-            '<li class="list-item">' +
-            '<a href="">' +
-            '<div class="row">' +
-            '<div class="col-sm-offset-1">' +
-            '<span class="icon people">' +
-            '<span data-icon="&#xe001;" aria-hidden="true"></span>' +
-            '</span>' +
-            '</div>' +
-            '<div class="col-sm-offset-2">' +
-            '<input type="text" name="user_id[]" value="' + userId + '" hidden></input>' +
-            '<span class="text">' + username + '</span>' +
-            '</div>' +
-            '</div>' +
-            '</a>' +
-            '</li>');
-        return true;
+                console.log(process);
+
+                if(process.success === "success"){
+                    console.log("oi");
+                    $("#hosts").append(
+                        '<content class="col-xs-1 col-xs-offset-1">'+
+                        '<div class="user-photo">'+
+                        '<button><img src="'+BASE_URL+'resources/images/user.jpeg">'+username+'</button>'+
+                        '</div>'+
+                        '</content>');
+                }
+                else{
+                }
+            },
+            error: function(jqXHR, textStatus, errorThrown) {
+                console.log(textStatus, errorThrown);
+            }
+        });
     }
-
 }
 
 function findUsers(){

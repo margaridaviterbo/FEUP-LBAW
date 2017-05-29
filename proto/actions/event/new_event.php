@@ -2,6 +2,7 @@
 
 include_once('../../config/init.php');
 include_once('../../database/event.php');
+include_once('../../database/host.php');
 include_once('../../database/localization.php');
 
 $name = $_POST["event-name"];
@@ -20,6 +21,7 @@ $longitude = $_POST["lng"];
 $street = $_POST["street"];
 $city = $_POST["city"];
 $country = $_POST["country"];
+
 
 if(!isset($_SESSION['username']))
     exit();
@@ -59,6 +61,15 @@ if ($local_id == null || $local_id == false){
 }
 
 createMetaEvent($name, $description, $beginning_date, $beginning_time, $ending_date, $ending_time, $photo, $free, $public, $_SESSION['user_id'], $category, $local_id);
+
+$eventId = $conn->lastInsertId();
+
+//adicionar hosts
+foreach ($_POST['user_id'] as $hostId){
+    addHost($hostId, $eventId);
+}
+
+//adicionar convidados
 
 echo '<script> window.location.href = "../../index.php"; </script>';
 

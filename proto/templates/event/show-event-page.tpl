@@ -22,6 +22,7 @@
                         <li><a class="active" href="#">Overview</a></li>
                         <li><a href="#location">Location</a></li>
                         <li><a href="#comments">Comments</a></li>
+                        <li><a href="#">Hosts</a></li>
                         <li><a href="#">Guests</a></li>
                     </ul>
                 </div>
@@ -92,14 +93,15 @@
                 </content>
 
             </div>
+        </div>
 
-            <div class="event-info-date" align="left">
-                <span class="glyphicon glyphicon-map-marker"></span> {$event.street}
-                <p></p>
-                <span class="glyphicon glyphicon-time"></span>{$date}
-            </div>
+        <div class="event-info-date" align="left">
+            <span class="glyphicon glyphicon-map-marker"></span> {$event.street}
+            <p></p>
+            <span class="glyphicon glyphicon-time"></span>{$date}
+        </div>
 
-            <!--<div>
+        <!--<div>
                 <form id="comment-form" action="../../actions/event/save_event.php" method="POST" class="form-inline">
                     <input type="hidden" name="id" value="{$event_id}" />
                     <input type="submit" value="Save" class="btn btn-default form-control"/>
@@ -111,79 +113,124 @@
                 </form>
             </div>-->
 
-            <div class="page-header">
-                <h3>Description</h3>
-            </div>
+        <div class="page-header">
+            <h3>Description</h3>
+        </div>
 
-            <div class="event-description">
-                {$event.description}
-            </div>
+        <div class="event-description">
+            {$event.description}
+        </div>
 
-            <div class="page-header">
-                <h3>Location</h3>
-            </div>
-            <div id="location" class="map-section">
+        <div class="page-header">
+            <h3>Location</h3>
+        </div>
+        <div id="location" class="map-section">
 
-                <div id="map" style="width: 100%; height: 300px;">
-                    <input type="text" id="lat" value="{$event.latitude}" hidden/>
-                    <input type="text" id="lon" value="{$event.longitude}" hidden/>
+            <div id="map" style="width: 100%; height: 300px;">
+                <input type="text" id="lat" value="{$event.latitude}" hidden/>
+                <input type="text" id="lon" value="{$event.longitude}" hidden/>
+            </div>
+            <h4 class="text-center"> {$event.street} </h4>
+        </div>
+
+        <div class="page-header">
+            <h3>Comments</h3>
+        </div>
+
+        <div class="event-comments" id="comments">
+
+            {if count($comments) == 0}
+                <h4>No comments yet.</h4>
+            {/if}
+
+            {foreach $comments as $cmt}
+                <div class="comment">
+
+                    <div class="row">
+                        <div class="col-xs-2 user-photo">
+                            <img class="center-block" src="{$BASE_URL}resources/images/user.png">
+                        </div>
+
+                        <div class="col-xs-4 user-photo">
+                            <strong>{$cmt.username}</strong>
+                            <p></p>
+                            {$cmt.comment_date}
+                        </div>
+
+                        <div class="col-xs-2 col-xs-offset-2">
+                            <button><span class="glyphicon glyphicon-share-alt"></span>Reply</button>
+                        </div>
+
+                        <div class="col-xs-2">
+                            <button><span class="glyphicon glyphicon-flag"></span>Report</button>
+                        </div>
+                    </div>
+                    <div class="panel-body">
+                        {$cmt.content}
+                    </div>
                 </div>
-                <h4 class="text-center"> {$event.street} </h4>
-            </div>
-
-            <div class="page-header">
-                <h3>Comments</h3>
-            </div>
-
-            <div class="event-comments" id="comments">
-
-                {foreach $comments as $cmt}
-                    <div class="comment">
-
-                        <div class="row">
-                            <div class="col-xs-2 user-photo">
-                                <img class="center-block" src="{$BASE_URL}resources/images/user.png">
-                            </div>
-
-                            <div class="col-xs-4 user-photo">
-                                <strong>{$cmt.username}</strong>
-                                <p></p>
-                                {$cmt.comment_date}
-                            </div>
-
-                            <div class="col-xs-2 col-xs-offset-2">
-                                <button><span class="glyphicon glyphicon-share-alt"></span>Reply</button>
-                            </div>
-
-                            <div class="col-xs-2">
-                                <button><span class="glyphicon glyphicon-flag"></span>Report</button>
-                            </div>
-                        </div>
-                        <div class="panel-body">
-                            {$cmt.content}
-                        </div>
-                    </div>
-                {/foreach}
+            {/foreach}
 
 
-                {if $USERNAME}
-                    <div class="page-header">
-                        <h3>Your Answer</h3>
-                    </div>
-                    <form id="comment-form" method="post" action="{$BASE_URL}actions/event/new_comment.php">
-                        <input type="text" name="user_id" hidden="true" value="{$USERID}">
-                        <input type="text" name="event_id" hidden="true" value="{$event_id}">
-                        <textarea name="editor" id="editor">
+            {if $USERNAME}
+                <div class="page-header">
+                    <h3>Your Answer</h3>
+                </div>
+                <form id="comment-form" method="post" action="{$BASE_URL}actions/event/new_comment.php">
+                    <input type="text" name="user_id" hidden="true" value="{$USERID}">
+                    <input type="text" name="event_id" id="event_id" hidden="true" value="{$event_id}">
+                    <textarea name="editor" id="editor">
                         </textarea>
-                        <script>
-                            CKEDITOR.replace('editor');
-                        </script>
+                    <script>
+                        CKEDITOR.replace('editor');
+                    </script>
 
-                        <input id="submit_editor" type="submit" value="Submit">
+                    <input id="submit_editor" type="submit" value="Submit">
 
-                    </form>
-                {/if}
+                </form>
+            {/if}
+        </div>
+
+
+        <div class="page-header">
+            <div class="row">
+                <content class="col-xs-9">
+                    <h3 style="margin: 0px;">Hosts</h3>
+                </content>
+                <content class="col-xs-3">
+                    {foreach $hosts as $host}
+                        {if $host.username == $USERNAME}
+                            <input id="search-user" type="search" class="form-control" placeholder="Add hosts..."
+                                       autocomplete="off"/>
+                            <div class="content-list" id="search-list" style="width: 100%;">
+                                <ul class="drop-list">
+
+                                </ul>
+                            </div>
+                        {/if}
+                    {/foreach}
+                </content>
             </div>
+        </div>
+
+        <div id="hosts">
+
+            {for $i = 0; $i < count($hosts); $i++}
+
+                {if $i == 0}
+                    <content class="col-xs-1">
+                        <div class="user-photo">
+                            <button><img src="{$BASE_URL}resources/images/user.jpeg">{$hosts[$i].username}</button>
+                        </div>
+                    </content>
+                {else}
+                    <content class="col-xs-1 col-xs-offset-1">
+                        <div class="user-photo">
+                            <button><img src="{$BASE_URL}resources/images/user.jpeg">{$hosts[$i].username}</button>
+                        </div>
+                    </content>
+                {/if}
+            {/for}
         </div>
     </div>
 </div>
@@ -219,4 +266,5 @@
 </script>
 
 
+<script src="{$BASE_URL}scripts/search/show-event-search.js"></script>
 <script type="text/javascript" src="../../scripts/event/show-map-location.js"></script>
