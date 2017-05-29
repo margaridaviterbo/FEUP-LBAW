@@ -20,9 +20,11 @@ $rate = getRating($meta_event_id)[0]["avg"];
 $comments = getComments($meta_event_id);
 
 $hosts = getHosts($meta_event_id);
+$guests = getGuests($meta_event_id);
 
 $smarty->assign('comments', $comments);
 $smarty->assign('hosts', $hosts);
+$smarty->assign('guests', $guests);
 
 $smarty->assign('rate', $rate);
 $smarty->assign('event_id', $meta_event_id);

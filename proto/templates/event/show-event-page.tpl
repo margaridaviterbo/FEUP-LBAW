@@ -22,8 +22,8 @@
                         <li><a class="active" href="#">Overview</a></li>
                         <li><a href="#location">Location</a></li>
                         <li><a href="#comments">Comments</a></li>
-                        <li><a href="#">Hosts</a></li>
-                        <li><a href="#">Guests</a></li>
+                        <li><a href="#hosts">Hosts</a></li>
+                        <li><a href="#guests">Guests</a></li>
                     </ul>
                 </div>
                 <div class="col-xs-3 col-sm-3">
@@ -200,7 +200,6 @@
             {/if}
         </div>
 
-
         <div class="page-header">
             <div class="row">
                 <content class="col-xs-9">
@@ -236,6 +235,49 @@
                     <content class="col-xs-1 col-xs-offset-1">
                         <div class="user-photo">
                             <button><img src="{$BASE_URL}resources/images/user.jpeg">{$hosts[$i].username}</button>
+                        </div>
+                    </content>
+                {/if}
+            {/for}
+        </div>
+
+        <div></div>
+
+        <div class="page-header">
+            <div class="row">
+                <content class="col-xs-9">
+                    <h3 style="margin: 0px;">Guests</h3>
+                </content>
+                <content class="col-xs-3">
+                    {foreach $hosts as $host}
+                        {if $host.username == $USERNAME}
+                            <input id="search-guest" type="search" class="form-control" placeholder="Add guests..."
+                                   autocomplete="off"/>
+                            <div class="content-list" id="search-list-guest" style="width: 100%;">
+                                <ul class="drop-list-guest">
+
+                                </ul>
+                            </div>
+                        {/if}
+                    {/foreach}
+                </content>
+            </div>
+        </div>
+
+        <div id="guests">
+
+            {for $i = 0; $i < count($guests); $i++}
+
+                {if $i == 0}
+                    <content class="col-xs-1">
+                        <div class="user-photo">
+                            <button><img src="{$BASE_URL}resources/images/user.jpeg">{$guests[$i].username}</button>
+                        </div>
+                    </content>
+                {else}
+                    <content class="col-xs-1 col-xs-offset-1">
+                        <div class="user-photo">
+                            <button><img src="{$BASE_URL}resources/images/user.jpeg">{$guests[$i].username}</button>
                         </div>
                     </content>
                 {/if}

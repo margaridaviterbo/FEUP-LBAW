@@ -1,11 +1,25 @@
 BASE_URL = "/";
 
 var usersAdded = [];
+var guestsAdded = [];
+
+var searchHost;
 
 $(document).ready(function(){
 
     $('#search-user').keyup(function () {
+        searchHost = true;
         findUsers();
+    });
+
+    $('#search-guest').keyup(function () {
+        searchHost = false;
+        findUsers();
+    });
+
+    $(".drop-guest-list").click(function(event) {
+        addToGuestList(event);
+        return false;
     });
 
     $(".drop-list").click(function(event) {
@@ -23,9 +37,15 @@ $(document).ready(function(){
         $("#search-list").fadeIn("fast");
     });
 
+    $('#search-guest').click( function(event){
+        event.stopPropagation();
+        $("#search-list-guest").fadeIn("fast");
+    });
+
     $(document).click( function(){
 
         $('#search-list').hide();
+        $('#search-list-guest').hide();
 
     });
 
@@ -74,13 +94,62 @@ function addToHostList(event){
             '</li>');
         return true;
     }
+}
 
+
+function addToGuestList(event){
+    var html = $(event.target);
+    var userId = html.attr("value");
+    var username = html.html();
+
+    if (typeof userId === "undefined" || userId == 0){
+        //nao faz nada
+        return false;
+    }
+    else{
+
+        for(var i=0; i<guestsAdded.length; i++){
+            if (guestsAdded[i] == userId)
+                return false;
+        }
+
+        guestsAdded.push(userId);
+
+        $(".guest-list").append(
+            '<li class="list-item">' +
+            '<a href="">' +
+            '<div class="row">' +
+            '<div class="col-sm-offset-1">' +
+            '<span class="icon people">' +
+            '<span data-icon="&#xe001;" aria-hidden="true"></span>' +
+            '</span>' +
+            '</div>' +
+            '<div class="col-sm-offset-2">' +
+            '<input type="text" name="guest_id[]" value="' + userId + '" hidden></input>' +
+            '<span class="text">' + username + '</span>' +
+            '</div>' +
+            '</div>' +
+            '</a>' +
+            '</li>');
+        return true;
+    }
 }
 
 function findUsers(){
-    var name = $('#search-user').val();
-    var list = $('#search-list');
-    var dropList = $(".drop-list");
+    var name;
+    var list;
+    var dropList;
+
+    if (searchHost) {
+        name = $('#search-user').val();
+        list = $('#search-list');
+        dropList = $(".drop-list");
+    }
+    else {
+        name = $('#search-guest').val();
+        list = $('#search-guest-list');
+        dropList = $(".drop-guest-list");
+    }
 
     list.fadeIn();
 
@@ -119,6 +188,7 @@ function findUsers(){
                         '</a>' +
                         '</li>');
                 }
+
             }
             else{
                 dropList.empty();

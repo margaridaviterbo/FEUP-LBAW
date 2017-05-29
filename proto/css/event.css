@@ -248,3 +248,9 @@ button:focus {
 .rating > input:checked ~ label:hover,
 .rating > label:hover ~ input:checked ~ label, /* lighten current selection */
 .rating > input:checked ~ label:hover ~ label { color: lightblue;  }
+
+
+.page-header #guest-area{
+    margin-top: 20px;
+    padding-top: 20px;
+}
