@@ -116,7 +116,7 @@
                                     Paid
                                 {/if}
                             </content>
-                            {if !$event.free}
+                            {if !$event.free && ($isGuest || $event.public)}
                                 <div class="buy-btn col-xs-offset-1 col-xs-4">
                                     <a href="../ticket/checkout-payment.php?id={$event_id}" class="btn btn-default">Buy Ticket</a>
                                 </div>
