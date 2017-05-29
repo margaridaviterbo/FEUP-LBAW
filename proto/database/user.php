@@ -6,10 +6,23 @@
         $stmt->execute(array($firstname, $lastname, $email));
     }
 
-    function updateUser($firstname, $lastname, $email, $nif){
+    function updateUser($firstname, $lastname, $email, $nif, $userId){
         global $conn;
-        $stmt = $conn->prepare('UPDATE public.users SET first_name = ?, last_name = ?, email=?, nif=?'); //TODO: Fazer update
-        $stmt->execute(array($firstname, $lastname, $email, $nif));
+        $stmt = $conn->prepare('UPDATE public.users SET first_name = ?, last_name = ?, email=?, nif=? WHERE user_id = ?'); //TODO: Fazer update
+        $stmt->execute(array($firstname, $lastname, $email, $nif, $userId));
+    }
+
+    function updateAuthenticatedUser($username, $password, $userId){
+        global $conn;
+
+        if ($password == null || $password == ''){
+            $stmt = $conn->prepare('UPDATE public.authenticated_user SET username = ? WHERE user_id = ?');
+            $stmt->execute(array($username, $userId));
+        }
+        else{
+            $stmt = $conn->prepare('UPDATE public.authenticated_user SET username = ?, password = ? WHERE user_id = ?');
+            $stmt->execute(array($username, sha1($password), $userId));
+        }
     }
 
     function createAuthenticatedUser($user_id, $username, $password){
@@ -125,9 +138,9 @@
 	
 	function getByUsername($username) {
         global $conn;
-        $stmt = $conn->prepare("SELECT * 
+        $stmt = $conn->prepare('SELECT * 
                                 FROM public.authenticated_user 
-                                WHERE username like ?");
+                                WHERE username = ?');
         $stmt->execute(array($username));
         return $stmt->fetchAll();
     }
@@ -165,6 +178,18 @@
 
     function searchUserByUsername($name, $username) {
         global $conn;
+        //$param = "%$name%";
+        $stmt = $conn->prepare('SELECT public.authenticated_user.username, public.Authenticated_User.photo_url, public.Authenticated_User.user_id, ts_rank(to_tsvector(username), query) AS rank
+                                        FROM public.Authenticated_User , to_tsquery(?) AS query
+                                        WHERE (upper(username) <> upper(?))
+                                        ORDER BY rank DESC');
+        $name = $name.":*";
+        $stmt->execute(array($name, $username));
+        return $stmt->fetchAll();
+    }
+
+    /*function searchUserByUsername($name, $username) {
+        global $conn;
         $param = "%$name%";
         $stmt = $conn->prepare('SELECT public.authenticated_user.username, public.Authenticated_User.photo_url, public.Authenticated_User.user_id
                                     FROM public.Authenticated_User 
@@ -172,7 +197,7 @@
                                     ORDER BY username ASC');
         $stmt->execute(array($param, $username));
         return $stmt->fetchAll();
-    }
+    }*/
 	
 	function getUserTickets($user_id) {
         global $conn;

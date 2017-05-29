@@ -74,6 +74,6 @@ foreach ($_POST['guest_id'] as $guestId){
     addGuest($guestId, $eventId);
 }
 
-echo '<script> window.location.href = "../../index.php"; </script>';
+header('Location: ../../pages/event/show-event-page.php?id='.$eventId);
 
 ?>

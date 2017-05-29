@@ -1,7 +1,5 @@
 BASE_URL = 'http://localhost/lbaw/proto/';
 
-var usersAdded = [];
-
 $(document).ready(function(){
 
     $('#search-user').keyup(function () {

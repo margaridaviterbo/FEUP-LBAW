@@ -8,11 +8,11 @@
     <div class="row">
         <content class="col-lg-offset-3 col-lg-6 col-sm-8 col-sm-offset-1 col-xs-12 page">
             <div class="page-header">
-                <h1>Events that I created</h1>
+                <h1>{$page_title}</h1>
             </div>
 
             {if $events==NULL}
-                <h3>You haven't created any events yet.</h3>
+                <h3>There are no events yet.</h3>
             {else}
 
                 {foreach $events as $event}
@@ -32,11 +32,6 @@
                                     {else}
                                         <a class="text-card">Paid</a>
                                     {/if}
-
-                                    <div class="event-card-btns">
-                                        <a href="../event/show-event-page.php" class="btn btn-default col-sm-5">See More</a>
-                                        <button type="button" class="btn btn-default col-sm-3">Going</button>
-                                    </div>
                                 </div>
 
                                 <div class="container-fluid">
@@ -69,12 +64,14 @@
 
                                 <div class="row">
                                     <p></p>
+                                    {if !$event.pastEvent}
                                     <button onclick="window.location.href='{$BASE_URL}pages/event/show-event-page.php?id={$event.event_id}'"
                                             type="button" class="btn btn-default col-sm-5">See Event
                                     </button>
-                                    <button onclick="window.location.href='../../pages/event/edit-event.php'"
+                                    <button onclick="window.location.href='../../pages/event/edit-event.php?id={$event.event_id}'"
                                             type="button" class="btn btn-default col-sm-5">Edit Event
                                     </button>
+                                    {/if}
                                 </div>
                             </div>
                         </div>

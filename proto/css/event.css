@@ -251,6 +251,7 @@ button:focus {
 @import url(//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css);
 
 /****** Style Star Rating Widget *****/
+.rating label { margin: 0; padding: 0; }
 
 .rating {
     border: none;
