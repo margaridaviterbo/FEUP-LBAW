@@ -7,7 +7,7 @@ $(document).ready(function() {
   testCanUpdate();
 });
 
-BASE_URL = 'http://localhost/lbaw/proto/';
+BASE_URL = 'http://localhost/lbaw/prot/';
 
 var canUpdateuser = true;
 var canUpdateEvent = true;
