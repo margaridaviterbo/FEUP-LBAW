@@ -6,6 +6,9 @@ include('../../database/host.php');
 
 $meta_event_id = $_GET['id'];
 
+$result = hasRated($meta_event_id, $_SESSION['user_id']);
+$rateUser = $result['evaluation'];
+
 $num_tickets = numTickets($meta_event_id);
 $event = getMetaEvent($meta_event_id);
 
@@ -24,6 +27,7 @@ $hosts = getHosts($meta_event_id);
 $guests = getGuests($meta_event_id);
 $going = false;
 $isGuest = false;
+
 
 if(!$event['public']){
 	$canSee=false;
@@ -71,6 +75,7 @@ $smarty->assign('isGuest', $isGuest);
 $smarty->assign('going', $going);
 $smarty->assign('au_user_id', $au_user_id);
 $smarty->assign('tickets', $num_tickets['num_tickets']);
+$smarty->assign('rateUser', $rateUser);
 
 $smarty->display('event/show-event-page.tpl');
 ?>
