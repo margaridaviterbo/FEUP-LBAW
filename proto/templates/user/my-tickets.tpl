@@ -12,7 +12,7 @@
 
   <ul>
   {foreach $TICKETS as $ticket}
-   
+
     <li>
       <div class="ticket-info container-fluid">
         <div class="row">
