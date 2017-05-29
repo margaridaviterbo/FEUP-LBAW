@@ -483,6 +483,7 @@ div.event-rate{
 .event-card-medium .btn-default{
     width: 80px;
     margin-left: 25px;
+    margin-right: 10px;
     border-color: #337ab7;
     color: #337ab7;
 }
