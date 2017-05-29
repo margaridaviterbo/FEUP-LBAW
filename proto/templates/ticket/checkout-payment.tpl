@@ -10,33 +10,75 @@
                     <div class="row checkout-card">
                         <div class="col-sm-12 tags-personal-card">
 						<form method="POST" action="../../actions/event/buy_ticket.php">
-                            <div class="content-ckeckout">
-                                <p class="tag-checkout-card" name="name">Nome:</p><input type="text" name="user" value="{$NAME}">
+                            <div class="row content-ckeckout">
+                                <div class="col-sm-2">
+                                    <p class="tag-checkout-card" name="name">Nome:</p>
+                                </div>
+                                <div class="col-sm-3">
+                                    <input type="text" name="user" class="form-control user-name" placeholder="Name"  value="{$NAME}" aria-describedby="basic-addon1" required>
+                                </div>
                             </div>
-                            <div class="content-ckeckout">
-							    <p class="tag-checkout-card" name="email">Email:</p><input type="email" name="email" value="{$EMAIL}" required>
-							</div>
+                            <div class="row"><p></p></div>
+                            <div class="row content-ckeckout">
+                                <div class="col-sm-2">
+							        <p class="tag-checkout-card" name="email">Email:</p>
+                                </div>
+                                <div class="col-sm-3">
+                                    <input type="email" name="email" class="form-control email" placeholder="Email"  value="{$EMAIL}" aria-describedby="basic-addon1" required>
+
+                                </div>
+                            </div>
+                            <div class="row"><p></p></div>
+                            <div class="row content-checkout">
+                                <div class="col-sm-2">
+                                    <p class="tag-checkout-card">NIF:</p>
+                                </div>
+                                <div class="col-sm-3">
+                                    <input type="text" name="nif" class="form-control nif" placeholder="NIF"  value="{$NIF}" aria-describedby="basic-addon1">
+                                </div>
+                            </div>
+                            <div class="row"><p></p></div>
+                            <div class="row content-checkout">
+                                <div class="col-sm-2">
+                                    <p class="tag-checkout-card">Event:</p>
+                                </div>
+                                <div class="col-sm-3">
+                                    <p id="evento">{$EVENT}</p>
+                                </div>
+                            </div>
+                            <div class="row"><p></p></div>
+                            <div class="row content-checkout">
+                                <div class="col-sm-2">
+                                    <p class="tag-checkout-card">Type:</p>
+                                </div>
+                                <div class="col-sm-3">
+                                    <select class="form-control" name="ticketType" required>
+                                    {foreach $TICKETS as $ticket}
+                                        <option value="{$ticket.type_of_ticket_id}">{$ticket.ticket_type} - {$ticket.price}€ </option>
+                                     {/foreach}
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="row"><p></p></div>
                             <div class="content-checkout">
-                                <p class="tag-checkout-card">NIF:</p><input type="text" name="nif" value="{$NIF}">
-                            </div>
-                            <div class="content-checkout">
-                                <p class="tag-checkout-card">Event:</p><p id="evento">{$EVENT}</p>
-                            </div>
-                            <div class="content-checkout">
-                                <p class="tag-checkout-card">Type:</p><select name="ticketType">
-                                {foreach $TICKETS as $ticket}
-                                   <option value="{$ticket.type_of_ticket_id}">{$ticket.ticket_type} - {$ticket.price}€ </option>
-                                 {/foreach}
-                                </select>
-                            </div>
-                            <!--<div class="content-checkout">
                                 <input type="hidden" name="id" value="{$event_id}" />
-                            </div>-->
-                            <div class="content-checkout">
-								<p class="tag-checkout-card">Quantity:</p><input type="number" name="quantity" value="1" required>
                             </div>
-                            <div class="content-checkout">
-                                <p class="tag-checkout-card">    </p><input class="btn btn-default btn-primary form-control" type="submit" value="Confirm"/>
+                            <div class="row content-checkout">
+                                <div class="col-sm-2">
+                                    <p class="tag-checkout-card">Quantity:</p>
+                                </div>
+                                <div class="col-sm-3">
+                                    <input type="number" name="quantity" class="form-control" value="1" required>
+                                </div>
+                            </div>
+                            <div class="row"><p></p></div>
+                            <div class="row content-checkout">
+                                <div class="col-sm-3">
+                                    <p class="tag-checkout-card">    </p>
+                                </div>
+                                <div class="col-sm-2">
+                                    <input class="btn btn-default btn-primary form-control" type="submit" value="Confirm"/>
+                                </div>
                             </div>
                         </form>
 

@@ -201,7 +201,7 @@
 	
 	function getUserTickets($user_id) {
         global $conn;
-        $stmt = $conn->prepare('SELECT ticket_type, name, ticket_id, public.Meta_Event.meta_event_id
+        $stmt = $conn->prepare('SELECT ticket_type, name, ticket_id, public.Meta_Event.meta_event_id, ticket_purchase_date
                                     FROM public.Ticket, public.Type_of_Ticket, public.Meta_Event
                                     WHERE public.Ticket.user_id = ? AND
 									public.Ticket.type_of_ticket_id = public.Type_of_Ticket.type_of_ticket_id AND
@@ -209,6 +209,17 @@
         $stmt->execute(array($user_id));
         return $stmt->fetchAll();
     }
+	
+	function getNotifications($user_id) {
+		global $conn;
+        $stmt = $conn->prepare('SELECT *
+                                    FROM (public.Notification
+									LEFT JOIN public.Meta_Event ON public.Meta_Event.meta_event_id = public.Notification.event_id)
+									LEFT JOIN public.Authenticated_User ON public.Authenticated_User.user_id = public.Notification.user_id 
+                                    WHERE public.Notification.user_id = ?;');
+        $stmt->execute(array($user_id));
+        return $stmt->fetchAll();
+	}
 
     //TODO: Usar full text search para pesquisa de nome completo, para username, talvez usar like (?)
 /*

@@ -1,4 +1,4 @@
-BASE_URL = "/";
+BASE_URL = 'http://localhost/lbaw/proto/';
 
 $(document).ready(function(){
 

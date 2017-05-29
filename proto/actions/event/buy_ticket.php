@@ -8,8 +8,6 @@ $nameReg = $_POST['user'];
 $nif = $_POST['nif'];
 $email = $_POST['email'];
 
-if(!isset($_SESSION['username']))
-    exit();
 require '../../paypal/start.php';
 use PayPal\Api\Amount;
 use PayPal\Api\Details;

@@ -1,4 +1,3 @@
-
 /* Verificar numero de bilhetes em stock quando se comprar bilhete*/
 
 CREATE OR REPLACE FUNCTION buy_ticket() RETURNS TRIGGER AS
@@ -177,3 +176,61 @@ CREATE TRIGGER add_notification
 BEFORE INSERT	ON Notification
 FOR EACH ROW
 EXECUTE PROCEDURE add_notification();
+
+CREATE OR REPLACE VIEW commentary AS
+SELECT public.Comments.comment_id AS comment_id, public.Event_Content.event_id AS event_id, public.Event_Content.user_id AS maker
+FROM public.Comments, public.Event_Content
+WHERE public.Comments.comment_id = public.Event_Content.event_content_id;
+
+CREATE OR REPLACE VIEW commentaryRecivers AS
+SELECT public.Guest.user_id, commentary.comment_id, commentary.event_id
+FROM commentary, public.Guest
+WHERE commentary.event_id = public.Guest.event_id;
+
+CREATE OR REPLACE VIEW commentaryHostRecivers AS
+SELECT public.Host.user_id, commentary.comment_id, commentary.event_id
+FROM commentary, public.Host
+WHERE commentary.event_id = public.Host.meta_event_id;
+
+/* Cria Notificaçao quando se cria um comentario */
+CREATE OR REPLACE FUNCTION addNotificationCommented() RETURNS TRIGGER AS
+$BODY$
+BEGIN
+	IF tg_op = 'INSERT' THEN
+		INSERT INTO Notification(notification_type, checked, user_id, event_id, event_content_id)
+		SELECT 'eventCommented', false, user_id, event_id, comment_id
+		FROM commentaryRecivers
+		WHERE commentaryRecivers.comment_id = NEW.comment_id AND user_id != (SELECT commentary.maker FROM commentary WHERE comment_id  = NEW.comment_id);
+        
+        INSERT INTO Notification(notification_type, checked, user_id, event_id, event_content_id)
+        SELECT 'eventCommented', false, user_id, event_id, NEW.comment_id
+        FROM commentaryHostRecivers
+        WHERE commentaryHostRecivers.comment_id = NEW.comment_id AND user_id != (SELECT commentary.maker FROM commentary WHERE comment_id  = NEW.comment_id);
+	END IF;
+	RETURN NEW;
+END;
+$BODY$
+LANGUAGE plpgsql;
+
+CREATE TRIGGER addNotificationCommented
+AFTER INSERT ON Comments
+FOR EACH ROW
+EXECUTE PROCEDURE addNotificationCommented();
+
+
+/* Cria Notificaçao quando se e convidado */
+CREATE OR REPLACE FUNCTION addNotificationInviation() RETURNS TRIGGER AS
+$BODY$
+BEGIN
+	IF tg_op = 'INSERT' THEN
+		INSERT INTO Notification(notification_type, checked, user_id, event_id) VALUES('eventInvitation', false, NEW.user_id, NEW.event_id);
+	END IF;
+	RETURN NEW;
+END;
+$BODY$
+LANGUAGE plpgsql;
+
+CREATE TRIGGER addNotificationInviation
+AFTER INSERT ON Guest
+FOR EACH ROW
+EXECUTE PROCEDURE addNotificationInviation();
