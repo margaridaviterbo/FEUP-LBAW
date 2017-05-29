@@ -7,8 +7,7 @@ $(document).ready(function() {
   testCanUpdate();
 });
 
-BASE_URL = 'http://gnomo.fe.up.pt/~lbaw1622/FEUP-LBAW/proto/';
-//BASE_URL = '/';
+BASE_URL = 'http://localhost/lbaw/proto/';
 
 var canUpdateuser = true;
 var canUpdateEvent = true;
@@ -16,12 +15,12 @@ var askedToUpdate = false;
 
 function initserchname() {
 	var name = $('#searched-words').text();
-    $('#serch-input').val(name);
+    $('#search').val(name);
 }
 
 function addeventChange() {
-	$('#serch-input').on('input', function() {
-		var name = $('#serch-input').val();
+	$('#search').on('input', function() {
+		var name = $('#search').val();
 		$('#searched-words').text(name);
 		$('.page-header h1').text("Search Results for \"" + name + "\"");
 		askedToUpdate = true;
@@ -44,7 +43,7 @@ function testCanUpdate() {
 			$('#eventosPesq .eventcadssech').html("");
 			$('#serch-num-page-user').text(0);
 			$('#serch-num-page-event').text(0);
-			var name = $('#serch-input').val();
+			var name = $('#search').val();
 			if(name == ''){
 				$('#tabs .button-users').html('Users (0)');
 				$('#tabs .button-events').html('Events (0)');
@@ -63,10 +62,10 @@ function testCanUpdate() {
 	}
 }
 
-function doajaxusercall(page, name, asc) {
+function doajaxusercall(page, name, ascn) {
 	  var ind = 0;
 	  canUpdateuser = false;
-	  $.getJSON(BASE_URL + "api/serch/serchusers.php", {page: page, serch: name, asc: asc}, function(data) {
+	  $.getJSON(BASE_URL + "api/search/searchusers.php", {page: page, serch: name, asc: ascn}, function(data) {
       $.each(data, function(i, asc) {
 		  ind += 1;
 		 $('#usersPesq .usercadssech').append(
@@ -79,7 +78,7 @@ function doajaxusercall(page, name, asc) {
                 '<div class="col-sm-9">' +
                   '<p class="text-card">'  + asc.username + '</p>' +
                   '<p class="text-card">' + asc.email + '</p>' +
-                  '<button type="button" class="btn btn-default col-sm-5">Go To ptofile</button>' +
+                  '<a href="'+BASE_URL+'pages/common/user-page-information.php?id='+asc.user_id+'"><button type="button" class="btn btn-default col-sm-5">Go To ptofile</button></a>' +
                 '</div>' +
               '</div>' +
             '</div>');
@@ -121,13 +120,14 @@ function doajaxeventcall(page, name, free, paid, nameOrPrice, asci) {
 		  bNameOrPrice = 1;
 	  else
 		  bNameOrPrice = 2;
-	  $.getJSON(BASE_URL + "api/serch/serchevents.php", {page: page, serch: name, free: bFree, paid: bPaid, nameOrPrice: bNameOrPrice, asc: asci}, function(data) {
+	  $.getJSON(BASE_URL + "api/search/searchevents.php", {page: page, serch: name, free: bFree, paid: bPaid, nameOrPrice: bNameOrPrice, asc: asci}, function(data) {
       $.each(data, function(i, asc) {
 		  ind += 1;
 		  var vfree = 'Free';
 		  var address = asc.cityname;
 		  var rateEvent = asc.rate;
 		  var rateString = '';
+		  console.log(asc);
 		  if(!asc.free){
 			  vfree = 'Paid';
 		  }
@@ -151,7 +151,7 @@ function doajaxeventcall(page, name, free, paid, nameOrPrice, asci) {
                   '<p class="text-card">' + vfree + '</p>' +
                   '<div class="container-fluid">' + 
                     '<div class="row">' +
-                      '<button type="button" class="btn btn-default col-sm-5">See More...</button>' +
+                      '<a href="'+BASE_URL+'pages/event/show-event-page.php?id='+asc.eveid+'"><button type="button" class="btn btn-default col-sm-5">See More...</button></a>' +
                       '<div class="classifica-card col-sm-7">' +
                        rateString  +
                       '</div>' +
@@ -180,7 +180,7 @@ function doajaxeventcall(page, name, free, paid, nameOrPrice, asci) {
 function finMoreUsers(page) {
 		if(canUpdateuser && canUpdateEvent){
 			$('.find-more-users').remove();
-			var name = $('#serch-input').val();
+			var name = $('#search').val();
 			if(name == ''){
 				$('#tabs .button-users').html('Users (0)');
 				$('#tabs .button-events').html('Events (0)');
@@ -195,7 +195,7 @@ function finMoreUsers(page) {
 function finMoreEvents(page) {
 		if(canUpdateuser && canUpdateEvent){
 			$('.find-more-events').remove();
-			var name = $('#serch-input').val();
+			var name = $('#search').val();
 			if(name == ''){
 				$('#tabs .button-users').html('Users (0)');
 				$('#tabs .button-events').html('Events (0)');

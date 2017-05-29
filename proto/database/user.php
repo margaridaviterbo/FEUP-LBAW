@@ -90,6 +90,16 @@
         $stmt->execute(array($id));
         return $stmt->fetch();
     }
+	
+	    function getTotalUsersFromId($id){
+        global $conn;
+        $stmt = $conn->prepare('SELECT *
+								FROM public.authenticated_user, public.users
+								WHERE public.authenticated_user.user_id = ? AND
+								public.authenticated_user.user_id = public.users.user_id;');
+        $stmt->execute(array($id));
+        return $stmt->fetch();
+    }
 
     function getUserIdFromAuthenticatedUser($username){
 
@@ -144,7 +154,7 @@
 	function getSearchUsers($page, $name, $asc) {
         global $conn;
         $param = "%$name%";
-        $stmt = $conn->prepare('SELECT public.Users.first_name, public.Users.last_name, public.Users.email, public.Authenticated_User.photo_url, public.Authenticated_User.username
+        $stmt = $conn->prepare('SELECT public.Users.first_name, public.Users.last_name, public.Users.email, public.Authenticated_User.photo_url, public.Authenticated_User.username, public.Authenticated_User.username, public.Authenticated_User.user_id
                                 FROM public.Authenticated_User INNER JOIN public.Users ON (public.Authenticated_User.user_id = public.Users.user_id)
                                 WHERE (upper(last_name) LIKE upper(?) OR upper(first_name) LIKE upper(?) OR upper(username) LIKE upper(?)) 
                                 ORDER BY first_name ' . $asc .
@@ -161,6 +171,17 @@
                                     WHERE (upper(username) LIKE upper(?) AND upper(username) <> upper(?)) 
                                     ORDER BY username ASC');
         $stmt->execute(array($param, $username));
+        return $stmt->fetchAll();
+    }
+	
+	function getUserTickets($user_id) {
+        global $conn;
+        $stmt = $conn->prepare('SELECT ticket_type, name, ticket_id, public.Meta_Event.meta_event_id
+                                    FROM public.Ticket, public.Type_of_Ticket, public.Meta_Event
+                                    WHERE public.Ticket.user_id = ? AND
+									public.Ticket.type_of_ticket_id = public.Type_of_Ticket.type_of_ticket_id AND
+									public.Type_of_Ticket.meta_event_id = public.Meta_Event.meta_event_id');
+        $stmt->execute(array($user_id));
         return $stmt->fetchAll();
     }
 

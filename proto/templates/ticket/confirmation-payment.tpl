@@ -13,32 +13,12 @@
       </div>
       <div class="row payed-card">
         <div class="col-sm-12 tags-personal-card">
-          <div class="content-ckeckout">
-            <p class="tag-ckeckout-card">Nome:</p>
-            <p id="nome">Rui Paiva</p>
-          </div>
-          <div class="content-ckeckout">
-            <p class="tag-ckeckout-card">Morada:</p>
-            <p id="morada">Rua das Flores, Porto, Portugal</p>
-          </div>
-          <div class="content-ckeckout">
-            <p class="tag-ckeckout-card">Event:</p>
-            <p id="evento">Evento1</p>
-          </div>
-          <div class="content-ckeckout">
-            <p class="tag-ckeckout-card">Type of ticket:</p>
-            <p id="evento">Type 1</p>
-          </div>
-          <div class="content-ckeckout">
-            <p class="tag-ckeckout-card">Custo:</p>
-            <p id="custo">10€</p>
-          </div>
-          <a href="#">
-            <button class="btn btn-default btn-primary form-control">Download ticket</button>
+          <a href="{$BASE_URL}api/ticket/getPdf.php?id={$ID}" target="_blank">
+            <button class="btn btn-default btn-primary form-control" id="download-ticket">Download ticket</button>
           </a>
           <br>
             <br>
-              <a href="../event/show-event-page.php">
+              <a href="../event/show-event-page.php?id={$IDEVENT}">
                 <button class="btn btn-default btn-primary form-control">Go back to event</button>
               </a>
             </div>
@@ -48,3 +28,7 @@
 </div>
 
 {include file='common/footer.tpl'}
+
+<script>
+  document.getElementById("download-ticket").click(); // Click on the checkbox
+</script>
