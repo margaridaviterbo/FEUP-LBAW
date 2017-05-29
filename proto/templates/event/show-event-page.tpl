@@ -17,7 +17,7 @@
 
             <div class="row">
 
-                <div class="col-sm-9">
+                <div class="col-xs-offset-1 col-xs-7 col-sm-offset-0 col-sm-9">
                     <ul class="nav navbar-nav">
                         <li><a class="active" href="#">Overview</a></li>
                         <li><a href="#location">Location</a></li>
@@ -26,7 +26,7 @@
                         <li><a href="#guests">Guests</a></li>
                     </ul>
                 </div>
-                <div class="col-sm-3">
+                <div class="col-xs-3 col-sm-3">
 
                     <select class="going-select" data-show-icon="true">
                         <option data-icon="glyphicon-heart">Not Going</option>
@@ -45,9 +45,10 @@
                     <span class="event-day">{$day}</span>
                 </content>
 
-                <content class="col-sm-8 col-md-9">
+                <content class="col-xs-8 col-md-9">
 
                     <div class="row">
+
                         <div class="col-xs-4 event-name">
                             {$event.name}
                         </div>
@@ -67,12 +68,28 @@
 
                         <div class="event-rate">
 
-                            {for $i=1 to $rate}
-                                <i onclick="rate(1)" class="fa fa-star fa" aria-hidden="true"></i>
-                            {/for}
-                            {for $i=$rate+1 to 5}
-                                <i onclick="rate(1)" class="fa fa-star-o fa" aria-hidden="true"></i>
-                            {/for}
+
+                        <div class="rating">
+                            <input type="radio" id="star5" name="rating" value="10"/><label class="full"
+                                                                                            for="star5"></label>
+                            <input type="radio" id="star4half" name="rating" value="9"/><label class="half"
+                                                                                               for="star4half"></label>
+                            <input type="radio" id="star4" name="rating" value="8"/><label class="full"
+                                                                                           for="star4"></label>
+                            <input type="radio" id="star3half" name="rating" value="7"/><label class="half"
+                                                                                               for="star3half"></label>
+                            <input type="radio" id="star3" name="rating" value="6"/><label class="full"
+                                                                                           for="star3"></label>
+                            <input type="radio" id="star2half" name="rating" value="5"/><label class="half"
+                                                                                               for="star2half"></label>
+                            <input type="radio" id="star2" name="rating" value="4"/><label class="full"
+                                                                                           for="star2"></label>
+                            <input type="radio" id="star1half" name="rating" value="3"/><label class="half"
+                                                                                               for="star1half"></label>
+                            <input type="radio" id="star1" name="rating" value="2"/><label class="full"
+                                                                                           for="star1"></label>
+                            <input type="radio" id="starhalf" name="rating" value="1"/><label class="half"
+                                                                                              for="starhalf"></label>
                         </div>
                     </div>
                     <div class="row">
@@ -93,7 +110,7 @@
                     </div>
                 </content>
 
-                <content class="col-sm-3 col-md-2 text-center user-photo">
+                <content class="col-xm-3 col-md-2 text-center user-photo">
 
                     <button><img src="{$BASE_URL}resources/images/user.jpeg">{$USERNAME}</button>
 
@@ -164,17 +181,26 @@
                             {$cmt.comment_date}
                         </div>
 
-                        <div class="col-xs-2 col-xs-offset-2">
-                            <button><span class="glyphicon glyphicon-share-alt"></span>Reply</button>
-                        </div>
-
-                        <div class="col-xs-2">
-                            <button><span class="glyphicon glyphicon-flag"></span>Report</button>
-                        </div>
+                        {if $cmt.username = $USERNAME}
+                            <div class="col-xs-offset-4 col-xs-2">
+                                <button class="remove" value="{$cmt.comment_id}"><span
+                                            class="glyphicon glyphicon-remove"></span>Delete
+                                </button>
+                            </div>
+                        {else}
+                            <div class="col-xs-2 col-xs-offset-2">
+                                <button><span class="glyphicon glyphicon-share-alt"></span>Reply</button>
+                            </div>
+                            <div class="col-xs-2">
+                                <button><span class="glyphicon glyphicon-flag"></span>Report</button>
+                            </div>
+                        {/if}
                     </div>
-                    <div class="panel-body">
-                        {$cmt.content}
-                    </div>
+                    <content class="col-xs-12">
+                        <div class="panel-body">
+                            {$cmt.content}
+                        </div>
+                    </content>
                 </div>
             {/foreach}
 
@@ -184,7 +210,7 @@
                     <h3>Your Answer</h3>
                 </div>
                 <form id="comment-form" method="post" action="{$BASE_URL}actions/event/new_comment.php">
-                    <input type="text" name="user_id" hidden="true" value="{$USERID}">
+                    <input type="text" name="user_id" id="user_id" hidden="true" value="{$USERID}">
                     <input type="text" name="event_id" id="event_id" hidden="true" value="{$event_id}">
                     <textarea name="editor" id="editor">
                         </textarea>
@@ -198,7 +224,6 @@
             {/if}
         </div>
 
-
         <div class="page-header">
             <div class="row">
                 <content class="col-xs-9">
@@ -208,7 +233,7 @@
                     {foreach $hosts as $host}
                         {if $host.username == $USERNAME}
                             <input id="search-user" type="search" class="form-control" placeholder="Add hosts..."
-                                       autocomplete="off"/>
+                                   autocomplete="off"/>
                             <div class="content-list" id="search-list" style="width: 100%;">
                                 <ul class="drop-list">
 
@@ -239,6 +264,7 @@
                 {/if}
             {/for}
         </div>
+
 
 
         <div class="page-header">
@@ -289,31 +315,53 @@
 
 <script>
 
-    $(document).ready(function () {
 
-        $('.navbar-nav li a').click(function () {
+        <div></div>
 
-            $('.navbar-nav a').removeClass("active");
-            $(this).addClass("active");
-        });
-    });
+        <div class="page-header">
+            <div class="row">
+                <content class="col-xs-9">
+                    <h3 style="margin: 0px;">Guests</h3>
+                </content>
+                <content class="col-xs-3">
+                    {foreach $hosts as $host}
+                        {if $host.username == $USERNAME}
+                            <input id="search-guest" type="search" class="form-control" placeholder="Add guests..."
+                                   autocomplete="off"/>
+                            <div class="content-list" id="search-list-guest" style="width: 100%;">
+                                <ul class="drop-list-guest">
 
+                                </ul>
+                            </div>
+                        {/if}
+                    {/foreach}
+                </content>
+            </div>
+        </div>
 
-    $(document).ready(function () {
+        <div id="guests">
 
-        $(window).scroll(function () {
-            console.log($(window).scrollTop())
-            if ($(window).scrollTop() > 480) {
-                $('.navbar-slide').addClass('navbar-fixed-second-top');
-            }
-            if ($(window).scrollTop() <= 480) {
-                $('.navbar-slide').removeClass('navbar-fixed-second-top');
-            }
-        });
-    });
+            {for $i = 0; $i < count($guests); $i++}
 
-</script>
+                {if $i == 0}
+                    <content class="col-xs-1">
+                        <div class="user-photo">
+                            <button><img src="{$BASE_URL}resources/images/user.jpeg">{$guests[$i].username}</button>
+                        </div>
+                    </content>
+                {else}
+                    <content class="col-xs-1 col-xs-offset-1">
+                        <div class="user-photo">
+                            <button><img src="{$BASE_URL}resources/images/user.jpeg">{$guests[$i].username}</button>
+                        </div>
+                    </content>
+                {/if}
+            {/for}
+        </div>
+    </div>
+</div>
 
+{include file='common/footer.tpl'}
 
-<script src="{$BASE_URL}scripts/search/show-event-search.js"></script>
+<script src="{$BASE_URL}scripts/search/show-event-script.js"></script>
 <script type="text/javascript" src="../../scripts/event/show-map-location.js"></script>

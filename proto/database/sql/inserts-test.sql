@@ -38,7 +38,3 @@ insert into public.event_content (user_id, event_id) values (1, 3);
 insert into public.event_content (user_id, event_id) values (2, 3);
 insert into public.event_content (user_id, event_id) values (2, 3);
 insert into public.event_content (user_id, event_id) values (2, 3);
-
-insert into public.Rate (event_content_id, evaluation) values (0,3);
-insert into public.Rate (event_content_id, evaluation) values (3,2);
-insert into public.Rate (event_content_id, evaluation) values (7,2);
