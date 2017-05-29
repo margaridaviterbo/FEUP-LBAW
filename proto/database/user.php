@@ -25,11 +25,11 @@
         }
     }
 
-    function createAuthenticatedUser($user_id, $username, $password){
+    function createAuthenticatedUser($user_id, $username, $password, $photo){
         global $conn;
         $state = 'active';
-        $stmt = $conn->prepare('INSERT INTO public.authenticated_user(user_id, username, password, user_state) VALUES (?, ?, ?, ?)');
-        $stmt->execute(array($user_id, $username, sha1($password), $state));
+        $stmt = $conn->prepare('INSERT INTO public.authenticated_user(user_id, username, password, photo_url, user_state) VALUES (?, ?, ?, ?, ?)');
+        $stmt->execute(array($user_id, $username, sha1($password), $photo, $state));
     }
 
     function authenticatedUserExists($username, $email, $nif){
