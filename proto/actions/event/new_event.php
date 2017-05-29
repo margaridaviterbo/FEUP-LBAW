@@ -70,6 +70,9 @@ foreach ($_POST['user_id'] as $hostId){
 }
 
 //adicionar convidados
+foreach ($_POST['guest_id'] as $guestId){
+    addGuest($guestId, $eventId);
+}
 
 echo '<script> window.location.href = "../../index.php"; </script>';
 

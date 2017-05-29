@@ -8,10 +8,10 @@ $response = array();
 $userId = $_POST['user'];
 $eventId = $_POST['event'];
 
-$add = isHost($userId, $eventId);
+$add = isGuest($userId, $eventId);
 
 if ($add == false){
-    addHost($userId, $eventId);
+    addGuest($userId, $eventId);
     $response['success'] = 'success';
 }
 else{

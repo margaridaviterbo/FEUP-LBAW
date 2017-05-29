@@ -51,7 +51,7 @@ $("#page1 .next").click(function () {
             current_fs = $(this).parent();
             next_fs = $(this).parent().next();
 
-            current_fs.hide("blind", 500);
+            current_fs.hide(500);
             next_fs.show(500);
 
             error_message = "";
@@ -81,7 +81,7 @@ $("#page2 .next").click(function () {
         current_fs = $(this).parent();
         next_fs = $(this).parent().next();
 
-        current_fs.hide("blind", 500);
+        current_fs.hide(500);
         next_fs.show(500);
 
         error_message = "";
@@ -95,7 +95,7 @@ $(".previous").click(function () {
     current_fs = $(this).parent();
     previous_fs = $(this).parent().prev();
 
-    current_fs.hide("blind", 500);
+    current_fs.hide(500);
     previous_fs.show(500);
 
 });
