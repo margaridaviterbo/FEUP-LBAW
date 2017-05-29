@@ -12,7 +12,7 @@
                 <p>
 
                 <form action="{$BASE_URL}actions/authentication/register.php" method="post"
-                      enctype="multipart/>form-data">
+                      enctype="multipart/form-data">
 
                     <label>First Name *</label>
                     <input name="first_name" id="first_name" type="text" class="form-control"
@@ -44,8 +44,9 @@
 
                     <label>Profile picture</label>
                     <div>
-                        <label for="profile-photo" class="btn btn-default">Upload photo</label>
-                        <input id="profile-photo" style="visibility:hidden;" type="file">
+                        <input type="hidden" name="MAX_FILE_SIZE" value="30000" />
+                        <label for="fileToUpload" class="btn btn-default">Upload photo</label>
+                        <input id="fileToUpload" name="fileToUpload" style="visibility:hidden;"type="file" accept="image/*">
                     </div>
 
                     <div class="modal-footer">
