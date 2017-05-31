@@ -1,3 +1,6 @@
+INSERT INTO public.administrator(username, email, password, active) VALUES ('administrator', 'admin@fe.up.pt', '8bc5de83cf1daf79ed5b2f13f93d7c05d01d0388', true);
+
+
 INSERT INTO public.category(name) VALUES ('none');
 INSERT INTO public.category(name) VALUES ('arts');
 INSERT INTO public.category(name) VALUES ('business');

@@ -141,7 +141,7 @@ CREATE TABLE public.Meta_Event
 	beginning_date timestamp NOT NULL,
 	ending_date timestamp,
 	meta_event_state boolean NOT NULL,
-  photo_url varchar(500),
+    photo_url varchar(500),
 	free boolean NOT NULL,
 	public boolean NOT NULL,
 	owner_id integer NOT NULL,

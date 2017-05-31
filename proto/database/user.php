@@ -153,10 +153,10 @@
 	
     function isLoginCorrect($username, $password) {
         global $conn;
-        $stmt = $conn->prepare("SELECT * 
+        $stmt = $conn->prepare('SELECT * 
                                 FROM public.authenticated_user 
-                                WHERE username = ? AND password = ?");
-        $stmt->execute(array($username, sha1($password)));
+                                WHERE (username = ?) AND (password = ?) AND user_state = ?;');
+        $stmt->execute(array($username, sha1($password), 'active'));
         return $stmt->fetch() == true;
     }
 
