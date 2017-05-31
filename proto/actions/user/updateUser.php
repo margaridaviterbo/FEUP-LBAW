@@ -24,6 +24,8 @@ if (move_uploaded_file($_FILES['fileToUpload']['tmp_name'], $uploadfile)) {
 updateUser($firstname, $lastname, $email, $nif, $_SESSION['user_id']);
 updateAuthenticatedUser($username, $password, $_SESSION['user_id'], $photo);
 
+$_SESSION['username'] = $username;
+
 header('Location: ../../pages/user/my-page-my-information.php');
 
 ?>

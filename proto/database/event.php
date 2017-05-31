@@ -147,7 +147,8 @@ function listEvents()
     INNER JOIN public.localization ON public.meta_event.local_id = public.localization.local_id
     INNER JOIN public.city ON public.city.city_id = public.localization.city_id
     INNER JOIN public.country ON public.country.country_id = public.city.country_id                        
-    where public.meta_event.beginning_date > now() ORDER BY beginning_date ASC');
+    WHERE (public.meta_event.beginning_date > now() AND public.meta_event."public" = true)
+    ORDER BY beginning_date ASC');
     $stmt->execute();
     return $stmt->fetchAll();
 }
@@ -224,6 +225,7 @@ function getMainEvents()
                             INNER JOIN public.country ON public.country.country_id = public.city.country_id
                             INNER JOIN public.event_content ON public.event_content.event_id = public.meta_event.meta_event_id
                             INNER JOIN public.rate ON public.rate.event_content_id = public.event_content.event_content_id
+                            WHERE public.meta_event."public" = true
                             ORDER BY public.rate.evaluation DESC
                             LIMIT 9');
     $stmt->execute();
@@ -258,6 +260,17 @@ function getMetaEventTickets($event_id){
     $stmt = $conn->prepare('SELECT *
 							FROM public.Type_of_Ticket
 							WHERE public.Type_of_Ticket.meta_event_id = ?');
+    $stmt->execute(array($event_id));
+    return $stmt->fetchAll();
+}
+
+function getOwnerEvent($event_id){
+    global $conn;
+    $stmt = $conn->prepare('SELECT public.authenticated_user.username
+							FROM public.authenticated_user
+							INNER JOIN public.meta_event
+							ON public.meta_event.owner_id = public.authenticated_user.user_id
+							WHERE public.meta_event.meta_event_id = ?');
     $stmt->execute(array($event_id));
     return $stmt->fetchAll();
 }
