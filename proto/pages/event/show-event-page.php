@@ -21,13 +21,14 @@ $ending_small_format = date('m/d/Y H:i', strtotime($event[ending_date]));
 
 $rate = getRating($meta_event_id)[0]['eval'];
 
+$owner = getOwnerEvent($meta_event_id);
+
 $comments = getComments($meta_event_id);
 
 $hosts = getHosts($meta_event_id);
 $guests = getGuests($meta_event_id);
 $going = false;
 $isGuest = false;
-
 
 if(!$event['public']){
 	$canSee=false;
@@ -57,9 +58,8 @@ $au_user_id =0;
 try{
 	$au_user_id = getUserIdFromAuthenticatedUser($_SESSION['username']);
 	$going = responseGetResponse($meta_event_id, $au_user_id)['is_going'];
-} catch(Exception $e){
+} catch(Exception $e) {
 }
-
 
 $smarty->assign('comments', $comments);
 $smarty->assign('hosts', $hosts);
@@ -76,6 +76,7 @@ $smarty->assign('going', $going);
 $smarty->assign('au_user_id', $au_user_id);
 $smarty->assign('tickets', $num_tickets['num_tickets']);
 $smarty->assign('rateUser', $rateUser);
+$smarty->assign('owner', $owner[0]['username']);
 
 $smarty->display('event/show-event-page.tpl');
 ?>

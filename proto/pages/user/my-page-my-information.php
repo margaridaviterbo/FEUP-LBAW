@@ -7,7 +7,7 @@ if (!isset($_SESSION['username'])){
     exit();
 }
 
-$id = getUserIdFromAuthenticatedUser($_SESSION['username']);
+$id = $_SESSION['user_id'];
 $authenticated = getAuthenticatedUserFromId($id);
 $user = getUserFromId($id);
 

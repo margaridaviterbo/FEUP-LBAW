@@ -86,7 +86,7 @@
 
                         <content class="col-xs-2 col-md-2 text-center user-photo">
 
-                            <button><img src="{$BASE_URL}resources/images/user.jpeg">{$USERNAME}</button>
+                            <button><img src="{$BASE_URL}resources/images/user.jpeg">{$owner}</button>
 
                         </content>
 
@@ -181,7 +181,7 @@
                             {$cmt.comment_date}
                         </div>
 
-                        {if $cmt.username = $USERNAME}
+                        {if $cmt.username == $USERNAME}
                             <div class="col-xs-offset-4 col-xs-2">
                                 <button class="remove" value="{$cmt.comment_id}"><span
                                             class="glyphicon glyphicon-remove"></span>Delete
@@ -196,11 +196,11 @@
                             </div>
                         {/if}
                     </div>
-                    <content class="col-xs-12">
+                    <div class="col-xs-12">
                         <div class="panel-body">
                             {$cmt.content}
                         </div>
-                    </content>
+                    </div>
                 </div>
             {/foreach}
 
