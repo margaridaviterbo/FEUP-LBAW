@@ -9,50 +9,65 @@ To experience our project, it´s required to download and extract the files to a
 
  ### 2. Utilization
 
-Homepage
+- Homepage
 
 ![homepage](homepage.jpg)
 
 1: Public Events list 
+
 2: Search (users ou events) 
+
 3: Check event details 
+
 4: Login and register new user 
 
 
-Event
+
+- Event
 
 ![homepage](evento.jpg)
 
 1: Return to homepage 
+
 2: Buy ticket for event 
+
 3: Rate event 
+
 
 
 
 ![homepage](evento2.jpg)
 
 1: Insert comment for event 
+
 2: Add hosts and/or guests for event 
 
 
 
-Personal page
+
+- Personal page
 
 ![homepage](mypage.jpg)
 
 1: Go to personal profile or logout 
+
 2: Personal events interaction 
+
 3: See or edit events 
+
 4: Personal activity interaction 
 
 
 
-Administrator
+
+- Administrator
 
 ![homepage](admin.jpg)
 
 1: Go to personal profile or logout 
+
 2: Manage notifications 
+
 
 
 
