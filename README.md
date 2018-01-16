@@ -6,11 +6,8 @@ Eventify is an information system with a web interface to collaboratively manage
 
 To experience our project, it´s required to download and extract the files to a web, or local, server with PHP and PostgreSQL database support.
 
-\\
-\\
- ### 2. Utilization
 
-2.1 Instructions
+ ### 2. Utilization
 
 Homepage
 
@@ -20,7 +17,7 @@ Homepage
 2: Search (users ou events) \\
 3: Check event details \\
 4: Login and register new user \\
-\\
+
 
 Event
 
@@ -30,14 +27,14 @@ Event
 2: Buy ticket for event \\
 3: Rate event \\
 
-\\
+
 
 {{ :lbaw1622:evento2.jpg?600 |}}
 
 1: Insert comment for event \\
 2: Add hosts and/or guests for event \\
 
-\\
+
 
 Personal page
 
@@ -48,7 +45,7 @@ Personal page
 3: See or edit events \\
 4: Personal activity interaction \\
 
-\\
+
 
 Administrator
 
@@ -57,17 +54,15 @@ Administrator
 1: Go to personal profile or logout \\
 2: Manage notifications \\
 
-\\
 
-2.2 Login credentials
 
-Authenticated User
-username: catarina24 \\
-password: 123456789a
+###3. Promotional video
 
-Administrator
-username: administrador \\
-password: 123456789a
+http://bit.ly/lbaw-1622
 
-\\
-\\
+
+###4. Promotional Brochure
+
+{{ :lbaw1622:folheto.jpg |
+}}
+
