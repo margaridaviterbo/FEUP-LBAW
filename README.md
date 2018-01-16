@@ -1,1 +1,73 @@
 # FEUP-LBAW
+
+Eventify is an information system with a web interface to collaboratively manage events. It's a website to buy/sell tickets, organize and promote events.
+
+### 1. Instalation
+
+To experience our project, it´s required to download and extract the files to a web, or local, server with PHP and PostgreSQL database support.
+
+\\
+\\
+ ### 2. Utilization
+
+2.1 Instructions
+
+Homepage
+
+{{ :lbaw1622:homepage.jpg?600 |}}
+
+1: Public Events list \\
+2: Search (users ou events) \\
+3: Check event details \\
+4: Login and register new user \\
+\\
+
+Event
+
+{{ :lbaw1622:evento.jpg?600 |}}
+
+1: Return to homepage \\
+2: Buy ticket for event \\
+3: Rate event \\
+
+\\
+
+{{ :lbaw1622:evento2.jpg?600 |}}
+
+1: Insert comment for event \\
+2: Add hosts and/or guests for event \\
+
+\\
+
+Personal page
+
+{{ :lbaw1622:mypage.jpg?600 |}}
+
+1: Go to personal profile or logout \\
+2: Personal events interaction \\
+3: See or edit events \\
+4: Personal activity interaction \\
+
+\\
+
+Administrator
+
+{{ :lbaw1622:admin.jpg?600 |}}
+
+1: Go to personal profile or logout \\
+2: Manage notifications \\
+
+\\
+
+2.2 Login credentials
+
+Authenticated User
+username: catarina24 \\
+password: 123456789a
+
+Administrator
+username: administrador \\
+password: 123456789a
+
+\\
+\\
